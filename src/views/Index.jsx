@@ -43,16 +43,17 @@ class Index extends React.Component {
         <main ref="main">
 
           <Carousel />
+          <Icons />
           <Hero />
-          <section className="section">
+          {/* <section className="section">
             <Container>
               <CustomControls />
               <Menus />
             </Container>
-          </section>
-          <Buttons />
+          </section> */}
+          {/* <Buttons />
           <Inputs />
-          <Navbars />
+          <Navbars /> */}
           {/* <section className="section section-components">
             <Container>
               <Tabs />
@@ -71,7 +72,6 @@ class Index extends React.Component {
               <TooltipPopover />
             </Container>
           </section> */}
-          <Icons />
           <Login />
           <Download />
         </main>
@@ -80,5 +80,6 @@ class Index extends React.Component {
     );
   }
 }
+
 
 export default Index;
