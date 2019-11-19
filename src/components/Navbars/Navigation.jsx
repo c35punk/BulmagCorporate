@@ -22,7 +22,7 @@ import {
   UncontrolledTooltip
 } from "reactstrap";
 
-class DemoNavbar extends React.Component {
+class Navigation extends React.Component {
   componentDidMount() {
     let headroom = new Headroom(document.getElementById("navbar-main"));
     // initialise
@@ -148,7 +148,7 @@ class DemoNavbar extends React.Component {
                       </DropdownItem>
                       <DropdownItem to="/register-page" tag={Link}>
                         Register
-                      </DropdownItem> 
+                      </DropdownItem>
                       <DropdownItem to="/contacts" tag={Link}>
                         Contacts
                       </DropdownItem>
@@ -245,4 +245,4 @@ class DemoNavbar extends React.Component {
   }
 }
 
-export default DemoNavbar;
+export default Navigation;
