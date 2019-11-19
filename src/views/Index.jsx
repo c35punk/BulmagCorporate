@@ -4,7 +4,7 @@ import React from "react";
 import { Container, Row } from "reactstrap";
 
 // core components
-import DemoNavbar from "components/Navbars/Navigation.jsx";
+import Navigation from "components/Navbars/Navigation.jsx";
 import CardsFooter from "components/Footers/CardsFooter.jsx";
 
 // index page sections
@@ -29,6 +29,7 @@ import Icons from "./IndexSections/Icons.jsx";
 import Login from "./IndexSections/Login.jsx";
 import Download from "./IndexSections/Download.jsx";
 
+
 class Index extends React.Component {
   componentDidMount() {
     document.documentElement.scrollTop = 0;
@@ -38,7 +39,7 @@ class Index extends React.Component {
   render() {
     return (
       <>
-        <DemoNavbar />
+        <Navigation />
         <main ref="main">
 
           <Carousel />
