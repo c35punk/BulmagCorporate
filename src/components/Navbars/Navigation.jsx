@@ -76,8 +76,7 @@ class Navigation extends React.Component {
                       <div className="dropdown-menu-inner">
                         <Media
                           className="d-flex align-items-center"
-                          href="https://demos.creative-tim.com/bulmag-design-system-react/#/documentation/overview?ref=adsr-navbar"
-                          target="_blank"
+                          href="/products"
                         >
                           <div className="icon icon-shape bg-gradient-primary rounded-circle text-white">
                             <i className="ni ni-spaceship" />
@@ -101,30 +100,15 @@ class Navigation extends React.Component {
                             <i className="ni ni-palette" />
                           </div>
                           <Media body className="ml-3">
-                            <h6 className="heading text-primary mb-md-1">
-                              Services
-                            </h6>
+                            <Link to="/services" >
+                              <Button>
+
+                                Services
+                              </Button>
+                            </Link>
                             <p className="description d-none d-md-inline-block mb-0">
                               Learn more about colors, typography, icons and the
                               grid system we used for bulmag.
-                            </p>
-                          </Media>
-                        </Media>
-                        <Media
-                          className="d-flex align-items-center"
-                          href="https://demos.creative-tim.com/bulmag-design-system-react/#/documentation/alert?ref=adsr-navbar"
-                          target="_blank"
-                        >
-                          <div className="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                            <i className="ni ni-ui-04" />
-                          </div>
-                          <Media body className="ml-3">
-                            <h5 className="heading text-warning mb-md-1">
-                              Components
-                            </h5>
-                            <p className="description d-none d-md-inline-block mb-0">
-                              Browse our 50 beautiful handcrafted components
-                              offered in the Free version.
                             </p>
                           </Media>
                         </Media>
