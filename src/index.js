@@ -12,6 +12,8 @@ import Login from "views/pages/Login.jsx";
 import Profile from "views/pages/Profile.jsx";
 import Register from "views/pages/Register.jsx";
 import Contacts from "views/pages/Contacts.jsx";
+import Products from "views/pages/Products";
+import Services from "views/pages/Services";
 import About from 'views/pages/About'
 
 ReactDOM.render(
@@ -24,6 +26,8 @@ ReactDOM.render(
       <Route path="/profile" exact render={props => <Profile {...props} />} />
       <Route path="/register" exact render={props => <Register {...props} />} />
       <Route path="/contacts" exact render={props => <Contacts {...props} />} />
+      <Route path="/products" exact render={props => <Products {...props} />} />
+      <Route path="/services" exact render={props => <Services {...props} />} />
       <Redirect to="/" />
     </Switch>
   </BrowserRouter>,
