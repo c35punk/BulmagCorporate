@@ -82,9 +82,11 @@ class Navigation extends React.Component {
                             <i className="ni ni-spaceship" />
                           </div>
                           <Media body className="ml-3">
-                            <h6 className="heading text-primary mb-md-1">
-                              Products
-                            </h6>
+                            <Link to="/products" >
+                              <Button>
+                                Products
+                              </Button>
+                            </Link>
                             <p className="description d-none d-md-inline-block mb-0">
                               Learn how to use bulmag compiling Scss, change
                               brand colors and more.
@@ -127,6 +129,18 @@ class Navigation extends React.Component {
                       <DropdownItem to="/landing" tag={Link}>
                         Landing
                       </DropdownItem>
+                      <DropdownItem to="/contacts" tag={Link}>
+                        Contacts
+                      </DropdownItem>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
+                  <UncontrolledDropdown nav>
+                    <DropdownToggle nav>
+                      <i className="ni ni-collection d-lg-none mr-1" />
+                      <span className="nav-link-inner--text">Account</span>
+                    </DropdownToggle>
+                    <DropdownMenu>
+
                       <DropdownItem to="/profile" tag={Link}>
                         Profile
                       </DropdownItem>
@@ -136,9 +150,7 @@ class Navigation extends React.Component {
                       <DropdownItem to="/register" tag={Link}>
                         Register
                       </DropdownItem>
-                      <DropdownItem to="/contacts" tag={Link}>
-                        Contacts
-                      </DropdownItem>
+
                     </DropdownMenu>
                   </UncontrolledDropdown>
                 </Nav>
@@ -146,7 +158,7 @@ class Navigation extends React.Component {
                   <NavItem>
                     <NavLink
                       className="nav-link-icon"
-                      href="https://www.facebook.com/creativetim"
+                      href="https://www.facebook.com/eBulmag/"
                       id="tooltip333589074"
                       target="_blank"
                     >
@@ -159,38 +171,7 @@ class Navigation extends React.Component {
                       Like us on Facebook
                     </UncontrolledTooltip>
                   </NavItem>
-                  <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
-                      href="https://www.instagram.com/creativetimofficial"
-                      id="tooltip356693867"
-                      target="_blank"
-                    >
-                      <i className="fa fa-instagram" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Instagram
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip356693867">
-                      Follow us on Instagram
-                    </UncontrolledTooltip>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink
-                      className="nav-link-icon"
-                      href="https://twitter.com/creativetim"
-                      id="tooltip184698705"
-                      target="_blank"
-                    >
-                      <i className="fa fa-twitter-square" />
-                      <span className="nav-link-inner--text d-lg-none ml-2">
-                        Twitter
-                      </span>
-                    </NavLink>
-                    <UncontrolledTooltip delay={0} target="tooltip184698705">
-                      Follow us on Twitter
-                    </UncontrolledTooltip>
-                  </NavItem>
+
                   <NavItem>
                     <NavLink
                       className="nav-link-icon"
@@ -207,18 +188,18 @@ class Navigation extends React.Component {
                       Star us on Github
                     </UncontrolledTooltip>
                   </NavItem>
-                  <NavItem className="d-none d-lg-block ml-lg-4">
+                  <NavItem className="d-none d-lg-block lg-4">
                     <Button
                       className="btn-neutral btn-icon"
                       color="default"
-                      href="https://www.creative-tim.com/product/bulmag-design-system-react?ref=adsr-navbar"
+                      href="https://e-bulmag.bg"
                       target="_blank"
                     >
                       <span className="btn-inner--icon">
-                        <i className="fa fa-cloud-download mr-2" />
+                        <i className="fa fa-shopping mr-2" />
                       </span>
-                      <span className="nav-link-inner--text ml-1">
-                        Download
+                      <span className="nav-link-inner--text ml-9">
+                        eBulmag online store
                       </span>
                     </Button>
                   </NavItem>

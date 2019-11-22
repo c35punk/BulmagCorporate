@@ -11565,3 +11565,96 @@ td.rdtYear:hover {
   margin-bottom: 0;
   flex: 1 1 auto;
   width: 1%; }
+
+
+  
+section.cms-boxes .cms-boxes-outer {
+  text-align: left;
+  margin-bottom: 6px;
+  padding: 0 3px;
+}
+
+section.cms-boxes h2 {
+  font-weight: bold;
+}
+
+.table-single-cell {
+  font-size: large;
+}
+
+section.cms-boxes .cms-boxes-outer .cms-boxes-items {
+  background: url("../img/background.png");
+  border-style: solid;
+  border-color: black;
+  font-family: "Microsoft JhengHei Light";
+  height: 250px;
+  display: table;
+  width: 100%;
+  border-radius: 10px;
+
+}
+
+section.cms-boxes .cms-boxes-outer .cms-boxes-items p {
+  color: #000000;
+  border-radius: 10%;
+}
+
+section.cms-boxes .cms-features {
+  background-color: #aa2727;
+}
+
+section.cms-boxes .boxes-align {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+section.cms-boxes .small-box,
+section.cms-boxes .large-box {
+  max-width: 350px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.img {
+  position: relative;
+  float: left;
+  width: 100px;
+  height: 100px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section.cms-boxes .cms-boxes-items h2 {
+  font-size: 35px;
+  color: #000000;
+  font-weight: 400;
+  line-height: 37px;
+  text-align: center;
+  margin: 20px 0 10px;
+
+}
+
+section.cms-boxes .cms-security,
+section.cms-boxes .cms-documentation {
+  background-color: #aa2727;
+}
+
+section.cms-boxes .cms-scalability {
+  background: url(https://www.solodev.com/assets/tiles/scalability.jpg) 0 0 no-repeat;
+  background-size: cover;
+}
+
+section.cms-boxes .cms-built {
+  background: url(https://www.solodev.com/assets/tiles/customer-service.jpg) 0 0 no-repeat;
+  background-size: cover;
+}
+
+section.cms-boxes .cms-security, section.cms-boxes .cms-documentation {
+  background-color: transparent;
+}
+
+section.cms-boxes .cms-boxes-items:hover {
+  opacity: .2;
+  cursor: pointer;
+}

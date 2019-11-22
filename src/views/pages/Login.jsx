@@ -35,12 +35,7 @@ class Login extends React.Component {
           <section className="section section-shaped section-lg">
             <div className="shape shape-style-1 bg-gradient-default">
               <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
+
               <span />
             </div>
             <Container className="pt-lg-md">
@@ -129,6 +124,7 @@ class Login extends React.Component {
                             className="my-4"
                             color="primary"
                             type="button"
+                            
                           >
                             Sign in
                           </Button>
@@ -140,7 +136,7 @@ class Login extends React.Component {
                     <Col xs="6">
                       <a
                         className="text-light"
-                        href="#pablo"
+                        href="/login"
                         onClick={e => e.preventDefault()}
                       >
                         <small>Forgot password?</small>
