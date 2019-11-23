@@ -45,106 +45,105 @@ class Landing extends React.Component {
 
                       <h1 className="display-3 text-white">
                         ABOUT US
-                        <span>completed with examples</span>
                       </h1>
                       <p className="lead text-white">
-                      <div class="static_text">
-                            <h3>Creation</h3>
-                            <br/>
-                            Bulmag AD was founded in January 1991 as a Bulgarian-Hungarian Ltd (where from the
-                            company’s
+                        <div class="static_text">
+                          <h3>Creation</h3>
+                          <br />
+                          Bulmag AD was founded in January 1991 as a Bulgarian-Hungarian Ltd (where from the
+                          company’s
                             name: <span >BUL</span>garian <span
-                                >MAG</span>yar). In 2003 the company was
-                            reorganized
-                            into a joint stock company (in Bulgarian - AD).
+                          >MAG</span>yar). In 2003 the company was
+                      reorganized
+                      into a joint stock company (in Bulgarian - AD).
                             <p>The company business is a response to the strong demand
-                                here
-                                for higher quality and more reliable IT products.
-                                Bulmag AD became one of IBM® Business Partners in the country in 1992 at the level
-                                of
+                              here
+                              for higher quality and more reliable IT products.
+                              Bulmag AD became one of IBM® Business Partners in the country in 1992 at the level
+                              of
                                 Solution Provider.</p>
-                            <br/>
-                            <h3>Main Activities</h3>
-                            <br/>
-                            <p>Bulmag AD is providing to clients IT System integration
-                                elements in various combinations: Hardware &amp; Software Delivery, Professional
-                                Services, Consultations Rendering, Training, Authorized Warranty (Lenovo Think,
-                                NetApp,
-                                Datecs, Pax) and Post-Warranty Service Provider,
-                                Servicing and Maintenance, Specific Solutions Development, Design and
+                          <br />
+                          <h3>Main Activities</h3>
+                          <br />
+                          <p>Bulmag AD is providing to clients IT System integration
+                              elements in various combinations: Hardware &amp; Software Delivery, Professional
+                              Services, Consultations Rendering, Training, Authorized Warranty (Lenovo Think,
+                              NetApp,
+                              Datecs, Pax) and Post-Warranty Service Provider,
+                              Servicing and Maintenance, Specific Solutions Development, Design and
                                 Implementation.</p>
-                            <p><strong> <span
-                                    ></span></strong></p>
+                          <p><strong> <span
+                          ></span></strong></p>
 
-                            <div>
-                                <br/>
-                                <h3>Our principles</h3>
-                                <br/>
-                                We do our best to deepen the partnership with leading IT vendors. Thus we like to
-                                maintain a thoroughly knowledge of the most advanced IT and keep a sound position on
-                                the
-                                market.
-                                <br/>
-                                We aim at assisting to the success of our clients by selling to them high-tech
-                                integrated system solutions. To do this we make on demand analysis, design,
-                                integration,
-                                optimization, support &amp; maintenance and further IT system enhancement and
-                                development during the whole its life cycle. Our objective is to help clients gain
-                                high
-                                profitability, better quality of products offered and sold and services rendered as
-                                well
-                                as successful return on their investment.
+                          <div>
+                            <br />
+                            <h3>Our principles</h3>
+                            <br />
+                            We do our best to deepen the partnership with leading IT vendors. Thus we like to
+                            maintain a thoroughly knowledge of the most advanced IT and keep a sound position on
+                            the
+                            market.
+                                <br />
+                            We aim at assisting to the success of our clients by selling to them high-tech
+                            integrated system solutions. To do this we make on demand analysis, design,
+                            integration,
+                            optimization, support &amp; maintenance and further IT system enhancement and
+                            development during the whole its life cycle. Our objective is to help clients gain
+                            high
+                            profitability, better quality of products offered and sold and services rendered as
+                            well
+                            as successful return on their investment.
 
                             </div>
-                            <br/>
-                            <p><strong> </strong></p>
+                          <br />
+                          <p><strong> </strong></p>
 
+                          <div>
+                            <h3>History points</h3>
                             <div>
-                                <h3>History points</h3>
-                                <div>
-                                    <br/>
-                                    <ul>1991 — Bulmag Ltd (in Bulgarian - OOD) Foundation</ul>
-                                    <ul>1992 — IBM® Business Partner</ul>
-                                    <ul>1996 — Certified IBM® Service</ul>
-                                    <ul>1999 — IBM® Top Performer for Bulgaria</ul>
-                                    <ul>2002 — ISO 9001:2000 Certification</ul>
-                                    <ul>2003 — Bulmag AD (JSC)</ul>
-                                    <ul>2006 — IBM® Premier Business Partner</ul>
-                                    <ul>2007 — Lenovo® Premier Business Partner</ul>
-                                    <ul>2015 — HPE® Business Partner</ul>
-                                    <ul>2015 — SAP Labs® Business Partner</ul>
-                                    <ul>2016 — Transaction Systems® Business Partner</ul>
-                                    <ul>2019 — eBulmag® Online Shop</ul>
+                              <br />
+                              <ul>1991 — Bulmag Ltd (in Bulgarian - OOD) Foundation</ul>
+                              <ul>1992 — IBM® Business Partner</ul>
+                              <ul>1996 — Certified IBM® Service</ul>
+                              <ul>1999 — IBM® Top Performer for Bulgaria</ul>
+                              <ul>2002 — ISO 9001:2000 Certification</ul>
+                              <ul>2003 — Bulmag AD (JSC)</ul>
+                              <ul>2006 — IBM® Premier Business Partner</ul>
+                              <ul>2007 — Lenovo® Premier Business Partner</ul>
+                              <ul>2015 — HPE® Business Partner</ul>
+                              <ul>2015 — SAP Labs® Business Partner</ul>
+                              <ul>2016 — Transaction Systems® Business Partner</ul>
+                              <ul>2019 — eBulmag® Online Shop</ul>
 
-                                    &nbsp;
+                              &nbsp;
 
-                                    <br/>
-                                </div>
+                                    <br />
                             </div>
-                            <div>
-                                <h3>Main activities</h3>
-                                <br/>
-                                <ul>System integration, including:
+                          </div>
+                          <div>
+                            <h3>Main activities</h3>
+                            <br />
+                            <ul>System integration, including:
                                     <li><em>Design of information systems;</em></li>
-                                    <li><em>Delivery of hardware and software products;</em></li>
-                                    <li><em>Professional and consultancy services;</em></li>
-                                    <li><em>Training;</em></li>
-                                    <li><em>Maintenance and support;</em></li>
-                                    <li><em>Development and implementation of customer-specific solutions;</em></li>
-                                    <li><em>Implementation of high availability and disaster recovery systems.</em>
-                                    </li>
-                                </ul>
-                            </div>
-                            <p><strong> </strong></p>
+                              <li><em>Delivery of hardware and software products;</em></li>
+                              <li><em>Professional and consultancy services;</em></li>
+                              <li><em>Training;</em></li>
+                              <li><em>Maintenance and support;</em></li>
+                              <li><em>Development and implementation of customer-specific solutions;</em></li>
+                              <li><em>Implementation of high availability and disaster recovery systems.</em>
+                              </li>
+                            </ul>
+                          </div>
+                          <p><strong> </strong></p>
 
-                            <div>
-                                <br/>
-                                <h3>Audited Reports &amp; Financials</h3>
-                                <br/>
-                            </div>
-                            <p>Audited annual reports &amp; Financials are disclosed by
+                          <div>
+                            <br />
+                            <h3>Audited Reports &amp; Financials</h3>
+                            <br />
+                          </div>
+                          <p>Audited annual reports &amp; Financials are disclosed by
                                 Bulmag AD in full each year in the Company Register to the Ministry of Justice.</p>
-                            <br/>
+                          <br />
                         </div>
                       </p>
                       <div className="btn-wrapper">
@@ -208,8 +207,6 @@ class Landing extends React.Component {
                     <Col lg="4">
                       <CardTemplate />
                     </Col>
-
-
                   </Row>
                 </Col>
               </Row>
