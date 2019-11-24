@@ -5,19 +5,19 @@ import { Button, Container, Row, Col, UncontrolledCarousel } from "reactstrap";
 
 const items = [
   {
-    src: require("assets/img/theme/img-1-1200x1000.jpg"),
+    src: "https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/1809Tdj/videoblocks-data-center-technician-walking-through-server-rack-corridor-visually-inspecting-working-server-cabinets-shot-on-red-epic-w-8k-helium-cinema-camera_rzdiis6ol_thumbnail-full01.png",
     altText: "ALT TEXT",
     caption: "CAPTION",
     header: "Part 1"
   },
   {
-    src: require("assets/img/theme/img-2-1200x1000.jpg"),
+    src: "https://wallpaperaccess.com/full/398348.jpg",
     altText: "",
     caption: "",
     header: "Part 2"
   },
   {
-    src: require("assets/img/theme/img-2-1200x1000.jpg"),
+    src: "https://images.pond5.com/servers-close-modern-data-center-footage-084168764_prevstill.jpeg",
     altText: "",
     caption: "",
     header: "Part 3"
