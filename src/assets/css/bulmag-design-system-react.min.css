@@ -12796,7 +12796,7 @@ textarea[resize="horizontal"] {
 }
 
 .section-shaped .shape-default {
-    background: linear-gradient(150deg, #7795f8 15%, #6772e5 70%, #555abf 94%)
+    background: linear-gradient(150deg, #aa2727 15%, #d30303 30%, #555abf 94%)
 }
 
 .section-shaped .shape-default :nth-child(1) {

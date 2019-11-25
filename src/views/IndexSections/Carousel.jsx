@@ -29,7 +29,7 @@ class Carousel extends React.Component {
     return (
       <>
         <section className="section section-shaped">
-          <div className="shape shape-style-1 shape-default">
+          <div className="shape shape-style-0 shape-default">
             <span />
             <span />
             <span />
@@ -38,14 +38,14 @@ class Carousel extends React.Component {
             <span />
           </div>
           <Container className="py-md">
-            <Row className="justify-content-between align-items-center">
-              <Col className="mb-lg-auto" lg="11">
-                <div className="rounded shadow-lg overflow-hidden transform-perspective-right">
+            <Row className="justify-content-between align-items-center justify-content-center">
+              <Col className="mb-lg-cover" lg="12">
+                <div className="rounded shadow-lg overflow-hidden transform-perspective-center">
                   <UncontrolledCarousel items={items} />
                 </div>
               </Col>
               <Col className="mb-5 mb-lg-0" lg="5">
-                <h1 className="text-white font-weight-light">
+                <h1 className="text-blue font-weight-light">
                   Bootstrap carousel
                 </h1>
                 <p className="lead text-white mt-4">
