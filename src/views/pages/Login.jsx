@@ -145,7 +145,7 @@ class Login extends React.Component {
                     <Col className="text-right" xs="6">
                       <a
                         className="text-light"
-                        href="#pablo"
+                        href="/register"
                         onClick={e => e.preventDefault()}
                       >
                         <small>Create new account</small>
