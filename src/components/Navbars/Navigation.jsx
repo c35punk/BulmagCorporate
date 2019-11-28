@@ -126,8 +126,8 @@ class Navigation extends React.Component {
                       <DropdownItem to="/about" tag={Link}>
                         About us
                       </DropdownItem>
-                      <DropdownItem to="/landing" tag={Link}>
-                        Landing
+                      <DropdownItem to="/projects" tag={Link}>
+                        Projects
                       </DropdownItem>
                       <DropdownItem to="/contacts" tag={Link}>
                         Contacts
@@ -141,8 +141,11 @@ class Navigation extends React.Component {
                     </DropdownToggle>
                     <DropdownMenu>
 
-                      <DropdownItem to="/profile" tag={Link}>
+                    <DropdownItem to="/profile" tag={Link}>
                         Profile
+                      </DropdownItem>
+                      <DropdownItem to="/dashboard" tag={Link}>
+                        Dashboard
                       </DropdownItem>
                       <DropdownItem to="/login" tag={Link}>
                         Login
@@ -171,7 +174,6 @@ class Navigation extends React.Component {
                       Like us on Facebook
                     </UncontrolledTooltip>
                   </NavItem>
-
                   <NavItem>
                     <NavLink
                       className="nav-link-icon"

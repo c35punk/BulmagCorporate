@@ -13,13 +13,13 @@ const items = [
   {
     src: "https://wallpaperaccess.com/full/398348.jpg",
     altText: "",
-    caption: "",
+    caption: "SOME TEXT",
     header: "Part 2"
   },
   {
     src: "https://images.pond5.com/servers-close-modern-data-center-footage-084168764_prevstill.jpeg",
     altText: "",
-    caption: "",
+    caption: "SOME TEXT",
     header: "Part 3"
   }
 ];
@@ -29,7 +29,7 @@ class Carousel extends React.Component {
     return (
       <>
         <section className="section section-shaped">
-          <div className="shape shape-style-0 shape-default">
+          <div className="shape shape-style-1 shape-default">
             <span />
             <span />
             <span />
