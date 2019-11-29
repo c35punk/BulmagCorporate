@@ -114,10 +114,10 @@ class CardsFooter extends React.Component {
                 <div className="copyright">
                   © {new Date().getFullYear()}{" "}
                   <a
-                    href="https://www.creative-tim.com?ref=adsr-footer"
+                    href="https://www.linkedin.com/in/liubomir-djantov-a109759b/"
                     target="_blank"
                   >
-                    Creative Tim
+                    Design by ldj5
                   </a>
                   .
                 </div>
