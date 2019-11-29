@@ -177,7 +177,7 @@ class Navigation extends React.Component {
                   <NavItem>
                     <NavLink
                       className="nav-link-icon"
-                      href="https://github.com/c35punk"
+                      href="https://github.com/c35punk/BulmagCorporate"
                       id="tooltip112445449"
                       target="_blank"
                     >

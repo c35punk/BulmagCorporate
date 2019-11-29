@@ -124,38 +124,22 @@ class CardsFooter extends React.Component {
               </Col>
               <Col md="6">
                 <Nav className="nav-footer justify-content-end">
+
                   <NavItem>
                     <NavLink
-                      href="https://www.creative-tim.com?ref=adsr-footer"
-                      target="_blank"
+                      to="/contacts" tag={Link}
                     >
-                      Creative Tim
+                      Contacts
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink
-                      href="https://www.creative-tim.com/presentation?ref=adsr-footer"
-                      target="_blank"
+                      to="/about" tag={Link}
                     >
                       About Us
                     </NavLink>
                   </NavItem>
-                  <NavItem>
-                    <NavLink
-                      href="http://blog.creative-tim.com?ref=adsr-footer"
-                      target="_blank"
-                    >
-                      Blog
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink
-                      href="https://github.com/creativetimofficial/bulmag-design-system-react/blob/master/LICENSE.md"
-                      target="_blank"
-                    >
-                      MIT License
-                    </NavLink>
-                  </NavItem>
+
                 </Nav>
               </Col>
             </Row>
