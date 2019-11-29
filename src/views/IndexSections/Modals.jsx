@@ -36,7 +36,7 @@ class Modals extends React.Component {
               type="button"
               onClick={() => this.toggleModal("notificationModal")}
             >
-              Notification
+              Details
             </Button>
             <Modal
               className="modal-dialog-centered modal-danger"

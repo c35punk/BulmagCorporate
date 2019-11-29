@@ -12,7 +12,7 @@ import CardsFooter from "components/Footers/CardsFooter.jsx";
 import Carousel from "./IndexSections/Carousel.jsx";
 import Login from "./IndexSections/Login.jsx";
 import Download from "./IndexSections/Download.jsx";
-import Modals from "./IndexSections/Modals.jsx";
+import Icons from "./IndexSections/Icons"
 
 
 class Index extends React.Component {
@@ -27,7 +27,7 @@ class Index extends React.Component {
         <Navigation />
         <main ref="main">
           <Carousel />
-          <Modals />
+          <Icons />
           <Login />
           <Download />
         </main>
