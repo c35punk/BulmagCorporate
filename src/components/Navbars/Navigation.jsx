@@ -141,7 +141,7 @@ class Navigation extends React.Component {
                     </DropdownToggle>
                     <DropdownMenu>
 
-                    <DropdownItem to="/profile" tag={Link}>
+                      <DropdownItem to="/profile" tag={Link}>
                         Profile
                       </DropdownItem>
                       <DropdownItem to="/dashboard" tag={Link}>
@@ -191,19 +191,20 @@ class Navigation extends React.Component {
                     </UncontrolledTooltip>
                   </NavItem>
                   <NavItem className="d-none d-lg-block lg-4">
-                    <Button
-                      className="btn-neutral btn-icon"
-                      color="default"
-                      href="https://e-bulmag.bg"
+                    <NavLink
+                      className="nav-link-icon"
+                      href="https://e-bulmag.bg/"
+                      id="online-store"
                       target="_blank"
                     >
-                      <span className="btn-inner--icon">
-                        <i className="fa fa-shopping mr-2" />
+                      <i className="fa fa-shopping-cart" />
+                      <span className="nav-link-inner--text d-lg-none ml-2">
+                        eBulmag
                       </span>
-                      <span className="nav-link-inner--text ml-9">
-                        eBulmag online store
-                      </span>
-                    </Button>
+                    </NavLink>
+                    <UncontrolledTooltip delay={0} target="online-store">
+                      Visit eBulmag online store
+                    </UncontrolledTooltip>
                   </NavItem>
                 </Nav>
               </UncontrolledCollapse>
