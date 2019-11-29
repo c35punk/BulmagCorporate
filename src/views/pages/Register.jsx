@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 
 // reactstrap components
 import {
@@ -20,6 +21,7 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/Navigation.jsx";
 import SimpleFooter from "components/Footers/SimpleFooter.jsx";
+import Modal from '../IndexSections/Modals'
 
 class Register extends React.Component {
 
@@ -29,13 +31,15 @@ class Register extends React.Component {
       name: '',
       email: '',
       password: '',
-      repeatPassword: ''
+      repeatPassword: '',
+      agree: false
     };
 
     this.handleName = this.handleName.bind(this)
     this.handlePassword = this.handlePassword.bind(this)
     this.handleRepeatPassword = this.handleRepeatPassword.bind(this)
     this.handleEmail = this.handleEmail.bind(this)
+    this.handleAgree = this.handleAgree.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
 
   }
@@ -52,6 +56,9 @@ class Register extends React.Component {
   handleRepeatPassword(event) {
     this.setState({ repeatPassword: event.target.value });
   }
+  handleAgree(event) {
+  this.setState({ agree: event.target.checked });
+  }
 
   handleSubmit(event) {
     console.log(this.state);
@@ -63,8 +70,7 @@ class Register extends React.Component {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
-    let object = this.state;
-    console.log(object)
+
 
   }
 
@@ -98,8 +104,7 @@ class Register extends React.Component {
                         <Button
                           className="btn-neutral btn-icon mr-4"
                           color="default"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
+                          to="/login" tag={Link}
                         >
                           <span className="btn-inner--icon mr-1">
                             <img
@@ -112,8 +117,7 @@ class Register extends React.Component {
                         <Button
                           className="btn-neutral btn-icon ml-1"
                           color="default"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
+                          to="/login" tag={Link}
                         >
                           <span className="btn-inner--icon mr-1">
                             <img
@@ -137,7 +141,7 @@ class Register extends React.Component {
                                 <i className="ni ni-hat-3" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Name" type="text" name="username" value={this.state.value} onChange={this.handleName} />
+                            <Input placeholder="Name" type="text" name="username" value={this.state.username} onChange={this.handleName} />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -147,7 +151,7 @@ class Register extends React.Component {
                                 <i className="ni ni-email-83" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Email" type="email" name="email" value={this.state.value} onChange={this.handleEmail} />
+                            <Input placeholder="Email" type="email" name="email" value={this.state.email} onChange={this.handleEmail} />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -162,7 +166,7 @@ class Register extends React.Component {
                               type="password"
                               autoComplete="off"
                               name="password"
-                              value={this.state.value} onChange={this.handlePassword}
+                              value={this.state.password} onChange={this.handlePassword}
                             />
                           </InputGroup>
                         </FormGroup>
@@ -178,7 +182,7 @@ class Register extends React.Component {
                               type="password"
                               name="repeatPassword"
                               autoComplete="off"
-                              value={this.state.value} onChange={this.handleRepeatPassword}
+                              value={this.state.repeatPassword} onChange={this.handleRepeatPassword}
                             />
                           </InputGroup>
                         </FormGroup>
@@ -197,6 +201,9 @@ class Register extends React.Component {
                                 className="custom-control-input"
                                 id="customCheckRegister"
                                 type="checkbox"
+                                name="agree"
+                                checked={this.state.agree}
+                                onChange={this.handleAgree}
                               />
                               <label
                                 className="custom-control-label"
@@ -205,8 +212,7 @@ class Register extends React.Component {
                                 <span>
                                   I agree with the{" "}
                                   <a
-                                    href="#pablo"
-                                    onClick={e => e.preventDefault()}
+                                    to="/login" tag={Link}
                                   >
                                     Privacy Policy
                                   </a>
