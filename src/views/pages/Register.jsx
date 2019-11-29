@@ -22,11 +22,34 @@ import DemoNavbar from "components/Navbars/Navigation.jsx";
 import SimpleFooter from "components/Footers/SimpleFooter.jsx";
 
 class Register extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { value: '' };
+
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+
+  }
+
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
+
+
+
   render() {
     return (
       <>
@@ -86,15 +109,15 @@ class Register extends React.Component {
                       <div className="text-center text-muted mb-4">
                         <small>Or sign up with credentials</small>
                       </div>
-                      <Form role="form">
+                      <Form role="form" onSubmit={this.handleSubmit}>
                         <FormGroup>
                           <InputGroup className="input-group-alternative mb-3">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
-                                <i className="ni ni-hat-3" />
+                                <i className="ni ni-hat-1" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Name" type="text" />
+                            <Input placeholder="Name" type="text" value={this.state.value} />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>

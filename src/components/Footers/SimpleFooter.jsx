@@ -34,6 +34,7 @@ class SimpleFooter extends Component {
                   id="tooltip126536702"
                   size="lg"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className=" fa fa-twitter" />
                 </Button>
@@ -47,6 +48,7 @@ class SimpleFooter extends Component {
                   id="tooltip383967593"
                   size="lg"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className=" fa fa-facebook-square" />
                 </Button>
@@ -73,6 +75,7 @@ class SimpleFooter extends Component {
                   id="tooltip626177562"
                   size="lg"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className=" fa fa-github" />
                 </Button>
@@ -89,6 +92,7 @@ class SimpleFooter extends Component {
                   <a
                     href="https://www.creative-tim.com?ref=adsr-footer"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Creative Tim
                   </a>
@@ -101,6 +105,7 @@ class SimpleFooter extends Component {
                     <NavLink
                       href="https://www.creative-tim.com?ref=adsr-footer"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Creative Tim
                     </NavLink>
@@ -109,6 +114,7 @@ class SimpleFooter extends Component {
                     <NavLink
                       href="https://www.creative-tim.com/presentation?ref=adsr-footer"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       About Us
                     </NavLink>
@@ -117,6 +123,7 @@ class SimpleFooter extends Component {
                     <NavLink
                       href="http://blog.creative-tim.com?ref=adsr-footer"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Blog
                     </NavLink>
@@ -125,6 +132,7 @@ class SimpleFooter extends Component {
                     <NavLink
                       href="https://github.com/creativetimofficial/bulmag-design-system-react/blob/master/LICENSE.md"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       MIT License
                     </NavLink>
