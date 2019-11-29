@@ -21,7 +21,6 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/Navigation.jsx";
 import SimpleFooter from "components/Footers/SimpleFooter.jsx";
-import Modal from '../IndexSections/Modals'
 
 class Register extends React.Component {
 

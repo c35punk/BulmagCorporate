@@ -28,8 +28,7 @@ class Modals extends React.Component {
   render() {
     return (
       <>
-        <Row>
-          <Col md="2">
+        
             <Button
               block
               className="mb-3"
@@ -84,8 +83,7 @@ class Modals extends React.Component {
                 </Button>
               </div>
             </Modal>
-          </Col>
-        </Row>
+          
       </>
     );
   }

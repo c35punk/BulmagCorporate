@@ -118,7 +118,7 @@ class Landing extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                    <Col lg="4">
+                    <Col lg="3">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
                           <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
@@ -154,7 +154,7 @@ class Landing extends React.Component {
                         </CardBody>
                       </Card>
                     </Col>
-                    <Col lg="4">
+                    <Col lg="3">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
                           <div className="icon icon-shape icon-shape-success rounded-circle mb-4">
@@ -190,7 +190,7 @@ class Landing extends React.Component {
                         </CardBody>
                       </Card>
                     </Col>
-                    <Col lg="4">
+                    <Col lg="3">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
                           <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">

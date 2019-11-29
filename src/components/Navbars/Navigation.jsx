@@ -69,7 +69,7 @@ class Navigation extends React.Component {
                 <Nav className="navbar-nav-hover align-items-lg-center" navbar>
                   <UncontrolledDropdown nav>
                     <DropdownToggle nav>
-                      <i className="ni ni-ui-04 d-lg-none mr-1" />
+                      <i className="ni ni-collection d-lg-none mr-1" />
                       <span className="nav-link-inner--text">Portfolio</span>
                     </DropdownToggle>
                     <DropdownMenu className="dropdown-menu-xl">
@@ -119,7 +119,7 @@ class Navigation extends React.Component {
                   </UncontrolledDropdown>
                   <UncontrolledDropdown nav>
                     <DropdownToggle nav>
-                      <i className="ni ni-collection d-lg-none mr-1" />
+                      <i className="ni ni-building d-lg-none mr-1" />
                       <span className="nav-link-inner--text">Company</span>
                     </DropdownToggle>
                     <DropdownMenu>
@@ -136,7 +136,7 @@ class Navigation extends React.Component {
                   </UncontrolledDropdown>
                   <UncontrolledDropdown nav>
                     <DropdownToggle nav>
-                      <i className="ni ni-collection d-lg-none mr-1" />
+                      <i className="ni ni-badge d-lg-none mr-1" />
                       <span className="nav-link-inner--text">Account</span>
                     </DropdownToggle>
                     <DropdownMenu>

@@ -25,14 +25,44 @@ import CardsFooter from "components/Footers/CardsFooter.jsx";
 
 // index page sections
 import Download from "../IndexSections/Download.jsx";
+import Product from "../IndexSections/Product"
 
-class Landing extends React.Component {
-  state = {};
+class Products extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+      products: [{
+        name: 'four',
+        description: 'description four',
+
+      },
+      {
+        name: 'one',
+        description: 'description one',
+
+      },
+      {
+        name: 'two',
+        description: 'description two',
+
+      },
+      {
+        name: 'three',
+        description: 'description three',
+
+      }]
+    }
+
+  };
+
+
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
+
   render() {
     return (
       <>
@@ -47,7 +77,7 @@ class Landing extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="6">
-                    <h1 className="display-3 text-white">
+                      <h1 className="display-3 text-white">
                         PRODUCTS
                       </h1>
                       <p className="lead text-white">
@@ -107,42 +137,10 @@ class Landing extends React.Component {
               <Row className="justify-content-center">
                 <Col lg="12">
                   <Row className="row-grid">
-                    <Col lg="4">
-                      <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5">
-                          <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
-                            <i className="ni ni-check-bold" />
-                          </div>
-                          <h6 className="text-primary">
-                            Download bulmag
-                          </h6>
-                          <p className="description mt-3">
-                            bulmag is a great free UI package based on Bootstrap
-                            4 that includes the most important components and
-                            features.
-                          </p>
-                          <div>
-                            <Badge color="primary" pill className="mr-1">
-                              design
-                            </Badge>
-                            <Badge color="primary" pill className="mr-1">
-                              system
-                            </Badge>
-                            <Badge color="primary" pill className="mr-1">
-                              creative
-                            </Badge>
-                          </div>
-                          <Button
-                            className="mt-4"
-                            color="primary"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                          >
-                            Learn more
-                          </Button>
-                        </CardBody>
-                      </Card>
-                    </Col>
+                    {this.state.products.map(product => {
+                      return <Product product={product} />
+
+                    })}
                     <Col lg="4">
                       <Card className="card-lift--hover shadow border-0">
                         <CardBody className="py-5">
@@ -951,4 +949,5 @@ class Landing extends React.Component {
   }
 }
 
-export default Landing;
+
+export default Products;
