@@ -25,15 +25,32 @@ class Register extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { value: '' };
+    this.state = {
+      name: '',
+      email: '',
+      password: '',
+      repeatPassword: ''
+    };
 
-    this.handleChange = this.handleChange.bind(this)
+    this.handleName = this.handleName.bind(this)
+    this.handlePassword = this.handlePassword.bind(this)
+    this.handleRepeatPassword = this.handleRepeatPassword.bind(this)
+    this.handleEmail = this.handleEmail.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
 
   }
 
-  handleChange(event) {
-    this.setState({ value: event.target.value });
+  handleName(event) {
+    this.setState({ name: event.target.value });
+  }
+  handleEmail(event) {
+    this.setState({ email: event.target.value });
+  }
+  handlePassword(event) {
+    this.setState({ password: event.target.value });
+  }
+  handleRepeatPassword(event) {
+    this.setState({ repeatPassword: event.target.value });
   }
 
   handleSubmit(event) {
@@ -46,6 +63,9 @@ class Register extends React.Component {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
+    let object = this.state;
+    console.log(object)
+
   }
 
 
@@ -117,7 +137,7 @@ class Register extends React.Component {
                                 <i className="ni ni-hat-3" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Name" type="text"  value={this.state.value} onChange={this.handleChange}  />
+                            <Input placeholder="Name" type="text" name="username" value={this.state.value} onChange={this.handleName} />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -127,7 +147,7 @@ class Register extends React.Component {
                                 <i className="ni ni-email-83" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Email" type="email" value={this.state.value} onChange={this.handleChange} />
+                            <Input placeholder="Email" type="email" name="email" value={this.state.value} onChange={this.handleEmail} />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -141,7 +161,8 @@ class Register extends React.Component {
                               placeholder="Password"
                               type="password"
                               autoComplete="off"
-                              value={this.state.value} onChange={this.handleChange} 
+                              name="password"
+                              value={this.state.value} onChange={this.handlePassword}
                             />
                           </InputGroup>
                         </FormGroup>
@@ -154,9 +175,10 @@ class Register extends React.Component {
                             </InputGroupAddon>
                             <Input
                               placeholder="Repeat Password"
-                              type="re-password"
+                              type="password"
+                              name="repeatPassword"
                               autoComplete="off"
-                              value={this.state.value} onChange={this.handleChange} 
+                              value={this.state.value} onChange={this.handleRepeatPassword}
                             />
                           </InputGroup>
                         </FormGroup>
