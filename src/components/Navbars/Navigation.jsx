@@ -79,7 +79,7 @@ class Navigation extends React.Component {
                           href="/products"
                         >
                           <div className="icon icon-shape bg-gradient-primary rounded-circle text-white">
-                            <i className="ni ni-spaceship" />
+                            <i className="ni ni-briefcase-24" />
                           </div>
                           <Media body className="ml-3">
                             <Link to="/products" >
@@ -99,7 +99,7 @@ class Navigation extends React.Component {
                           target="_blank"
                         >
                           <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
-                            <i className="ni ni-palette" />
+                            <i className="ni ni-support-16" />
                           </div>
                           <Media body className="ml-3">
                             <Link to="/services" >

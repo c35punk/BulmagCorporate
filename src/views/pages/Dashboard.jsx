@@ -45,8 +45,6 @@ class Landing extends React.Component {
               <div className="shape shape-style-1 shape-default">
                 <span />
                 <span />
-                <span />
-                <span />
               </div>
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
@@ -127,10 +125,10 @@ class Landing extends React.Component {
                               {this.props.period}
                             </Badge>
                             <Badge color="primary" pill className="mr-1">
-                            {this.props.info}
+                              {this.props.info}
                             </Badge>
                             <Badge color="primary" pill className="mr-1">
-                            {this.props.log}
+                              {this.props.log}
                             </Badge>
                           </div>
                           <Button

@@ -138,7 +138,7 @@ class Register extends React.Component {
                           <InputGroup className="input-group-alternative mb-3">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
-                                <i className="ni ni-hat-3" />
+                                <i className="ni ni-circle-08" />
                               </InputGroupText>
                             </InputGroupAddon>
                             <Input placeholder="Name" type="text" name="name" value={this.state.name} onChange={this.handleName} />
