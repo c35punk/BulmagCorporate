@@ -37,7 +37,7 @@ class Register extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+    console.log(this.state);
     event.preventDefault();
   }
 
@@ -114,10 +114,10 @@ class Register extends React.Component {
                           <InputGroup className="input-group-alternative mb-3">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
-                                <i className="ni ni-hat-1" />
+                                <i className="ni ni-hat-3" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Name" type="text" value={this.state.value} />
+                            <Input placeholder="Name" type="text"  value={this.state.value} onChange={this.handleChange}  />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -127,7 +127,7 @@ class Register extends React.Component {
                                 <i className="ni ni-email-83" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Email" type="email" />
+                            <Input placeholder="Email" type="email" value={this.state.value} onChange={this.handleChange} />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -141,6 +141,22 @@ class Register extends React.Component {
                               placeholder="Password"
                               type="password"
                               autoComplete="off"
+                              value={this.state.value} onChange={this.handleChange} 
+                            />
+                          </InputGroup>
+                        </FormGroup>
+                        <FormGroup>
+                          <InputGroup className="input-group-alternative">
+                            <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
+                                <i className="ni ni-lock-circle-open" />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                              placeholder="Repeat Password"
+                              type="re-password"
+                              autoComplete="off"
+                              value={this.state.value} onChange={this.handleChange} 
                             />
                           </InputGroup>
                         </FormGroup>
@@ -180,8 +196,8 @@ class Register extends React.Component {
                         <div className="text-center">
                           <Button
                             className="mt-4"
-                            color="primary"
-                            type="button"
+                            color="default"
+                            type="submit"
                           >
                             Create account
                           </Button>

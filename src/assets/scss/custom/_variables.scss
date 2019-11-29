@@ -20,7 +20,7 @@ $gray-400: #ced4da !default;
 $gray-500: #adb5bd !default;
 $gray-600: #aa2727 !default;   // Line footer color
 $gray-700: #525f7f !default;   // Line p color
-$gray-800: #32325d !default;   // Line heading color
+$gray-800: #fff !default;   // Line heading color
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
@@ -67,7 +67,7 @@ $colors: map-merge((
   "gray-dark":  $gray-800
 ), $colors);
 
-$default:       #667064 !default; //background (Login, Register), navbar background
+$default:       #505250 !default; //background (Login, Register), navbar background
 $primary:       #aa2727 !default;
 $secondary:     #bebeb7 !default; //footer, collapsible buttons, forms
 $success:       $green !default;
@@ -118,7 +118,7 @@ $brand-colors: map-merge((
 
 $shape-colors: () !default;
 $shape-colors: map-merge((
-  "default":      #32325d,
+  "default":      #fff,
   "primary":      #5533ff,
   "secondary":    #24b47e,
   "neutral":      #ABCDAA, 
@@ -140,7 +140,7 @@ $shapes-primary-colors: map-merge((
 
 $shapes-default-colors: () !default;
 $shapes-default-colors: map-merge((
-  "step-1-gradient-bg":         #6e7075a1,
+  "step-1-gradient-bg":         #66838b,
   "step-2-gradient-bg":         #fff,
   "step-3-gradient-bg":         #0d0a0e,
   "span-1-bg":                  #d33030,
@@ -164,9 +164,9 @@ $shapes-light-colors: map-merge((
 
 $shapes-dark-colors: () !default;
 $shapes-dark-colors: map-merge((
-  "step-1-gradient-bg":         #32325d,
-  "step-2-gradient-bg":         #32325d,
-  "step-3-gradient-bg":         #32325d,
+  "step-1-gradient-bg":         #fff,
+  "step-2-gradient-bg":         #fff,
+  "step-3-gradient-bg":         #fff,
   "span-1-bg":                  #2e2e57,
   "span-2-bg":                  #2b2b58,
   "span-3-bg":                  #25254d,
