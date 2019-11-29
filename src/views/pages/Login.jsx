@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 
 // reactstrap components
 import {
@@ -22,11 +23,46 @@ import DemoNavbar from "components/Navbars/Navigation.jsx";
 import SimpleFooter from "components/Footers/SimpleFooter.jsx";
 
 class Login extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      password: '',
+      remember: false
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleEmail = this.handleEmail.bind(this)
+    this.handlePassword = this.handlePassword.bind(this)
+    this.handleRemember = this.handleRemember.bind(this)
+  }
+  handleEmail(event) {
+    this.setState({ email: event.target.value });
+  }
+
+  handlePassword(event) {
+    this.setState({ password: event.target.value });
+  }
+
+  handleRemember(event) {
+    this.setState({ remember: event.target.checked })
+  }
+
+
+  handleSubmit(event) {
+    console.log(this.state);
+    event.preventDefault();
+  }
+
+
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
+
+
   render() {
     return (
       <>
@@ -81,7 +117,7 @@ class Login extends React.Component {
                       <div className="text-center text-muted mb-4">
                         <small>Or sign in with credentials</small>
                       </div>
-                      <Form role="form">
+                      <Form role="form" onSubmit={this.handleSubmit}>
                         <FormGroup className="mb-3">
                           <InputGroup className="input-group-alternative">
                             <InputGroupAddon addonType="prepend">
@@ -89,7 +125,7 @@ class Login extends React.Component {
                                 <i className="ni ni-email-83" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Email" type="email" />
+                            <Input placeholder="Email" type="email" name="email" value={this.state.email} onChange={this.handleEmail} />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -103,6 +139,8 @@ class Login extends React.Component {
                               placeholder="Password"
                               type="password"
                               autoComplete="off"
+                              value={this.state.password} onChange={this.handlePassword}
+
                             />
                           </InputGroup>
                         </FormGroup>
@@ -111,6 +149,8 @@ class Login extends React.Component {
                             className="custom-control-input"
                             id=" customCheckLogin"
                             type="checkbox"
+                            checked={this.state.remember}
+                            onChange={this.handleRemember}
                           />
                           <label
                             className="custom-control-label"
@@ -123,8 +163,8 @@ class Login extends React.Component {
                           <Button
                             className="my-4"
                             color="primary"
-                            type="button"
-                            
+                            type="submit"
+
                           >
                             Sign in
                           </Button>
@@ -136,8 +176,7 @@ class Login extends React.Component {
                     <Col xs="6">
                       <a
                         className="text-light"
-                        href="/login"
-                        onClick={e => e.preventDefault()}
+                        to="/login" tag={Link}
                       >
                         <small>Forgot password?</small>
                       </a>
@@ -145,8 +184,7 @@ class Login extends React.Component {
                     <Col className="text-right" xs="6">
                       <a
                         className="text-light"
-                        href="/register"
-                        onClick={e => e.preventDefault()}
+                        to="/register" tag={Link}
                       >
                         <small>Create new account</small>
                       </a>
