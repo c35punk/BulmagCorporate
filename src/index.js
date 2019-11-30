@@ -15,6 +15,7 @@ import Contacts from "views/pages/Contacts.jsx";
 import Products from "views/pages/Products";
 import Services from "views/pages/Services";
 import Dashboard from "views/pages/Dashboard";
+import AddSystem from "views/pages/AddSystem";
 import About from 'views/pages/About'
 
 ReactDOM.render(
@@ -30,6 +31,7 @@ ReactDOM.render(
       <Route path="/products" exact render={props => <Products {...props} />} />
       <Route path="/services" exact render={props => <Services {...props} />} />
       <Route path="/dashboard" exact render={props => <Dashboard {...props} />} />
+      <Route path="/add-system" exact render={props => <AddSystem {...props} />} />
       <Redirect to="/" />
     </Switch>
   </BrowserRouter>,

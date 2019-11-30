@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Modal from "../IndexSections/Modals"
 
 import {
     Card,
     CardBody,
     Badge,
-    Button, 
+    Button,
     Col
 
 } from 'reactstrap';
@@ -37,14 +37,9 @@ class Product extends React.Component {
                                 creative
                     </Badge>
                         </div>
-                        <Modal/>
-                        <Button
-                            className="mt-4"
+                        <Modal className="mt-3"
                             color="primary"
-                            to="/profile" tag={Link}
-                        >
-                            Learn more
-                  </Button>
+                            to="/profile" tag={Link} />
                     </CardBody>
                 </Card>
             </Col>

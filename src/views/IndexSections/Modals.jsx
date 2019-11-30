@@ -27,12 +27,13 @@ class Modals extends React.Component {
   };
   render() {
     return (
+      
       <>
-        
+        <br/>
             <Button
               block
-              className="mb-3"
-              color="warning"
+              className="mb-2"
+              color="default"
               type="button"
               onClick={() => this.toggleModal("notificationModal")}
             >
@@ -69,7 +70,7 @@ class Modals extends React.Component {
                 </div>
               </div>
               <div className="modal-footer">
-                <Button className="btn-white" color="default" type="button">
+                <Button className="btn-white" color="primary" type="button">
                   Ok, Got it
                 </Button>
                 <Button

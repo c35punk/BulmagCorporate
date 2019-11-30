@@ -2,6 +2,7 @@
 import React from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
+import { Link } from 'react-router-dom'
 
 // reactstrap components
 import {
@@ -60,17 +61,17 @@ class Landing extends React.Component {
                         <Button
                           className="btn-icon mb-3 mb-sm-0"
                           color="info"
-                          href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
+                          to="/add-system" tag={Link}
                         >
                           <span className="btn-inner--icon mr-1">
-                            <i className="fa fa-code" />
+                            <i className="fa fa-server" />
                           </span>
-                          <span className="btn-inner--text">Components</span>
+                          <span className="btn-inner--text">Add system</span>
                         </Button>
                         <Button
                           className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
                           color="default"
-                          href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
+                          to="/contacts" tag={Link}
                         >
                           <span className="btn-inner--icon mr-1">
                             <i className="ni ni-cloud-download-95" />
