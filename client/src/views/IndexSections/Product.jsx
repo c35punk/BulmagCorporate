@@ -19,9 +19,10 @@ class Product extends React.Component {
             <Col lg="4" >
                 <Card className="card-lift--hover shadow border-0">
                     <CardBody className="py-5">
-                        <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
-                            <img src={this.props.product.image} alt="" />
+                        <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
                         </div>
+                        <img src={this.props.product.image} alt="" style={{ width: "150px"}} />
+
                         <h6 className="text-primary">
                             {this.props.product.description}
                         </h6>
