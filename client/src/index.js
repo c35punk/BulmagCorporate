@@ -14,8 +14,8 @@ import Register from "views/pages/Register.jsx";
 import Contacts from "views/pages/Contacts.jsx";
 import Products from "views/pages/Products";
 import Services from "views/pages/Services";
-import Dashboard from "views/pages/Dashboard";
-import AddSystem from "views/pages/AddSystem";
+import Dashboard from "./views/pages/Dashboard";
+import AddSystem from "./views/pages/AddSystem";
 import About from 'views/pages/About'
 
 ReactDOM.render(

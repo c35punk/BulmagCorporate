@@ -21,6 +21,7 @@ import {
 // core components
 import DemoNavbar from "components/Navbars/Navigation.jsx";
 import SimpleFooter from "components/Footers/SimpleFooter.jsx";
+import { checkPropTypes } from "prop-types";
 
 class Register extends React.Component {
 
@@ -32,8 +33,8 @@ class Register extends React.Component {
       productNumber: '',
       serialNumber: '',
       type: '',
-      startDate: '',
-      endDate: '',
+      startDate: checkPropTypes,
+      endDate: checkPropTypes,
       agree: false
     };
 
