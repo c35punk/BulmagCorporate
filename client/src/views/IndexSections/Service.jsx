@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Modal from "../IndexSections/Modals"
+import Modal from "./Modals"
 
 import {
     Card,

@@ -6,7 +6,6 @@ dbConnector().then(() => {
     const app = require('express')();
 
     require('./config/express')(app);
-    require('./config/routes')(app);
 
     app.use(function(err, req, res, next) {
         const user = req.user;

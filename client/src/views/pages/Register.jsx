@@ -64,7 +64,7 @@ class Register extends React.Component {
     event.preventDefault();
   }
 
-
+ 
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
@@ -150,7 +150,7 @@ class Register extends React.Component {
                                 <i className="ni ni-circle-08" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Name" type="text" name="name" value={this.state.name} onChange={this.handleName} />
+                            <Input placeholder="Username" type="text" name="name" value={this.state.name} onChange={this.handleName} />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -234,8 +234,8 @@ class Register extends React.Component {
                           <Button
                             className="mt-4"
                             color="default"
-                            type="button"
-                            onClick={this.submitHandler}
+                            type="submit"
+                            // onClick={this.submitHandler}
                           >
                             Create account
                           </Button>

@@ -1,19 +1,16 @@
 const { Schema, model } = require('mongoose');
 
-const teamSchema = new Schema({
+const productSchema = new Schema({
     name: {
         type: String,
         required: true,
-        unique: true,
     },
-    projects: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Project'
-    }],
-    members: [{
-        type: Schema.Types.ObjectId,
-        ref: 'User' 
-    }]
+    description: {
+        type: String,
+    },
+    productUrl: {
+        type: String 
+    }
 });
 
-module.exports = model('Team', teamSchema);
+module.exports = model('Product', productSchema);

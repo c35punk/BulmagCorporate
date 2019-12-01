@@ -1,9 +1,11 @@
 const userModel = require('./User');
-const teamModel = require('./Team');
+const productModel = require('./Product');
 const projectModel = require('./Project');
+const serviceModel = require('./Service');
 
 module.exports = {
     userModel,
-    teamModel,
+    productModel,
+    serviceModel,
     projectModel
 }

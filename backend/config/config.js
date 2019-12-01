@@ -9,6 +9,7 @@ const config = {
         development: {
             port: process.env.PORT || 19959,
             dbURL: 'mongodb://localhost:27017/bulmag-prod'
+            
         }
     }
 };

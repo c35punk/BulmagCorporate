@@ -34,28 +34,48 @@ class Products extends React.Component {
     this.state = {
 
       products: [{
-        name: 'four',
-        description: 'description four',
+        name: 'Vibbek',
+        description: 'Cloud-based TMS',
+        image: 'https://tr-sys.com/wp-content/themes/trsys/assets/img/partners/sw-solution-providers/vibbek.png',
+        productUrl: 'https://www.vibbek.com/en/product/'
+      },
+      {
+        name: 'Lenovo',
+        description: 'ThinkSystem Servers',
+        image: '',
+        productUrl: 'https://www.lenovo.com/us/en/data-center/servers/c/servers'
 
       },
       {
-        name: 'one',
-        description: 'description one',
+        name: 'Lenovo',
+        description: 'ThinkSystem Storages',
+        image: '',
+        productUrl: 'https://www.lenovo.com/us/en/data-center/storage/c/storage'
 
       },
       {
-        name: 'two',
-        description: 'description two',
-
-      },
-      {
-        name: 'three',
-        description: 'description three',
-
+        name: 'OpenWay',
+        description: 'Payment Processing SW',
+        image: '',
+        productUrl: 'https://www.openwaygroup.com/'
       }]
     }
 
   };
+
+  // async componentWillMount() {
+  //   try {
+  //     const response = await fetch(
+  //       "localhost:27107/bulmag-dev.products"
+  //     );
+  //     const data = await response.json();
+  //     this.setState(() => ({
+  //       products: data[0]
+  //     }));
+  //   } catch (error) {
+  //     console.log("Error in fetching data");
+  //   }
+  // }
 
 
   componentDidMount() {

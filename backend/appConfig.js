@@ -1,5 +1,5 @@
 const authCookieName = 'auth_cookie';
-const secret = 'secret';
+const secret = 'hush-hush@!';
 
 module.exports = {
     authCookieName,
