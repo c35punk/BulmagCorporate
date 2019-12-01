@@ -1,10 +1,13 @@
 {
-  "name": "jelofullstack",
+  "name": "bulmag",
   "version": "1.0.0",
+  "description": "Bulmag AD Corporate Website",
   "main": "index.js",
+  "author": "ldj5",
   "license": "MIT",
+  "homepage": "https://www.bulmag.bg",
   "scripts": {
-    "start": "concurrently \"cd backend && node server.js\" \"cd client && npm start\""
+    "start": "concurrently \"cd backend && node index.js\" \"cd client && npm start\""
   },
   "dependencies": {
     "concurrently": "^4.0.1"

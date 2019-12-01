@@ -56,7 +56,7 @@ class Register extends React.Component {
     this.setState({ repeatPassword: event.target.value });
   }
   handleAgree(event) {
-  this.setState({ agree: event.target.checked });
+    this.setState({ agree: event.target.checked });
   }
 
   handleSubmit(event) {
@@ -69,8 +69,18 @@ class Register extends React.Component {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
+  }
 
-
+  submitHandler = () => {
+    const {
+      name,
+      email,
+      password,
+      repeatPassword,
+      agree
+    } = this.state;
+    console.log(this.state)
+    console.log(name, email, password, repeatPassword, agree)
   }
 
 
@@ -224,7 +234,8 @@ class Register extends React.Component {
                           <Button
                             className="mt-4"
                             color="default"
-                            type="submit"
+                            type="button"
+                            onClick={this.submitHandler}
                           >
                             Create account
                           </Button>
