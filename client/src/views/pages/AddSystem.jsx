@@ -113,7 +113,7 @@ class Register extends React.Component {
                   <Card className="bg-secondary shadow border-0">
                     <CardHeader className="bg-white pb-5">
                     <div className="text-center text-muted mb-4">
-                        <large>Add system to maintenance contact</large>
+                        <large>Add System to Maintenance Contract</large>
                       </div>
                     </CardHeader>
                     <CardBody className="px-lg-5 py-lg-5">

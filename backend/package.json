@@ -1,14 +1,13 @@
 {
-  "name": "bulmag",
+  "name": "exam-skeleton",
   "version": "1.0.0",
-  "description": "Bulmag AD Corporate Website",
+  "description": "",
   "main": "index.js",
-  "author": "ldj5",
-  "license": "MIT",
-  "homepage": "https://www.bulmag.bg",
   "scripts": {
     "start": "nodemon index.js"
   },
+  "author": "ldj5",
+  "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",

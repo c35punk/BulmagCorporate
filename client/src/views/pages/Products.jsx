@@ -37,29 +37,35 @@ class Products extends React.Component {
         name: 'Vibbek',
         description: 'Cloud-based TMS',
         image: 'https://tr-sys.com/wp-content/themes/trsys/assets/img/partners/sw-solution-providers/vibbek.png',
-        productUrl: 'https://www.vibbek.com/en/product/'
+        productUrl: 'https://www.vibbek.com/en/product/',
+        type: 'Banking'
       },
       {
         name: 'Lenovo',
         description: 'ThinkSystem Servers',
-        image: '',
-        productUrl: 'https://www.lenovo.com/us/en/data-center/servers/c/servers'
+        image: 'https://www.lenovo.com/medias/lenovo-data-center-rack-server-thinksystem-sr860-subseries-hero.png?context=bWFzdGVyfHJvb3R8MTExMTg3fGltYWdlL3BuZ3xoMmMvaDViLzk1ODYwOTQxMTI3OTgucG5nfDkzMzU1ZTM0NDViNDMxMDczMjBhNzYwODkzZjU3MzA3YTdkOGJjNzc2Yzk0ZWRhNjZmZWVjNjUwMzMwNDg3Mzc',
+        productUrl: 'https://www.lenovo.com/us/en/data-center/servers/c/servers',
+        type: 'HW'
 
       },
       {
         name: 'Lenovo',
         description: 'ThinkSystem Storages',
-        image: '',
-        productUrl: 'https://www.lenovo.com/us/en/data-center/storage/c/storage'
+        image: 'https://www.lenovo.com/medias/lenovo-data-center-storage-san-thinksystem-de-hybrid-subseries-hero.png?context=bWFzdGVyfHJvb3R8MTA2MzQ4fGltYWdlL3BuZ3xoZDkvaGNhLzk4MTYyOTU2MDQyNTQucG5nfDg4YjY1MmZhMTRkMjAyZDk1ZmNhYTdmODE2NmMzZjdjNDIzZmM4MWJiNjM2YTdmZTEzNmVlZmRjOTFlM2VmMDc',
+        productUrl: 'https://www.lenovo.com/us/en/data-center/storage/c/storage',
+        type: 'HW'
 
       },
       {
         name: 'OpenWay',
         description: 'Payment Processing SW',
-        image: '',
-        productUrl: 'https://www.openwaygroup.com/'
+        image: 'https://images.glints.com/unsafe/1024x0/glints-dashboard.s3.amazonaws.com/company-logo/2daa178c42ec2ea9b274430807f107a7.png',
+        productUrl: 'https://www.openwaygroup.com/',
+        type: 'Banking'
       }]
     }
+
+
 
   };
 
@@ -129,132 +135,57 @@ class Products extends React.Component {
                 </svg>
               </div>
             </section>
-            {/* 1st Hero Variation */}
+            
           </div>
           <section className="section section-lg pt-lg-0 mt--200">
             <Container>
               <Row className="justify-content-center">
+              <Button
+                          className="btn-icon mb-3 mb-sm-0"
+                          color="info"
+                          href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
+                        >
+                          <span className="btn-inner--icon mr-1">
+                            <i className="fa fa-code" />
+                          </span>
+                          <span className="btn-inner--text">System Integration Hardware</span>
+                        </Button>
                 <Col lg="12">
                   <Row className="row-grid">
-                    {this.state.products.map(product => {
-                      return <Product product={product} />
-
+                    {this.state.products.filter(x => x.type === 'HW').map(product => {
+                      return (
+                        <>
+                          <Product product={product} />
+                          <br />
+                        </>
+                      )
                     })}
                   </Row>
                 </Col>
               </Row>
-              <br />
+            </Container>
+            <Container>
               <Row className="justify-content-center">
+              <Button
+                          className="btn-icon mb-2 mb-lg-0"
+                          color="primary"
+                          href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
+                        >
+                          <span className="btn-inner--icon mr-1">
+                            <i className="fa fa-server" />
+                          </span>
+                          <span className="btn-inner--text">Banking Solutions</span>
+                        </Button>
                 <Col lg="12">
                   <Row className="row-grid">
-                    <Col lg="4">
-                      <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5">
-                          <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
-                            <i className="ni ni-check-bold" />
-                          </div>
-                          <h6 className="text-primary">
-                            Download bulmag
-                          </h6>
-                          <p className="description mt-3">
-                            bulmag is a great free UI package based on Bootstrap
-                            4 that includes the most important components and
-                            features.
-                          </p>
-                          <div>
-                            <Badge color="primary" pill className="mr-1">
-                              design
-                            </Badge>
-                            <Badge color="primary" pill className="mr-1">
-                              system
-                            </Badge>
-                            <Badge color="primary" pill className="mr-1">
-                              creative
-                            </Badge>
-                          </div>
-                          <Button
-                            className="mt-4"
-                            color="primary"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                          >
-                            Learn more
-                          </Button>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                    <Col lg="4">
-                      <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5">
-                          <div className="icon icon-shape icon-shape-success rounded-circle mb-4">
-                            <i className="ni ni-istanbul" />
-                          </div>
-                          <h6 className="text-success text-uppercase">
-                            Build Something
-                          </h6>
-                          <p className="description mt-3">
-                            bulmag is a great free UI package based on Bootstrap
-                            4 that includes the most important components and
-                            features.
-                          </p>
-                          <div>
-                            <Badge color="success" pill className="mr-1">
-                              business
-                            </Badge>
-                            <Badge color="success" pill className="mr-1">
-                              vision
-                            </Badge>
-                            <Badge color="success" pill className="mr-1">
-                              success
-                            </Badge>
-                          </div>
-                          <Button
-                            className="mt-4"
-                            color="success"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                          >
-                            Learn more
-                          </Button>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                    <Col lg="4">
-                      <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5">
-                          <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
-                            <i className="ni ni-planet" />
-                          </div>
-                          <h6 className="text-warning text-uppercase">
-                            Prepare Launch
-                          </h6>
-                          <p className="description mt-3">
-                            bulmag is a great free UI package based on Bootstrap
-                            4 that includes the most important components and
-                            features.
-                          </p>
-                          <div>
-                            <Badge color="warning" pill className="mr-1">
-                              marketing
-                            </Badge>
-                            <Badge color="warning" pill className="mr-1">
-                              product
-                            </Badge>
-                            <Badge color="warning" pill className="mr-1">
-                              launch
-                            </Badge>
-                          </div>
-                          <Button
-                            className="mt-4"
-                            color="warning"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                          >
-                            Learn more
-                          </Button>
-                        </CardBody>
-                      </Card>
-                    </Col>
+                    {this.state.products.filter(x => x.type === 'Banking').map(product => {
+                      return (
+                        <>
+                          <Product product={product} />
+                          <br />
+                        </>
+                      )
+                    })}
                   </Row>
                 </Col>
               </Row>
