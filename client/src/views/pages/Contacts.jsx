@@ -20,7 +20,7 @@ import {
 } from "reactstrap";
 
 // core components
-import Navigation from "components/Navbars/Navigation.jsx";
+import DemoNavbar from "components/Navbars/Navigation.jsx";
 import CardsFooter from "components/Footers/CardsFooter.jsx";
 
 // index page sections
@@ -36,13 +36,12 @@ class Landing extends React.Component {
   render() {
     return (
       <>
-        <Navigation />
+        <DemoNavbar />
         <main ref="main">
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 shape-default">
-              </div>
+              <div className="shape shape-style-1 shape-default"></div>
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                   <Row>
@@ -51,6 +50,9 @@ class Landing extends React.Component {
                         CONTACTS
                         <span>Give us a call or drop a line</span>
                       </h1>
+                      <div id="map_div" class="col-12">
+                        <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Bulmag+AD,+Sofia,+Bulgaria&amp;aq=0&amp;oq=bulmag+ad+sofia&amp;sll=37.0625,-95.677068&amp;sspn=57.292148,135.263672&amp;t=m&amp;ie=UTF8&amp;hq=Bulmag+AD,&amp;hnear=Sofia,+Sofia-city,+Bulgaria&amp;ll=42.654856,23.372898&amp;spn=0.018937,0.025749&amp;z=14&amp;iwloc=A&amp;output=embed&amp;iwloc=near"></iframe>
+                      </div>
                       <p className="lead text-white">
                         The design system comes with four pre-built pages to
                         help you get started faster. You can change the text and
@@ -680,7 +682,6 @@ class Landing extends React.Component {
               </svg>
             </div>
           </section>
-         
         </main>
         <CardsFooter />
       </>

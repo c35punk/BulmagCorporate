@@ -27,7 +27,6 @@ class Modals extends React.Component {
   };
   render() {
     return (
-
       <>
         <br />
         <Button
@@ -38,7 +37,7 @@ class Modals extends React.Component {
           onClick={() => this.toggleModal("notificationModal")}
         >
           Details
-            </Button>
+        </Button>
         <Modal
           className="modal-dialog-centered modal-primary modal-lg"
           contentClassName="bg-gradient-default"
@@ -63,28 +62,15 @@ class Modals extends React.Component {
             <div className="py-6 text-center">
               <div class="embed-responsive embed-responsive-16by9">
                 <div className="loader">Loading...</div>
-                <iframe class="embed-responsive-item"
+                <iframe
+                  class="embed-responsive-item"
                   src={this.props.productUrl}
-                  allowfullscreen></iframe>
+                  allowfullscreen
+                ></iframe>
               </div>
             </div>
           </div>
-          {/* <div className="modal-footer">
-            <Button className="btn-white" color="primary" type="button">
-              Ok, Got it
-                </Button>
-            <Button
-              className="text-white ml-auto"
-              color="link"
-              data-dismiss="modal"
-              type="button"
-              onClick={() => this.toggleModal("notificationModal")}
-            >
-              Close
-                </Button>
-          </div> */}
         </Modal>
-
       </>
     );
   }

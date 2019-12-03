@@ -166,11 +166,10 @@ class Products extends React.Component {
               <Row className="justify-content-center">
                 <Button
                   className="btn-icon mb-3 mb-sm-0"
-                  color="info"
-                  href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
+                  color="primary"
                 >
                   <span className="btn-inner--icon mr-1">
-                    <i className="fa fa-code" />
+                    <i className="fa fa-server" />
                   </span>
                   <span className="btn-inner--text">
                     System Integration Hardware
@@ -197,7 +196,6 @@ class Products extends React.Component {
                 <Button
                   className="btn-icon mb-2 mb-lg-0"
                   color="primary"
-                  href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
                 >
                   <span className="btn-inner--icon mr-1">
                     <i className="fa fa-server" />
