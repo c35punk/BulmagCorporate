@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 // nodejs library that concatenates classes
 import classnames from "classnames";
 
@@ -26,63 +26,91 @@ import CardsFooter from "components/Footers/CardsFooter.jsx";
 
 // index page sections
 import Download from "../IndexSections/Download.jsx";
-import Product from "../IndexSections/Product"
+import Product from "../IndexSections/Product.jsx";
 
 class Products extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
-      products: [{
-        name: 'Vibbek',
-        description: 'Cloud-based TMS',
-        image: 'https://tr-sys.com/wp-content/themes/trsys/assets/img/partners/sw-solution-providers/vibbek.png',
-        productUrl: 'https://www.vibbek.com/en/product/',
-        type: 'Banking'
-      },
-      {
-        name: 'Lenovo',
-        description: 'ThinkSystem Servers',
-        image: 'https://www.lenovo.com/medias/lenovo-data-center-rack-server-thinksystem-sr860-subseries-hero.png?context=bWFzdGVyfHJvb3R8MTExMTg3fGltYWdlL3BuZ3xoMmMvaDViLzk1ODYwOTQxMTI3OTgucG5nfDkzMzU1ZTM0NDViNDMxMDczMjBhNzYwODkzZjU3MzA3YTdkOGJjNzc2Yzk0ZWRhNjZmZWVjNjUwMzMwNDg3Mzc',
-        productUrl: 'https://www.lenovo.com/us/en/data-center/servers/c/servers',
-        type: 'HW'
-
-      },
-      {
-        name: 'Lenovo',
-        description: 'ThinkSystem Storages',
-        image: 'https://www.lenovo.com/medias/lenovo-data-center-storage-san-thinksystem-de-hybrid-subseries-hero.png?context=bWFzdGVyfHJvb3R8MTA2MzQ4fGltYWdlL3BuZ3xoZDkvaGNhLzk4MTYyOTU2MDQyNTQucG5nfDg4YjY1MmZhMTRkMjAyZDk1ZmNhYTdmODE2NmMzZjdjNDIzZmM4MWJiNjM2YTdmZTEzNmVlZmRjOTFlM2VmMDc',
-        productUrl: 'https://www.lenovo.com/us/en/data-center/storage/c/storage',
-        type: 'HW'
-
-      },
-      {
-        name: 'OpenWay',
-        description: 'Payment Processing SW',
-        image: 'https://images.glints.com/unsafe/1024x0/glints-dashboard.s3.amazonaws.com/company-logo/2daa178c42ec2ea9b274430807f107a7.png',
-        productUrl: 'https://www.openwaygroup.com/',
-        type: 'Banking'
-      }]
-    }
-
-
-
-  };
-
-  // async componentWillMount() {
-  //   try {
-  //     const response = await fetch(
-  //       "localhost:27107/bulmag-dev.products"
-  //     );
-  //     const data = await response.json();
-  //     this.setState(() => ({
-  //       products: data[0]
-  //     }));
-  //   } catch (error) {
-  //     console.log("Error in fetching data");
-  //   }
-  // }
-
+      products: [
+        {
+          name: "Vibbek",
+          description: "Cloud-based TMS",
+          image:
+            "https://tr-sys.com/wp-content/themes/trsys/assets/img/partners/sw-solution-providers/vibbek.png",
+          productUrl: "https://www.vibbek.com/en/product/",
+          type: "Banking"
+        },
+        {
+          name: "INFINIDAT",
+          description: "Multi-Petabyte Storages",
+          image:
+            "https://marketplace.vmware.com/resources/apps/infinibox__1546010338411.png",
+          productUrl:
+            "https://marketplace.vmware.com/vsx/solutions/infinibox?ref=related",
+          type: "HW"
+        },
+        {
+          name: "Lenovo",
+          description: "ThinkSystem Servers",
+          image:
+            "https://www.lenovo.com/medias/lenovo-data-center-rack-server-thinksystem-sr860-subseries-hero.png?context=bWFzdGVyfHJvb3R8MTExMTg3fGltYWdlL3BuZ3xoMmMvaDViLzk1ODYwOTQxMTI3OTgucG5nfDkzMzU1ZTM0NDViNDMxMDczMjBhNzYwODkzZjU3MzA3YTdkOGJjNzc2Yzk0ZWRhNjZmZWVjNjUwMzMwNDg3Mzc",
+          productUrl:
+            "https://www.lenovo.com/us/en/data-center/servers/c/servers",
+          type: "HW"
+        },
+        {
+          name: "Lenovo",
+          description: "ThinkSystem Storages",
+          image:
+            "https://www.lenovo.com/medias/lenovo-data-center-storage-san-thinksystem-de-hybrid-subseries-hero.png?context=bWFzdGVyfHJvb3R8MTA2MzQ4fGltYWdlL3BuZ3xoZDkvaGNhLzk4MTYyOTU2MDQyNTQucG5nfDg4YjY1MmZhMTRkMjAyZDk1ZmNhYTdmODE2NmMzZjdjNDIzZmM4MWJiNjM2YTdmZTEzNmVlZmRjOTFlM2VmMDc",
+          productUrl:
+            "https://www.lenovo.com/us/en/data-center/storage/c/storage",
+          type: "HW"
+        },
+        {
+          name: "OpenWay",
+          description: "Payment Processing SW",
+          image:
+            "https://images.glints.com/unsafe/1024x0/glints-dashboard.s3.amazonaws.com/company-logo/2daa178c42ec2ea9b274430807f107a7.png",
+          productUrl: "https://www.openwaygroup.com/",
+          type: "Banking"
+        },
+        {
+          name: "VX Series VMware",
+          description: "VMware HCI Appliance",
+          image:
+            "https://www3.lenovo.com/medias/lenovo-data-center-thinkagile-vx-series-subseries-hero.png?context=bWFzdGVyfHJvb3R8MTA2NjAzfGltYWdlL3BuZ3xoM2UvaDRiLzk2ODM3OTc2MzkxOTgucG5nfGNlNzQxOTA1NzMwMWFlZWUxZmRkOWEyMDU3OGIyMWMyYmM4NjM0YzkzYjA5NThmNDkwNzIwMzNhMGZmOWNlY2U",
+          productUrl: "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-VX-Series/p/WMD00000340",
+          type: "HCI"
+        },
+        {
+          name: "HX Series Nutanix",
+          description: "Nutanix HCI Appliance",
+          image:
+            "https://images.glints.com/unsafe/1024x0/glints-dashboard.s3.amazonaws.com/company-logo/2daa178c42ec2ea9b274430807f107a7.png",
+          productUrl: "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-HX-Series/p/WMD00000326",
+          type: "HCI"
+        },
+        {
+          name: "CP Series",
+          description: "Customizable Cloud Solution",
+          image:
+            "https://images.glints.com/unsafe/1024x0/glints-dashboard.s3.amazonaws.com/company-logo/2daa178c42ec2ea9b274430807f107a7.png",
+          productUrl: "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-CP-Series/p/WMD00000362",
+          type: "HCI"
+        },
+        {
+          name: "SX Series Microsoft",
+          description: "Hybrid Cloud",
+          image:
+            "https://images.glints.com/unsafe/1024x0/glints-dashboard.s3.amazonaws.com/company-logo/2daa178c42ec2ea9b274430807f107a7.png",
+          productUrl: "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-SX-for-Microsoft-Azure-Stack/p/WMD00000272",
+          type: "HCI"
+        }
+      ]
+    };
+  }
 
   componentDidMount() {
     document.documentElement.scrollTop = 0;
@@ -98,22 +126,19 @@ class Products extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 shape-default">
-              </div>
+              <div className="shape shape-style-1 shape-default"></div>
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                   <Row>
                     <Col lg="6">
-                      <h1 className="display-3 text-white">
-                        PRODUCTS
-                      </h1>
+                      <h1 className="display-3 text-white">PRODUCTS</h1>
                       <p className="lead text-white">
-                        The design system comes with four pre-built pages to
-                        help you get started faster. You can change the text and
-                        images and you're good to go.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Voluptatem vero, doloribus nesciunt esse incidunt ullam.
+                        Eum adipisci quod nisi alias impedit labore, dignissimos
+                        recusandae porro ad maxime facere delectus dolore.
                       </p>
-                      <div className="btn-wrapper">
-                      </div>
+                      <div className="btn-wrapper"></div>
                     </Col>
                   </Row>
                 </div>
@@ -135,57 +160,90 @@ class Products extends React.Component {
                 </svg>
               </div>
             </section>
-            
           </div>
           <section className="section section-lg pt-lg-0 mt--200">
             <Container>
               <Row className="justify-content-center">
-              <Button
-                          className="btn-icon mb-3 mb-sm-0"
-                          color="info"
-                          href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
-                        >
-                          <span className="btn-inner--icon mr-1">
-                            <i className="fa fa-code" />
-                          </span>
-                          <span className="btn-inner--text">System Integration Hardware</span>
-                        </Button>
+                <Button
+                  className="btn-icon mb-3 mb-sm-0"
+                  color="info"
+                  href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
+                >
+                  <span className="btn-inner--icon mr-1">
+                    <i className="fa fa-code" />
+                  </span>
+                  <span className="btn-inner--text">
+                    System Integration Hardware
+                  </span>
+                </Button>
                 <Col lg="12">
                   <Row className="row-grid">
-                    {this.state.products.filter(x => x.type === 'HW').map(product => {
-                      return (
-                        <>
-                          <Product product={product} />
-                          <br />
-                        </>
-                      )
-                    })}
+                    {this.state.products
+                      .filter(x => x.type === "HW")
+                      .map(product => {
+                        return (
+                          <>
+                            <Product product={product} />
+                            <br />
+                          </>
+                        );
+                      })}
                   </Row>
                 </Col>
               </Row>
             </Container>
             <Container>
               <Row className="justify-content-center">
-              <Button
-                          className="btn-icon mb-2 mb-lg-0"
-                          color="primary"
-                          href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
-                        >
-                          <span className="btn-inner--icon mr-1">
-                            <i className="fa fa-server" />
-                          </span>
-                          <span className="btn-inner--text">Banking Solutions</span>
-                        </Button>
+                <Button
+                  className="btn-icon mb-2 mb-lg-0"
+                  color="primary"
+                  href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
+                >
+                  <span className="btn-inner--icon mr-1">
+                    <i className="fa fa-server" />
+                  </span>
+                  <span className="btn-inner--text">Banking Solutions</span>
+                </Button>
                 <Col lg="12">
                   <Row className="row-grid">
-                    {this.state.products.filter(x => x.type === 'Banking').map(product => {
-                      return (
-                        <>
-                          <Product product={product} />
-                          <br />
-                        </>
-                      )
-                    })}
+                    {this.state.products
+                      .filter(x => x.type === "Banking")
+                      .map(product => {
+                        return (
+                          <>
+                            <Product product={product} />
+                            <br />
+                          </>
+                        );
+                      })}
+                  </Row>
+                </Col>
+              </Row>
+            </Container>
+            <Container>
+              <Row className="justify-content-center">
+                <Button
+                  className="btn-icon mb-2 mb-lg-0"
+                  color="primary"
+                  href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
+                >
+                  <span className="btn-inner--icon mr-1">
+                    <i className="fa fa-server" />
+                  </span>
+                  <span className="btn-inner--text">Hyper-converged Infrastructure & Cloud</span>
+                </Button>
+                <Col lg="12">
+                  <Row className="row-grid">
+                    {this.state.products
+                      .filter(x => x.type === "HCI")
+                      .map(product => {
+                        return (
+                          <>
+                            <Product product={product} />
+                            <br />
+                          </>
+                        );
+                      })}
                   </Row>
                 </Col>
               </Row>
@@ -801,11 +859,9 @@ class Products extends React.Component {
           <Download />
         </main>
         <CardsFooter />
-
       </>
     );
   }
 }
-
 
 export default Products;
