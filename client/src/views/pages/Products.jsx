@@ -88,7 +88,7 @@ class Products extends React.Component {
           name: "HX Series Nutanix",
           description: "Nutanix HCI Appliance",
           image:
-            "https://images.glints.com/unsafe/1024x0/glints-dashboard.s3.amazonaws.com/company-logo/2daa178c42ec2ea9b274430807f107a7.png",
+            "https://www.lenovo.com/medias/lenovo-converged-systems-hx-series-subseries-hero.png?context=bWFzdGVyfHJvb3R8OTMxODR8aW1hZ2UvcG5nfGgxOS9oYTMvOTMxMTUxMzAxODM5OC5wbmd8OTFmN2RmNzMxNGFlNzJjNTRmMWI2MjE2YTg4NWFkYWYwMjgzOGM0OWE3ZmY2N2FiMDcxMmRlYzlhMzk2MzZjMA",
           productUrl: "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-HX-Series/p/WMD00000326",
           type: "HCI"
         },
@@ -96,7 +96,7 @@ class Products extends React.Component {
           name: "CP Series",
           description: "Customizable Cloud Solution",
           image:
-            "https://images.glints.com/unsafe/1024x0/glints-dashboard.s3.amazonaws.com/company-logo/2daa178c42ec2ea9b274430807f107a7.png",
+            "https://static.lenovo.com/ww/img/data-center/uberflip/sdi/lenovo-data-center-software-defined-infrastructure-thinkagile-cp-series.png",
           productUrl: "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-CP-Series/p/WMD00000362",
           type: "HCI"
         },
@@ -104,7 +104,7 @@ class Products extends React.Component {
           name: "SX Series Microsoft",
           description: "Hybrid Cloud",
           image:
-            "https://images.glints.com/unsafe/1024x0/glints-dashboard.s3.amazonaws.com/company-logo/2daa178c42ec2ea9b274430807f107a7.png",
+            "https://www.lenovo.com/medias/lenovo-software-defined-infrastructure-thinkagile-microsoft-azure-stack-subseries-hero.png?context=bWFzdGVyfHJvb3R8NjM1MDR8aW1hZ2UvcG5nfGhkYS9oMGUvOTU5NDUyMTk3Njg2Mi5wbmd8NWNhY2Q0YmEyMzE2NjkwODA2MzIzMzg3ZTQxZjllY2QzNjM5M2ZmNzlkZTdkNjFiNjlhYjM4YzUxNzI1YTE3Yg",
           productUrl: "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-SX-for-Microsoft-Azure-Stack/p/WMD00000272",
           type: "HCI"
         }

@@ -5,10 +5,10 @@ import { Button, Container, Row, Col, UncontrolledCarousel } from "reactstrap";
 
 const items = [
   {
-    src: "https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/1809Tdj/videoblocks-data-center-technician-walking-through-server-rack-corridor-visually-inspecting-working-server-cabinets-shot-on-red-epic-w-8k-helium-cinema-camera_rzdiis6ol_thumbnail-full01.png",
+    src: "https://i.pinimg.com/originals/bd/16/c5/bd16c57405f3142d4cc740e0ee44d536.jpg",
     altText: "ALT TEXT",
     caption: "CAPTION",
-    header: "Part 1"
+    textarea: "Part 1"
   },
   {
     src: "https://wallpaperaccess.com/full/398348.jpg",

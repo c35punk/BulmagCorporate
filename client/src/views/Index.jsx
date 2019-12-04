@@ -12,8 +12,10 @@ import CardsFooter from "components/Footers/CardsFooter.jsx";
 import Carousel from "./IndexSections/Carousel.jsx";
 import Login from "./IndexSections/Login.jsx";
 import Download from "./IndexSections/Download.jsx";
-import Icons from "./IndexSections/Icons"
-
+import Icons from "./IndexSections/Icons";
+import Progress from "./IndexSections/Progress";
+import Menus from "./IndexSections/Menus";
+import Tabs from "./IndexSections/Tabs";
 
 class Index extends React.Component {
   componentDidMount() {
@@ -27,8 +29,8 @@ class Index extends React.Component {
         <Navigation />
         <main ref="main">
           <Carousel />
-          <Icons />
-          <Login />
+          <Menus />
+          <Tabs />
           <Download />
         </main>
         <CardsFooter />
@@ -36,6 +38,5 @@ class Index extends React.Component {
     );
   }
 }
-
 
 export default Index;
