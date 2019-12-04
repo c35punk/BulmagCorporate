@@ -165,7 +165,7 @@ class Products extends React.Component {
             <Container>
               <Row className="justify-content-center">
                 <Button
-                  className="btn-icon mb-3 mb-sm-0"
+                  className="btn-icon mb-12 mb-lg-0"
                   color="primary"
                 >
                   <span className="btn-inner--icon mr-1">

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Modal from "../IndexSections/Modals";
 
-import { Card, CardBody, Badge, Button, Col } from "reactstrap";
+import { Card, CardBody, Badge, Col } from "reactstrap";
 
 class Product extends React.Component {
   render() {
@@ -14,14 +14,20 @@ class Product extends React.Component {
             <img
               src={this.props.product.image}
               alt=""
-              style={{ width: "150px", height: "auto" }}
+              style={{ width: "150px"}}
             />
 
             <h6 className="text-primary">{this.props.product.description}</h6>
             <p className="description mt-3">{this.props.product.name}</p>
             <div>
-              <Badge color="default" pill className="mr-1">
+              <Badge color="primary" pill className="mr-1">
                 design
+              </Badge>
+              <Badge color="primary" pill className="mr-1">
+                system
+              </Badge>
+              <Badge color="primary" pill className="mr-1">
+                creative
               </Badge>
             </div>
             <Modal
