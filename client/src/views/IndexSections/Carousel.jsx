@@ -5,19 +5,21 @@ import { Button, Container, Row, Col, UncontrolledCarousel } from "reactstrap";
 
 const items = [
   {
-    src: "https://i.pinimg.com/originals/bd/16/c5/bd16c57405f3142d4cc740e0ee44d536.jpg",
-    altText: "ALT TEXT",
-    caption: "CAPTION",
-    textarea: "Part 1"
+    src: "https://wallpaperaccess.com/full/1398628.jpg",
+    caption: ["CAPTION ", "System Integration"],
+    footer: "Part 1"
   },
   {
-    src: "https://wallpaperaccess.com/full/398348.jpg",
+    src:
+      "https://i.pinimg.com/originals/bd/16/c5/bd16c57405f3142d4cc740e0ee44d536.jpg",
+
     altText: "",
     caption: "SOME TEXT",
     header: "Part 2"
   },
   {
-    src: "https://images.pond5.com/servers-close-modern-data-center-footage-084168764_prevstill.jpeg",
+    src:
+      "https://images.wallpaperscraft.com/image/services_hand_hosting_contract_servers_80759_3840x2160.jpg",
     altText: "",
     caption: "SOME TEXT",
     header: "Part 3"
@@ -61,7 +63,6 @@ class Carousel extends React.Component {
                   See all components
                 </Button>
               </Col>
-
             </Row>
           </Container>
           {/* SVG separator */}
