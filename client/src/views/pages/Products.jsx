@@ -25,8 +25,8 @@ import DemoNavbar from "components/Navbars/Navigation.jsx";
 import CardsFooter from "components/Footers/CardsFooter.jsx";
 
 // index page sections
-import Download from "../IndexSections/Download.jsx";
-import Product from "../IndexSections/Product.jsx";
+import Download from "../IndexSections/Download";
+import Product from "../IndexSections/Product";
 
 class Products extends React.Component {
   constructor(props) {

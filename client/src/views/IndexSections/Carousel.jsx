@@ -6,8 +6,8 @@ import { Button, Container, Row, Col, UncontrolledCarousel } from "reactstrap";
 const items = [
   {
     src: "https://wallpaperaccess.com/full/1398628.jpg",
-    caption: ["CAPTION ", "System Integration"],
-    footer: "Part 1"
+    caption: "CAPTION",
+    header: "Part 1"
   },
   {
     src:
@@ -19,7 +19,7 @@ const items = [
   },
   {
     src:
-      "https://images.wallpaperscraft.com/image/services_hand_hosting_contract_servers_80759_3840x2160.jpg",
+      "https://www.larutadelsorigens.cat/wallpic/full/31-316749_sql-server-wallpaper-data-center-wallpaper-4k.jpg",
     altText: "",
     caption: "SOME TEXT",
     header: "Part 3"
@@ -32,9 +32,6 @@ class Carousel extends React.Component {
       <>
         <section className="section section-shaped">
           <div className="shape shape-style-1 shape-default">
-            <span />
-            <span />
-            <span />
             <span />
             <span />
             <span />

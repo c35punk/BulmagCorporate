@@ -25,7 +25,7 @@ import DemoNavbar from "components/Navbars/Navigation.jsx";
 import CardsFooter from "components/Footers/CardsFooter.jsx";
 
 // index page sections
-import Download from "../IndexSections/Download.jsx";
+import Download from "../IndexSections/Download";
 
 class Landing extends React.Component {
   state = {};
@@ -61,7 +61,7 @@ class Landing extends React.Component {
                         images and you're good to go.
                       </p>
                       <div className="btn-wrapper">
-                        <Button
+                      <Button
                           className="btn-icon mb-3 mb-sm-0"
                           color="info"
                           href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"

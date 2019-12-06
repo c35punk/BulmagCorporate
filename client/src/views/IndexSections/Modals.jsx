@@ -2,21 +2,8 @@ import React from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
 // reactstrap components
-import {
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  FormGroup,
-  Form,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Modal,
-  Row,
-  Col
-} from "reactstrap";
+import { Button, Modal } from "reactstrap";
+import Loading from "./Loading";
 
 class Modals extends React.Component {
   state = {};
@@ -61,7 +48,8 @@ class Modals extends React.Component {
           <div className="modal-body">
             <div className="py-6 text-center">
               <div class="embed-responsive embed-responsive-16by9">
-                <div className="loader">Loading...</div>
+                <Loading />
+
                 <iframe
                   class="embed-responsive-item"
                   src={this.props.productUrl}

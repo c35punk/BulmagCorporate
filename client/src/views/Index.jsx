@@ -29,8 +29,7 @@ class Index extends React.Component {
         <Navigation />
         <main ref="main">
           <Carousel />
-          <Menus />
-          <Tabs />
+
           <Download />
         </main>
         <CardsFooter />

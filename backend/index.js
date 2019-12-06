@@ -1,20 +1,13 @@
-global.__basedir = __dirname;
-const dbConnector = require('./config/database');
+let env = process.env.NODE_ENV || 'development'
 
-dbConnector().then(() => {
-    const config = require('./config/config');
-    const app = require('express')();
+let options = require('./config/options')[env]
 
-    require('./config/express')(app);
-    require('./config/routes')(app);
+const app = require('express')()
 
-    app.use(function(err, req, res, next) {
-        const user = req.user;
-    
-        res.render('errors/500', { errorMessage: err.message, user })
-    });
+require('./config/database')(options)
+require('./config/express')(app)
+require('./config/routes')(app)
+require('./config/passport')()
 
-    app.listen(config.port, console.log(`Server is listening on port ${config.port}...`));
-}).catch((err) => console.error(err));
-
-
+app.listen(settings.port)
+console.log(`Server up and listening on PORT: ${options.port}...`)
