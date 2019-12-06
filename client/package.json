@@ -91,6 +91,7 @@
     "react-dom": "16.8.6",
     "react-router": "5.0.0",
     "react-router-dom": "5.0.0",
+    "react-toastify": "^5.4.1",
     "reactstrap": "8.0.0",
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",

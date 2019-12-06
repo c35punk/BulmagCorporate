@@ -33,7 +33,6 @@ module.exports.initialList = () => {
     Product.find({}).then(products => {
         if (products.length > 0) return
 
-
         Product.create(
 
             {

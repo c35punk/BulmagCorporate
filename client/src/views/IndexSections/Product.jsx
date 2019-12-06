@@ -14,20 +14,13 @@ class Product extends React.Component {
             <img
               src={this.props.product.image}
               alt=""
-              style={{ width: "150px"}}
+              style={{ width: "150px" }}
             />
 
             <h6 className="text-primary">{this.props.product.description}</h6>
-            <p className="description mt-3">{this.props.product.name}</p>
             <div>
               <Badge color="primary" pill className="mr-1">
-                design
-              </Badge>
-              <Badge color="primary" pill className="mr-1">
-                system
-              </Badge>
-              <Badge color="primary" pill className="mr-1">
-                creative
+                {this.props.product.name}
               </Badge>
             </div>
             <Modal
