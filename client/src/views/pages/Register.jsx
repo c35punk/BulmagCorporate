@@ -71,17 +71,17 @@ class Register extends React.Component {
     this.refs.main.scrollTop = 0;
   }
 
-  submitHandler = () => {
-    const {
-      name,
-      email,
-      password,
-      repeatPassword,
-      agree
-    } = this.state;
-    console.log(this.state)
-    console.log(name, email, password, repeatPassword, agree)
-  }
+  // submitHandler = () => {
+  //   const {
+  //     name,
+  //     email,
+  //     password,
+  //     repeatPassword,
+  //     agree
+  //   } = this.state;
+  //   console.log(this.state)
+  //   console.log(name, email, password, repeatPassword, agree)
+  // }
 
 
 
