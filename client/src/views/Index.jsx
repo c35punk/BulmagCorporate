@@ -1,12 +1,10 @@
 import React from "react";
 
-//constants
+//constants & components
 import { auth, roles, notificationMessages } from "../constants/constants";
-import { defaultUser } from "../components/contexts/user-context";
+import { defaultUser, UserProvider } from "../components/contexts/user-context";
 import notificationService from "../services/notification-service";
-
-// reactstrap components
-// import { Container, Row } from "reactstrap";
+import NotificationsContainer from "../components/notifications/NotificationsContainer";
 
 // core components
 import Navigation from "components/Navbars/Navigation.jsx";
@@ -60,21 +58,40 @@ class Index extends React.Component {
     return false;
   };
 
+  updateUser = user => {
+    window.localStorage.setItem(auth.authUser, JSON.stringify(user));
+    this.setState({ user });
+  };
+
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
   render() {
+    const { user } = this.state;
+    console.log(user);
+
     return (
       <>
-        <Navigation />
-        <main ref="main">
-          <Carousel />
+        <NotificationsContainer />
+        <UserProvider
+          // UserContext
+          value={{
+            user,
+            isAdmin: this.isAdmin,
+            isLoginRequired: this.isLoginRequired,
+            updateUser: this.updateUser
+          }}
+        >
+          <Navigation />
+          <main ref="main">
+            <Carousel />
 
-          <Download />
-        </main>
-        <CardsFooter />
+            <Download />
+          </main>
+          <CardsFooter />
+        </UserProvider>
       </>
     );
   }
