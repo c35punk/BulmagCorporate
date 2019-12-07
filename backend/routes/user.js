@@ -6,6 +6,15 @@ const encryption = require("../utilities/encryption");
 
 const router = new express.Router();
 
+
+router.route('/register').post((req, res) => {
+  const userObj = req.body;
+
+  const newUser = new User(userObj);
+
+  newUser.save().then(() => res.json('User registered successfully!')).catch(err => res.status(400).json('Error: ' + err))
+})
+
 function validateUserUpdateForm(userToken) {
   const errors = {};
   let isFormValid = true;
