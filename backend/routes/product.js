@@ -5,12 +5,8 @@ const Product = require("../models/Product");
 const router = new express.Router();
 
 router.post("/add-product", authCheck, (req, res) => {
-  const product = req.body;
-  let productObj = {
-    creator: req.user._id,
-    product
-  };
-
+  const productObj = req.body;
+ 
   Product.create(productObj)
     .then(createdProduct => {
       res.status(200).json({

@@ -1,5 +1,5 @@
 const authRoutes = require("../routes/auth");
-const machineRoutes = require("../routes/machine");
+const machineRoutes = require("../routes/add-system");
 const productRoutes = require("../routes/product");
 const usersRoutes = require("../routes/user");
 
