@@ -14,7 +14,7 @@ function validateUserUpdateForm(userToken) {
   if (
     !userToken ||
     typeof userToken.username !== "string" ||
-    userToken.username.trim().length < 4
+    userToken.username.length < 4
   ) {
     isFormValid = false;
     errors.username = "Username must be at least 4 characters long";
@@ -32,7 +32,7 @@ function validateUserUpdateForm(userToken) {
   if (
     !userToken ||
     typeof userToken.password !== "string" ||
-    userToken.password.trim().length < 8
+    userToken.password.length < 8
   ) {
     isFormValid = false;
     errors.password = "Password must be at least 8 characters long";
@@ -83,32 +83,32 @@ router.post("/profile", authCheck, (req, res) => {
       // Username
       if (
         userObj.username &&
-        userObj.username.trim() !== "" &&
-        userObj.username.trim() !== existingUser.username
+        userObj.username !== "" &&
+        userObj.username !== existingUser.username
       ) {
-        existingUser.username = userObj.username.trim();
+        existingUser.username = userObj.username;
       }
 
       // Email
       if (
         userObj.email &&
-        userObj.email.trim() !== "" &&
-        userObj.email.trim() !== existingUser.email
+        userObj.email !== "" &&
+        userObj.email !== existingUser.email
       ) {
-        existingUser.email = userObj.email.trim();
+        existingUser.email = userObj.email;
       }
 
       // Password
       let newHashedPassword = null;
 
-      if (userObj.password && userObj.password.trim() !== "") {
+      if (userObj.password && userObj.password !== "") {
         newHashedPassword = encryption.generateHashedPassword(
           existingUser.salt,
-          userObj.password.trim()
+          userObj.password
         );
 
         if (existingUser.password !== newHashedPassword) {
-          existingUser.password = userObj.password.trim();
+          existingUser.password = userObj.password;
         }
       }
 
