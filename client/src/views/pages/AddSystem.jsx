@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
 
 // reactstrap components
 import {
@@ -33,7 +33,7 @@ class Register extends React.Component {
       serialNumber: "",
       type: "",
       startDate: Date,
-      endDate: checkPropTypes,
+      endDate: Date,
       agree: false
     };
 
@@ -75,16 +75,32 @@ class Register extends React.Component {
 
   handleSubmit(event) {
     console.log(this.state);
+    const machineToBeAdded = {
+      manufacturer: this.state.manufacturer,
+      machineName: this.state.machineName,
+      productNumber: this.state.productNumber,
+      serialNumber: this.state.serialNumber,
+      type: this.state.type,
+      startDate: this.state.startDate,
+      endDate: this.state.endDate,
+      agree: this.state.agree
+    };
+
+    axios
+      .post("http://localhost:9949/machines/add-system", machineToBeAdded)
+      .then(res => console.log(res.data));
+    console.log(machineToBeAdded);
+    console.log(this.state);
+
     event.preventDefault();
-    window.location = "/dashboard";
+    event.preventDefault();
+    // window.location = "/dashboard";
   }
 
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
-
-    
   }
 
   render() {

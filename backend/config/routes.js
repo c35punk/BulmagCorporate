@@ -7,8 +7,8 @@ module.exports = app => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Content-Type");
     next();
-  }),
-    app.use("/auth", authRoutes);
+  });
+  app.use("/auth", authRoutes);
   app.use("/products", productRoutes);
-  app.use("/dashboard", machineRoutes);
+  app.use("/machines", machineRoutes);
 };

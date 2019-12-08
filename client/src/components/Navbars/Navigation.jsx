@@ -34,6 +34,8 @@ class Navigation extends React.Component {
   render() {
     const { isLoggedIn, isAdmin, username } = this.props;
     const profileName = `${username}'s ${paths.profileName}`;
+
+
     let account;
 
     if (isLoggedIn) {
@@ -69,18 +71,7 @@ class Navigation extends React.Component {
             id="navbar-main"
           >
             <Container>
-              {/* <HeaderAll />
-
-              {isLoggedIn ? (
-                isAdmin ? (
-                  <HeaderAdmin />
-                ) : (
-                  <HeaderAuth profileName={profileName} />
-                )
-              ) : (
-                <HeaderAnonymous />
-              )} */}
-              <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
+                     <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
                 <img
                   alt="..."
                   src={require("assets/img/brand/bulmag-react-white.png")}

@@ -22,7 +22,7 @@ router.post("/add-system", authCheck, (req, res) => {
     .catch(err => {
       console.log(err);
       const message = "Something went wrong :(";
-      return res.status(200).json({
+      return res.status(400).json({
         success: false,
         message: message
       });
