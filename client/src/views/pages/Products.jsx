@@ -146,13 +146,7 @@ class Products extends React.Component {
                   <Row>
                     <Col lg="6">
                       <h1 className="display-3 text-white">PRODUCTS</h1>
-                      <p className="lead text-white">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Voluptatem vero, doloribus nesciunt esse incidunt ullam.
-                        Eum adipisci quod nisi alias impedit labore, dignissimos
-                        recusandae porro ad maxime facere delectus dolore.
-                      </p>
-                      <div className="btn-wrapper"></div>
+                     
                     </Col>
                   </Row>
                 </div>
