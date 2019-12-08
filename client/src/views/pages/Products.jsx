@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from 'axios'
 // nodejs library that concatenates classes
 import classnames from "classnames";
 
@@ -31,6 +32,7 @@ import Product from "../IndexSections/Product";
 class Products extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       products: [
         {
@@ -81,7 +83,8 @@ class Products extends React.Component {
           description: "VMware HCI Appliance",
           image:
             "https://www3.lenovo.com/medias/lenovo-data-center-thinkagile-vx-series-subseries-hero.png?context=bWFzdGVyfHJvb3R8MTA2NjAzfGltYWdlL3BuZ3xoM2UvaDRiLzk2ODM3OTc2MzkxOTgucG5nfGNlNzQxOTA1NzMwMWFlZWUxZmRkOWEyMDU3OGIyMWMyYmM4NjM0YzkzYjA5NThmNDkwNzIwMzNhMGZmOWNlY2U",
-          productUrl: "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-VX-Series/p/WMD00000340",
+          productUrl:
+            "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-VX-Series/p/WMD00000340",
           type: "HCI"
         },
         {
@@ -89,7 +92,8 @@ class Products extends React.Component {
           description: "Nutanix HCI Appliance",
           image:
             "https://www.lenovo.com/medias/lenovo-converged-systems-hx-series-subseries-hero.png?context=bWFzdGVyfHJvb3R8OTMxODR8aW1hZ2UvcG5nfGgxOS9oYTMvOTMxMTUxMzAxODM5OC5wbmd8OTFmN2RmNzMxNGFlNzJjNTRmMWI2MjE2YTg4NWFkYWYwMjgzOGM0OWE3ZmY2N2FiMDcxMmRlYzlhMzk2MzZjMA",
-          productUrl: "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-HX-Series/p/WMD00000326",
+          productUrl:
+            "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-HX-Series/p/WMD00000326",
           type: "HCI"
         },
         {
@@ -97,7 +101,8 @@ class Products extends React.Component {
           description: "Customizable Cloud Solution",
           image:
             "https://static.lenovo.com/ww/img/data-center/uberflip/sdi/lenovo-data-center-software-defined-infrastructure-thinkagile-cp-series.png",
-          productUrl: "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-CP-Series/p/WMD00000362",
+          productUrl:
+            "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-CP-Series/p/WMD00000362",
           type: "HCI"
         },
         {
@@ -105,7 +110,8 @@ class Products extends React.Component {
           description: "Hybrid Cloud",
           image:
             "https://www.lenovo.com/medias/lenovo-software-defined-infrastructure-thinkagile-microsoft-azure-stack-subseries-hero.png?context=bWFzdGVyfHJvb3R8NjM1MDR8aW1hZ2UvcG5nfGhkYS9oMGUvOTU5NDUyMTk3Njg2Mi5wbmd8NWNhY2Q0YmEyMzE2NjkwODA2MzIzMzg3ZTQxZjllY2QzNjM5M2ZmNzlkZTdkNjFiNjlhYjM4YzUxNzI1YTE3Yg",
-          productUrl: "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-SX-for-Microsoft-Azure-Stack/p/WMD00000272",
+          productUrl:
+            "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-SX-for-Microsoft-Azure-Stack/p/WMD00000272",
           type: "HCI"
         }
       ]
@@ -113,6 +119,14 @@ class Products extends React.Component {
   }
 
   componentDidMount() {
+    axios
+      .get("http://localhost:9949/products/")
+      .then(res => {
+        this.setState({ products: res.data });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
@@ -164,10 +178,7 @@ class Products extends React.Component {
           <section className="section section-lg pt-lg-0 mt--200">
             <Container>
               <Row className="justify-content-center">
-                <Button
-                  className="btn-icon mb-12 mb-lg-0"
-                  color="primary"
-                >
+                <Button className="btn-icon mb-12 mb-lg-0" color="primary">
                   <span className="btn-inner--icon mr-1">
                     <i className="fa fa-server" />
                   </span>
@@ -193,10 +204,7 @@ class Products extends React.Component {
             </Container>
             <Container>
               <Row className="justify-content-center">
-                <Button
-                  className="btn-icon mb-2 mb-lg-0"
-                  color="primary"
-                >
+                <Button className="btn-icon mb-2 mb-lg-0" color="primary">
                   <span className="btn-inner--icon mr-1">
                     <i className="fa fa-server" />
                   </span>
@@ -228,7 +236,9 @@ class Products extends React.Component {
                   <span className="btn-inner--icon mr-1">
                     <i className="fa fa-server" />
                   </span>
-                  <span className="btn-inner--text">Hyper-converged Infrastructure & Cloud</span>
+                  <span className="btn-inner--text">
+                    Hyper-converged Infrastructure & Cloud
+                  </span>
                 </Button>
                 <Col lg="12">
                   <Row className="row-grid">
