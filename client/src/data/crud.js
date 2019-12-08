@@ -6,10 +6,7 @@ const getAuthHeader = () => {
 };
 
 function request(method) {
-  // const getAuthHeader = () => {
-  //   const authToken = window.localStorage.getItem(auth.authToken);
-  //   return authToken ? { Authorization: `Bearer ${authToken}` } : {};
-  // };
+
 
   return async (url, data = {}, options = {}) => {
     const authHeader = getAuthHeader();

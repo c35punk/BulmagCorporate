@@ -10,6 +10,7 @@ module.exports = {
   },
 
   production: {
-    port: process.env.PORT
+    port: process.env.PORT,
+    db: 'mongodb+srv://ldj5:<password>@bulmag-prod-qditm.gcp.mongodb.net/test',
   }
 }

@@ -12,25 +12,7 @@ router.post("/add-product", (req, res) => {
     .then(() => res.json('Product added!'))
     .catch(err => res.status(400).json('Error: ' + err))
 
-})
-
-  // Product.create(productObj)
-  //   .then(createdProduct => {
-  //     res.status(200).json({
-  //       success: true,
-  //       message: "Product created successfully.",
-  //       data: createdProduct
-  //     });
-  //   })
-  //   .catch(err => {
-  //     console.log(err);
-  //     const message = "Something went wrong :(";
-  //     return res.status(200).json({
-  //       success: false,
-  //       message: message
-  //     });
-  //   });
-// });
+}) 
 
 router.get("/", (req, res) => {
   Product.find().then(products => {

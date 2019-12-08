@@ -7,10 +7,7 @@ let userSchema = new mongoose.Schema({
     salt: String,
     password: String,
     roles: [String],
-    machines: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Machine'
-    },
+    
 })
 
 userSchema.method({

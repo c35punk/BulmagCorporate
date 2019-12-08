@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 // reactstrap components
 import {
@@ -24,72 +24,51 @@ import SimpleFooter from "components/Footers/SimpleFooter.jsx";
 import { checkPropTypes } from "prop-types";
 
 class Register extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      manufacturer: '',
-      machineName: '',
-      productNumber: '',
-      serialNumber: '',
-      type: '',
-      startDate: checkPropTypes,
-      endDate: checkPropTypes,
-      agree: false
+      name: "",
+      description: "",
+      image: "",
+      productUrl: "",
+      type: ""
     };
 
-    this.handleManufacturer = this.handleManufacturer.bind(this)
-    this.handleName = this.handleName.bind(this)
-    this.handleProductNumber = this.handleProductNumber.bind(this)
-    this.handleSerialNumber = this.handleSerialNumber.bind(this)
-    this.handleType = this.handleType.bind(this)
-    this.handleStartDate = this.handleStartDate.bind(this)
-    this.handleEndDate = this.handleEndDate.bind(this)
-    this.handleAgree = this.handleAgree.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-
+    this.handleName = this.handleName.bind(this);
+    this.handleDescription = this.handleDescription.bind(this);
+    this.handleImage = this.handleImage.bind(this);
+    this.handleProductUrl = this.handleProductUrl.bind(this);
+    this.handleType = this.handleType.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleManufacturer(event) {
-    this.setState({ manufacturer: event.target.value });
-  }
   handleName(event) {
-    this.setState({ machineName: event.target.value });
+    this.setState({ name: event.target.value });
   }
-  handleProductNumber(event) {
-    this.setState({ productNumber: event.target.value });
+ 
+  handleDescription(event) {
+    this.setState({ image: event.target.value });
   }
-  handleSerialNumber(event) {
-    this.setState({ serialNumber: event.target.value });
+  handleImage(event) {
+    this.setState({ productUrl: event.target.value });
   }
   handleType(event) {
     this.setState({ type: event.target.value });
   }
-  handleStartDate(event) {
+  handleProductUrl(event) {
     this.setState({ startDate: event.target.value });
   }
-  handleEndDate(event) {
-    this.setState({ endDate: event.target.value });
-  }
-  handleAgree(event) {
-  this.setState({ agree: event.target.checked });
-  }
-
+ 
   handleSubmit(event) {
     console.log(this.state);
     event.preventDefault();
   }
 
-
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
-
-
   }
-
-
 
   render() {
     return (
@@ -112,7 +91,7 @@ class Register extends React.Component {
                 <Col lg="5">
                   <Card className="bg-secondary shadow border-0">
                     <CardHeader className="bg-white pb-5">
-                    <div className="text-center text-muted mb-4">
+                      <div className="text-center text-muted mb-4">
                         <large>Add System to Maintenance Contract</large>
                       </div>
                     </CardHeader>
@@ -128,7 +107,13 @@ class Register extends React.Component {
                                 <i className="ni ni-single-copy-04" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Manufacturer" type="text" name="manufacturer" value={this.state.manufacturer} onChange={this.handleManufacturer} />
+                            <Input
+                              placeholder="Name"
+                              type="text"
+                              name="name"
+                              value={this.state.name}
+                              onChange={this.handleName}
+                            />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -138,7 +123,13 @@ class Register extends React.Component {
                                 <i className="ni ni-single-copy-04" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Machine Model" type="text" name="machineName" value={this.state.machineName} onChange={this.handleName} />
+                            <Input
+                              placeholder="Machine Model"
+                              type="text"
+                              name="description"
+                              value={this.state.description}
+                              onChange={this.handleName}
+                            />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -148,7 +139,13 @@ class Register extends React.Component {
                                 <i className="ni ni-single-copy-04" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Product Number" type="text" name="productNumber" value={this.state.productNumber} onChange={this.handleProductNumber} />
+                            <Input
+                              placeholder="Product Number"
+                              type="text"
+                              name="image"
+                              value={this.state.image}
+                              onChange={this.handleDescription}
+                            />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -158,7 +155,13 @@ class Register extends React.Component {
                                 <i className="ni ni-single-copy-04" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Serial Number" type="text" name="serialNumber" value={this.state.serialNumber} onChange={this.handleSerialNumber} />
+                            <Input
+                              placeholder="Serial Number"
+                              type="text"
+                              name="productUrl"
+                              value={this.state.productUrl}
+                              onChange={this.handleImage}
+                            />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -168,7 +171,13 @@ class Register extends React.Component {
                                 <i className="ni ni-email-83" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Type (Server, Storage, Switch, etc.)" type="type" name="type" value={this.state.type} onChange={this.handleType} />
+                            <Input
+                              placeholder="Type (Server, Storage, Switch, etc.)"
+                              type="type"
+                              name="type"
+                              value={this.state.type}
+                              onChange={this.handleType}
+                            />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -183,7 +192,8 @@ class Register extends React.Component {
                               type="date"
                               autoComplete="off"
                               name="startDate"
-                              value={this.state.startDate} onChange={this.handleStartDate}
+                              value={this.state.startDate}
+                              onChange={this.handleProductUrl}
                             />
                           </InputGroup>
                         </FormGroup>
@@ -199,11 +209,12 @@ class Register extends React.Component {
                               type="date"
                               name="endDate"
                               autoComplete="off"
-                              value={this.state.endDate} onChange={this.handleEndDate}
+                              value={this.state.endDate}
+                              onChange={this.handleEndDate}
                             />
                           </InputGroup>
                         </FormGroup>
-                       
+
                         <Row className="my-4">
                           <Col xs="12">
                             <div className="custom-control custom-control-alternative custom-checkbox">
@@ -220,9 +231,7 @@ class Register extends React.Component {
                                 htmlFor="customCheckRegister"
                               >
                                 <span>
-                                 
-                                    Agree with maintenance contract terms
-                                
+                                  Agree with maintenance contract terms
                                 </span>
                               </label>
                             </div>
