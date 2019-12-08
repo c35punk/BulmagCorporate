@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom'
+import axios from "axios";
 
 // reactstrap components
 import {
@@ -52,6 +53,22 @@ class Login extends React.Component {
 
   handleSubmit(event) {
     console.log(this.state);
+    const loginUser = {
+      email: this.state.email,
+      password: this.state.password
+    };
+
+    console.log(loginUser);
+    console.log(this.state);
+
+    axios
+      .post("http://localhost:9949/auth/signup", loginUser)
+      .then(res => console.log(res.data));
+
+   
+    event.preventDefault();
+
+    window.location = "/dashboard";
     event.preventDefault();
   }
 

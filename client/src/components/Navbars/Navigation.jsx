@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 // JavaScript plugin that hides or shows a component based on your scroll
 import Headroom from "headroom.js";
+import { UserConsumer } from "../contexts/user-context";
+import { paths, roles } from "../../constants/constants";
+
 // reactstrap components
 import {
   Button,
@@ -29,6 +32,9 @@ class Navigation extends React.Component {
     headroom.init();
   }
   render() {
+    const { isLoggedIn, isAdmin, username } = this.props;
+    const profileName = `${username}'s ${paths.profileName}`;
+
     return (
       <>
         <header className="header-global">
@@ -38,6 +44,17 @@ class Navigation extends React.Component {
             id="navbar-main"
           >
             <Container>
+              {/* <HeaderAll />
+
+              {isLoggedIn ? (
+                isAdmin ? (
+                  <HeaderAdmin />
+                ) : (
+                  <HeaderAuth profileName={profileName} />
+                )
+              ) : (
+                <HeaderAnonymous />
+              )} */}
               <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
                 <img
                   alt="..."
@@ -82,14 +99,11 @@ class Navigation extends React.Component {
                             <i className="ni ni-briefcase-24" />
                           </div>
                           <Media body className="ml-3">
-                            <Link to="/products" >
-                              <Button>
-                                Products
-                              </Button>
+                            <Link to="/products">
+                              <Button>Products</Button>
                             </Link>
                             <p className="description d-none d-md-inline-block mb-0">
-                              Learn how to use bulmag compiling Scss, change
-                              brand colors and more.
+                             We offer high-end HW and SW solutions
                             </p>
                           </Media>
                         </Media>
@@ -102,15 +116,11 @@ class Navigation extends React.Component {
                             <i className="ni ni-support-16" />
                           </div>
                           <Media body className="ml-3">
-                            <Link to="/services" >
-                              <Button>
-
-                                Services
-                              </Button>
+                            <Link to="/services">
+                              <Button>Services</Button>
                             </Link>
                             <p className="description d-none d-md-inline-block mb-0">
-                              Learn more about colors, typography, icons and the
-                              grid system we used for bulmag.
+                              Boost your business with our enterprise services
                             </p>
                           </Media>
                         </Media>
@@ -140,7 +150,6 @@ class Navigation extends React.Component {
                       <span className="nav-link-inner--text">Account</span>
                     </DropdownToggle>
                     <DropdownMenu>
-
                       <DropdownItem to="/profile" tag={Link}>
                         Profile
                       </DropdownItem>
@@ -153,7 +162,6 @@ class Navigation extends React.Component {
                       <DropdownItem to="/register" tag={Link}>
                         Register
                       </DropdownItem>
-
                     </DropdownMenu>
                   </UncontrolledDropdown>
                 </Nav>
