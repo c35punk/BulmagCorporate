@@ -79,6 +79,7 @@ class Index extends React.Component {
           // UserContext
           value={{
             user,
+            isLoggedIn: this.isLoggedIn,
             isAdmin: this.isAdmin,
             isLoginRequired: this.isLoginRequired,
             updateUser: this.updateUser

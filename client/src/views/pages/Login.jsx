@@ -29,7 +29,8 @@ class Login extends React.Component {
     this.state = {
       email: "",
       password: "",
-      remember: false
+      remember: false,
+      token: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -57,14 +58,15 @@ class Login extends React.Component {
     };
 
     console.log(loginUser);
-    console.log(this.state);
 
-    axios
-      .post("http://localhost:9949/auth/login", loginUser)
-      .then(res => console.log(res.data));
+    axios.post("http://localhost:9949/auth/login", loginUser).then(res => {
+      this.setState({ token: res.data.token });
+      console.log("Success@@:");
+      console.log(this.state);
+      console.log(res.data.token);
+    });
 
-
-    window.location = "/dashboard";
+    // window.location = "/dashboard";
     event.preventDefault();
   }
 

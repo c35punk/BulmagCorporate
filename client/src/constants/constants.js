@@ -7,28 +7,24 @@ const baseUrl = "http://localhost:9949";
 const authUrl = `${baseUrl}/auth`;
 const machinesUrl = `${baseUrl}/dashboard`;
 const productUrl = `${baseUrl}/products`;
-const usersUrl = `${baseUrl}/users`;
-const statsUrl = `${baseUrl}/stats`;
+
 
 const dbConstants = {
   // auth
   loginUrl: `${authUrl}/login`,
   logoutUrl: `${authUrl}/logout`,
-  registerUrl: `${authUrl}/register`,
+  registerUrl: `${authUrl}/signup`,
   // products
-  productCreateUrl: `${productUrl}/create`,
+  productCreateUrl: `${productUrl}/add-product`,
   productEditByIdUrl: `${productUrl}/edit/`,
   productDeleteByIdUrl: `${productUrl}/delete/`,
-  productLikeByIdUrl: `${productUrl}/like/`,
-  productUnlikeByIdUrl: `${productUrl}/unlike/`,
-  productReviewByIdUrl: `${productUrl}/review/`,
   productReviewDeleteByIdIndexUrl: `${productUrl}/review/delete/`, // :productId/:reviewIndex
   productFileUploadByIdUrl: `${productUrl}/upload/`,
   productFileDeleteByIdUrl: `${productUrl}/upload/delete/`,
   productFileDownloadByIdUrl: `${productUrl}/download/`,
   productsAllUrl: `${productUrl}/all`,
   // machines
-  machineCreateUrl: `${machinesUrl}/submit`,
+  machineCreateUrl: `${machinesUrl}/add-system`,
   machineApproveByIdUrl: `${machinesUrl}/approve/`,
   machineCancelByIdUrl: `${machinesUrl}/cancel/`,
   machineDeliverByIdUrl: `${machinesUrl}/deliver/`,
@@ -39,9 +35,8 @@ const dbConstants = {
   machinesDeliveredUrl: `${machinesUrl}/delivered`,
   machinesPendingUrl: `${machinesUrl}/pending`,
   // user
-  userProfileUrl: `${usersUrl}/profile`,
-  // stats
-  statsUrl: `${statsUrl}/`
+  userProfileUrl: `/profile`,
+
 };
 
 // Input notifications
