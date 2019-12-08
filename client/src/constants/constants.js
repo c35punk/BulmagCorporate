@@ -3,7 +3,7 @@ const auth = {
   authUser: "authUser"
 };
 
-const baseUrl = "http://localhost:5000";
+const baseUrl = "http://localhost:9949";
 const authUrl = `${baseUrl}/auth`;
 const machinesUrl = `${baseUrl}/dashboard`;
 const productUrl = `${baseUrl}/products`;
@@ -75,15 +75,10 @@ const notificationMessages = {
   productEditedMsg: "Product updated",
   productLikeddMsg: "Product liked",
   productUnlikeddMsg: "Product unliked",
-  productAddedToCartMsg: "Product added to cart",
-  productRemovedFromCartMsg: "Product removed from cart",
   productInfoUpdatedMsg: "Product info & price updated",
   productQuantityUpdatedMsg: "Product quantity updated",
   productFileNotFoundMsg: "Product file not found",
   productNotFoundMsg: "Product not found",
-  // Cart
-  cartEmptyMsg: "Cart is empty",
-  cartUpdatedMsg: "Cart updated",
   // Machines
   machineCreateMsg: "Order created",
   machineApprovedMsg: "Order approved",

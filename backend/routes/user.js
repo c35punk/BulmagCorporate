@@ -7,13 +7,13 @@ const encryption = require("../utilities/encryption");
 const router = new express.Router();
 
 
-router.post('/register', (req, res) => {
-  const userObj = req.body;
+// router.post('/register', (req, res) => {
+//   const userObj = req.body;
 
-  const userToSave = new User(userObj);
-  userToSave.save()
-    .then(() => res.json('User registered successfully!'))
-    .catch(err => res.status(400).json('Error: ' + err))
+//   const userToSave = new User(userObj);
+//   userToSave.save()
+//     .then(() => res.json('User registered successfully!'))
+//     .catch(err => res.status(400).json('Error: ' + err))
 
 
 
@@ -22,7 +22,7 @@ router.post('/register', (req, res) => {
   // const newUser = new User(userObj);
 
   // newUser.save().then(() => res.json('User registered successfully!')).catch(err => res.status(400).json('Error: ' + err))
-})
+// })
 
 function validateUserUpdateForm(userToken) {
   const errors = {};

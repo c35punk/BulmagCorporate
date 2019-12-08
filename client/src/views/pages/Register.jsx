@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 // reactstrap components
 import {
@@ -23,24 +23,23 @@ import DemoNavbar from "components/Navbars/Navigation.jsx";
 import SimpleFooter from "components/Footers/SimpleFooter.jsx";
 
 class Register extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      email: '',
-      password: '',
-      repeatPassword: '',
-      agree: false
+      name: "",
+      email: "",
+      password: "",
+      repeatPassword: "",
+      agree: false,
+      passwordMatch: false
     };
 
-    this.handleName = this.handleName.bind(this)
-    this.handlePassword = this.handlePassword.bind(this)
-    this.handleRepeatPassword = this.handleRepeatPassword.bind(this)
-    this.handleEmail = this.handleEmail.bind(this)
-    this.handleAgree = this.handleAgree.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-
+    this.handleName = this.handleName.bind(this);
+    this.handlePassword = this.handlePassword.bind(this);
+    this.handleRepeatPassword = this.handleRepeatPassword.bind(this);
+    this.handleEmail = this.handleEmail.bind(this);
+    this.handleAgree = this.handleAgree.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleName(event) {
@@ -53,37 +52,34 @@ class Register extends React.Component {
     this.setState({ password: event.target.value });
   }
   handleRepeatPassword(event) {
-    this.setState({ repeatPassword: event.target.value });
+    this.setState({
+      repeatPassword: event.target.value,
+      passwordMatch: this.state.password === this.state.repeatPassword ? true : false
+    });
   }
   handleAgree(event) {
     this.setState({ agree: event.target.checked });
   }
 
   handleSubmit(event) {
+    const newUser = {
+      name: this.state.name,
+      password: this.state.password,
+      email: this.state.email
+    };
+
+    console.log(newUser);
     console.log(this.state);
     event.preventDefault();
+
+    window.location = "/dashboard";
   }
 
- 
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
-
-  // submitHandler = () => {
-  //   const {
-  //     name,
-  //     email,
-  //     password,
-  //     repeatPassword,
-  //     agree
-  //   } = this.state;
-  //   console.log(this.state)
-  //   console.log(name, email, password, repeatPassword, agree)
-  // }
-
-
 
   render() {
     return (
@@ -113,7 +109,8 @@ class Register extends React.Component {
                         <Button
                           className="btn-neutral btn-icon mr-4"
                           color="default"
-                          to="/login" tag={Link}
+                          to="/login"
+                          tag={Link}
                         >
                           <span className="btn-inner--icon mr-1">
                             <img
@@ -126,7 +123,8 @@ class Register extends React.Component {
                         <Button
                           className="btn-neutral btn-icon ml-1"
                           color="default"
-                          to="/login" tag={Link}
+                          to="/login"
+                          tag={Link}
                         >
                           <span className="btn-inner--icon mr-1">
                             <img
@@ -150,7 +148,13 @@ class Register extends React.Component {
                                 <i className="ni ni-circle-08" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Username" type="text" name="name" value={this.state.name} onChange={this.handleName} />
+                            <Input
+                              placeholder="Username"
+                              type="text"
+                              name="name"
+                              value={this.state.name}
+                              onChange={this.handleName}
+                            />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -160,7 +164,13 @@ class Register extends React.Component {
                                 <i className="ni ni-email-83" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Email" type="email" name="email" value={this.state.email} onChange={this.handleEmail} />
+                            <Input
+                              placeholder="Email"
+                              type="email"
+                              name="email"
+                              value={this.state.email}
+                              onChange={this.handleEmail}
+                            />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -175,7 +185,8 @@ class Register extends React.Component {
                               type="password"
                               autoComplete="off"
                               name="password"
-                              value={this.state.password} onChange={this.handlePassword}
+                              value={this.state.password}
+                              onChange={this.handlePassword}
                             />
                           </InputGroup>
                         </FormGroup>
@@ -191,7 +202,8 @@ class Register extends React.Component {
                               type="password"
                               name="repeatPassword"
                               autoComplete="off"
-                              value={this.state.repeatPassword} onChange={this.handleRepeatPassword}
+                              value={this.state.repeatPassword}
+                              onChange={this.handleRepeatPassword}
                             />
                           </InputGroup>
                         </FormGroup>
@@ -220,9 +232,7 @@ class Register extends React.Component {
                               >
                                 <span>
                                   I agree with the{" "}
-                                  <a
-                                    to="/login" tag={Link}
-                                  >
+                                  <a to="/login" tag={Link}>
                                     Privacy Policy
                                   </a>
                                 </span>
