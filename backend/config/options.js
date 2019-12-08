@@ -11,6 +11,6 @@ module.exports = {
 
   production: {
     port: process.env.PORT,
-    db: 'mongodb+srv://ldj5:<password>@bulmag-prod-qditm.gcp.mongodb.net/test',
+    db: 'mongodb+srv://ldj5:Zaq12345^@bulmag-prod-qditm.gcp.mongodb.net/test',
   }
 }

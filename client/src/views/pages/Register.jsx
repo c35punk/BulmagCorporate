@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 // reactstrap components
 import {
@@ -26,7 +27,7 @@ class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
+      username: "",
       email: "",
       password: "",
       repeatPassword: "",
@@ -43,7 +44,7 @@ class Register extends React.Component {
   }
 
   handleName(event) {
-    this.setState({ name: event.target.value });
+    this.setState({ username: event.target.value });
   }
   handleEmail(event) {
     this.setState({ email: event.target.value });
@@ -54,7 +55,8 @@ class Register extends React.Component {
   handleRepeatPassword(event) {
     this.setState({
       repeatPassword: event.target.value,
-      passwordMatch: this.state.password === this.state.repeatPassword ? true : false
+      passwordMatch:
+        this.state.password === this.state.repeatPassword ? true : false
     });
   }
   handleAgree(event) {
@@ -63,16 +65,20 @@ class Register extends React.Component {
 
   handleSubmit(event) {
     const newUser = {
-      name: this.state.name,
-      password: this.state.password,
-      email: this.state.email
+      username: this.state.username,
+      email: this.state.email,
+      password: this.state.password
     };
+
+    axios
+      .post("http://localhost:9949/users/register", newUser)
+      .then(res => console.log(res.data));
 
     console.log(newUser);
     console.log(this.state);
     event.preventDefault();
 
-    window.location = "/dashboard";
+    // window.location = "/login";
   }
 
   componentDidMount() {

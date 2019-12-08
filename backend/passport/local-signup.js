@@ -7,7 +7,7 @@ module.exports = new PassportLocalStrategy({
   passwordField: 'password',
   session: false,
   passReqToCallback: true
-}, (req, email, password, error) => {
+}, (req, email, password, done) => {
   console.log(email)
   const user = {
     email: email.trim(),
@@ -19,7 +19,7 @@ module.exports = new PassportLocalStrategy({
     .find({email: email})
     .then(users => {
       if (users.length > 0) {
-        return error('E-mail already exists!')
+        return done('E-mail already exists!')
       }
 
       user.salt = encryption.generateSalt()
@@ -29,10 +29,10 @@ module.exports = new PassportLocalStrategy({
       User
         .create(user)
         .then(() => {
-          return error(null)
+          return done(null)
         })
         .catch(() => {
-          return error('Something went wrong :( Check the form for errors.')
+          return done('Something went wrong :( Check the form for errors.')
         })
     })
 })
