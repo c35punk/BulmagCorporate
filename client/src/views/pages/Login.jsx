@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 // reactstrap components
@@ -24,19 +24,18 @@ import DemoNavbar from "components/Navbars/Navigation.jsx";
 import SimpleFooter from "components/Footers/SimpleFooter.jsx";
 
 class Login extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
       remember: false
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleEmail = this.handleEmail.bind(this)
-    this.handlePassword = this.handlePassword.bind(this)
-    this.handleRemember = this.handleRemember.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleEmail = this.handleEmail.bind(this);
+    this.handlePassword = this.handlePassword.bind(this);
+    this.handleRemember = this.handleRemember.bind(this);
   }
   handleEmail(event) {
     this.setState({ email: event.target.value });
@@ -47,9 +46,8 @@ class Login extends React.Component {
   }
 
   handleRemember(event) {
-    this.setState({ remember: event.target.checked })
+    this.setState({ remember: event.target.checked });
   }
-
 
   handleSubmit(event) {
     console.log(this.state);
@@ -62,23 +60,19 @@ class Login extends React.Component {
     console.log(this.state);
 
     axios
-      .post("http://localhost:9949/auth/signup", loginUser)
+      .post("http://localhost:9949/auth/login", loginUser)
       .then(res => console.log(res.data));
 
-   
-    event.preventDefault();
 
     window.location = "/dashboard";
     event.preventDefault();
   }
-
 
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
-
 
   render() {
     return (
@@ -142,7 +136,13 @@ class Login extends React.Component {
                                 <i className="ni ni-email-83" />
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Email" type="email" name="email" value={this.state.email} onChange={this.handleEmail} />
+                            <Input
+                              placeholder="Email"
+                              type="email"
+                              name="email"
+                              value={this.state.email}
+                              onChange={this.handleEmail}
+                            />
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -156,8 +156,8 @@ class Login extends React.Component {
                               placeholder="Password"
                               type="password"
                               autoComplete="off"
-                              value={this.state.password} onChange={this.handlePassword}
-
+                              value={this.state.password}
+                              onChange={this.handlePassword}
                             />
                           </InputGroup>
                         </FormGroup>
@@ -181,7 +181,6 @@ class Login extends React.Component {
                             className="my-4"
                             color="primary"
                             type="submit"
-
                           >
                             Sign in
                           </Button>
@@ -191,18 +190,12 @@ class Login extends React.Component {
                   </Card>
                   <Row className="mt-3">
                     <Col xs="6">
-                      <a
-                        className="text-light"
-                        to="/login" tag={Link}
-                      >
+                      <a className="text-light" to="/login" tag={Link}>
                         <small>Forgot password?</small>
                       </a>
                     </Col>
                     <Col className="text-right" xs="6">
-                      <a
-                        className="text-light"
-                        to="/register" tag={Link}
-                      >
+                      <a className="text-light" to="/register" tag={Link}>
                         <small>Create new account</small>
                       </a>
                     </Col>

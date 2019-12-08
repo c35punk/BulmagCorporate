@@ -70,14 +70,12 @@ class Register extends React.Component {
       password: this.state.password
     };
 
-    console.log(newUser);
-    console.log(this.state);
-
     axios
       .post("http://localhost:9949/auth/signup", newUser)
       .then(res => console.log(res.data));
+    console.log(newUser);
+    console.log(this.state);
 
-   
     event.preventDefault();
 
     window.location = "/login";

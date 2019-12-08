@@ -34,6 +34,31 @@ class Navigation extends React.Component {
   render() {
     const { isLoggedIn, isAdmin, username } = this.props;
     const profileName = `${username}'s ${paths.profileName}`;
+    let account;
+
+    if (isLoggedIn) {
+      account = (
+        <>
+          <DropdownItem to="/profile" tag={Link}>
+            Profile
+          </DropdownItem>
+          <DropdownItem to="/dashboard" tag={Link}>
+            Dashboard
+          </DropdownItem>
+        </>
+      );
+    } else {
+      account = (
+        <>
+          <DropdownItem to="/login" tag={Link}>
+            Login
+          </DropdownItem>
+          <DropdownItem to="/register" tag={Link}>
+            Register
+          </DropdownItem>
+        </>
+      );
+    }
 
     return (
       <>
@@ -103,7 +128,7 @@ class Navigation extends React.Component {
                               <Button>Products</Button>
                             </Link>
                             <p className="description d-none d-md-inline-block mb-0">
-                             We offer high-end HW and SW solutions
+                              We offer high-end HW and SW solutions
                             </p>
                           </Media>
                         </Media>
@@ -149,20 +174,7 @@ class Navigation extends React.Component {
                       <i className="ni ni-badge d-lg-none mr-1" />
                       <span className="nav-link-inner--text">Account</span>
                     </DropdownToggle>
-                    <DropdownMenu>
-                      <DropdownItem to="/profile" tag={Link}>
-                        Profile
-                      </DropdownItem>
-                      <DropdownItem to="/dashboard" tag={Link}>
-                        Dashboard
-                      </DropdownItem>
-                      <DropdownItem to="/login" tag={Link}>
-                        Login
-                      </DropdownItem>
-                      <DropdownItem to="/register" tag={Link}>
-                        Register
-                      </DropdownItem>
-                    </DropdownMenu>
+                    <DropdownMenu>{account}</DropdownMenu>
                   </UncontrolledDropdown>
                 </Nav>
                 <Nav className="align-items-lg-center ml-lg-auto" navbar>
