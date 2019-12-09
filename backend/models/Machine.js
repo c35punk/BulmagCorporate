@@ -27,9 +27,12 @@ const machineSchema = new Schema({
     type: {
         type: String,
         required: REQUIRED_VALIDATION_MESSAGE,
-        enum:
-            ['Server', 'Storage', 'Switch']
+        values: [
+            'Server', 'Storage', 'Switch'
+        ],
+        message: 'Status is invalid, valid values include [Server, Storage, Switch].'
     },
+
     startDate: {
         type: Schema.Types.Date,
         required: REQUIRED_VALIDATION_MESSAGE
