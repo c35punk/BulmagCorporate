@@ -74,7 +74,7 @@ class Login extends React.Component {
 
               const isAdmin = res.data.user.roles
                 .map(role => role.toLowerCase())
-                .filter(role => role === "admin");
+                .some(role => role === "admin");
 
               console.log(isAdmin);
 
@@ -104,7 +104,7 @@ class Login extends React.Component {
       }
     );
 
-    // window.location = "/dashboard";
+    window.location = "/dashboard";
     event.preventDefault();
   }
 
@@ -238,19 +238,4 @@ class Login extends React.Component {
   }
 }
 
-const LoginContext = props => {
-  return (
-    <UserConsumer>
-      {({ isLoggedIn, updateUser, isAdmin }) => (
-        <Login
-          {...props}
-          isAdmin={isAdmin}
-          isLoggedIn={isLoggedIn}
-          updateUser={updateUser}
-        />
-      )}
-    </UserConsumer>
-  );
-};
-
-export default LoginContext;
+export default Login;

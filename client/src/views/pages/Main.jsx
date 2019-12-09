@@ -16,14 +16,12 @@ class Main extends React.Component {
   render() {
     return (
       <>
-        <Navigation />
         <main ref="main">
           <Carousel />
           <CardExample />
           <CompanyOverview />
           <Tabs />
         </main>
-        <CardsFooter />
       </>
     );
   }

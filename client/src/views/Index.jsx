@@ -28,8 +28,8 @@ import Services from "./pages/Services";
 import Dashboard from "./pages/Dashboard";
 import AddSystem from "./pages/AddSystem";
 import About from "./pages/About.jsx";
-import Navigation from "components/Navbars/Navigation";
-import CardsFooter from "components/Footers/CardsFooter";
+import Navigation from "../components/Navbars/Navigation";
+import CardsFooter from "../components/Footers/CardsFooter";
 
 class Index extends Component {
   constructor(props) {
@@ -54,6 +54,8 @@ class Index extends Component {
   render() {
     const { user } = this.state;
 
+    console.log("Hello from Index.jsx");
+    console.log(user);
     return (
       <div>
         <UserProvider value={user}>

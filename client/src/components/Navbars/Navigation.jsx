@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 // JavaScript plugin that hides or shows a component based on your scroll
 import Headroom from "headroom.js";
+import { UserConsumer } from "../../contexts/user-context";
 
 // reactstrap components
 import {
@@ -27,7 +28,7 @@ class Navigation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedin: true
+      user: {}
     };
   }
 
@@ -39,7 +40,10 @@ class Navigation extends React.Component {
   render() {
     let account;
 
-    if (this.state.isLoggedIn) {
+    console.log("Hello from Navigation.jsx");
+    console.log(this.state.user);
+
+    if (this.props.isLoggedIn) {
       account = (
         <>
           <DropdownItem to="/profile" tag={Link}>
@@ -64,7 +68,6 @@ class Navigation extends React.Component {
     }
 
     return (
-      <>
         <header className="header-global">
           <Navbar
             className="navbar-main navbar-transparent navbar-light headroom"
@@ -223,9 +226,19 @@ class Navigation extends React.Component {
             </Container>
           </Navbar>
         </header>
-      </>
     );
   }
 }
 
-export default Navigation;
+const NavContext = props => {
+  return (
+    <UserConsumer>
+      {({ isLoggedIn, isAdmin }) => (
+        <Navigation {...props} isAdmin={isAdmin} isLoggedIn={isLoggedIn} />
+      )}
+    </UserConsumer>
+  );
+};
+
+export default NavContext;
+
