@@ -20,7 +20,7 @@ import {
 } from "reactstrap";
 
 // core components
-import DemoNavbar from "components/Navbars/Navigation.jsx";
+import Navigation from "components/Navbars/Navigation.jsx";
 import SimpleFooter from "components/Footers/SimpleFooter.jsx";
 
 class Login extends React.Component {
@@ -79,7 +79,7 @@ class Login extends React.Component {
   render() {
     return (
       <>
-        <DemoNavbar />
+        <Navigation {...this.props} />
         <main ref="main">
           <section className="section section-shaped section-lg">
             <div className="shape shape-style-1 bg-gradient-default">

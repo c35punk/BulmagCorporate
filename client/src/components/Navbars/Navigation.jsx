@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 // JavaScript plugin that hides or shows a component based on your scroll
 import Headroom from "headroom.js";
-import { UserConsumer } from "../contexts/user-context";
-import { paths, roles } from "../../constants/constants";
 
 // reactstrap components
 import {
@@ -26,19 +24,22 @@ import {
 } from "reactstrap";
 
 class Navigation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoggedin: false
+    };
+  }
+
   componentDidMount() {
     let headroom = new Headroom(document.getElementById("navbar-main"));
     // initialise
     headroom.init();
   }
   render() {
-    const { isLoggedIn, isAdmin, username } = this.props;
-    const profileName = `${username}'s ${paths.profileName}`;
-
-
     let account;
 
-    if (isLoggedIn) {
+    if (this.state.isLoggedIn) {
       account = (
         <>
           <DropdownItem to="/profile" tag={Link}>
@@ -71,7 +72,7 @@ class Navigation extends React.Component {
             id="navbar-main"
           >
             <Container>
-                     <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
+              <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
                 <img
                   alt="..."
                   src={require("assets/img/brand/bulmag-react-white.png")}
