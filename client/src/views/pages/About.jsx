@@ -5,9 +5,6 @@ import classnames from "classnames";
 // reactstrap components
 import { Badge, Button, Container, Row, Col } from "reactstrap";
 
-// core components
-import DemoNavbar from "components/Navbars/Navigation.jsx";
-import CardsFooter from "components/Footers/CardsFooter.jsx";
 
 // index page sections
 import Download from "../IndexSections/CompanyOverview";
@@ -23,7 +20,6 @@ class Landing extends React.Component {
   render() {
     return (
       <>
-        <DemoNavbar />
         <main ref="main">
           <div className="position-relative">
             {/* shape Hero */}
@@ -316,7 +312,6 @@ class Landing extends React.Component {
 
           <Download />
         </main>
-        <CardsFooter />
       </>
     );
   }
