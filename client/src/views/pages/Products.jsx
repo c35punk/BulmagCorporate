@@ -26,7 +26,7 @@ import Navigation from "components/Navbars/Navigation.jsx";
 import CardsFooter from "components/Footers/CardsFooter.jsx";
 
 // index page sections
-import Download from "../IndexSections/Download";
+import Download from "../IndexSections/CompanyOverview";
 import Product from "../IndexSections/Product";
 
 class Products extends React.Component {

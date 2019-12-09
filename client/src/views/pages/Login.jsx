@@ -24,8 +24,12 @@ import Navigation from "components/Navbars/Navigation.jsx";
 import SimpleFooter from "components/Footers/SimpleFooter.jsx";
 
 class Login extends React.Component {
+  
   constructor(props) {
     super(props);
+
+
+    
     this.state = {
       email: "",
       password: "",
@@ -66,7 +70,7 @@ class Login extends React.Component {
       console.log(res.data.token);
     });
 
-    // window.location = "/dashboard";
+    window.location = "/dashboard";
     event.preventDefault();
   }
 
@@ -99,7 +103,7 @@ class Login extends React.Component {
                         <Button
                           className="btn-neutral btn-icon"
                           color="default"
-                          href="#pablo"
+                          href="#"
                           onClick={e => e.preventDefault()}
                         >
                           <span className="btn-inner--icon mr-1">
@@ -113,7 +117,7 @@ class Login extends React.Component {
                         <Button
                           className="btn-neutral btn-icon ml-1"
                           color="default"
-                          href="#pablo"
+                          href="#"
                           onClick={e => e.preventDefault()}
                         >
                           <span className="btn-inner--icon mr-1">

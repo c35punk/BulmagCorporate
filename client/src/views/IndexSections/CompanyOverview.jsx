@@ -3,7 +3,7 @@ import React from "react";
 // reactstrap components
 import { Button, Container, Row, Col, UncontrolledTooltip } from "reactstrap";
 
-class Download extends React.Component {
+class CompanyOverview extends React.Component {
   render() {
     return (
       <>
@@ -14,7 +14,7 @@ class Download extends React.Component {
                 <h2 className="display-3">
                   Do you love this awesome{" "}
                   <span className="text-success">
-                    Design System for Bootstrap 4?
+                   Company Overview
                   </span>
                 </h2>
                 <p className="lead">
@@ -131,4 +131,4 @@ class Download extends React.Component {
   }
 }
 
-export default Download;
+export default CompanyOverview;

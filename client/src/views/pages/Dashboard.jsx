@@ -25,7 +25,7 @@ import DemoNavbar from "components/Navbars/Navigation.jsx";
 import CardsFooter from "components/Footers/CardsFooter.jsx";
 
 // index page sections
-import Download from "../IndexSections/Download";
+import CompanyOverview from "../IndexSections/CompanyOverview";
 
 class Landing extends React.Component {
   state = {};
@@ -76,7 +76,7 @@ class Landing extends React.Component {
                             <i className="ni ni-cloud-download-95" />
                           </span>
                           <span className="btn-inner--text">
-                            Download React
+                            CompanyOverview React
                           </span>
                         </Button>
                       </div>
@@ -680,7 +680,7 @@ class Landing extends React.Component {
                         href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
                         size="lg"
                       >
-                        Download React
+                        CompanyOverview React
                       </Button>
                     </Col>
                   </Row>
@@ -826,7 +826,7 @@ class Landing extends React.Component {
               </Row>
             </Container>
           </section>
-          <Download />
+          <CompanyOverview />
         </main>
         <CardsFooter />
       </>

@@ -30,31 +30,6 @@ function validateCreateForm(payload) {
     errors.machineName = 'Please, enter a valid machine name.'
   }
 
-  if (!payload || typeof payload.neck !== 'string' || payload.neck.length < 4) {
-    isFormValid = false
-    errors.neck = 'Model name must be at least 4 symbols.'
-  }
-
-  if (!payload || typeof payload.pickups !== 'string' || payload.pickups.length < 4) {
-    isFormValid = false
-    errors.pickups = 'Model name must be at least 4 symbols.'
-  }
-
-  if (!payload || !payload.price || payload.price < 0) {
-    isFormValid = false
-    errors.price = 'Price must be a positive number.'
-  }
-
-  if (!payload || typeof payload.image !== 'string' || !(payload.image.startsWith('https://') || payload.image.startsWith('http://')) || payload.image.length < 14) {
-    isFormValid = false
-    errors.image = 'Please enter valid Image URL. Image URL must be at least 14 symbols.'
-  }
-
-  if(!payload || typeof payload.video !== 'string' || !payload.video.includes('youtube')){
-    isFormValid = false
-    errors.video = 'Please provide a youtube video!'
-  }
-
   if (!isFormValid) {
     message = 'Check the form for errors.'
   }
