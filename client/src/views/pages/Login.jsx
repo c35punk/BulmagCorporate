@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { UserConsumer } from "../../contexts/user-context";
 
 // reactstrap components
 import {
@@ -24,23 +25,18 @@ import Navigation from "components/Navbars/Navigation.jsx";
 import SimpleFooter from "components/Footers/SimpleFooter.jsx";
 
 class Login extends React.Component {
-  
   constructor(props) {
     super(props);
 
-
-    
     this.state = {
       email: "",
       password: "",
-      remember: false,
-      token: ""
+      error: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleEmail = this.handleEmail.bind(this);
     this.handlePassword = this.handlePassword.bind(this);
-    this.handleRemember = this.handleRemember.bind(this);
   }
   handleEmail(event) {
     this.setState({ email: event.target.value });
@@ -50,40 +46,86 @@ class Login extends React.Component {
     this.setState({ password: event.target.value });
   }
 
-  handleRemember(event) {
-    this.setState({ remember: event.target.checked });
-  }
-
   handleSubmit(event) {
     console.log(this.state);
-    const loginUser = {
-      email: this.state.email,
-      password: this.state.password
+
+    const { email, password } = this.state;
+    const { updateUser } = this.props;
+
+    console.log(updateUser);
+
+    const credentials = {
+      email,
+      password
     };
 
-    console.log(loginUser);
+    this.setState(
+      {
+        error: ""
+      },
+      () => {
+        try {
+          axios
+            .post("http://localhost:9949/auth/login", credentials)
+            .then(res => {
+              // this.setState({ token: res.data.token });
+              console.log("Success@@:");
+              console.log(res);
 
-    axios.post("http://localhost:9949/auth/login", loginUser).then(res => {
-      this.setState({ token: res.data.token });
-      console.log("Success@@:");
-      console.log(this.state);
-      console.log(res.data.token);
-    });
+              const isAdmin = res.data.user.roles
+                .map(role => role.toLowerCase())
+                .filter(role => role === "admin");
+
+              console.log(isAdmin);
+
+              window.localStorage.setItem("auth_token", res.data.token);
+              window.localStorage.setItem(
+                "user",
+                JSON.stringify({
+                  ...res.data.user,
+                  isAdmin: isAdmin,
+                  isLoggedIn: true
+                })
+              );
+              updateUser({
+                isAdmin,
+                isLoggedIn: true,
+                updateUser,
+                ...res.data.user
+              });
+              console.log(window.localStorage);
+              console.log(res.data.user.roles);
+            });
+        } catch (error) {
+          this.setState({
+            error: error.message
+          });
+        }
+      }
+    );
 
     // window.location = "/dashboard";
     event.preventDefault();
   }
 
-  componentDidMount() {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-    this.refs.main.scrollTop = 0;
-  }
+  // componentDidMount() {
+  //   document.documentElement.scrollTop = 0;
+  //   document.scrollingElement.scrollTop = 0;
+  //   this.refs.main.scrollTop = 0;
+  // }
 
   render() {
+    const { email, password, error } = this.state;
+    const { isLoggedIn } = this.props;
+
+    if (isLoggedIn) {
+      return <Link to="/dashboard" />;
+    }
+
     return (
       <>
-        <Navigation/>
+        <Navigation />
+
         <main ref="main">
           <section className="section section-shaped section-lg">
             <div className="shape shape-style-1 bg-gradient-default">
@@ -146,7 +188,7 @@ class Login extends React.Component {
                               placeholder="Email"
                               type="email"
                               name="email"
-                              value={this.state.email}
+                              value={email}
                               onChange={this.handleEmail}
                             />
                           </InputGroup>
@@ -162,48 +204,27 @@ class Login extends React.Component {
                               placeholder="Password"
                               type="password"
                               autoComplete="off"
-                              value={this.state.password}
+                              value={password}
                               onChange={this.handlePassword}
                             />
                           </InputGroup>
                         </FormGroup>
-                        <div className="custom-control custom-control-alternative custom-checkbox">
-                          <input
-                            className="custom-control-input"
-                            id=" customCheckLogin"
-                            type="checkbox"
-                            checked={this.state.remember}
-                            onChange={this.handleRemember}
-                          />
-                          <label
-                            className="custom-control-label"
-                            htmlFor=" customCheckLogin"
-                          >
-                            <span>Remember me</span>
-                          </label>
-                        </div>
-                        <div className="text-center">
-                          <Button
-                            className="my-4"
-                            color="primary"
-                            type="submit"
-                          >
-                            Sign in
-                          </Button>
-                        </div>
+                        <Button className="my-4" color="primary" type="submit">
+                          Sign in
+                        </Button>
                       </Form>
                     </CardBody>
                   </Card>
                   <Row className="mt-3">
                     <Col xs="6">
-                      <a className="text-light" to="/login" tag={Link}>
+                      <Link className="text-light" to="/login">
                         <small>Forgot password?</small>
-                      </a>
+                      </Link>
                     </Col>
                     <Col className="text-right" xs="6">
-                      <a className="text-light" to="/register" tag={Link}>
+                      <Link className="text-light" to="/register">
                         <small>Create new account</small>
-                      </a>
+                      </Link>
                     </Col>
                   </Row>
                 </Col>
@@ -217,4 +238,19 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+const LoginContext = props => {
+  return (
+    <UserConsumer>
+      {({ isLoggedIn, updateUser, isAdmin }) => (
+        <Login
+          {...props}
+          isAdmin={isAdmin}
+          isLoggedIn={isLoggedIn}
+          updateUser={updateUser}
+        />
+      )}
+    </UserConsumer>
+  );
+};
+
+export default LoginContext;

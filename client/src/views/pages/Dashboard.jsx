@@ -21,13 +21,13 @@ import {
 } from "reactstrap";
 
 // core components
-import DemoNavbar from "components/Navbars/Navigation.jsx";
+import Navigation from "components/Navbars/Navigation.jsx";
 import CardsFooter from "components/Footers/CardsFooter.jsx";
 
 // index page sections
 import CompanyOverview from "../IndexSections/CompanyOverview";
 
-class Landing extends React.Component {
+class Dashboard extends React.Component {
   state = {};
   componentDidMount() {
     document.documentElement.scrollTop = 0;
@@ -37,7 +37,7 @@ class Landing extends React.Component {
   render() {
     return (
       <>
-        <DemoNavbar />
+        <Navigation />
         <main ref="main">
           <div className="position-relative">
             {/* shape Hero */}
@@ -834,4 +834,4 @@ class Landing extends React.Component {
   }
 }
 
-export default Landing;
+export default Dashboard;
