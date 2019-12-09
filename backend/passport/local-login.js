@@ -25,7 +25,7 @@ module.exports = new PassportLocalStrategy({
       const userToken = {
         sub: user.id
       }
-      const token = jwt.sign(userToken, 'jwt jwt jwt jwt@!@!')
+      const token = jwt.sign(userToken, 'default@!@!@!')
       const data = {
         username: user.username
       }

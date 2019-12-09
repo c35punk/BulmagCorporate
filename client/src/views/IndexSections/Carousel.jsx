@@ -1,28 +1,53 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 // reactstrap components
 import { Button, Container, Row, Col, UncontrolledCarousel } from "reactstrap";
 
 const items = [
   {
     src: "https://wallpaperaccess.com/full/1398628.jpg",
-    caption: "CAPTION",
-    header: "Part 1"
+    caption: (
+      <Button
+        className="btn-white mt-4"
+        color="default"
+        to="/products"
+        tag={Link}
+      >
+        Learn more
+      </Button>
+    ),
+    header: "System Integration Services"
   },
   {
     src:
       "https://i.pinimg.com/originals/bd/16/c5/bd16c57405f3142d4cc740e0ee44d536.jpg",
 
-    altText: "",
-    caption: "SOME TEXT",
-    header: "Part 2"
+    caption: (
+      <Button
+        className="btn-white mt-4"
+        color="default"
+        to="/products"
+        tag={Link}
+      >
+        Learn more
+      </Button>
+    ),
+    header: "Payment Solutions"
   },
   {
     src:
       "https://www.larutadelsorigens.cat/wallpic/full/31-316749_sql-server-wallpaper-data-center-wallpaper-4k.jpg",
-    altText: "",
-    caption: "SOME TEXT",
-    header: "Part 3"
+    caption: (
+      <Button
+        className="btn-white mt-4"
+        color="default"
+        to="/products"
+        tag={Link}
+      >
+        Learn more
+      </Button>
+    ),
+    header: "Post Warranty Enterprise Maintenance"
   }
 ];
 

@@ -70,7 +70,7 @@ class Login extends React.Component {
       console.log(res.data.token);
     });
 
-    window.location = "/dashboard";
+    // window.location = "/dashboard";
     event.preventDefault();
   }
 
@@ -83,7 +83,7 @@ class Login extends React.Component {
   render() {
     return (
       <>
-        <Navigation {...this.props} />
+        <Navigation/>
         <main ref="main">
           <section className="section section-shaped section-lg">
             <div className="shape shape-style-1 bg-gradient-default">
