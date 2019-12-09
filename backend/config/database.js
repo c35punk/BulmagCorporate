@@ -15,6 +15,7 @@ module.exports = (options) => {
     console.log('MongoDB ready!')
     User.seedAdminUser()
     Product.initialList()
+    // Service.initialList()
   })
   db.on('error', err => console.log(`Database error: ${err}`))
 }

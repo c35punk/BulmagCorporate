@@ -34,7 +34,6 @@ module.exports.initialList = () => {
         if (products.length > 0) return
 
         Product.create(
-
             {
                 name: "Vibbek",
                 description: "Cloud-based TMS",
@@ -110,7 +109,6 @@ module.exports.initialList = () => {
                 productUrl: "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-SX-for-Microsoft-Azure-Stack/p/WMD00000272",
                 type: "HCI"
             }
-
         )
     })
 }

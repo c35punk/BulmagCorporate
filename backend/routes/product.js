@@ -4,7 +4,7 @@ const Product = require("../models/Product");
 
 const router = new express.Router();
 
-router.post("/add-product", authCheck,(req, res) => {
+router.post("/add-product", (req, res) => {
   const productObj = req.body;
 
   const productToSave = new Product(productObj);
@@ -12,7 +12,7 @@ router.post("/add-product", authCheck,(req, res) => {
     .then(() => res.json('Product added!'))
     .catch(err => res.status(400).json('Error: ' + err))
 
-}) 
+})
 
 router.get("/", (req, res) => {
   Product.find().then(products => {

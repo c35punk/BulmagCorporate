@@ -87,12 +87,11 @@ class Register extends React.Component {
     };
 
     axios
-      .post("http://localhost:9949/machines/add-system", machineToBeAdded)
+      .post("http://localhost:9949/machines/create", machineToBeAdded)
       .then(res => console.log(res.data));
     console.log(machineToBeAdded);
     console.log(this.state);
 
-    event.preventDefault();
     event.preventDefault();
     // window.location = "/dashboard";
   }

@@ -24,7 +24,7 @@ const dbConstants = {
   productFileDownloadByIdUrl: `${productUrl}/download/`,
   productsAllUrl: `${productUrl}/all`,
   // machines
-  machineCreateUrl: `${machinesUrl}/add-system`,
+  machineCreateUrl: `${machinesUrl}/create`,
   machineApproveByIdUrl: `${machinesUrl}/approve/`,
   machineCancelByIdUrl: `${machinesUrl}/cancel/`,
   machineDeliverByIdUrl: `${machinesUrl}/deliver/`,
