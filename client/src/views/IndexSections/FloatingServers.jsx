@@ -28,4 +28,4 @@ const FloatingServers = props => {
     )
 }
 
-export default FloatingServers
+export default FloatingServers;

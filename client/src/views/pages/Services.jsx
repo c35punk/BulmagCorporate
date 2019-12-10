@@ -141,27 +141,7 @@ class Services extends React.Component {
               </Row>
             </Container>
           </section>
-          <section className="section section-lg">
-            <Container>
-              <Row className="row-grid align-items-center">
-                <Col className="order-md-6" md="6">
-                  <img
-                    alt="..."
-                    className="img-fluid floating"
-                    src="https://www.jvzoohost.com/img/jvZoo-images/solutions-server.png"
-                  />
-                </Col>
-                <Col className="order-md-6" md="6">
-                  <img
-                    alt="..."
-                    className="img-fluid floating"
-                    src="https://www.freepngimg.com/thumb/graphic_design/51153-6-home-server-picture-free-png-hq.png"
-                  />
-                </Col>
-              </Row>
-            </Container>
-          </section>
-          <section className="section bg-secondary">
+              <section className="section bg-secondary">
             <Container>
               <Row className="row-grid align-items-center">
                 <Col md="6">

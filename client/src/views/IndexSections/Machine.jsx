@@ -6,22 +6,37 @@ import { Card, CardBody, Badge, Col } from "reactstrap";
 
 class Machine extends React.Component {
   render() {
+    let {
+      manufacturer,
+      machineName,
+      productNumber,
+      serialNumber,
+      type,
+      startDate,
+      endDate
+    } = this.props;
     return (
       <Col lg="4">
         <Card className="card-lift--hover shadow border-0">
           <CardBody className="py-5">
             <div className="icon icon-shape icon-shape-warning rounded-circle mb-4"></div>
-            <img
-              src={this.props.machine.image}
-              alt=""
-              style={{ width: "150px" }}
-            />
+            <h1>{manufacturer}</h1>
 
-            <h6 className="text-primary">{this.props.machine.description}</h6>
+            <h6 className="text-primary">Machine: {machineName}</h6>
+            <h6 className="text-primary">PN: {productNumber}</h6>
+            <h6 className="text-primary">SN: {serialNumber}</h6>
             <div>
               <Badge color="primary" pill className="mr-1">
-                <i className="ni ni-watch-time"/>
-                {this.props.machine.name}
+                <i className="ni ni-watch-time" />
+                Starts: {startDate}
+              </Badge>
+              <Badge color="primary" pill className="mr-1">
+                <i className="ni ni-watch-time" />
+                Ends: {endDate}
+              </Badge>
+              <Badge color="primary" pill className="mr-1">
+                <i className="ni ni-settings-gear-65" />
+                {type}
               </Badge>
             </div>
             <Modal
