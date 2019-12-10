@@ -36,15 +36,24 @@ class Navigation extends React.Component {
     let headroom = new Headroom(document.getElementById("navbar-main"));
     // initialise
     headroom.init();
-  }
-  render() {
-    let account;
-
     console.log("Hello from Navigation.jsx");
     console.log(this.props);
     console.log(this.state);
+  }
+  render() {
+    let account;
+    let greeting = (
+      <UncontrolledDropdown nav>
+        <DropdownToggle nav>
+          <i className="ni ni-badge d-lg-none mr-1" />
+          <span className="nav-link-inner--text" to="/profile" tag={Link}>
+            Hello, {this.props.username}!
+          </span>
+        </DropdownToggle>
+      </UncontrolledDropdown>
+    );
 
-    if (this.props.isLoggedIn) {
+    if (this.props.isLoggedIn && this.props.isAdmin) {
       account = (
         <>
           <DropdownItem to="/profile" tag={Link}>
@@ -52,6 +61,27 @@ class Navigation extends React.Component {
           </DropdownItem>
           <DropdownItem to="/dashboard" tag={Link}>
             Dashboard
+          </DropdownItem>
+          <DropdownItem to="/add-product" tag={Link}>
+            Add Product
+          </DropdownItem>
+          <DropdownItem to="/logout" tag={Link}>
+            Logout
+          </DropdownItem>
+        </>
+      );
+    } else if (this.props.isLoggedIn) {
+      account = (
+        <>
+          <DropdownItem to="/profile" tag={Link}>
+            Profile
+          </DropdownItem>
+          <DropdownItem to="/dashboard" tag={Link}>
+            Dashboard
+          </DropdownItem>
+
+          <DropdownItem to="/logout" tag={Link}>
+            Logout
           </DropdownItem>
         </>
       );
@@ -112,10 +142,7 @@ class Navigation extends React.Component {
                   </DropdownToggle>
                   <DropdownMenu className="dropdown-menu-xl">
                     <div className="dropdown-menu-inner">
-                      <Media
-                        className="d-flex align-items-center"
-                        href="/products"
-                      >
+                      <Media>
                         <div className="icon icon-shape bg-gradient-primary rounded-circle text-white">
                           <i className="ni ni-briefcase-24" />
                         </div>
@@ -128,11 +155,7 @@ class Navigation extends React.Component {
                           </p>
                         </Media>
                       </Media>
-                      <Media
-                        className="d-flex align-items-center"
-                        href="https://demos.creative-tim.com/bulmag-design-system-react/#/documentation/colors?ref=adsr-navbar"
-                        target="_blank"
-                      >
+                      <Media>
                         <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
                           <i className="ni ni-support-16" />
                         </div>
@@ -171,6 +194,15 @@ class Navigation extends React.Component {
                     <span className="nav-link-inner--text">Account</span>
                   </DropdownToggle>
                   <DropdownMenu>{account}</DropdownMenu>
+                </UncontrolledDropdown>
+                <UncontrolledDropdown nav>
+                  <DropdownToggle nav>
+                    <i className="ni ni-badge d-lg-none mr-1" />
+                    <span className="nav-link-inner--text">
+                      {" "}
+                      {this.props.isLoggedIn ? greeting : null}
+                    </span>
+                  </DropdownToggle>
                 </UncontrolledDropdown>
               </Nav>
               <Nav className="align-items-lg-center ml-lg-auto" navbar>
@@ -235,8 +267,13 @@ class Navigation extends React.Component {
 const NavContext = props => {
   return (
     <UserConsumer>
-      {({ isLoggedIn, isAdmin }) => (
-        <Navigation {...props} isAdmin={isAdmin} isLoggedIn={isLoggedIn} />
+      {({ isLoggedIn, isAdmin, username }) => (
+        <Navigation
+          {...props}
+          isAdmin={isAdmin}
+          isLoggedIn={isLoggedIn}
+          username={username}
+        />
       )}
     </UserConsumer>
   );
