@@ -27,10 +27,11 @@ import Products from "./pages/Products";
 import Services from "./pages/Services";
 import Dashboard from "./pages/Dashboard";
 import AddSystem from "./pages/AddSystem";
-import Logout from './pages/Logout'
+import Logout from "./pages/Logout";
 import About from "./pages/About.jsx";
 import Navigation from "../components/Navbars/Navigation";
 import CardsFooter from "../components/Footers/CardsFooter";
+import AddProduct from "./pages/AddProduct";
 
 class Index extends Component {
   constructor(props) {
@@ -109,6 +110,11 @@ class Index extends Component {
               path="/add-system"
               exact
               render={props => <AddSystem {...props} />}
+            />
+            <AdminRoute
+              path="/add-product"
+              exact
+              render={props => <AddProduct {...props} />}
             />
           </Switch>
           <CardsFooter />

@@ -3,10 +3,6 @@ import React from "react";
 // reactstrap components
 import { Button, Card, Container, Row, Col } from "reactstrap";
 
-// core components
-import DemoNavbar from "components/Navbars/Navigation.jsx";
-import SimpleFooter from "components/Footers/SimpleFooter.jsx";
-
 class Profile extends React.Component {
   componentDidMount() {
     document.documentElement.scrollTop = 0;
@@ -16,7 +12,6 @@ class Profile extends React.Component {
   render() {
     return (
       <>
-        <DemoNavbar />
         <main className="profile-page" ref="main">
           <section className="section-profile-cover section-shaped my-0">
             {/* Circles background */}
@@ -143,7 +138,6 @@ class Profile extends React.Component {
             </Container>
           </section>
         </main>
-        <SimpleFooter />
       </>
     );
   }

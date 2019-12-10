@@ -23,7 +23,7 @@ import DemoNavbar from "components/Navbars/Navigation.jsx";
 import SimpleFooter from "components/Footers/SimpleFooter.jsx";
 import { checkPropTypes } from "prop-types";
 
-class Register extends React.Component {
+class AddSystem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -251,7 +251,7 @@ class Register extends React.Component {
                             <div className="custom-control custom-control-alternative custom-checkbox">
                               <input
                                 className="custom-control-input"
-                                id="customCheckRegister"
+                                id="customCheckAddSystem"
                                 type="checkbox"
                                 name="agree"
                                 checked={this.state.agree}
@@ -259,7 +259,7 @@ class Register extends React.Component {
                               />
                               <label
                                 className="custom-control-label"
-                                htmlFor="customCheckRegister"
+                                htmlFor="customCheckAddSystem"
                               >
                                 <span>
                                   Agree with maintenance contract terms
@@ -275,7 +275,7 @@ class Register extends React.Component {
                             type="submit"
                             // to="/dashboard" tag={Link}
                           >
-                            Add system
+                            Add product
                           </Button>
                         </div>
                       </Form>
@@ -292,4 +292,4 @@ class Register extends React.Component {
   }
 }
 
-export default Register;
+export default AddSystem;
