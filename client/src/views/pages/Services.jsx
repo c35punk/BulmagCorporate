@@ -144,11 +144,18 @@ class Services extends React.Component {
           <section className="section section-lg">
             <Container>
               <Row className="row-grid align-items-center">
-                <Col className="order-md-2" md="6">
+                <Col className="order-md-6" md="6">
                   <img
                     alt="..."
                     className="img-fluid floating"
-                    src={require("assets/img/theme/promo-1.png")}
+                    src="https://www.jvzoohost.com/img/jvZoo-images/solutions-server.png"
+                  />
+                </Col>
+                <Col className="order-md-6" md="6">
+                  <img
+                    alt="..."
+                    className="img-fluid floating"
+                    src="https://www.freepngimg.com/thumb/graphic_design/51153-6-home-server-picture-free-png-hq.png"
                   />
                 </Col>
               </Row>

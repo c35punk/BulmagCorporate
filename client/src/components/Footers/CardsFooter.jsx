@@ -23,20 +23,40 @@ class CardsFooter extends React.Component {
             <Row>
               <Col className="mb-5 mb-md-0" md="3">
                 <Card className="card-lift--hover shadow border-0">
-                  <Link to="/landing-page">
+                  <Link to="/products">
                     <CardImg
                       alt="..."
-                      src={require("assets/img/theme/landing.jpg")}
+                      src="https://vistaitgroup.com/pub/media/wysiwyg/CoreCompetencies/updateMAR2018/Lenovo-Gold.png"
+                    />
+                  </Link>
+                </Card>
+              </Col>
+                <Col className="mb-5 mb-lg-0" md="3">
+                  <Card className="card-lift--hover shadow border-0">
+                    <Link to="/about">
+                      <CardImg
+                        alt="..."
+                        src="https://www.lenovopartnernetwork.com/assets/Uploads/2e3f24153f/lenovo-default-social.jpg"
+                      />
+                    </Link>
+                  </Card>
+                </Col>
+              <Col className="mb-5 mb-lg-0" md="3">
+                <Card className="card-lift--hover shadow border-0">
+                  <Link to="/about">
+                    <CardImg
+                      alt="..."
+                      src="https://i.ytimg.com/vi/Tygk0HnjG-o/maxresdefault.jpg"
                     />
                   </Link>
                 </Card>
               </Col>
               <Col className="mb-5 mb-lg-0" md="3">
                 <Card className="card-lift--hover shadow border-0">
-                  <Link to="/profile-page">
+                  <Link to="/about">
                     <CardImg
                       alt="..."
-                      src={require("assets/img/theme/profile.jpg")}
+                      src="https://www.lenovopartnernetwork.com/assets/kapost-media/2ab71b37e9/logo-lenovo-certified-textured__ScaleMaxWidthWzM4NV0.png"
                     />
                   </Link>
                 </Card>
@@ -54,7 +74,6 @@ class CardsFooter extends React.Component {
                 </h4>
               </Col>
               <Col className="text-lg-center btn-wrapper" lg="6">
-                
                 <Button
                   className="btn-neutral btn-icon-only btn-round ml-1"
                   color="facebook"
@@ -68,7 +87,7 @@ class CardsFooter extends React.Component {
                 <UncontrolledTooltip delay={0} target="tooltip837440414">
                   Like us
                 </UncontrolledTooltip>
-               
+
                 <Button
                   className="btn-neutral btn-icon-only btn-round ml-1"
                   color="github"
@@ -100,22 +119,16 @@ class CardsFooter extends React.Component {
               </Col>
               <Col md="6">
                 <Nav className="nav-footer justify-content-end">
-
                   <NavItem>
-                    <NavLink
-                      to="/contacts" tag={Link}
-                    >
+                    <NavLink to="/contacts" tag={Link}>
                       Contacts
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink
-                      to="/about" tag={Link}
-                    >
+                    <NavLink to="/about" tag={Link}>
                       About Us
                     </NavLink>
                   </NavItem>
-
                 </Nav>
               </Col>
             </Row>

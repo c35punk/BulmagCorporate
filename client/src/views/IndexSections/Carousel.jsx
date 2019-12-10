@@ -68,9 +68,9 @@ class Carousel extends React.Component {
                   <UncontrolledCarousel items={items} />
                 </div>
               </Col>
-              <Col className="mb-5 mb-lg-0" lg="5">
+              <Col className="mb-5 mb-lg-0" lg="7">
                 <h1 className="text-blue font-weight-heavy">
-                  Bootstrap carousel
+                 Over 25 Years of Experience in System Integration
                 </h1>
 
                 <Button
