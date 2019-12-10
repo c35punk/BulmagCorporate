@@ -3,7 +3,7 @@ import React from "react";
 import { Card, Button, Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 
-const ProfessionalServicesBanner = props => {
+const ProfessionalServicesBanner = () => {
   return (
     <section className="section section-lg pt-0">
       <Container>
@@ -15,9 +15,7 @@ const ProfessionalServicesBanner = props => {
                   PROFESSIONAL SERVICES AND ENTERPRISE MAINTENANCE
                 </h3>
                 <p className="lead text-white mt-3">
-                  I will be the leader of a company that ends up being worth
-                  billions of dollars, because I got the answers. I understand
-                  culture.
+               Find the right service for
                 </p>
               </Col>
               <Col className="ml-lg-auto" lg="3">

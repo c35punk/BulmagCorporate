@@ -1,6 +1,7 @@
 const authRoutes = require("../routes/auth");
 const machineRoutes = require("../routes/machine");
 const productRoutes = require("../routes/product");
+const serviceRoutes = require("../routes/service")
 
 module.exports = app => {
   app.use(function (req, res, next) {
@@ -11,4 +12,5 @@ module.exports = app => {
   app.use("/auth", authRoutes);
   app.use("/products", productRoutes);
   app.use("/machines", machineRoutes);
+  app.use("/services", serviceRoutes)
 };

@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const productSchema = new Schema({
+const serviceSchema = new Schema({
     name: {
         type: String,
         required: true,
@@ -13,7 +13,7 @@ const productSchema = new Schema({
         type: String,
         required: true,
     },
-    productUrl: {
+    serviceUrl: {
         type: String,
         required: true,
     },
@@ -22,96 +22,74 @@ const productSchema = new Schema({
         required: true,
         enum: {
             values: [
-                'HW', 'Banking', 'HCI'
-            ],
+                'Enterprise', 'Business'],
             message: 'Status is invalid, valid values include [HW, Banking, HCI].'
-          },
+        },
     },
 });
 
-let Product = model('Product', productSchema)
+let Service = model('Service', serviceSchema)
 
-module.exports = Product
-module.exports.initialList = () => {
-    Product.find({}).then(products => {
-        if (products.length > 0) return
+module.exports = Service
+module.exports.initialServicesList = () => {
+    Service.find({}).then(services => {
+        if (services.length > 0) return
 
-        Product.create(
+        Service.create(
             {
-                name: "Vibbek",
-                description: "Cloud-based TMS",
-                image:
-                    "https://tr-sys.com/wp-content/themes/trsys/assets/img/partners/sw-solution-providers/vibbek.png",
-                productUrl: "https://www.vibbek.com/en/product/",
-                type: "Banking"
+                name: "Maintenance",
+                description: "Post-Warranty Enterprise Multi-Vendor Maintenance",
+                image: "http://cdn.onlinewebfonts.com/svg/download_96545.png",
+                serviceUrl: `(<div className="col-md-12 cms-boxes">
+                    <div className="containerTab" id="maintenance" style="display:none;">
+                        <span className="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+                        <h2>Post Warranty Enterprise Multi-Vendor Maintenance</h2>
+                        <div className="table-single-cell">
+                            <p></p>
+                            <h4 style="font-style:unset">With a Bulmag AD maintenance contract, you protect yourself
+                                against
+                                unplanned additional costs for repairs, support and
+                                maintenance, which exceed your budget and can threaten the financing of projects
+                            relevant to security.</h4>
+                            <p></p>
+
+                            <h5 className="lead-thin">From hardware maintenance and repairs to telephone support and system
+                                monitoring, you get everything
+                            you need for a smooth data centre. Thereby, your systems are excellently secured.</h5>
+                            <p></p>
+
+                            <div className="row row-table">
+                                <div className="col-md-4 column text-left"><h3><strong>Server</strong></h3>
+                                    <p><span lang="en-GB">The Bulmag AD maintenance contract for hardware combines proactive system maintenance using the Technogroup AG Remotetool and direct access to the expertise of the Technogroup AG knowledge database. This service is complemented by the Auto-Call-System RHS Baseline, which informs the Bulmag AD control centre about hardware failures of server units. Thereby, a&nbsp;Bulmag AD technician fixes the error with the right components before you even noticed the error yourself. Using our service, you profit from an exceptional system reliability that is necessary for smooth operations.</span>
+                                    </p></div>
+                                <div className="col-md-4 column text-left"><h3><strong>Storage</strong></h3>
+                                    <p><span lang="en-GB">When every minute counts, play safe with a Bulmag AD service contract for storage systems. The service specifically designed for business critical storage systems provides integrated support for your storage environment, the associated virtual storage manager and the application software. You can adjust the scope of the contract depending on your desired level of availability. Besides support for storage solutions in large and medium-sized companies, Bulmag AD offers services for SAN infrastructure of all the main manufacturers, especially in heterogeneous system environments – independent of manufacturers.</span>
+                                    </p></div>
+                                <div className="col-md-4 column text-left"><h3><strong>Network</strong></h3>
+                                    <p><span lang="en-GB">A flexible business requires a flexible IT. Your LAN, WAN or SAN infrastructure is crucial for the deployment of your existing applications, processes and services. Establish a higher service level while simultaneously allowing a more reliable, secure and dependable delivery of your data to the user.</span>
+                                    </p>
+                                    <p><span lang="en-GB">In the age of virtualisation, a dynamic administration of the network configuration is of vital importance. From SAN via LAN to the WAN infrastructure and despite of using small switches or powerful directors, Bulmag AD is your professional service provider for hardware maintenance. Besides Cisco, Brocade and Adva, Bulmag AD supports all major network products.</span>
+                                    </p></div>
+                            </div>
+                            <div style="margin-bottom: 50px;"><h3><strong>Hyper-converged infrastructure</strong></h3>
+                                <p>Hyper-converged systems are playing an ever greater role in both public and private
+                                clouds.</p>
+                                <p>Bulmag AD provides the right service contracts for all-round protection especially
+                                    for those components, covering almost all known enterprise brands used for
+                                computing, networking, and storage</p></div>
+                            <div className="divider">
+                                <span></span></div>
+                            <div><h3><strong>Flexible SLAs</strong></h3>
+                                <p className="lead-thin">The SLAs in Bulmag AD’s maintenance contracts can be selected
+                                individually by every company that requires a maximum of IT availability:</p></div>
+                        </div>
+
+
+                    </div>
+                </div>)`,
+                type: "Enterprise"
             },
-            {
-                name: "INFINIDAT",
-                description: "Multi-Petabyte Storages",
-                image:
-                    "https://marketplace.vmware.com/resources/apps/infinibox__1546010338411.png",
-                productUrl:
-                    "https://marketplace.vmware.com/vsx/solutions/infinibox?ref=related",
-                type: "HW"
-            },
-            {
-                name: "Lenovo",
-                description: "ThinkSystem Servers",
-                image:
-                    "https://www.lenovo.com/medias/lenovo-data-center-rack-server-thinksystem-sr860-subseries-hero.png?context=bWFzdGVyfHJvb3R8MTExMTg3fGltYWdlL3BuZ3xoMmMvaDViLzk1ODYwOTQxMTI3OTgucG5nfDkzMzU1ZTM0NDViNDMxMDczMjBhNzYwODkzZjU3MzA3YTdkOGJjNzc2Yzk0ZWRhNjZmZWVjNjUwMzMwNDg3Mzc",
-                productUrl:
-                    "https://www.lenovo.com/us/en/data-center/servers/c/servers",
-                type: "HW"
-            },
-            {
-                name: "Lenovo",
-                description: "ThinkSystem Storages",
-                image:
-                    "https://www.lenovo.com/medias/lenovo-data-center-storage-san-thinksystem-de-hybrid-subseries-hero.png?context=bWFzdGVyfHJvb3R8MTA2MzQ4fGltYWdlL3BuZ3xoZDkvaGNhLzk4MTYyOTU2MDQyNTQucG5nfDg4YjY1MmZhMTRkMjAyZDk1ZmNhYTdmODE2NmMzZjdjNDIzZmM4MWJiNjM2YTdmZTEzNmVlZmRjOTFlM2VmMDc",
-                productUrl:
-                    "https://www.lenovo.com/us/en/data-center/storage/c/storage",
-                type: "HW"
-            },
-            {
-                name: "OpenWay",
-                description: "Payment Processing SW",
-                image:
-                    "https://images.glints.com/unsafe/1024x0/glints-dashboard.s3.amazonaws.com/company-logo/2daa178c42ec2ea9b274430807f107a7.png",
-                productUrl: "https://www.openwaygroup.com/",
-                type: "Banking"
-            },
-            {
-                name: "VX Series VMware",
-                description: "VMware HCI Appliance",
-                image:
-                    "https://www3.lenovo.com/medias/lenovo-data-center-thinkagile-vx-series-subseries-hero.png?context=bWFzdGVyfHJvb3R8MTA2NjAzfGltYWdlL3BuZ3xoM2UvaDRiLzk2ODM3OTc2MzkxOTgucG5nfGNlNzQxOTA1NzMwMWFlZWUxZmRkOWEyMDU3OGIyMWMyYmM4NjM0YzkzYjA5NThmNDkwNzIwMzNhMGZmOWNlY2U",
-                productUrl: "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-VX-Series/p/WMD00000340",
-                type: "HCI"
-            },
-            {
-                name: "HX Series Nutanix",
-                description: "Nutanix HCI Appliance",
-                image:
-                    "https://www.lenovo.com/medias/lenovo-converged-systems-hx-series-subseries-hero.png?context=bWFzdGVyfHJvb3R8OTMxODR8aW1hZ2UvcG5nfGgxOS9oYTMvOTMxMTUxMzAxODM5OC5wbmd8OTFmN2RmNzMxNGFlNzJjNTRmMWI2MjE2YTg4NWFkYWYwMjgzOGM0OWE3ZmY2N2FiMDcxMmRlYzlhMzk2MzZjMA",
-                productUrl: "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-HX-Series/p/WMD00000326",
-                type: "HCI"
-            },
-            {
-                name: "CP Series",
-                description: "Customizable Cloud Solution",
-                image:
-                    "https://static.lenovo.com/ww/img/data-center/uberflip/sdi/lenovo-data-center-software-defined-infrastructure-thinkagile-cp-series.png",
-                productUrl: "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-CP-Series/p/WMD00000362",
-                type: "HCI"
-            },
-            {
-                name: "SX Series Microsoft",
-                description: "Hybrid Cloud",
-                image:
-                    "https://www.lenovo.com/medias/lenovo-software-defined-infrastructure-thinkagile-microsoft-azure-stack-subseries-hero.png?context=bWFzdGVyfHJvb3R8NjM1MDR8aW1hZ2UvcG5nfGhkYS9oMGUvOTU5NDUyMTk3Njg2Mi5wbmd8NWNhY2Q0YmEyMzE2NjkwODA2MzIzMzg3ZTQxZjllY2QzNjM5M2ZmNzlkZTdkNjFiNjlhYjM4YzUxNzI1YTE3Yg",
-                productUrl: "https://www.lenovo.com/us/en/data-center/software-defined-infrastructure/ThinkAgile-SX-for-Microsoft-Azure-Stack/p/WMD00000272",
-                type: "HCI"
-            }
+
         )
     })
 }
