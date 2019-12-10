@@ -2,6 +2,7 @@ const express = require("express");
 const authCheck = require("../config/auth-check");
 const Product = require("../models/Product");
 
+
 const router = new express.Router();
 
 router.post("/add-product", (req, res) => {

@@ -7,13 +7,6 @@ import {
   UserProvider,
   defaultState
 } from "../contexts/user-context";
-import NotificationsContainer from "../components/notifications/NotificationsContainer";
-
-// core components
-// import Navigation from "components/Navbars/Navigation.jsx";
-// import CardsFooter from "components/Footers/CardsFooter.jsx";
-
-// import { UserProvider, defaultState } from "../contexts/user-context";
 
 import UserRoute from "../routes/user-route";
 import AdminRoute from "../routes/auth-route";
@@ -26,12 +19,13 @@ import Contacts from "./pages/Contacts.jsx";
 import Products from "./pages/Products";
 import Services from "./pages/Services";
 import Dashboard from "./pages/Dashboard";
-import AddSystem from "./pages/AddSystem";
+import AddMachine from "./pages/AddMachine";
 import Logout from "./pages/Logout";
 import About from "./pages/About.jsx";
 import Navigation from "../components/Navbars/Navigation";
 import CardsFooter from "../components/Footers/CardsFooter";
 import AddProduct from "./pages/AddProduct";
+import AddService from "./pages/AddService";
 
 class Index extends Component {
   constructor(props) {
@@ -106,15 +100,20 @@ class Index extends Component {
               exact
               render={props => <Logout {...props} />}
             />
-            <Route
-              path="/add-system"
+            <UserRoute
+              path="/add-machine"
               exact
-              render={props => <AddSystem {...props} />}
+              render={props => <AddMachine {...props} />}
             />
             <AdminRoute
               path="/add-product"
               exact
               render={props => <AddProduct {...props} />}
+            />
+            <AdminRoute
+              path="/add-service"
+              exact
+              render={props => <AddService {...props} />}
             />
           </Switch>
           <CardsFooter />

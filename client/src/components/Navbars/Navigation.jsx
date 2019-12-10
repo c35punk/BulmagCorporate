@@ -57,11 +57,11 @@ class Navigation extends React.Component {
           <DropdownItem to="/profile" tag={Link}>
             Profile
           </DropdownItem>
-          <DropdownItem to="/dashboard" tag={Link}>
-            Dashboard
-          </DropdownItem>
           <DropdownItem to="/add-product" tag={Link}>
             Add Product
+          </DropdownItem>
+          <DropdownItem to="/add-service" tag={Link}>
+            Add Service
           </DropdownItem>
           <DropdownItem to="/logout" tag={Link}>
             Logout

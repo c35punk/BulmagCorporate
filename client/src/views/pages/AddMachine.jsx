@@ -89,7 +89,7 @@ class AddSystem extends React.Component {
     console.log(this.state);
 
     event.preventDefault();
-    // window.location = "/dashboard";
+    window.location = "/dashboard";
   }
 
   componentDidMount() {
@@ -104,6 +104,30 @@ class AddSystem extends React.Component {
         <main ref="main">
           <section className="section section-shaped section-lg">
             <div className="shape shape-style-1 bg-gradient-default">
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
               <span />
               <span />
               <span />

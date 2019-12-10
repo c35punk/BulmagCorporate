@@ -4,7 +4,7 @@ import Modal from "./Modals";
 
 import { Card, CardBody, Badge, Col } from "reactstrap";
 
-class Service extends React.Component {
+class Machine extends React.Component {
   render() {
     return (
       <Col lg="4">
@@ -12,24 +12,25 @@ class Service extends React.Component {
           <CardBody className="py-5">
             <div className="icon icon-shape icon-shape-warning rounded-circle mb-4"></div>
             <img
-              src={this.props.service.image}
+              src={this.props.machine.image}
               alt=""
               style={{ width: "150px" }}
             />
 
-            <h6 className="text-primary">{this.props.service.description}</h6>
+            <h6 className="text-primary">{this.props.machine.description}</h6>
             <div>
               <Badge color="primary" pill className="mr-1">
-                {this.props.service.name}
+                <i className="ni ni-watch-time"/>
+                {this.props.machine.name}
               </Badge>
             </div>
             <Modal
               className="mt-3"
               color="primary"
-              to="/profile"
+              to="/dashboard"
               tag={Link}
-              serviceUrl={this.props.service.serviceUrl}
-              description={this.props.service.description}
+              machineUrl={this.props.machine.machineUrl}
+              description={this.props.machine.description}
             />
           </CardBody>
         </Card>
@@ -37,4 +38,4 @@ class Service extends React.Component {
     );
   }
 }
-export default Service;
+export default Machine;
