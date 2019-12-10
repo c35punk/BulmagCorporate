@@ -18,10 +18,6 @@ import {
   Col
 } from "reactstrap";
 
-// core components
-import DemoNavbar from "components/Navbars/Navigation.jsx";
-import SimpleFooter from "components/Footers/SimpleFooter.jsx";
-import { checkPropTypes } from "prop-types";
 
 class AddSystem extends React.Component {
   constructor(props) {
@@ -286,7 +282,6 @@ class AddSystem extends React.Component {
             </Container>
           </section>
         </main>
-        <SimpleFooter />
       </>
     );
   }

@@ -23,6 +23,14 @@ class Profile extends React.Component {
               <span />
               <span />
               <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
             </div>
             {/* SVG separator */}
             <div className="separator separator-bottom separator-skew">

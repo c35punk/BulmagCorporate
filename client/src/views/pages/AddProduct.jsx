@@ -44,13 +44,13 @@ class AddProduct extends React.Component {
     this.setState({ description: event.target.value });
   }
   handleImage(event) {
-    this.setState({ serialNumber: event.target.value });
+    this.setState({ image: event.target.value });
   }
   handleType(event) {
     this.setState({ type: event.target.value });
   }
   handleProductUrl(event) {
-    this.setState({ endDate: event.target.value });
+    this.setState({ productUrl: event.target.value });
   }
 
   handleSubmit(event) {
@@ -70,7 +70,7 @@ class AddProduct extends React.Component {
     console.log(this.state);
 
     event.preventDefault();
-    // window.location = "/dashboard";
+    window.location = "/products";
   }
 
   componentDidMount() {
@@ -117,7 +117,7 @@ class AddProduct extends React.Component {
                               </InputGroupText>
                             </InputGroupAddon>
                             <Input
-                              placeholder="Product Name"
+                              placeholder="Vendor"
                               type="text"
                               name="name"
                               value={this.state.name}

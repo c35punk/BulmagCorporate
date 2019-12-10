@@ -8,12 +8,8 @@ const HomePageIntro = props => {
       <Container className="pt-lg pb-300">
         <Row className="text-center justify-content-center">
           <Col lg="10">
-            <h2 className="display-3 text-white">Build something</h2>
-            <p className="lead text-white">
-              According to the National Oceanic and Atmospheric Administration,
-              Ted, Scambos, NSIDClead scentist, puts the potentially record low
-              maximum sea ice extent tihs year down to low ice.
-            </p>
+            <h2 className="display-3 text-white">Professional Service</h2>
+          
           </Col>
         </Row>
         <Row className="row-grid mt-5">
