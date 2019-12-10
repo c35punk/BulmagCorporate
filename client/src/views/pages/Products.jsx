@@ -21,9 +21,6 @@ import {
   Col
 } from "reactstrap";
 
-// core components
-import Navigation from "components/Navbars/Navigation.jsx";
-import CardsFooter from "components/Footers/CardsFooter.jsx";
 
 // index page sections
 import Download from "../IndexSections/CompanyOverview";
@@ -55,7 +52,6 @@ class Products extends React.Component {
   render() {
     return (
       <>
-        <Navigation />
         <main ref="main">
           <div className="position-relative">
             {/* shape Hero */}
@@ -715,7 +711,6 @@ class Products extends React.Component {
           </section>
           <Download />
         </main>
-        <CardsFooter />
       </>
     );
   }

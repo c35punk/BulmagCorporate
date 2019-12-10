@@ -18,10 +18,6 @@ import {
   Col
 } from "reactstrap";
 
-// core components
-import DemoNavbar from "components/Navbars/Navigation.jsx";
-import CardsFooter from "components/Footers/CardsFooter.jsx";
-
 // index page sections
 import Download from "../IndexSections/CompanyOverview";
 
@@ -35,8 +31,7 @@ class Landing extends React.Component {
   render() {
     return (
       <>
-        <DemoNavbar />
-        <main ref="main">
+            <main ref="main">
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
@@ -682,7 +677,7 @@ class Landing extends React.Component {
             </div>
           </section>
         </main>
-        <CardsFooter />
+
       </>
     );
   }

@@ -6,6 +6,7 @@ import CardExample from "../IndexSections/CardExample";
 import Tabs from "../IndexSections/Tabs";
 import Navigation from "components/Navbars/Navigation.jsx";
 import CardsFooter from "components/Footers/CardsFooter.jsx";
+import HomePageIntro from "views/IndexSections/HomePageIntro.jsx";
 
 class Main extends React.Component {
   componentDidMount() {
@@ -19,6 +20,7 @@ class Main extends React.Component {
         <main ref="main">
           <Carousel />
           <CardExample />
+          <HomePageIntro />
           <CompanyOverview />
           <Tabs />
         </main>
