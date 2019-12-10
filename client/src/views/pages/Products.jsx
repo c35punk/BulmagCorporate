@@ -21,7 +21,6 @@ import {
   Col
 } from "reactstrap";
 
-
 // index page sections
 import Download from "../IndexSections/CompanyOverview";
 import Product from "../IndexSections/Product";
@@ -87,7 +86,7 @@ class Products extends React.Component {
           <section className="section section-lg pt-lg-0 mt--200">
             <Container>
               <Row className="justify-content-center">
-                <Button className="btn-icon mb-12 mb-lg-0" color="primary">
+                <Button className="btn-icon mb-12 mb-lg-0" color="primary" id='HW'>
                   <span className="btn-inner--icon mr-1">
                     <i className="fa fa-server" />
                   </span>
@@ -113,7 +112,7 @@ class Products extends React.Component {
             </Container>
             <Container>
               <Row className="justify-content-center">
-                <Button className="btn-icon mb-2 mb-lg-0" color="primary">
+                <Button className="btn-icon mb-2 mb-lg-0" color="primary" id='Banking'>
                   <span className="btn-inner--icon mr-1">
                     <i className="fa fa-server" />
                   </span>
@@ -137,11 +136,7 @@ class Products extends React.Component {
             </Container>
             <Container>
               <Row className="justify-content-center">
-                <Button
-                  className="btn-icon mb-2 mb-lg-0"
-                  color="primary"
-                  href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
-                >
+                <Button className="btn-icon mb-2 mb-lg-0" color="primary" id='HCI'>
                   <span className="btn-inner--icon mr-1">
                     <i className="fa fa-server" />
                   </span>

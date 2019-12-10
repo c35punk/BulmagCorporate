@@ -10,7 +10,7 @@ const items = [
       <Button
         className="btn-white mt-4"
         color="default"
-        to="/products"
+        to="/products#HW"
         tag={Link}
       >
         Learn more
@@ -26,7 +26,7 @@ const items = [
       <Button
         className="btn-white mt-4"
         color="default"
-        to="/products"
+        to="/products#Banking"
         tag={Link}
       >
         Learn more
@@ -41,7 +41,7 @@ const items = [
       <Button
         className="btn-white mt-4"
         color="default"
-        to="/products"
+        to="/services#Maintenance"
         tag={Link}
       >
         Learn more
@@ -64,7 +64,7 @@ class Carousel extends React.Component {
           <Container className="py-md">
             <Row className="justify-content-between align-items-center justify-content-center">
               <Col className="mb-lg-cover" lg="12">
-                <div className="rounded shadow-lg overflow-hidden transform-perspective-center">
+                <div className="rounded shadow-lg overflow-hidden transform-perspective-right">
                   <UncontrolledCarousel items={items} />
                 </div>
               </Col>
