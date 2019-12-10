@@ -74,7 +74,7 @@ router.post('/create', authCheck, (req, res) => {
         })
       })
   } else {
-    return res.status(200).json({
+    return res.status(400).json({
       success: false,
       message: 'Invalid credentials!'
     })
