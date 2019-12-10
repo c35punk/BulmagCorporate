@@ -227,7 +227,7 @@ class Navigation extends React.Component {
                     </span>
                   </NavLink>
                   <UncontrolledTooltip delay={0} target="tooltip112445449">
-                    Star us on Github
+                    Star this project on Github
                   </UncontrolledTooltip>
                 </NavItem>
                 <NavItem className="d-none d-lg-block lg-4">

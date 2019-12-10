@@ -86,7 +86,11 @@ class Products extends React.Component {
           <section className="section section-lg pt-lg-0 mt--200">
             <Container>
               <Row className="justify-content-center">
-                <Button className="btn-icon mb-12 mb-lg-0" color="primary" id='HW'>
+                <Button
+                  className="btn-icon mb-12 mb-lg-0"
+                  color="primary"
+                  id="HW"
+                >
                   <span className="btn-inner--icon mr-1">
                     <i className="fa fa-server" />
                   </span>
@@ -112,16 +116,22 @@ class Products extends React.Component {
             </Container>
             <Container>
               <Row className="justify-content-center">
-                <Button className="btn-icon mb-2 mb-lg-0" color="primary" id='Banking'>
+                <Button
+                  className="btn-icon mb-2 mb-lg-0"
+                  color="primary"
+                  id="HCI"
+                >
                   <span className="btn-inner--icon mr-1">
                     <i className="fa fa-server" />
                   </span>
-                  <span className="btn-inner--text">Banking Solutions</span>
+                  <span className="btn-inner--text">
+                    Hyper-converged Infrastructure & Cloud
+                  </span>
                 </Button>
                 <Col lg="12">
                   <Row className="row-grid">
                     {this.state.products
-                      .filter(x => x.type === "Banking")
+                      .filter(x => x.type === "HCI")
                       .map(product => {
                         return (
                           <>
@@ -136,18 +146,20 @@ class Products extends React.Component {
             </Container>
             <Container>
               <Row className="justify-content-center">
-                <Button className="btn-icon mb-2 mb-lg-0" color="primary" id='HCI'>
+                <Button
+                  className="btn-icon mb-2 mb-lg-0"
+                  color="primary"
+                  id="Banking"
+                >
                   <span className="btn-inner--icon mr-1">
                     <i className="fa fa-server" />
                   </span>
-                  <span className="btn-inner--text">
-                    Hyper-converged Infrastructure & Cloud
-                  </span>
+                  <span className="btn-inner--text">Banking Solutions</span>
                 </Button>
                 <Col lg="12">
                   <Row className="row-grid">
                     {this.state.products
-                      .filter(x => x.type === "HCI")
+                      .filter(x => x.type === "Banking")
                       .map(product => {
                         return (
                           <>

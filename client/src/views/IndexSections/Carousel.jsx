@@ -69,37 +69,22 @@ class Carousel extends React.Component {
                 </div>
               </Col>
               <Col className="mb-5 mb-lg-0" lg="5">
-                <h1 className="text-blue font-weight-light">
+                <h1 className="text-blue font-weight-heavy">
                   Bootstrap carousel
                 </h1>
-                <p className="lead text-white mt-4">
-                  Argon Design System comes with four pre-built pages to help
-                  you get started faster. You can change the text and images and
-                  you're good to go.
-                </p>
+
                 <Button
                   className="btn-white mt-4"
                   color="default"
-                  href="https://demos.creative-tim.com/argon-design-system-react/#/documentation/alerts?ref=adsr-landing-page"
+                  to="/projects"
+                  tag={Link}
                 >
-                  See all components
+                  See all Projects
                 </Button>
               </Col>
             </Row>
           </Container>
-          {/* SVG separator */}
-          <div className="separator separator-bottom separator-skew">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="none"
-              version="1.1"
-              viewBox="0 0 2560 100"
-              x="0"
-              y="0"
-            >
-              <polygon className="fill-white" points="2560 0 2560 100 0 100" />
-            </svg>
-          </div>
+          
         </section>
       </>
     );

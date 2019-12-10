@@ -12,17 +12,61 @@ class CompanyOverview extends React.Component {
             <Row className="row-grid justify-content-center">
               <Col className="text-center" lg="8">
                 <h2 className="display-3">
-                  Do you love this awesome{" "}
-                  <span className="text-success">
-                   Company Overview
+                  <span className="text-success" color="default">
+                    Company Overview
                   </span>
                 </h2>
-                <p className="lead">
-                  Cause if you do, it can be yours for FREE. Hit the button
-                  below to navigate to Creative Tim where you can find the
-                  Design System in React. Start a new project or give an old
-                  Bootstrap project a new look!
-                </p>
+
+                <div className="c_feature_box product-title">
+                  <div className="row">
+                    <div className="col-lg-4">
+                      <div className="c_box_item">
+                        <a href="#">
+                          <h4 color="primary">
+                            Enterprise Class Vendors and Solutions
+                          </h4>
+                        </a>
+
+                        <p>
+                          Bulmag AD offer full range of Lenovo®, NetApp®,
+                          INFINIDAT®, VMware®, RedHat®, Microsoft®, Cisco®,
+                          TransactionSystems®, PAX®, and Datecs® products.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="col-lg-4">
+                      <div className="c_box_item">
+                        <a href="#">
+                          <h4 color="primary">
+                            25+ Years Experience in System Integration
+                          </h4>
+                        </a>
+
+                        <p>
+                          With more than 100+ successful projects, Bulmag AD is
+                          surely your trusted companion on the path to digital
+                          transformation.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="col-lg-4">
+                      <div className="c_box_item">
+                        <a href="#">
+                          <h4 color="primary">
+                            Continual Commitment to Professional Excellence
+                          </h4>
+                        </a>
+
+                        <p>
+                          We are maintaining the tools and resources needed to
+                          deliver our services more effectively yielding great
+                          returns, more efficient work cycles, while achieving
+                          positive impact at the end of the day.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div className="btn-wrapper">
                   <Button
                     className="mb-3 mb-sm-0"
@@ -37,7 +81,6 @@ class CompanyOverview extends React.Component {
                     Available on these technologies
                   </h4>
                   <Row className="justify-content-center">
-                   
                     <Col lg="2" xs="4">
                       <a
                         href="https://www.creative-tim.com/product/vue-bulmag-design-system?ref=adsr-landing-page"
