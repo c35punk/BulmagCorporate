@@ -27,6 +27,7 @@ import Products from "./pages/Products";
 import Services from "./pages/Services";
 import Dashboard from "./pages/Dashboard";
 import AddSystem from "./pages/AddSystem";
+import Logout from './pages/Logout'
 import About from "./pages/About.jsx";
 import Navigation from "../components/Navbars/Navigation";
 import CardsFooter from "../components/Footers/CardsFooter";
@@ -98,6 +99,11 @@ class Index extends Component {
               path="/dashboard"
               exact
               render={props => <Dashboard {...props} />}
+            />
+            <UserRoute
+              path="/logout"
+              exact
+              render={props => <Logout {...props} />}
             />
             <Route
               path="/add-system"

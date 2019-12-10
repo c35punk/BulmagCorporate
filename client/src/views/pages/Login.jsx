@@ -52,6 +52,7 @@ class Login extends React.Component {
     const { email, password } = this.state;
     const { updateUser } = this.props;
 
+    console.log('updateUser');
     console.log(updateUser);
 
     const credentials = {
@@ -117,6 +118,9 @@ class Login extends React.Component {
   render() {
     const { email, password, error } = this.state;
     const { isLoggedIn } = this.props;
+
+    console.log('this.props')
+    console.log(this.props)
 
     if (isLoggedIn) {
       return <Link to="/dashboard" />;

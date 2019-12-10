@@ -25,20 +25,12 @@ import {
 } from "reactstrap";
 
 class Navigation extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      user: {}
-    };
-  }
-
   componentDidMount() {
     let headroom = new Headroom(document.getElementById("navbar-main"));
     // initialise
     headroom.init();
     console.log("Hello from Navigation.jsx");
     console.log(this.props);
-    console.log(this.state);
   }
   render() {
     let account;
@@ -46,7 +38,7 @@ class Navigation extends React.Component {
       <UncontrolledDropdown nav>
         <DropdownToggle nav>
           <i className="ni ni-badge d-lg-none mr-1" />
-          <span className="nav-link-inner--text" to="/profile" tag={Link}>
+          <span className="nav-link-inner--text">
             Hello, {this.props.username}!
           </span>
         </DropdownToggle>

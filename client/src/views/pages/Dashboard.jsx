@@ -29,15 +29,14 @@ import CompanyOverview from "../IndexSections/CompanyOverview";
 
 class Dashboard extends React.Component {
   state = {};
-  componentDidMount() {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-    this.refs.main.scrollTop = 0;
-  }
+  // componentDidMount() {
+  //   document.documentElement.scrollTop = 0;
+  //   document.scrollingElement.scrollTop = 0;
+  //   this.refs.main.scrollTop = 0;
+  // }
   render() {
     return (
       <>
-        <Navigation />
         <main ref="main">
           <div className="position-relative">
             {/* shape Hero */}
@@ -826,9 +825,7 @@ class Dashboard extends React.Component {
               </Row>
             </Container>
           </section>
-          <CompanyOverview />
         </main>
-        <CardsFooter />
       </>
     );
   }

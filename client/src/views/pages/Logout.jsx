@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { UserConsumer, defaultState } from '../../contexts/user-context'
 
 class Logout extends Component {
@@ -12,7 +12,7 @@ class Logout extends Component {
     }
 
     render() {
-        return <Link to="/" />
+        return <Redirect to="/" />
     }
 }
 
