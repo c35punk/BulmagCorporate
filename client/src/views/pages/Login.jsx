@@ -20,9 +20,6 @@ import {
   Col
 } from "reactstrap";
 
-// core components
-import Navigation from "components/Navbars/Navigation.jsx";
-import SimpleFooter from "components/Footers/SimpleFooter.jsx";
 
 class Login extends React.Component {
   constructor(props) {
@@ -47,12 +44,13 @@ class Login extends React.Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
     console.log(this.state);
 
     const { email, password } = this.state;
     const { updateUser } = this.props;
 
-    console.log('updateUser');
+    console.log("updateUser");
     console.log(updateUser);
 
     const credentials = {
@@ -88,12 +86,13 @@ class Login extends React.Component {
                   isLoggedIn: true
                 })
               );
-              updateUser({
-                isAdmin,
-                isLoggedIn: true,
-                updateUser,
-                ...res.data.user
-              });
+              // updateUser({
+              //   isAdmin,
+              //   isLoggedIn: true,
+              //   updateUser,
+              //   ...res.data.user
+              // });
+              window.location = "/";
               console.log(window.localStorage);
               console.log(res.data.user.roles);
             });
@@ -104,32 +103,22 @@ class Login extends React.Component {
         }
       }
     );
-
-    window.location = "/dashboard";
-    event.preventDefault();
   }
 
-  // componentDidMount() {
-  //   document.documentElement.scrollTop = 0;
-  //   document.scrollingElement.scrollTop = 0;
-  //   this.refs.main.scrollTop = 0;
-  // }
+  componentDidMount() {
+    document.documentElement.scrollTop = 0;
+    document.scrollingElement.scrollTop = 0;
+    this.refs.main.scrollTop = 0;
+  }
 
   render() {
     const { email, password, error } = this.state;
-    const { isLoggedIn } = this.props;
+    
+    console.log("this.props");
+    console.log(this.props);
 
-    console.log('this.props')
-    console.log(this.props)
-
-    if (isLoggedIn) {
-      return <Link to="/dashboard" />;
-    }
-
-    return (
+      return (
       <>
-        <Navigation />
-
         <main ref="main">
           <section className="section section-shaped section-lg">
             <div className="shape shape-style-1 bg-gradient-default">
@@ -236,7 +225,6 @@ class Login extends React.Component {
             </Container>
           </section>
         </main>
-        <SimpleFooter />
       </>
     );
   }

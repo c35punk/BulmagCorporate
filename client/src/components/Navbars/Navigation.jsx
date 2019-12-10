@@ -35,14 +35,20 @@ class Navigation extends React.Component {
   render() {
     let account;
     let greeting = (
-      <UncontrolledDropdown nav>
-        <DropdownToggle nav>
-          <i className="ni ni-badge d-lg-none mr-1" />
-          <span className="nav-link-inner--text">
-            Hello, {this.props.username}!
-          </span>
-        </DropdownToggle>
-      </UncontrolledDropdown>
+      <>
+        <UncontrolledDropdown nav>
+          <DropdownToggle nav>
+            <i className="ni ni-badge d-lg-none mr-1" />
+            <span className="nav-link-inner--text">
+              {this.props.isLoggedIn ? (
+                <>Hello, {this.props.username}!</>
+              ) : (
+                false
+              )}
+            </span>
+          </DropdownToggle>
+        </UncontrolledDropdown>
+      </>
     );
 
     if (this.props.isLoggedIn && this.props.isAdmin) {
@@ -187,15 +193,8 @@ class Navigation extends React.Component {
                   </DropdownToggle>
                   <DropdownMenu>{account}</DropdownMenu>
                 </UncontrolledDropdown>
-                <UncontrolledDropdown nav>
-                  <DropdownToggle nav>
-                    <i className="ni ni-badge d-lg-none mr-1" />
-                    <span className="nav-link-inner--text">
-                      {" "}
-                      {this.props.isLoggedIn ? greeting : null}
-                    </span>
-                  </DropdownToggle>
-                </UncontrolledDropdown>
+
+                {this.props.isLoggedIn ? greeting : false}
               </Nav>
               <Nav className="align-items-lg-center ml-lg-auto" navbar>
                 <NavItem>
