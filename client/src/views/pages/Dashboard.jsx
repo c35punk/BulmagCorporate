@@ -98,7 +98,6 @@ class Dashboard extends React.Component {
                   <Row className="row-grid">
                     {this.state.machines
                       .filter(x => x.type === "Server")
-                      .filter(s => s.creatorUsername === "Superman")
                       .map(machine => {
                         return (
                           <>
@@ -130,7 +129,6 @@ class Dashboard extends React.Component {
                   <Row className="row-grid">
                     {this.state.machines
                       .filter(x => x.type === "Switch")
-                      .filter(s => s.creatorUsername === this.props.username)
                       .map(machine => {
                         return (
                           <>
@@ -161,7 +159,6 @@ class Dashboard extends React.Component {
                   <Row className="row-grid">
                     {this.state.machines
                       .filter(x => x.type === "Storage")
-                      .filter(s => s.creatorUsername === this.props.username)
                       .map(machine => {
                         return (
                           <Machine

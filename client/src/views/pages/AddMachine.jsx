@@ -9,6 +9,7 @@ import {
   CardBody,
   FormGroup,
   Form,
+  Label,
   Input,
   InputGroupAddon,
   InputGroupText,
@@ -17,7 +18,6 @@ import {
   Row,
   Col
 } from "reactstrap";
-
 
 class AddSystem extends React.Component {
   constructor(props) {
@@ -79,7 +79,8 @@ class AddSystem extends React.Component {
       type: this.state.type,
       startDate: this.state.startDate,
       endDate: this.state.endDate,
-      agree: this.state.agree
+      agree: this.state.agree,
+      creatorUsername: this.props.username
     };
 
     axios
@@ -219,18 +220,39 @@ class AddSystem extends React.Component {
                           <InputGroup className="input-group-alternative mb-3">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
+                                <i className="ni ni-align-left-2" />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                              type="select"
+                              name="select"
+                              placeholder="Type (Server, Storage, Switch, etc.)"
+                              name="type"
+                              value={this.state.type}
+                              onChange={this.handleType}
+                            >
+                              <option>Server</option>
+                              <option>Storage</option>
+                              <option>Switch</option>
+                            </Input>
+                          </InputGroup>
+                        </FormGroup>
+                        {/* <FormGroup>
+                          <InputGroup className="input-group-alternative mb-3">
+                            <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
                                 <i className="ni ni-email-83" />
                               </InputGroupText>
                             </InputGroupAddon>
                             <Input
                               placeholder="Type (Server, Storage, Switch, etc.)"
-                              type="type"
+                              type="text"
                               name="type"
                               value={this.state.type}
                               onChange={this.handleType}
                             />
                           </InputGroup>
-                        </FormGroup>
+                        </FormGroup> */}
                         <FormGroup>
                           <InputGroup className="input-group-alternative">
                             <InputGroupAddon addonType="prepend">

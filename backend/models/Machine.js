@@ -12,7 +12,7 @@ const machineSchema = new Schema({
         type: String,
         required: REQUIRED_VALIDATION_MESSAGE,
         enum:
-            ['Lenovo', 'HPE', 'Cisco', 'Dell', 'Other']
+            ['Lenovo', 'HPE', 'Cisco', 'Dell', 'INFINIDAT', 'Other']
     },
     productNumber: {
         type: String,
@@ -46,6 +46,9 @@ const machineSchema = new Schema({
         type: Schema.Types.Boolean
     },
 
+    creatorUsername: {
+        type: String
+    }
 
 });
 
