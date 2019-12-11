@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-
+import { UserConsumer } from "../../contexts/user-context";
 // reactstrap components
 import {
   Button,
@@ -9,7 +9,6 @@ import {
   CardBody,
   FormGroup,
   Form,
-  Label,
   Input,
   InputGroupAddon,
   InputGroupText,
@@ -19,7 +18,7 @@ import {
   Col
 } from "reactstrap";
 
-class AddSystem extends React.Component {
+class AddMachine extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -333,4 +332,19 @@ class AddSystem extends React.Component {
   }
 }
 
-export default AddSystem;
+const AddSystemContext = props => {
+  return (
+    <UserConsumer>
+      {({ isLoggedIn, isAdmin, username }) => (
+        <AddMachine
+          {...props}
+          isAdmin={isAdmin}
+          isLoggedIn={isLoggedIn}
+          username={username}
+        />
+      )}
+    </UserConsumer>
+  );
+};
+
+export default AddSystemContext;

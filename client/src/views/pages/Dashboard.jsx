@@ -99,6 +99,7 @@ class Dashboard extends React.Component {
                   <Row className="row-grid">
                     {this.state.machines
                       .filter(x => x.type === "Server")
+                      .filter(s => s.creatorUsername === this.props.username)
                       .map(machine => {
                         return (
                           <>
@@ -130,6 +131,7 @@ class Dashboard extends React.Component {
                   <Row className="row-grid">
                     {this.state.machines
                       .filter(x => x.type === "Switch")
+                      .filter(s => s.creatorUsername === this.props.username)
                       .map(machine => {
                         return (
                           <>
@@ -160,12 +162,12 @@ class Dashboard extends React.Component {
                   <Row className="row-grid">
                     {this.state.machines
                       .filter(x => x.type === "Storage")
+                      .filter(s => s.creatorUsername === this.props.username)
                       .map(machine => {
                         return (
                           <Machine
                             machine={machine}
                             image="https://www.lenovo.com/medias/lenovo-storage-das-d3284-subseries-hero.png?context=bWFzdGVyfHJvb3R8NDk2Mzl8aW1hZ2UvcG5nfGhhMi9oMzMvOTM0NDM2MDU3OTEwMi5wbmd8NjA3ZTFlOTY5YTg0NjdlMTAzMTI3NTE2ZDFkZmJhOWM5MTZlZjgwM2ExOWIyMGRhZTdjYzdmZjlmMzk0YzZlMQ"
-                            username={this.props.username}
                           />
                         );
                       })}
