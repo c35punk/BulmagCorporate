@@ -15,7 +15,7 @@ const ProfessionalServicesBanner = () => {
                   PROFESSIONAL SERVICES AND ENTERPRISE MAINTENANCE
                 </h3>
                 <p className="lead text-white mt-3">
-               Find the right service for
+               Find the right service for your business
                 </p>
               </Col>
               <Col className="ml-lg-auto" lg="3">

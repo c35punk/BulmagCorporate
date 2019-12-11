@@ -20,7 +20,7 @@ class CompanyOverview extends React.Component {
                     <Col className="order-md-6" md="6">
                       <div className="c_box_item">
                         <p className="lead text-black">
-                          <h4>Enterprise Class Vendors and Solutions</h4>
+                          <h2>Enterprise Class Vendors and Solutions</h2>
                         </p>
 
                         <p>
@@ -33,7 +33,7 @@ class CompanyOverview extends React.Component {
                     <Col className="order-md-6" md="6">
                       <div className="c_box_item">
                         <p className="lead text-black">
-                          <h4>25+ Years Experience in System Integration</h4>
+                          <h2>25+ Years Experience in System Integration</h2>
                         </p>
 
                         <p>
@@ -46,9 +46,9 @@ class CompanyOverview extends React.Component {
                     <Col className="order-md-6" md="6">
                       <div className="c_box_item">
                         <p className="lead text-black">
-                          <h4>
+                          <h2>
                             Continual Commitment to Professional Excellence
-                          </h4>
+                          </h2>
                         </p>
 
                         <p>

@@ -1,11 +1,9 @@
 import React from "react";
-// nodejs library that concatenates classes
-import classnames from "classnames";
-// reactstrap components
+
 import { Button, Modal } from "reactstrap";
 import Loading from "./Loading";
 
-class Modals extends React.Component {
+class MachineModals extends React.Component {
   state = {};
   toggleModal = state => {
     this.setState({
@@ -64,4 +62,4 @@ class Modals extends React.Component {
   }
 }
 
-export default Modals;
+export default MachineModals;

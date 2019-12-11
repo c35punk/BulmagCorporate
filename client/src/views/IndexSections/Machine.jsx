@@ -6,6 +6,9 @@ import { Card, CardBody, Badge, Col } from "reactstrap";
 
 class Machine extends React.Component {
   render() {
+    console.log("Machine's this.props");
+    console.log(this.props);
+
     let {
       manufacturer,
       machineName,
@@ -14,7 +17,7 @@ class Machine extends React.Component {
       type,
       startDate,
       endDate
-    } = this.props;
+    } = this.props.machine;
     return (
       <Col lg="4">
         <Card className="card-lift--hover shadow border-0">
@@ -36,7 +39,7 @@ class Machine extends React.Component {
               </Badge>
               <Badge color="primary" pill className="mr-1">
                 <i className="ni ni-settings-gear-65" />
-               Type: {type}
+                Type: {type}
               </Badge>
             </div>
             <Modal

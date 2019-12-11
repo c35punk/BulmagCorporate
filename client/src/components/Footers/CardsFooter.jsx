@@ -26,7 +26,7 @@ class CardsFooter extends React.Component {
                   <Link to="/products">
                     <CardImg
                       alt="..."
-                      src="https://vistaitgroup.com/pub/media/wysiwyg/CoreCompetencies/updateMAR2018/Lenovo-Gold.png"
+                      src="https://www.paymentcomponents.com/wp-content/uploads/2018/05/press3.png"
                     />
                   </Link>
                 </Card>
@@ -56,7 +56,7 @@ class CardsFooter extends React.Component {
                   <Link to="/about">
                     <CardImg
                       alt="..."
-                      src="https://www.lenovopartnernetwork.com/assets/kapost-media/2ab71b37e9/logo-lenovo-certified-textured__ScaleMaxWidthWzM4NV0.png"
+                      src="http://www.uzdaily.com/storage/img/Askar-foto/2-mfCd_q_iw.jpg"
                     />
                   </Link>
                 </Card>
