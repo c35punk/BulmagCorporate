@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Machine from "../IndexSections/Machine";
+import { UserConsumer } from "../../contexts/user-context";
 
 // reactstrap components
 import { Button, Card, CardBody, Container, Row, Col } from "reactstrap";
@@ -164,6 +165,7 @@ class Dashboard extends React.Component {
                           <Machine
                             machine={machine}
                             image="https://www.lenovo.com/medias/lenovo-storage-das-d3284-subseries-hero.png?context=bWFzdGVyfHJvb3R8NDk2Mzl8aW1hZ2UvcG5nfGhhMi9oMzMvOTM0NDM2MDU3OTEwMi5wbmd8NjA3ZTFlOTY5YTg0NjdlMTAzMTI3NTE2ZDFkZmJhOWM5MTZlZjgwM2ExOWIyMGRhZTdjYzdmZjlmMzk0YzZlMQ"
+                            username={this.props.username}
                           />
                         );
                       })}
@@ -243,4 +245,19 @@ class Dashboard extends React.Component {
   }
 }
 
-export default Dashboard;
+const DashboardContext = props => {
+  return (
+    <UserConsumer>
+      {({ isLoggedIn, isAdmin, username }) => (
+        <Dashboard
+          {...props}
+          isAdmin={isAdmin}
+          isLoggedIn={isLoggedIn}
+          username={username}
+        />
+      )}
+    </UserConsumer>
+  );
+};
+
+export default DashboardContext;
