@@ -36,7 +36,7 @@ class Machine extends React.Component {
               </Badge>
               <Badge color="primary" pill className="mr-1">
                 <i className="ni ni-settings-gear-65" />
-                {type}
+               Type: {type}
               </Badge>
             </div>
             <Modal

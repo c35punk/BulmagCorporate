@@ -2,10 +2,10 @@ import React from "react";
 
 import Carousel from "../IndexSections/Carousel.jsx";
 import CompanyOverview from "../IndexSections/CompanyOverview.jsx";
-import Tabs from "../IndexSections/Tabs";
 import HomePageIntro from "views/IndexSections/HomePageIntro.jsx";
 import ProfessionalServicesBanner from "views/IndexSections/ProfessionalServicesBanner.jsx";
 import FloatingServers from "views/IndexSections/FloatingServers.jsx";
+import Presentation from "views/IndexSections/Presentation.jsx";
 
 class Main extends React.Component {
   componentDidMount() {
@@ -21,8 +21,8 @@ class Main extends React.Component {
           <CompanyOverview />
           <FloatingServers />
           <ProfessionalServicesBanner />
+          <Presentation />
           <HomePageIntro />
-          <Tabs />
         </main>
       </>
     );

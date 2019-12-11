@@ -5,12 +5,10 @@ import classnames from "classnames";
 // reactstrap components
 import { Badge, Button, Container, Row, Col } from "reactstrap";
 
-
 // index page sections
-import Download from "../IndexSections/CompanyOverview";
-import CardTemplate from "../IndexSections/CardExample";
+import Company from "../IndexSections/CompanyOverview";
 
-class Landing extends React.Component {
+class About extends React.Component {
   state = {};
   componentDidMount() {
     document.documentElement.scrollTop = 0;
@@ -216,19 +214,7 @@ class Landing extends React.Component {
           <section className="section section-lg pt-lg-0 mt--200">
             <Container>
               <Row className="justify-content-center">
-                <Col lg="12">
-                  <Row className="row-grid">
-                    <Col lg="4">
-                      <CardTemplate />
-                    </Col>
-                    <Col lg="4">
-                      <CardTemplate />
-                    </Col>
-                    <Col lg="4">
-                      <CardTemplate />
-                    </Col>
-                  </Row>
-                </Col>
+                <Col lg="12"></Col>
               </Row>
             </Container>
           </section>
@@ -310,11 +296,11 @@ class Landing extends React.Component {
             </Container>
           </section>
 
-          <Download />
+          <Company />
         </main>
       </>
     );
   }
 }
 
-export default Landing;
+export default About;

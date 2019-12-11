@@ -5,24 +5,9 @@ import axios from "axios";
 import classnames from "classnames";
 
 // reactstrap components
-import {
-  Badge,
-  Button,
-  Card,
-  CardBody,
-  CardImg,
-  FormGroup,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Container,
-  Row,
-  Col
-} from "reactstrap";
+import { Button, Container, Row, Col } from "reactstrap";
 
 // index page sections
-import Download from "../IndexSections/CompanyOverview";
 import Service from "../IndexSections/Service";
 
 class Services extends React.Component {

@@ -1,7 +1,7 @@
 import React from "react";
 
 // reactstrap components
-import { Button, Container, Row, Col, UncontrolledTooltip } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 
 class CompanyOverview extends React.Component {
   render() {
@@ -12,20 +12,16 @@ class CompanyOverview extends React.Component {
             <Row className="row-grid justify-content-center">
               <Col className="text-center" lg="8">
                 <h2 className="display-3">
-                  <span className="text-success" color="default">
-                    Company Overview
-                  </span>
+                  <span className="text-danger">Company Overview</span>
                 </h2>
 
-                <div className="c_feature_box product-title">
+                <div className="c_feature_box">
                   <div className="row">
-                    <div className="col-lg-4">
+                    <Col className="order-md-6" md="6">
                       <div className="c_box_item">
-                        <a href="#">
-                          <h4 color="primary">
-                            Enterprise Class Vendors and Solutions
-                          </h4>
-                        </a>
+                        <p className="lead text-black">
+                          <h4>Enterprise Class Vendors and Solutions</h4>
+                        </p>
 
                         <p>
                           Bulmag AD offer full range of Lenovo®, NetApp®,
@@ -33,14 +29,12 @@ class CompanyOverview extends React.Component {
                           TransactionSystems®, PAX®, and Datecs® products.
                         </p>
                       </div>
-                    </div>
-                    <div className="col-lg-4">
+                    </Col>
+                    <Col className="order-md-6" md="6">
                       <div className="c_box_item">
-                        <a href="#">
-                          <h4 color="primary">
-                            25+ Years Experience in System Integration
-                          </h4>
-                        </a>
+                        <p className="lead text-black">
+                          <h4>25+ Years Experience in System Integration</h4>
+                        </p>
 
                         <p>
                           With more than 100+ successful projects, Bulmag AD is
@@ -48,14 +42,14 @@ class CompanyOverview extends React.Component {
                           transformation.
                         </p>
                       </div>
-                    </div>
-                    <div className="col-lg-4">
+                    </Col>
+                    <Col className="order-md-6" md="6">
                       <div className="c_box_item">
-                        <a href="#">
-                          <h4 color="primary">
+                        <p className="lead text-black">
+                          <h4>
                             Continual Commitment to Professional Excellence
                           </h4>
-                        </a>
+                        </p>
 
                         <p>
                           We are maintaining the tools and resources needed to
@@ -64,106 +58,8 @@ class CompanyOverview extends React.Component {
                           positive impact at the end of the day.
                         </p>
                       </div>
-                    </div>
+                    </Col>
                   </div>
-                </div>
-                <div className="btn-wrapper">
-                  <Button
-                    className="mb-3 mb-sm-0"
-                    color="primary"
-                    href="https://www.creative-tim.com/product/bulmag-design-system-react?ref=adsr-landing-page"
-                  >
-                    Download React
-                  </Button>
-                </div>
-                <div className="text-center">
-                  <h4 className="display-4 mb-5 mt-5">
-                    Available on these technologies
-                  </h4>
-                  <Row className="justify-content-center">
-                    <Col lg="2" xs="4">
-                      <a
-                        href="https://www.creative-tim.com/product/vue-bulmag-design-system?ref=adsr-landing-page"
-                        id="tooltip265846671"
-                        target="_blank"
-                      >
-                        <img
-                          alt="..."
-                          className="img-fluid"
-                          src="https://s3.amazonaws.com/creativetim_bucket/tim_static_images/presentation-page/vue.jpg"
-                        />
-                      </a>
-                      <UncontrolledTooltip delay={0} target="tooltip265846671">
-                        Vue.js - The progressive javascript framework
-                      </UncontrolledTooltip>
-                    </Col>
-                    <Col lg="2" xs="4">
-                      <a
-                        href="https://www.creative-tim.com/product/bulmag-design-system-angular?ref=adsr-landing-page"
-                        id="tooltip233150499"
-                        target="_blank"
-                      >
-                        <img
-                          alt="..."
-                          className="img-fluid"
-                          src="https://s3.amazonaws.com/creativetim_bucket/tim_static_images/presentation-page/angular.jpg"
-                        />
-                      </a>
-                      <UncontrolledTooltip delay={0} target="tooltip233150499">
-                        Angular - One framework. Mobile & Desktop
-                      </UncontrolledTooltip>
-                    </Col>
-                    <Col lg="2" xs="4">
-                      <a
-                        href="https://www.creative-tim.com/product/bulmag-design-system-react?ref=adsr-landing-page"
-                        id="tooltip308866163"
-                        target="_blank"
-                      >
-                        <img
-                          alt="..."
-                          className="img-fluid"
-                          src="https://s3.amazonaws.com/creativetim_bucket/tim_static_images/presentation-page/react.jpg"
-                        />
-                      </a>
-                      <UncontrolledTooltip delay={0} target="tooltip308866163">
-                        React - A JavaScript library for building user
-                        interfaces
-                      </UncontrolledTooltip>
-                    </Col>
-                    <Col lg="2" xs="4">
-                      <a
-                        href="https://www.creative-tim.com/product/bulmag-design-system-react?ref=adsr-landing-page"
-                        id="tooltip76119384"
-                        target="_blank"
-                      >
-                        <img
-                          alt="..."
-                          className="img-fluid"
-                          src="https://s3.amazonaws.com/creativetim_bucket/tim_static_images/presentation-page/sketch.jpg"
-                        />
-                      </a>
-                      <UncontrolledTooltip delay={0} target="tooltip76119384">
-                        Sketch - Digital design toolkit
-                      </UncontrolledTooltip>
-                    </Col>
-                    <Col lg="2" xs="4">
-                      <a
-                        href="https://www.creative-tim.com/product/bulmag-design-system-react?ref=adsr-landing-page"
-                        id="tooltip646643508"
-                        target="_blank"
-                      >
-                        <img
-                          alt="..."
-                          className="img-fluid"
-                          src="https://s3.amazonaws.com/creativetim_bucket/tim_static_images/presentation-page/ps.jpg"
-                        />
-                      </a>
-                      <UncontrolledTooltip delay={0} target="tooltip646643508">
-                        Adobe Photoshop - Software for digital images
-                        manipulation
-                      </UncontrolledTooltip>
-                    </Col>
-                  </Row>
                 </div>
               </Col>
             </Row>
