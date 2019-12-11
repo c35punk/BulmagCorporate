@@ -18,13 +18,16 @@ class Machine extends React.Component {
       startDate,
       endDate
     } = this.props.machine;
+
+    let { image } = this.props;
+
     return (
       <Col lg="4">
         <Card className="card-lift--hover shadow border-0">
           <CardBody className="py-5">
             <div className="icon icon-shape icon-shape-warning rounded-circle mb-4"></div>
-            <h1>{manufacturer}</h1>
-
+            <h5 className="text-primary">Vendor: {manufacturer}</h5>
+            <img src={image} alt="" style={{ width: "150px" }} />
             <h6 className="text-primary">Machine: {machineName}</h6>
             <h6 className="text-primary">PN: {productNumber}</h6>
             <h6 className="text-primary">SN: {serialNumber}</h6>

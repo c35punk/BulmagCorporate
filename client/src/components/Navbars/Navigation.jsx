@@ -43,7 +43,7 @@ class Navigation extends React.Component {
               {this.props.isLoggedIn ? (
                 <>Hello, {this.props.username}!</>
               ) : (
-                false
+                null
               )}
             </span>
           </DropdownToggle>

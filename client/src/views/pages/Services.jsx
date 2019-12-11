@@ -1,8 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
-// nodejs library that concatenates classes
-import classnames from "classnames";
 
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";

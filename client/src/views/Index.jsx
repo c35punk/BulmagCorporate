@@ -1,12 +1,8 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 //constants & components
-import {
-  UserConsumer,
-  UserProvider,
-  defaultState
-} from "../contexts/user-context";
+import { UserProvider, defaultState } from "../contexts/user-context";
 
 import UserRoute from "../routes/user-route";
 import AdminRoute from "../routes/auth-route";
