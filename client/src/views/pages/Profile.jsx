@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { UserConsumer } from "../../contexts/user-context";
 
 // reactstrap components
-import { Button, Card, Container, Row, Col } from "reactstrap";
+import { Button, Badge, Card, Container, Row, Col } from "reactstrap";
 
 class Profile extends React.Component {
   componentDidMount() {
@@ -36,6 +36,7 @@ class Profile extends React.Component {
               <span />
             </div>
           </section>
+
           <section className="section">
             <Container>
               <Card className="card-profile shadow mt--300">
@@ -52,6 +53,7 @@ class Profile extends React.Component {
                         </Link>
                       </div>
                     </Col>
+
                     <Col
                       className="order-lg-3 text-lg-right align-self-lg-center"
                       lg="4"
@@ -60,17 +62,15 @@ class Profile extends React.Component {
                         <Button
                           className="mr-4"
                           color="info"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
+                          href="tel:+35928179060"
                           size="sm"
                         >
-                          Connect
+                          Call Us
                         </Button>
                         <Button
                           className="float-right"
                           color="default"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
+                          href="mailto:service@bulmag.bg"
                           size="sm"
                         >
                           Message
@@ -81,50 +81,43 @@ class Profile extends React.Component {
                       <div className="card-profile-stats d-flex justify-content-center">
                         <div>
                           <span className="heading">22</span>
-                          <span className="description">Friends</span>
+                          <span className="description">
+                            Machines in Maintenance
+                          </span>
                         </div>
-                        <div>
-                          <span className="heading">10</span>
-                          <span className="description">Photos</span>
-                        </div>
-                        <div>
-                          <span className="heading">89</span>
-                          <span className="description">Comments</span>
-                        </div>
+                        
                       </div>
                     </Col>
                   </Row>
                   <div className="text-center mt-5">
-                    <h3>
-                      Jessica Jones{" "}
-                      <span className="font-weight-light">, 27</span>
-                    </h3>
-                    <div className="h6 font-weight-300">
-                      <i className="ni location_pin mr-2" />
-                      Bucharest, Romania
-                    </div>
-                    <div className="h6 mt-4">
-                      <i className="ni business_briefcase-24 mr-2" />
-                      Solution Manager - Creative Tim Officer
-                    </div>
-                    <div>
-                      <i className="ni education_hat mr-2" />
-                      University of Computer Science
-                    </div>
+                    <Row className="align-items-center justify-content-center">
+                      <iframe
+                        src={"https://www." + this.props.companyName + ".bg"}
+                        width="800"
+                        height="450"
+                        frameborder="0"
+                        allow
+                      ></iframe>
+                    </Row>
                   </div>
                   <div className="mt-5 py-5 border-top text-center">
                     <Row className="justify-content-center">
                       <Col lg="9">
-                        <p>
-                          An artist of considerable range, Ryan — the name taken
-                          by Melbourne-raised, Brooklyn-based Nick Murphy —
-                          writes, performs and records all of his own music,
-                          giving it a warm, intimate feel with a solid groove
-                          structure. An artist of considerable range.
-                        </p>
-                        <a href="#pablo" onClick={e => e.preventDefault()}>
-                          Show more
-                        </a>
+                        <Badge color="default" pill className="mr-2">
+                          {this.props.companyName}
+                        </Badge>
+                        <Badge color="primary" pill className="mr-1">
+                          Address: {this.props.address}
+                        </Badge>
+                        <Badge color="primary" pill className="mr-1">
+                          VAT Nr.: {this.props.vatNumber}
+                        </Badge>
+                        <Badge color="primary" pill className="mr-1">
+                          Contact Person.: {this.props.contactPerson}
+                        </Badge>
+                        <Badge color="primary" pill className="mr-1">
+                          @mail: {this.props.email}
+                        </Badge>
                       </Col>
                     </Row>
                   </div>
@@ -149,7 +142,9 @@ const ProfileContext = props => {
         email,
         vatNumber,
         companyImage,
-        companyName
+        companyName,
+        contactPerson,
+        id
       }) => (
         <Profile
           {...props}
@@ -161,6 +156,8 @@ const ProfileContext = props => {
           companyName={companyName}
           companyImage={companyImage}
           vatNumber={vatNumber}
+          contactPerson={contactPerson}
+          id={id}
         />
       )}
     </UserConsumer>

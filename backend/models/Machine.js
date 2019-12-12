@@ -10,7 +10,7 @@ const machineSchema = new Schema({
         type: String,
         required: REQUIRED_VALIDATION_MESSAGE,
         enum:
-            ['Lenovo', 'HPE', 'Cisco', 'Dell', 'INFINIDAT', 'Other']
+            ['Lenovo', 'HPE', 'CISCO', 'Dell', 'INFINIDAT', 'Other']
     },
     productNumber: {
         type: String,
