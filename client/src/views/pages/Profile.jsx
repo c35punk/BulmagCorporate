@@ -5,14 +5,51 @@ import { UserConsumer } from "../../contexts/user-context";
 
 // reactstrap components
 import { Button, Badge, Card, Container, Row, Col } from "reactstrap";
+import axios from "axios";
 
 class Profile extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      machines: [],
+      servers: Number,
+      storages: Number,
+      switches: Number
+    };
+  }
+
   componentDidMount() {
+    axios
+      .get("http://localhost:9949/machines/")
+      .then(res => {
+        const userMachines = res.data.filter(
+          x => x.creatorID === this.props.user.id
+        );
+        this.setState({
+          machines: userMachines
+        });
+        this.setState({
+          servers: this.state.machines.filter(x => x.type === "Server")
+        });
+        this.setState({
+          storages: this.state.machines.filter(x => x.type === "Storage")
+        });
+        this.setState({
+          switches: this.state.machines.filter(x => x.type === "Switch")
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
   render() {
+    console.log("Hello from Profile");
+    console.log(this.props);
+    console.log(this.state.machines);
     return (
       <>
         <main className="profile-page" ref="main">
@@ -21,13 +58,7 @@ class Profile extends React.Component {
             <div className="shape shape-style-1 shape-default alpha-4">
               <span />
               <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
+
               <span />
               <span />
               <span />
@@ -48,7 +79,7 @@ class Profile extends React.Component {
                           <img
                             alt="..."
                             className="rounded-circle"
-                            src={this.props.companyImage}
+                            src={this.props.user.companyImage}
                           />
                         </Link>
                       </div>
@@ -77,22 +108,36 @@ class Profile extends React.Component {
                         </Button>
                       </div>
                     </Col>
+
                     <Col className="order-lg-1" lg="4">
                       <div className="card-profile-stats d-flex justify-content-center">
                         <div>
-                          <span className="heading">22</span>
-                          <span className="description">
-                            Machines in Maintenance
+                          <span className="heading">
+                            {this.state.servers.length}
                           </span>
+                          <span className="description">Servers</span>
                         </div>
-                        
+                        <div>
+                          <span className="heading">
+                            {this.state.storages.length}
+                          </span>
+                          <span className="description">Storages</span>
+                        </div>
+                        <div>
+                          <span className="heading">
+                            {this.state.switches.length}
+                          </span>
+                          <span className="description">Switches</span>
+                        </div>
                       </div>
                     </Col>
                   </Row>
                   <div className="text-center mt-5">
                     <Row className="align-items-center justify-content-center">
                       <iframe
-                        src={"https://www." + this.props.companyName + ".bg"}
+                        src={
+                          "https://www." + this.props.user.companyName + ".bg"
+                        }
                         width="800"
                         height="450"
                         frameborder="0"
@@ -104,19 +149,19 @@ class Profile extends React.Component {
                     <Row className="justify-content-center">
                       <Col lg="9">
                         <Badge color="default" pill className="mr-2">
-                          {this.props.companyName}
+                          {this.props.user.companyName}
                         </Badge>
                         <Badge color="primary" pill className="mr-1">
-                          Address: {this.props.address}
+                          Address: {this.props.user.address}
                         </Badge>
                         <Badge color="primary" pill className="mr-1">
-                          VAT Nr.: {this.props.vatNumber}
+                          VAT Nr.: {this.props.user.vatNumber}
                         </Badge>
                         <Badge color="primary" pill className="mr-1">
-                          Contact Person.: {this.props.contactPerson}
+                          Contact Person: {this.props.user.contactPerson}
                         </Badge>
                         <Badge color="primary" pill className="mr-1">
-                          @mail: {this.props.email}
+                          @mail: {this.props.user.email}
                         </Badge>
                       </Col>
                     </Row>
@@ -134,31 +179,8 @@ class Profile extends React.Component {
 const ProfileContext = props => {
   return (
     <UserConsumer>
-      {({
-        isLoggedIn,
-        isAdmin,
-        username,
-        address,
-        email,
-        vatNumber,
-        companyImage,
-        companyName,
-        contactPerson,
-        id
-      }) => (
-        <Profile
-          {...props}
-          isAdmin={isAdmin}
-          isLoggedIn={isLoggedIn}
-          username={username}
-          email={email}
-          address={address}
-          companyName={companyName}
-          companyImage={companyImage}
-          vatNumber={vatNumber}
-          contactPerson={contactPerson}
-          id={id}
-        />
+      {({ isLoggedIn, isAdmin }) => (
+        <Profile {...props} isAdmin={isAdmin} isLoggedIn={isLoggedIn} />
       )}
     </UserConsumer>
   );
