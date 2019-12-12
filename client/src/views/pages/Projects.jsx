@@ -51,7 +51,6 @@ class Projects extends React.Component {
                   <Row>
                     <Col lg="6">
                       <h1 className="display-3 text-white">PROJECTS</h1>
-                     
                     </Col>
                   </Row>
                 </div>
@@ -74,7 +73,7 @@ class Projects extends React.Component {
                     <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
                       <i className="ni ni-settings-gear-65" />
                     </div>
-                    <h3>Awesome features</h3>
+                    <p>Awesome features</p>
                     <p>
                       The kit comes with three pre-built pages to help you get
                       started faster. You can change the text and images and

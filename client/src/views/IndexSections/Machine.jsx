@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Modal from "./Modals";
+import Modal from "./MachineModals";
 
 import { Card, CardBody, Badge, Col } from "reactstrap";
 

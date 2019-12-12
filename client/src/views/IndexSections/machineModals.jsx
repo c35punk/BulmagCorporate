@@ -13,6 +13,7 @@ class MachineModals extends React.Component {
   render() {
     return (
       <>
+        <br />
         <Button
           block
           className="mb-2"
@@ -49,7 +50,7 @@ class MachineModals extends React.Component {
 
                 <iframe
                   class="embed-responsive-item"
-                  src={this.props.productUrl || this.props.machineUrl}
+                  src=""
                   allowfullscreen
                 ></iframe>
               </div>

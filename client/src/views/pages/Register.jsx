@@ -19,10 +19,6 @@ import {
   Col
 } from "reactstrap";
 
-// core components
-import DemoNavbar from "components/Navbars/Navigation.jsx";
-import SimpleFooter from "components/Footers/SimpleFooter.jsx";
-
 class Register extends React.Component {
   constructor(props) {
     super(props);
@@ -124,7 +120,6 @@ class Register extends React.Component {
   render() {
     return (
       <>
-        <DemoNavbar />
         <main ref="main">
           <section className="section section-shaped section-lg">
             <div className="shape shape-style-1 bg-gradient-default">

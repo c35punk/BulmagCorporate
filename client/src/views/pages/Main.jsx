@@ -5,7 +5,7 @@ import CompanyOverview from "../IndexSections/CompanyOverview.jsx";
 import HomePageIntro from "views/IndexSections/HomePageIntro.jsx";
 import ProfessionalServicesBanner from "views/IndexSections/ProfessionalServicesBanner.jsx";
 import FloatingServers from "views/IndexSections/FloatingServers.jsx";
-import Presentation from "views/IndexSections/Presentation.jsx";
+import SupportBanner from "views/IndexSections/SupportBanner";
 
 class Main extends React.Component {
   componentDidMount() {
@@ -21,7 +21,7 @@ class Main extends React.Component {
           <CompanyOverview />
           <FloatingServers />
           <ProfessionalServicesBanner />
-          <Presentation />
+          <SupportBanner />
           <HomePageIntro />
         </main>
       </>
