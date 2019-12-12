@@ -5,8 +5,6 @@ const REQUIRED_VALIDATION_MESSAGE = '{PATH} is required'
 const machineSchema = new Schema({
     machineName: {
         type: String,
-        required: REQUIRED_VALIDATION_MESSAGE,
-        unique: true,
     },
     manufacturer: {
         type: String,

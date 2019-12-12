@@ -22,11 +22,11 @@ class AddMachine extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      manufacturer: "",
+      manufacturer: "Lenovo",
       machineName: "",
       productNumber: "",
       serialNumber: "",
-      type: "",
+      type: "Server",
       startDate: Date,
       endDate: Date,
       agree: false

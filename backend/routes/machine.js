@@ -1,5 +1,4 @@
 const express = require('express')
-const authCheck = require('../config/auth-check')
 const Machine = require('../models/Machine')
 const machineController = require('../controllers/machine-controller')
 
@@ -7,6 +6,8 @@ const router = new express.Router()
 
 router.post("/create", (req, res) => {
   const machineObj = req.body;
+
+  console.log(machineObj)
 
 
   const machineToSave = new Machine(machineObj);
