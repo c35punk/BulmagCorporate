@@ -120,6 +120,11 @@ class Login extends React.Component {
       <>
         <main ref="main">
           <section className="section section-shaped section-lg">
+            {error.length ? (
+              <Alert dismissible className="alert" variant="danger">
+                {this.state.error}
+              </Alert>
+            ) : null}
             <div className="shape shape-style-1 bg-gradient-default">
               <span />
 
