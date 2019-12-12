@@ -33,7 +33,7 @@ class CardsFooter extends React.Component {
               </Col>
                 <Col className="mb-5 mb-lg-0" md="3">
                   <Card className="card-lift--hover shadow border-0">
-                    <Link to="/about">
+                    <Link to="/products">
                       <CardImg
                         alt="..."
                         src="https://www.lenovopartnernetwork.com/assets/Uploads/2e3f24153f/lenovo-default-social.jpg"
@@ -43,7 +43,7 @@ class CardsFooter extends React.Component {
                 </Col>
               <Col className="mb-5 mb-lg-0" md="3">
                 <Card className="card-lift--hover shadow border-0">
-                  <Link to="/about">
+                  <Link to="/products">
                     <CardImg
                       alt="..."
                       src="https://i.ytimg.com/vi/Tygk0HnjG-o/maxresdefault.jpg"
@@ -53,7 +53,7 @@ class CardsFooter extends React.Component {
               </Col>
               <Col className="mb-5 mb-lg-0" md="3">
                 <Card className="card-lift--hover shadow border-0">
-                  <Link to="/about">
+                  <Link to="/products">
                     <CardImg
                       alt="..."
                       src="http://www.uzdaily.com/storage/img/Askar-foto/2-mfCd_q_iw.jpg"

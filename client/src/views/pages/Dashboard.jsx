@@ -7,6 +7,7 @@ import { UserConsumer } from "../../contexts/user-context";
 
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
+import NotFound from "./NotFound";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -32,6 +33,7 @@ class Dashboard extends React.Component {
     this.refs.main.scrollTop = 0;
   }
   render() {
+    
     return (
       <>
         <main ref="main">
