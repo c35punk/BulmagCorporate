@@ -14,7 +14,7 @@ module.exports = new PassportLocalStrategy({
   }
 
   User
-    .findOne({email: userToLogin.email})
+    .findOne({ email: userToLogin.email })
     .then(user => {
       if (!user || !user.authenticate(userToLogin.password)) {
         const error = new Error('Incorrect email or password')
@@ -22,12 +22,22 @@ module.exports = new PassportLocalStrategy({
         return done(error)
       }
 
+      console.log("local sign in");
+      console.log(user);
+
       const userToken = {
         sub: user.id
       }
       const token = jwt.sign(userToken, 'default@!@!@!')
       const data = {
-        username: user.username
+        username: user.username,
+        email: user.email,
+        companyName: user.companyName,
+        contactPerson: user.contactPerson,
+        companyImage: user.companyImage,
+        vatNumber: user.vatNumber,
+        address: user.address,
+
       }
 
       if (user.roles) {

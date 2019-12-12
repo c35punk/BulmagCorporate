@@ -30,6 +30,9 @@ class Index extends Component {
 
     const parsedUser = userFromStorage ? JSON.parse(userFromStorage) : {};
 
+    console.log("parsedUser");
+    console.log(parsedUser);
+
     this.state = {
       user: {
         ...defaultState,
@@ -64,7 +67,7 @@ class Index extends Component {
             <UserRoute
               path="/profile"
               exact
-              render={props => <Profile {...props} />}
+              render={props => <Profile {...props} user={user} />}
             />
             <Route
               path="/register"
