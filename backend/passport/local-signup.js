@@ -8,15 +8,21 @@ module.exports = new PassportLocalStrategy({
   session: false,
   passReqToCallback: true
 }, (req, email, password, done) => {
-  console.log(email)
   const user = {
     email: email.trim(),
     password: password.trim(),
-    username: req.body.username.trim()
+    username: req.body.username.trim(),
+    companyName: req.body.companyName.trim(),
+    contactPerson: req.body.contactPerson.trim(),
+    companyImage: req.body.companyImage.trim(),
+    vatNumber: req.body.vatNumber.trim(),
+    address: req.body.address.trim(),
+
   }
 
+  console.log(user)
   User
-    .find({email: email})
+    .find({ email: email })
     .then(users => {
       if (users.length > 0) {
         return done('E-mail already exists!')

@@ -32,7 +32,12 @@ class Register extends React.Component {
       password: "",
       repeatPassword: "",
       agree: false,
-      passwordMatch: false
+      passwordMatch: false,
+      companyName: "",
+      vatNumber: "",
+      contactPerson: "",
+      companyImage: "",
+      address: ""
     };
 
     this.handleName = this.handleName.bind(this);
@@ -40,6 +45,12 @@ class Register extends React.Component {
     this.handleRepeatPassword = this.handleRepeatPassword.bind(this);
     this.handleEmail = this.handleEmail.bind(this);
     this.handleAgree = this.handleAgree.bind(this);
+    this.handleCompanyName = this.handleCompanyName.bind(this);
+    this.handleCompanyImage = this.handleCompanyImage.bind(this);
+    this.handleVatNumber = this.handleVatNumber.bind(this);
+    this.handleContactPerson = this.handleContactPerson.bind(this);
+    this.handleAddress = this.handleAddress.bind(this);
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -54,25 +65,48 @@ class Register extends React.Component {
   }
   handleRepeatPassword(event) {
     this.setState({
-      repeatPassword: event.target.value,
-      passwordMatch:
-        this.state.password === this.state.repeatPassword ? true : false
+      repeatPassword: event.target.value
     });
   }
   handleAgree(event) {
     this.setState({ agree: event.target.checked });
   }
+  handleCompanyName(event) {
+    this.setState({ companyName: event.target.value });
+  }
+  handleVatNumber(event) {
+    this.setState({ vatNumber: event.target.value });
+  }
+  handleContactPerson(event) {
+    this.setState({ contactPerson: event.target.value });
+  }
+  handleAddress(event) {
+    this.setState({ address: event.target.value });
+  }
+  handleCompanyImage(event) {
+    this.setState({ companyImage: event.target.value });
+  }
 
   handleSubmit(event) {
+    this.state.passwordMatch =
+      this.state.password === this.state.repeatPassword ? true : false;
+
     const newUser = {
       username: this.state.username,
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
+      passwordMatch: this.state.passwordMatch,
+      companyName: this.state.companyName,
+      vatNumber: this.state.vatNumber,
+      contactPerson: this.state.contactPerson,
+      companyImage: this.state.companyImage,
+      address: this.state.address
     };
 
     axios
       .post("http://localhost:9949/auth/signup", newUser)
       .then(res => console.log(res.data));
+    console.log("newUser");
     console.log(newUser);
     console.log(this.state);
 
@@ -213,6 +247,90 @@ class Register extends React.Component {
                             />
                           </InputGroup>
                         </FormGroup>
+                        <FormGroup>
+                          <InputGroup className="input-group-alternative">
+                            <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
+                                <i className="ni ni-building" />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                              placeholder="Company Name"
+                              type="text"
+                              name="companyName"
+                              value={this.state.companyName}
+                              onChange={this.handleCompanyName}
+                            />
+                          </InputGroup>
+                        </FormGroup>
+                        <FormGroup>
+                          <InputGroup className="input-group-alternative">
+                            <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
+                                <i className="ni ni-pin-3" />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                              placeholder="Company Address"
+                              type="text"
+                              name="address"
+                              autoComplete="off"
+                              value={this.state.address}
+                              onChange={this.handleAddress}
+                            />
+                          </InputGroup>
+                        </FormGroup>
+                        <FormGroup>
+                          <InputGroup className="input-group-alternative">
+                            <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
+                                <i className="ni ni-circle-08" />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                              placeholder="Contact Person"
+                              type="text"
+                              name="contactPerson"
+                              autoComplete="off"
+                              value={this.state.contactPerson}
+                              onChange={this.handleContactPerson}
+                            />
+                          </InputGroup>
+                        </FormGroup>
+                        <FormGroup>
+                          <InputGroup className="input-group-alternative">
+                            <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
+                                <i className="ni ni-collection" />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                              placeholder="VAT Number"
+                              type="text"
+                              name="vatNumber"
+                              autoComplete="off"
+                              value={this.state.vatNumber}
+                              onChange={this.handleVatNumber}
+                            />
+                          </InputGroup>
+                        </FormGroup>
+                        <FormGroup>
+                          <InputGroup className="input-group-alternative">
+                            <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
+                                <i className="ni ni-lock-circle-open" />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                              placeholder="Link to Company Logo Image"
+                              type="text"
+                              name="companyImage"
+                              autoComplete="off"
+                              value={this.state.companyImage}
+                              onChange={this.handleCompanyImage}
+                            />
+                          </InputGroup>
+                        </FormGroup>
                         <div className="text-muted font-italic">
                           <small>
                             password strength:{" "}
@@ -264,7 +382,6 @@ class Register extends React.Component {
             </Container>
           </section>
         </main>
-        <SimpleFooter />
       </>
     );
   }

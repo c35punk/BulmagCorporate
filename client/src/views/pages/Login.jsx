@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Alert from "../IndexSections/Alerts";
 
 // reactstrap components
 import {
@@ -18,7 +19,6 @@ import {
   Row,
   Col
 } from "reactstrap";
-
 
 class Login extends React.Component {
   constructor(props) {
@@ -112,11 +112,11 @@ class Login extends React.Component {
 
   render() {
     const { email, password, error } = this.state;
-    
+
     console.log("this.props");
     console.log(this.props);
 
-      return (
+    return (
       <>
         <main ref="main">
           <section className="section section-shaped section-lg">
@@ -133,6 +133,11 @@ class Login extends React.Component {
                       <div className="text-muted text-center mb-3">
                         <small>Sign in with</small>
                       </div>
+                      {error.length ? (
+                        <Alert dismissible className="alert" variant="danger">
+                          {error}
+                        </Alert>
+                      ) : null}
                       <div className="btn-wrapper text-center">
                         <Button
                           className="btn-neutral btn-icon"

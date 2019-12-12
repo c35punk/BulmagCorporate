@@ -23,7 +23,6 @@ class Dashboard extends React.Component {
       .then(res => {
         this.setState({ machines: res.data });
         console.log(res.data);
-        console.log("Username: ");
       })
       .catch(function(error) {
         console.log(error);

@@ -13,7 +13,6 @@ class MachineModals extends React.Component {
   render() {
     return (
       <>
-        <br />
         <Button
           block
           className="mb-2"

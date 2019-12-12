@@ -42,9 +42,7 @@ class Navigation extends React.Component {
             <span className="nav-link-inner--text">
               {this.props.isLoggedIn ? (
                 <>Hello, {this.props.username}!</>
-              ) : (
-                null
-              )}
+              ) : null}
             </span>
           </DropdownToggle>
         </UncontrolledDropdown>
@@ -77,7 +75,6 @@ class Navigation extends React.Component {
           <DropdownItem to="/dashboard" tag={Link}>
             Dashboard
           </DropdownItem>
-
           <DropdownItem to="/logout" tag={Link}>
             Logout
           </DropdownItem>

@@ -47,7 +47,7 @@ class Index extends Component {
     const { user } = this.state;
 
     console.log("Hello from Index.jsx");
-    console.log(user);
+    console.log(this.state);
     return (
       <div>
         <UserProvider value={user}>

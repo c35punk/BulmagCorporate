@@ -13,6 +13,10 @@ function validateSignupForm(payload) {
     isFormValid = false
     errors.username = 'Username must be at least 4 characters long'
   }
+  if (!payload || !payload.passwordMatch) {
+    isFormValid = false
+    errors.passwordMatch = 'Passwords must match'
+  }
 
   if (!payload || typeof payload.email !== 'string' || !validator.isEmail(payload.email)) {
     isFormValid = false

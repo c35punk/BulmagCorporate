@@ -1,10 +1,9 @@
 const express = require("express");
 const Service = require("../models/Service");
-const authCheck = require('../config/auth-check')
 
 const router = new express.Router();
 
-router.post("/add-service", authCheck, (req, res) => {
+router.post("/add-service", (req, res) => {
   const serviceObj = req.body;
 
   const serviceToSave = new Service(serviceObj);

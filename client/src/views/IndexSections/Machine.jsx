@@ -34,11 +34,11 @@ class Machine extends React.Component {
             <div>
               <Badge color="primary" pill className="mr-1">
                 <i className="ni ni-watch-time" />
-                Starts: {startDate}
+                Starts: {startDate.substring(0, 10)}
               </Badge>
               <Badge color="primary" pill className="mr-1">
                 <i className="ni ni-watch-time" />
-                Ends: {endDate}
+                Ends: {endDate.substring(0, 10)}
               </Badge>
               <Badge color="primary" pill className="mr-1">
                 <i className="ni ni-settings-gear-65" />

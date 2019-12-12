@@ -143,7 +143,7 @@ class AddMachine extends React.Component {
                   <Card className="bg-secondary shadow border-0">
                     <CardHeader className="bg-white pb-5">
                       <div className="text-center text-muted mb-4">
-                        <large>Add System to Maintenance Contract</large>
+                        <large>Add Machine to Maintenance Contract</large>
                       </div>
                     </CardHeader>
                     <CardBody className="px-lg-5 py-lg-5">
@@ -159,12 +159,20 @@ class AddMachine extends React.Component {
                               </InputGroupText>
                             </InputGroupAddon>
                             <Input
-                              placeholder="Manufacturer"
-                              type="text"
-                              name="manufacturer"
+                              type="select"
+                              name="select"
+                              placeholder="Type (Server, Storage, Switch, etc.)"
+                              name="type"
                               value={this.state.manufacturer}
                               onChange={this.handleManufacturer}
-                            />
+                            >
+                              <option>Lenovo</option>
+                              <option>Dell</option>
+                              <option>INFINIDAT</option>
+                              <option>HPE</option>
+                              <option>CISCO</option>
+                              <option>Other</option>
+                            </Input>
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -316,7 +324,7 @@ class AddMachine extends React.Component {
                             type="submit"
                             // to="/dashboard" tag={Link}
                           >
-                            Add product
+                            Add Machine
                           </Button>
                         </div>
                       </Form>
