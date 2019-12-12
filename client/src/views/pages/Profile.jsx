@@ -1,5 +1,8 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+import { UserConsumer } from "../../contexts/user-context";
+
 // reactstrap components
 import { Button, Card, Container, Row, Col } from "reactstrap";
 
@@ -32,22 +35,6 @@ class Profile extends React.Component {
               <span />
               <span />
             </div>
-            {/* SVG separator */}
-            <div className="separator separator-bottom separator-skew">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                preserveAspectRatio="none"
-                version="1.1"
-                viewBox="0 0 2560 100"
-                x="0"
-                y="0"
-              >
-                <polygon
-                  className="fill-white"
-                  points="2560 0 2560 100 0 100"
-                />
-              </svg>
-            </div>
           </section>
           <section className="section">
             <Container>
@@ -56,13 +43,13 @@ class Profile extends React.Component {
                   <Row className="justify-content-center">
                     <Col className="order-lg-2" lg="3">
                       <div className="card-profile-image">
-                        <a href="#pablo" onClick={e => e.preventDefault()}>
+                        <Link to="/dashboard">
                           <img
                             alt="..."
                             className="rounded-circle"
-                            src={require("assets/img/theme/team-4-800x800.jpg")}
+                            src={this.props.companyImage}
                           />
-                        </a>
+                        </Link>
                       </div>
                     </Col>
                     <Col
@@ -151,4 +138,33 @@ class Profile extends React.Component {
   }
 }
 
-export default Profile;
+const ProfileContext = props => {
+  return (
+    <UserConsumer>
+      {({
+        isLoggedIn,
+        isAdmin,
+        username,
+        address,
+        email,
+        vatNumber,
+        companyImage,
+        companyName
+      }) => (
+        <Profile
+          {...props}
+          isAdmin={isAdmin}
+          isLoggedIn={isLoggedIn}
+          username={username}
+          email={email}
+          address={address}
+          companyName={companyName}
+          companyImage={companyImage}
+          vatNumber={vatNumber}
+        />
+      )}
+    </UserConsumer>
+  );
+};
+
+export default ProfileContext;

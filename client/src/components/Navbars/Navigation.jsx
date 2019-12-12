@@ -255,12 +255,13 @@ class Navigation extends React.Component {
 const NavContext = props => {
   return (
     <UserConsumer>
-      {({ isLoggedIn, isAdmin, username }) => (
+      {({ isLoggedIn, isAdmin, username, id }) => (
         <Navigation
           {...props}
           isAdmin={isAdmin}
           isLoggedIn={isLoggedIn}
           username={username}
+          id={id}
         />
       )}
     </UserConsumer>

@@ -37,7 +37,7 @@ module.exports = new PassportLocalStrategy({
         companyImage: user.companyImage,
         vatNumber: user.vatNumber,
         address: user.address,
-
+        id: user._id
       }
 
       if (user.roles) {

@@ -11,6 +11,7 @@ const defaultState = {
     isAdmin: false,
     isLoggedIn: false,
     contracts: [],
+    _id: '',
     updateUser() { }
 };
 const { Consumer: UserConsumer, Provider: UserProvider } = createContext(defaultState);

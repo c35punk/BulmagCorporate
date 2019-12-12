@@ -79,7 +79,7 @@ class AddMachine extends React.Component {
       startDate: this.state.startDate,
       endDate: this.state.endDate,
       agree: this.state.agree,
-      creatorUsername: this.props.username
+      creatorID: this.props.id
     };
 
     axios
@@ -343,12 +343,13 @@ class AddMachine extends React.Component {
 const AddSystemContext = props => {
   return (
     <UserConsumer>
-      {({ isLoggedIn, isAdmin, username }) => (
+      {({ isLoggedIn, isAdmin, username, id }) => (
         <AddMachine
           {...props}
           isAdmin={isAdmin}
           isLoggedIn={isLoggedIn}
           username={username}
+          id={id}
         />
       )}
     </UserConsumer>

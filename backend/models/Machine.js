@@ -44,7 +44,7 @@ const machineSchema = new Schema({
         type: Schema.Types.Boolean
     },
 
-    creatorUsername: {
+    creatorID: {
         type: String
     }
 

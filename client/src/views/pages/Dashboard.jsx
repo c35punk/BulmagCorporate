@@ -98,7 +98,7 @@ class Dashboard extends React.Component {
                   <Row className="row-grid">
                     {this.state.machines
                       .filter(x => x.type === "Server")
-                      .filter(s => s.creatorUsername === this.props.username)
+                      .filter(s => s.creatorID === this.props.id)
                       .map(machine => {
                         return (
                           <>
@@ -130,7 +130,7 @@ class Dashboard extends React.Component {
                   <Row className="row-grid">
                     {this.state.machines
                       .filter(x => x.type === "Switch")
-                      .filter(s => s.creatorUsername === this.props.username)
+                      .filter(s => s.creatorID === this.props.id)
                       .map(machine => {
                         return (
                           <>
@@ -161,7 +161,7 @@ class Dashboard extends React.Component {
                   <Row className="row-grid">
                     {this.state.machines
                       .filter(x => x.type === "Storage")
-                      .filter(s => s.creatorUsername === this.props.username)
+                      .filter(s => s.creatorID === this.props.id)
                       .map(machine => {
                         return (
                           <Machine
@@ -184,12 +184,13 @@ class Dashboard extends React.Component {
 const DashboardContext = props => {
   return (
     <UserConsumer>
-      {({ isLoggedIn, isAdmin, username }) => (
+      {({ isLoggedIn, isAdmin, username, id }) => (
         <Dashboard
           {...props}
           isAdmin={isAdmin}
           isLoggedIn={isLoggedIn}
           username={username}
+          id={id}
         />
       )}
     </UserConsumer>
