@@ -52,9 +52,6 @@ class Navigation extends React.Component {
     if (this.props.isLoggedIn && this.props.isAdmin) {
       account = (
         <>
-          <DropdownItem to="/profile" tag={Link}>
-            Profile
-          </DropdownItem>
           <DropdownItem to="/add-product" tag={Link}>
             Add Product
           </DropdownItem>

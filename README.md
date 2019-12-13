@@ -45,12 +45,13 @@ After installing all dependencies and starting the app you should see something 
 
 ## Functionalities
 
-- Register (User & Admin)
-- Login (User & Admin)
+- Register (Visitor, User, Admin)
+- Login (Visitor, User, Admin)
 - Add Machine to Maintenance Contract (User)
-- Access Dashboard (User)
-- Add Product to Products Section (User)
-- Add Service to Service Section (User)
+- Access to Dashboard (User)
+- Access to Profile (User)
+- Add Product to Products Section (Admin)
+- Add Service to Service Section (Admin)
 
 ## Built With
 
