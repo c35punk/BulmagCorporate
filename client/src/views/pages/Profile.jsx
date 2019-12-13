@@ -135,7 +135,7 @@ class Profile extends React.Component {
                   <div className="text-center mt-5">
                     <Row className="align-items-center justify-content-center">
                       <iframe
-                        src="https://techcrunch.com/"
+                        src="https://www.oreilly.com/"
                         width="800"
                         height="450"
                         frameborder="0"
