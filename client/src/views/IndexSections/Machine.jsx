@@ -50,8 +50,7 @@ class Machine extends React.Component {
               color="primary"
               to="/dashboard"
               tag={Link}
-              machineUrl={this.props.machine.machineUrl}
-              description={this.props.machine.description}
+              machine={this.props.machine}
             />
           </CardBody>
         </Card>

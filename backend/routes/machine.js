@@ -16,6 +16,19 @@ router.post("/create", (req, res) => {
     .catch(err => res.status(400).json('Error: ' + err))
 
 })
+router.post("/edit", (req, res) => {
+  const machineObj = req.body;
+
+  console.log("machineObj")
+  console.log(machineObj)
+
+
+  const machineToSave = new Machine(machineObj);
+  machineToSave.findOneAndUpdate()
+    .then(() => res.json('Machine updated!'))
+    .catch(err => res.status(400).json('Error: ' + err))
+
+})
 
 router.get('/', (req, res) => {
   Machine

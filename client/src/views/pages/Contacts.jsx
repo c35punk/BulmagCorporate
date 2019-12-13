@@ -32,13 +32,13 @@ class Contacts extends React.Component {
         <main ref="main">
           <div className="position-relative">
             {/* shape Hero */}
-            <section className="section section-lg section-shaped pb-250">
+            <section className="section section-lg section-shaped pb-250 justify-content-center ">
               <div className="shape shape-style-1 shape-default"></div>
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                   <Row>
                     <Col lg="6">
-                      <h1 className="display-3 text-white">
+                      <h1 className="display-3 text-white ">
                         CONTACTS
                         <span>Give us a call or drop a line</span>
                       </h1>
@@ -73,7 +73,7 @@ class Contacts extends React.Component {
           </div>
           <section className="section section-lg pt-lg-0 section-contact-us">
             <Container>
-              <Row className="justify-content-center mt--300">
+              <Row className="justify-content-left mt--300">
                 <Col lg="8">
                   <Card className="bg-gradient-secondary shadow">
                     <CardBody className="p-lg-5">

@@ -22,6 +22,7 @@ import Navigation from "../components/Navbars/Navigation";
 import CardsFooter from "../components/Footers/CardsFooter";
 import AddProduct from "./pages/AddProduct";
 import AddService from "./pages/AddService";
+import NotFound from "./pages/NotFound";
 
 class Index extends Component {
   constructor(props) {
@@ -57,6 +58,7 @@ class Index extends Component {
           <Navigation />
           <Switch>
             <Route path="/" exact render={props => <Main {...props} />} />
+            <Route path="/not-found" exact render={props => <NotFound {...props} />} />
             <Route path="/about" exact render={props => <About {...props} />} />
             <Route
               path="/projects"
