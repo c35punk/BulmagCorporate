@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Alert from "../IndexSections/Alerts";
+import { UserConsumer } from "../../contexts/user-context";
 
 // reactstrap components
 import {
@@ -50,7 +51,7 @@ class Login extends React.Component {
     const { updateUser } = this.props;
 
     console.log("updateUser");
-    console.log(updateUser);
+    console.log(this.props);
 
     const credentials = {
       email,
@@ -85,13 +86,13 @@ class Login extends React.Component {
                   isLoggedIn: true
                 })
               );
-              // updateUser({
-              //   isAdmin,
-              //   isLoggedIn: true,
-              //   updateUser,
-              //   ...res.data.user
-              // });
-              window.location = "/";
+              updateUser({
+                isAdmin,
+                isLoggedIn: true,
+                updateUser,
+                ...res.data.user
+              });
+              window.location = "/profile";
               console.log(window.localStorage);
               console.log(res.data.user.roles);
             });
@@ -122,7 +123,7 @@ class Login extends React.Component {
           <section className="section section-shaped section-lg">
             {error.length ? (
               <Alert dismissible className="alert" variant="danger">
-                {this.state.error}
+                {error}
               </Alert>
             ) : null}
             <div className="shape shape-style-1 bg-gradient-default">
@@ -239,4 +240,19 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+const LoginContext = props => {
+  return (
+    <UserConsumer>
+      {({ isLoggedIn, updateUser, isAdmin }) => (
+        <Login
+          {...props}
+          isAdmin={isAdmin}
+          isLoggedIn={isLoggedIn}
+          updateUser={updateUser}
+        />
+      )}
+    </UserConsumer>
+  );
+};
+
+export default LoginContext;
