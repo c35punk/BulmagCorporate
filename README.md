@@ -55,10 +55,10 @@ After installing all dependencies and starting the app you should see something 
 
 ## Built With
 
-- [NodeJS](http://www.dropwizard.io/1.0.2/docs/) - Open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser
-- [ExpressJS](https://maven.apache.org/) - Web application framework for Node.js
-- [MongoDB](https://rometools.github.io/rome/) - Cross-platform document-oriented database program
-- [ReactJS](https://rometools.github.io/rome/) - JavaScript library for building user interfaces
+- [NodeJS](https://nodejs.org/en/) - Open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser
+- [ExpressJS](https://expressjs.com/) - Web application framework for Node.js
+- [MongoDB](https://www.mongodb.com/) - Cross-platform document-oriented database program
+- [ReactJS](https://reactjs.org/) - JavaScript library for building user interfaces
 
 ## Authors
 
