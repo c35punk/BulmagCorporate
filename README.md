@@ -45,8 +45,8 @@ After installing all dependencies and starting the app you should see something 
 
 ## Functionalities
 
-- Register (Visitor, User, Admin)
-- Login (Visitor, User, Admin)
+- Register (Visitor)
+- Login (Visitor)
 - Add Machine to Maintenance Contract (User)
 - Access to Dashboard (User)
 - Access to Profile (User)
