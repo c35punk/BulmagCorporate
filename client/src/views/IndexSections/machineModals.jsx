@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-
+import { UserConsumer } from "../../contexts/user-context";
 import { Link } from "react-router-dom";
 // reactstrap components
 import {
@@ -40,25 +40,33 @@ class MachineModals extends React.Component {
   };
 
   handleStartDate(event) {
-    this.setState({ startDate: event.target.value });
+    this.setState({ startDate: event.target.value + "T00:00:00.000Z" });
   }
   handleEndDate(event) {
-    this.setState({ endDate: event.target.value });
+    this.setState({ endDate: event.target.value + "T00:00:00.000Z" });
   }
 
   handleSubmit(event) {
-    console.log(this.state);
+    event.preventDefault();
     const editedTokens = {
-      productNumber: this.state.productNumber,
-      serialNumber: this.state.serialNumber
+      startDate: this.state.startDate,
+      endDate: this.state.endDate
     };
+
+    console.log(editedTokens);
 
     let machineId = this.props.machine._id;
 
-    fetch(`localhost:9949/edit/${machineId}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(editedTokens)
+    axios.put(`localhost:9949/edit/${machineId}`, editedTokens).then(res => {
+      if (res.status === 200) {
+        this.props.history.push(`/edit/${machineId}`);
+
+        console.log("this.props.history");
+      } else {
+        res.json().then(err => {
+          console.log(err.message);
+        });
+      }
     });
   }
 
@@ -68,8 +76,7 @@ class MachineModals extends React.Component {
       manufacturer,
       serialNumber,
       productNumber,
-      startDate,
-      endDate,
+
       type
     } = this.props.machine;
     console.log(this.state);
@@ -253,6 +260,7 @@ class MachineModals extends React.Component {
                           type="submit"
                           to="/dashboard"
                           tag={Link}
+                          onClick={() => this.toggleModal("notificationModal")}
                         >
                           Edit Machine
                         </Button>
@@ -268,5 +276,20 @@ class MachineModals extends React.Component {
     );
   }
 }
+const AddSystemContext = props => {
+  return (
+    <UserConsumer>
+      {({ isLoggedIn, isAdmin, username, id }) => (
+        <MachineModals
+          {...props}
+          isAdmin={isAdmin}
+          isLoggedIn={isLoggedIn}
+          username={username}
+          id={id}
+        />
+      )}
+    </UserConsumer>
+  );
+};
 
-export default MachineModals;
+export default AddSystemContext;

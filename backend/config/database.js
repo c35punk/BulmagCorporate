@@ -14,7 +14,7 @@ module.exports = (options) => {
     if (err) {
       throw err
     }
-    console.log('MongoDB ready!')
+    console.log('MongoDB up and running...')
     User.seedAdminUser()
     Product.initialList()
     Service.initialServicesList()

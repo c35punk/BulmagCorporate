@@ -75,6 +75,7 @@ class Login extends React.Component {
                 .map(role => role.toLowerCase())
                 .some(role => role === "admin");
 
+              console.log("isAdmin");
               console.log(isAdmin);
 
               window.localStorage.setItem("auth_token", res.data.token);
@@ -92,7 +93,9 @@ class Login extends React.Component {
                 updateUser,
                 ...res.data.user
               });
-              window.location = "/profile";
+              isAdmin
+                ? (window.location = "/")
+                : (window.location = "/profile");
               console.log(window.localStorage);
               console.log(res.data.user.roles);
             });

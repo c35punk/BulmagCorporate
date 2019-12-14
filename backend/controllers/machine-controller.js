@@ -1,4 +1,4 @@
-const { machineData } = require('./../data')
+const { machineData } = require('./../data/machine-data')
 
 module.exports = {
     getById: (req, res) => {

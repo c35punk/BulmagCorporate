@@ -15,7 +15,7 @@ const HomePageIntro = props => {
         <Row className="row-grid mt-5">
           <Col lg="4">
             <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-              <i className="ni ni-business_briefcase-24 text-primary" />
+              <i className="ni ni-circle-08 text-primary" />
             </div>
             <h5 className="text-white mt-3">Development and Implementation</h5>
             <p className="text-white mt-3">
