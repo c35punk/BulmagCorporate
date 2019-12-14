@@ -11,19 +11,14 @@ module.exports = {
         }
     },
 
-    delete: async (id) => {
-        try {
-            await Machine.findByIdAndRemove(id);
-            return { message: 'Deleted!' };
-        } catch (err) {
-            console.log(err);
-            throw new Error('Failed to delete machine!');
-        }
-    },
 
     edit: async (id, newMachineInput) => {
         try {
             const machine = await Machine.findById(id);
+
+            console.log(machine)
+         
+
 
             Object.keys(newMachineInput).forEach(newProp => {
                 machine[newProp] = newMachineInput[newProp];

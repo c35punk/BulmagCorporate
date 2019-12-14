@@ -1,4 +1,4 @@
-const { machineData } = require('./../data/machine-data')
+const { machineData } = require('./../data/')
 
 module.exports = {
     getById: (req, res) => {
@@ -25,42 +25,19 @@ module.exports = {
     edit: (req, res) => {
         const id = req.params.machineId;
 
+        console.log("req.body")
+        console.log(req.body)
+        console.log("id")
+        console.log(id)
+
         machineData.edit(id, req.body)
             .then(data => {
-                res.success(
-                    true,
-                    data.msg,
-                    null,
-                    200
-                );
+                console.log("data");
+                console.log(data);
             }).catch(err => {
-                res.success(
-                    false,
-                    err.message,
-                    null,
-                    500
-                );
+                console.log(err)
             });
     },
 
-    delete: (req, res) => {
-        const id = req.params.machineId;
 
-        machineData.delete(id)
-            .then(msg => {
-                res.success(
-                    true,
-                    msg,
-                    null,
-                    200
-                );
-            }).catch(err => {
-                res.success(
-                    false,
-                    err.message,
-                    null,
-                    500
-                );
-            });
-    }
 }
