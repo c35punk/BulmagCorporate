@@ -24,17 +24,17 @@ From your terminal:
 ```
 1. cd backend
 
-2. npm install
+2. npm install/yarn add
 
 3. cd ..
 
 4. cd client
 
-5. npm install
+5. npm install/yarn add
 
 6. cd ..
 
-7. npm install
+7. npm install/yarn add
 
 8. npm start
 ```
