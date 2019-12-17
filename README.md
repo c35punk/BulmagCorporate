@@ -47,6 +47,9 @@ After installing all dependencies and starting the app you should see something 
 
 - Register (Visitor)
 - Login (Visitor)
+- Home page (Visitor, User, Admin)
+- Contacts (Visitor, User, Admin)
+- About Us (Visitor, User, Admin)
 - Add Machine to Maintenance Contract (User)
 - Access to Dashboard (User)
 - Access to Profile (User)
