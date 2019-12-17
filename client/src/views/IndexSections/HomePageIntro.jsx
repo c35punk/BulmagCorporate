@@ -1,6 +1,6 @@
 import React from "react";
 
-import {  Container, Row, Col } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 
 const HomePageIntro = props => {
   return (
@@ -9,7 +9,6 @@ const HomePageIntro = props => {
         <Row className="text-center justify-content-center">
           <Col lg="10">
             <h2 className="display-3 text-white">Professional Service</h2>
-          
           </Col>
         </Row>
         <Row className="row-grid mt-5">
