@@ -7,7 +7,7 @@ class CompanyOverview extends React.Component {
   render() {
     return (
       <>
-        <section className="section section-lg">
+        <section className="section section-lg ">
           <Container>
             <Row className="row-grid justify-content-center">
               <Col className="text-center" lg="8">
@@ -15,11 +15,11 @@ class CompanyOverview extends React.Component {
                   <span className="text-danger">Company Overview</span>
                 </h2>
 
-                <div className="c_feature_box">
+                <div className="position-relative">
                   <div className="row">
                     <Col className="order-md-6" md="6">
                       <div className="c_box_item">
-                        <p className="lead text-black">
+                        <p className="lead">
                           <h2>Enterprise Class Vendors and Solutions</h2>
                         </p>
 
