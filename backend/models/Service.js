@@ -23,7 +23,7 @@ const serviceSchema = new Schema({
         enum: {
             values: [
                 'Enterprise', 'Business'],
-            message: 'Status is invalid, valid values include [HW, Banking, HCI].'
+            message: 'Status is invalid, valid values include [Enterprise, Business].'
         },
     },
 });
