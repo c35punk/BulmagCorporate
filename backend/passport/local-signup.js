@@ -17,7 +17,6 @@ module.exports = new PassportLocalStrategy({
     companyImage: req.body.companyImage.trim(),
     vatNumber: req.body.vatNumber.trim(),
     address: req.body.address.trim(),
-
   }
 
   console.log(user)

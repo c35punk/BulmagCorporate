@@ -41,7 +41,7 @@ const updateOrderStatusUpdateById = async (
 
 const orderService = {
   // Admin
-  createOrder: books => post(dbConstants.orderCreateUrl, books),
+  createOrder: machines => post(dbConstants.orderCreateUrl, machines),
   approveOrderById: id => post(dbConstants.orderApproveByIdUrl + id),
   cancelOrderById: id => post(dbConstants.orderCancelByIdUrl + id),
   deliverOrderById: id => post(dbConstants.orderDeliverByIdUrl + id),

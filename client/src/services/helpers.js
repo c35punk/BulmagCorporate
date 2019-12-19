@@ -75,17 +75,17 @@ const filterCurrentPageItems = (items, currentPage, pageLimit) => {
   return itemsToDisplay;
 };
 
-const calculateOrderTotal = books => {
+const calculateOrderTotal = machines => {
   let orderTotal = 0;
-  books
+  machines
     .filter(
-      book =>
-        book !== null &&
-        book !== undefined &&
-        book.price !== null &&
-        book.quantity !== null
+      machine =>
+        machine !== null &&
+        machine !== undefined &&
+        machine.price !== null &&
+        machine.quantity !== null
     )
-    .map(book => (orderTotal += book.price * book.quantity));
+    .map(machine => (orderTotal += machine.price * machine.quantity));
   return orderTotal;
 };
 

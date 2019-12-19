@@ -3,7 +3,7 @@ const auth = {
   authUser: "authUser"
 };
 
-const baseUrl = "http://localhost:5000";
+const baseUrl = "http://localhost:9949";
 const authUrl = `${baseUrl}/auth`;
 const machineUrl = `${baseUrl}/machine`;
 const ordersUrl = `${baseUrl}/orders`;
