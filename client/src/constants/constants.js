@@ -5,7 +5,7 @@ const auth = {
 
 const baseUrl = "http://localhost:9949";
 const authUrl = `${baseUrl}/auth`;
-const machineUrl = `${baseUrl}/machine`;
+const machineUrl = `${baseUrl}/machines`;
 const ordersUrl = `${baseUrl}/orders`;
 const usersUrl = `${baseUrl}/users`;
 const statsUrl = `${baseUrl}/stats`;
@@ -16,13 +16,13 @@ const dbConstants = {
   logoutUrl: `${authUrl}/logout`,
   registerUrl: `${authUrl}/signup`,
   // machines
+  machinesUrl: `${machineUrl}/`,
   machineCreateUrl: `${machineUrl}/create`,
   machineEditByIdUrl: `${machineUrl}/edit/`,
   machineDeleteByIdUrl: `${machineUrl}/delete/`,
   machineLikeByIdUrl: `${machineUrl}/like/`,
   machineUnlikeByIdUrl: `${machineUrl}/unlike/`,
   machineReviewByIdUrl: `${machineUrl}/review/`,
-  machineReviewDeleteByIdIndexUrl: `${machineUrl}/review/delete/`, // :machineId/:reviewIndex
   machineFileUploadByIdUrl: `${machineUrl}/upload/`,
   machineFileDeleteByIdUrl: `${machineUrl}/upload/delete/`,
   machineFileDownloadByIdUrl: `${machineUrl}/download/`,

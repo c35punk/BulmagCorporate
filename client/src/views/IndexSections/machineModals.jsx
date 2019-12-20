@@ -28,7 +28,8 @@ class MachineModals extends React.Component {
     };
     this.handleStartDate = this.handleStartDate.bind(this);
     this.handleEndDate = this.handleEndDate.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   state = {};
@@ -46,7 +47,7 @@ class MachineModals extends React.Component {
     this.setState({ endDate: event.target.value + "T00:00:00.000Z" });
   }
 
-  handleSubmit(event) {
+  handleEdit(event) {
     event.preventDefault();
     const editedTokens = {
       startDate: this.state.startDate,
@@ -67,7 +68,39 @@ class MachineModals extends React.Component {
         });
       }
     });
-    window.location = '/dashboard'
+    (() => {
+      this.toggleModal("notificationModal");
+
+      window.location = "/dashboard";
+    })();
+  }
+
+  handleDelete(event) {
+    event.preventDefault();
+    const editedTokens = {
+      startDate: this.state.startDate,
+      endDate: this.state.endDate
+    };
+
+    console.log(editedTokens);
+
+    let machineId = this.props.machine._id;
+    machineService.deleteMachine(machineId).then(res => {
+      if (res.status === 200) {
+        res.json().then(data => {
+          this.props.history.push(`/delete/${machineId}`);
+        });
+      } else {
+        res.json().then(err => {
+          console.log(err.message);
+        });
+      }
+    });
+    // (() => {
+    //   this.toggleModal("notificationModal");
+
+    //   window.location = "/dashboard";
+    // })();
   }
 
   render() {
@@ -90,7 +123,7 @@ class MachineModals extends React.Component {
           type="button"
           onClick={() => this.toggleModal("notificationModal")}
         >
-          Edit
+          Edit/Delete
         </Button>
         <Modal
           className="modal-dialog-centered modal-primary modal-lg"
@@ -123,7 +156,7 @@ class MachineModals extends React.Component {
                     </div>
                   </CardHeader>
                   <CardBody className="px-lg-5 py-lg-5">
-                    <Form role="form" onSubmit={this.handleSubmit}>
+                    <Form role="form">
                       <FormGroup>
                         <InputGroup className="input-group-alternative mb-3">
                           <InputGroupAddon addonType="prepend">
@@ -258,9 +291,19 @@ class MachineModals extends React.Component {
                           className="mt-4"
                           color="default"
                           type="submit"
-                          onClick={() => this.toggleModal("notificationModal")}
+                          onClick={this.handleEdit}
                         >
                           Edit Machine
+                        </Button>
+                      </div>
+                      <div className="text-center">
+                        <Button
+                          className="mt-4"
+                          color="default"
+                          type="submit"
+                          onClick={this.handleDelete}
+                        >
+                          Delete Machine
                         </Button>
                       </div>
                     </Form>

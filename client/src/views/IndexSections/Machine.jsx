@@ -48,7 +48,6 @@ class Machine extends React.Component {
             <Modal
               className="mt-3"
               color="primary"
-              to="/dashboard"
               tag={Link}
               machine={this.props.machine}
             />

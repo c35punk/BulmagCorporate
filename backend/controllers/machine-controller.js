@@ -38,6 +38,25 @@ module.exports = {
                 console.log(err)
             });
     },
+    delete: (req, res) => {
+        const id = req.params.machineId;
 
+        machineData.delete(id)
+            .then(msg => {
+                res.success(
+                    true,
+                    msg,
+                    null,
+                    200
+                );
+            }).catch(err => {
+                res.success(
+                    false,
+                    err.message,
+                    null,
+                    500
+                );
+            });
+    }
 
 }

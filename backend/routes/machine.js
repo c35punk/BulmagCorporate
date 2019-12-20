@@ -28,5 +28,6 @@ router.get('/', (req, res) => {
 
 
 router.put('/edit/:machineId', machineController.edit)
+router.delete('/delete/:machineId', machineController.delete)
 
 module.exports = router
