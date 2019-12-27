@@ -20,6 +20,9 @@ class About extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
+              <Container className="py-lg-md d-flex">
+                <h1 className="display-3 text-white justify-content-center position-absolute">About</h1>
+              </Container>
               <Tabs />
               <div className="shape shape-style-1 shape-default"></div>
               <Container className="py-lg-md d-flex"></Container>
