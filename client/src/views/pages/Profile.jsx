@@ -53,25 +53,32 @@ class Profile extends React.Component {
     return (
       <>
         <main className="profile-page" ref="main">
-          <section className="section-profile-cover section-shaped my-0">
-            {/* Circles background */}
-            <div className="shape shape-style-1 shape-default alpha-4">
-              <span />
-              <span />
-
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-            </div>
-          </section>
+          <div className="position-relative">
+            {/* shape Hero */}
+            <section className="section section-lg section-shaped pb-250">
+              <div className="shape shape-style-1 shape-default">
+                <span />
+                <span />
+              </div>
+              <Container className="py-lg-md d-flex">
+                <div className="col px-0">
+                  <Row>
+                    <Col lg="6">
+                      <h1 className="display-3 text-white">Profile</h1>
+                      <p className="lead text-white">Manage your account</p>
+                     
+                    </Col>
+                  </Row>
+                </div>
+              </Container>
+            </section>
+            {/* 1st Hero Variation */}
+          </div>
 
           <section className="section">
             <Container>
               <Card className="card-profile shadow mt--300">
-                <div className="px-4">
+                <div className="rounded shadow-lg overflow-hidden transform-perspective-right">
                   <Row className="justify-content-center">
                     <Col className="order-lg-2" lg="3">
                       <div className="card-profile-image">

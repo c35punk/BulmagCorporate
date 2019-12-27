@@ -48,7 +48,7 @@ class Dashboard extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="6">
-                      <h1 className="display-3 text-white">DASHBOARD</h1>
+                      <h1 className="display-3 text-white">Dashboard</h1>
                       <p className="lead text-white">Systems in maintenance</p>
                       <div className="btn-wrapper">
                         <Button
