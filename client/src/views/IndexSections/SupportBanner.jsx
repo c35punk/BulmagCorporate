@@ -13,7 +13,7 @@ const SupportBanner = () => {
               <img
                 alt="..."
                 className="img-center img-fluid"
-                src={require("assets/img/ill/ill-2.svg")}
+                src="https://www.jvzoohost.com/img/jvZoo-images/solutions-server.png"
               />
             </div>
           </Col>

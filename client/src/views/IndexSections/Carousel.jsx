@@ -61,7 +61,7 @@ class Carousel extends React.Component {
             <span />
             <span />
           </div>
-          <Container className="py-lg mb-lg-cover col-lg-11">
+          <Container className="py-lg mb-lg-cover col-lg-9">
             <Row className="justify-content-between align-items-center justify-content-center">
               <Col className="mb-lg-cover" lg="12">
                 <div className="rounded shadow-lg overflow-hidden transform-perspective-center">
