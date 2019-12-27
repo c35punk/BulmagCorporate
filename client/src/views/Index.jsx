@@ -19,7 +19,7 @@ import AddMachine from "./pages/AddMachine";
 import Logout from "./pages/Logout";
 import About from "./pages/About.jsx";
 import Navigation from "../components/Navbars/Navigation";
-import CardsFooter from "../components/Footers/CardsFooter";
+import SimpleFooter from "../components/Footers/SimpleFooter";
 import AddProduct from "./pages/AddProduct";
 import AddService from "./pages/AddService";
 import NotFound from "./pages/NotFound";
@@ -117,7 +117,7 @@ class Index extends Component {
               render={props => <AddService {...props} />}
             />
           </Switch>
-          <CardsFooter />
+          <SimpleFooter />
         </UserProvider>
       </div>
     );

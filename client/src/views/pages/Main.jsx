@@ -15,16 +15,14 @@ class Main extends React.Component {
   }
   render() {
     return (
-      <>
-        <main ref="main">
-          <Carousel />
-          <CompanyOverview />
-          <FloatingServers />
-          <ProfessionalServicesBanner />
-          <SupportBanner />
-          <HomePageIntro />
-        </main>
-      </>
+      <main ref="main">
+        <Carousel />
+        <CompanyOverview />
+        <FloatingServers />
+        <ProfessionalServicesBanner />
+        <SupportBanner />
+        <HomePageIntro />
+      </main>
     );
   }
 }
