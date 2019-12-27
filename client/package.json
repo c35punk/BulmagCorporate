@@ -22,7 +22,7 @@
   "license": "MIT",
   "homepage": "https://www.bulmag.bg",
   "scripts": {
-    "start": "PORT=34881 node scripts/start.js",
+    "start": "SET PORT=34881 && node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",

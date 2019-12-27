@@ -61,20 +61,21 @@ class Carousel extends React.Component {
             <span />
             <span />
           </div>
-          <Container className="py-md">
+          <Container className="py-lg">
             <Row className="justify-content-between align-items-center justify-content-center">
               <Col className="mb-lg-cover" lg="12">
-                <div className="rounded shadow-lg overflow-hidden transform-perspective-right">
+                <div className="rounded shadow-lg overflow-hidden transform-perspective-center">
                   <UncontrolledCarousel items={items} />
                 </div>
               </Col>
-              <Col className="mb-5 mb-lg-0" lg="7">
-                <h1 className="text-blue font-weight-heavy">
-                 Over 25 Years of Experience in System Integration
+              <Col className="mb-5 mb-lg-0" lg="12">
+                <h1 className="display-6 text-primary justify-content-center">
+                  Over 25 Years of Experience in System Integration
                 </h1>
 
                 <Button
-                  className="btn-white mt-4"
+                  className="btn-white mt-4 justify-content-center"
+                  lg="12"
                   color="default"
                   to="/projects"
                   tag={Link}
@@ -84,7 +85,6 @@ class Carousel extends React.Component {
               </Col>
             </Row>
           </Container>
-          
         </section>
       </>
     );
