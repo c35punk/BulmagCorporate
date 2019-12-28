@@ -1,7 +1,7 @@
 import React from "react";
 
 // reactstrap components
-import { Button, Container, Row, Col } from "reactstrap";
+import { Container } from "reactstrap";
 
 // index page sections
 import Tabs from "../IndexSections/Tabs";
@@ -21,7 +21,9 @@ class About extends React.Component {
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250">
               <Container className="py-lg-md d-flex">
-                <h1 className="display-3 text-white justify-content-center position-absolute">About</h1>
+                <h1 className="display-3 text-white justify-content-center position-absolute">
+                  ABOUT
+                </h1>
               </Container>
               <Tabs />
               <div className="shape shape-style-1 shape-default"></div>

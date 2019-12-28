@@ -62,7 +62,7 @@ class TabsSection extends React.Component {
                     href="#"
                     role="tab"
                   >
-                    Our principles
+                    Our Principles
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -75,7 +75,7 @@ class TabsSection extends React.Component {
                     href="#"
                     role="tab"
                   >
-                    History points
+                    History Points
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -152,7 +152,6 @@ class TabsSection extends React.Component {
                       <ul>2015 — SAP Labs® Business Partner</ul>
                       <ul>2016 — Transaction Systems® Business Partner</ul>
                       <ul>2019 — eBulmag® Online Shop</ul>
-                      &nbsp;
                     </p>
                   </TabPane>
                   <TabPane tabId="plainTabs4">

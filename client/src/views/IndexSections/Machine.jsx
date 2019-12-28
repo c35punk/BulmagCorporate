@@ -21,11 +21,17 @@ class Machine extends React.Component {
 
     let { image } = this.props;
 
+    let currentDate = new Date(endDate);
+
+    console.log("Date.now");
+    console.log(Date(Date.now()));
+    console.log(currentDate);
+
     let status =
-      endDate > Date.now ? (
-        <div className="icon icon-shape icon-shape-green rounded-circle mb-4"></div>
+      currentDate > Date.now ? (
+        <div className="icon icon-shape icon-shape-danger rounded-circle mb-4"></div>
       ) : (
-        <div className="icon icon-shape icon-shape-warning rounded-circle mb-4"></div>
+        <div className="icon icon-shape danger"></div>
       );
 
     return (
