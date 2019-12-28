@@ -10,7 +10,6 @@ class Service extends React.Component {
       <Col lg="4">
         <Card className="card-lift--hover shadow border-0">
           <CardBody className="py-5">
-            <div className="icon icon-shape icon-shape-warning rounded-circle mb-4"></div>
             <img
               src={this.props.service.image}
               alt=""

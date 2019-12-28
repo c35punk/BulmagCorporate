@@ -168,7 +168,7 @@ class MachineModals extends React.Component {
                             type="select"
                             name="select"
                             placeholder="Type (Server, Storage, Switch, etc.)"
-                            name="type"
+                            name="manufacturer"
                             value={manufacturer}
                             disabled
                           >
