@@ -78,7 +78,7 @@ class Profile extends React.Component {
           <section className="section">
             <Container>
               <Card className="card-profile shadow mt--300">
-                <div className="rounded shadow-lg overflow-hidden transform-perspective-right">
+                <div className="rounded shadow-lg overflow-hidden transform-perspective-center">
                   <Row className="justify-content-center">
                     <Col className="order-lg-2" lg="3">
                       <div className="card-profile-image">

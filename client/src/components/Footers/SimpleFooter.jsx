@@ -21,11 +21,9 @@ class SimpleFooter extends Component {
             <Row className="row-grid align-items-center my-md">
               <Col lg="6">
                 <h3 className="text-primary font-weight-light mb-2">
-                  Thank you for supporting us!
+                  Thank you for choosing us!
                 </h3>
-                <h4 className="mb-0 font-weight-light">
-                  Let's get in touch on any of these platforms.
-                </h4>
+               
               </Col>
               <Col className="text-lg-center btn-wrapper" lg="6">
                 

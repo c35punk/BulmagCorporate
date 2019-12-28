@@ -119,8 +119,8 @@ $brand-colors: map-merge((
 $shape-colors: () !default;
 $shape-colors: map-merge((
   "default":      #fff,
-  "primary":      #5533ff,
-  "secondary":    #06251a,
+  "primary":      red,
+  "secondary":    green,
   "neutral":      #ABCDAA, 
   "blue-gray":    #b2cbe1,
 
