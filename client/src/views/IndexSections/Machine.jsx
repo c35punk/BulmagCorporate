@@ -21,11 +21,20 @@ class Machine extends React.Component {
 
     let { image } = this.props;
 
+    let status;
+
+    endDate > Date.now
+      ? (status = (
+          <div className="icon icon-shape icon-shape-warning rounded-circle mb-4"></div>
+        ))
+      : (status = (
+          <div className="icon icon-shape icon-shape-warning rounded-circle mb-4"></div>
+        ));
+
     return (
       <Col lg="4">
         <Card className="card-lift--hover shadow border-0">
           <CardBody className="py-5">
-            <div className="icon icon-shape icon-shape- rounded-circle mb-4"></div>
             <h5 className="text-primary">Vendor: {manufacturer}</h5>
             <img src={image} alt="" style={{ width: "150px" }} />
             <h6 className="text-primary">Machine: {machineName}</h6>
