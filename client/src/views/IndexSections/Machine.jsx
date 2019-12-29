@@ -45,23 +45,24 @@ class Machine extends React.Component {
         <Card className="card-lift--hover shadow border-0">
           <CardBody className="py-5">
             {status}
-            <h5 className="text-dark">Vendor: {manufacturer}</h5>
+            <h5 className="text-dark">
+              Vendor: <strong>{manufacturer}</strong>
+            </h5>
             <img src={image} alt="" style={{ width: "150px" }} />
             <h6 className="text-dark">Machine: {machineName}</h6>
             <h6 className="text-dark">PN: {productNumber}</h6>
             <h6 className="text-dark">SN: {serialNumber}</h6>
             <div>
-              <Badge color="dark" pill className="mr-2">
-                <i className="ni ni-watch-time" />
-                Starts: {startDate.substring(0, 10)}
+              <Badge color="dark" pill className="mr-1">
+                <i className="ni ni-watch-time" /> Starts:{" "}
+                {startDate.substring(0, 10)}
               </Badge>
-              <Badge color="dark" pill className="mr-3">
-                <i className="ni ni-watch-time" />
-                Ends: {endDate.substring(0, 10)}
+              <Badge color="dark" pill className="mr-1">
+                <i className="ni ni-watch-time" /> Ends:{" "}
+                {endDate.substring(0, 10)}
               </Badge>
-              <Badge color="dark" pill className="mr-5">
-                <i className="ni ni-settings-gear-65" />
-                Type: {type}
+              <Badge color="dark" pill className="mr-1">
+                <i className="ni ni-settings-gear-65" /> Type: {type}
               </Badge>
             </div>
             <Modal
