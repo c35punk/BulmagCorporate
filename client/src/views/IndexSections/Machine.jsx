@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Modal from "./MachineModals";
+import ExpiredModal from "./MachineModalsExpired";
 
 import { Card, CardBody, Badge, Col } from "reactstrap";
 
@@ -22,6 +23,22 @@ class Machine extends React.Component {
     let { image } = this.props;
 
     let currentDate = new Date(endDate);
+
+    let maintenanceChecker = isDateBeforeToday(currentDate) ? (
+      <Modal
+        className="mt-3"
+        color="dark"
+        tag={Link}
+        machine={this.props.machine}
+      />
+    ) : (
+      <ExpiredModal
+        className="mt-3"
+        color="dark"
+        tag={Link}
+        machine={this.props.machine}
+      />
+    );
 
     function isDateBeforeToday(date) {
       return (
@@ -65,12 +82,7 @@ class Machine extends React.Component {
                 <i className="ni ni-settings-gear-65" /> Type: {type}
               </Badge>
             </div>
-            <Modal
-              className="mt-3"
-              color="dark"
-              tag={Link}
-              machine={this.props.machine}
-            />
+            {maintenanceChecker}
           </CardBody>
         </Card>
       </Col>
