@@ -23,16 +23,24 @@ class Machine extends React.Component {
 
     let currentDate = new Date(endDate);
 
-    console.log("Date.now");
-    console.log(Date(Date.now()));
-    console.log(currentDate);
-
-    let status =
-      currentDate > Date.now ? (
-        <div className="icon icon-shape icon-shape-danger rounded-circle mb-4"></div>
-      ) : (
-        <div className="icon icon-shape danger"></div>
+    function isDateBeforeToday(date) {
+      return (
+        new Date(date.toDateString()) > new Date(new Date().toDateString())
       );
+    }
+    console.log(isDateBeforeToday(currentDate));
+
+    let status = isDateBeforeToday(currentDate) ? (
+      <Badge color="secondary" pill className="mr-3">
+        <i className="ni ni-settings-gear-65" />
+        In Maintenance
+      </Badge>
+    ) : (
+      <Badge color="primary" pill className="mr-3">
+        <i className="ni ni-settings-gear-65" />
+        Maintenance Expired
+      </Badge>
+    );
 
     return (
       <Col lg="4">
