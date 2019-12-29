@@ -31,7 +31,7 @@ class Machine extends React.Component {
     console.log(isDateBeforeToday(currentDate));
 
     let status = isDateBeforeToday(currentDate) ? (
-      <Badge color="secondary" pill className="mr-3">
+      <Badge color="info" pill className="mr-3">
         In Maintenance
       </Badge>
     ) : (
@@ -45,28 +45,28 @@ class Machine extends React.Component {
         <Card className="card-lift--hover shadow border-0">
           <CardBody className="py-5">
             {status}
-            <h5 className="text-primary">Vendor: {manufacturer}</h5>
+            <h5 className="text-dark">Vendor: {manufacturer}</h5>
             <img src={image} alt="" style={{ width: "150px" }} />
-            <h6 className="text-primary">Machine: {machineName}</h6>
-            <h6 className="text-primary">PN: {productNumber}</h6>
-            <h6 className="text-primary">SN: {serialNumber}</h6>
+            <h6 className="text-dark">Machine: {machineName}</h6>
+            <h6 className="text-dark">PN: {productNumber}</h6>
+            <h6 className="text-dark">SN: {serialNumber}</h6>
             <div>
-              <Badge color="primary" pill className="mr-1">
+              <Badge color="dark" pill className="mr-2">
                 <i className="ni ni-watch-time" />
                 Starts: {startDate.substring(0, 10)}
               </Badge>
-              <Badge color="primary" pill className="mr-1">
+              <Badge color="dark" pill className="mr-3">
                 <i className="ni ni-watch-time" />
                 Ends: {endDate.substring(0, 10)}
               </Badge>
-              <Badge color="primary" pill className="mr-1">
+              <Badge color="dark" pill className="mr-5">
                 <i className="ni ni-settings-gear-65" />
                 Type: {type}
               </Badge>
             </div>
             <Modal
               className="mt-3"
-              color="primary"
+              color="dark"
               tag={Link}
               machine={this.props.machine}
             />
