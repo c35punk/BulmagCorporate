@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Machine from "../IndexSections/Machine";
 import { UserConsumer } from "../../contexts/user-context";
+import { dbConstants } from "../../constants/constants";
 
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
-import NotFound from "./NotFound";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class Dashboard extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:9949/machines/")
+      .get(dbConstants.machinesUrl)
       .then(res => {
         this.setState({ machines: res.data });
         console.log(res.data);
@@ -33,7 +33,6 @@ class Dashboard extends React.Component {
     this.refs.main.scrollTop = 0;
   }
   render() {
-    
     return (
       <>
         <main ref="main">
@@ -48,7 +47,7 @@ class Dashboard extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="6">
-                      <h1 className="display-3 text-white">Dashboard</h1>
+                      <h1 className="display-3 text-white">DASHBOARD</h1>
                       <p className="lead text-white">Systems in maintenance</p>
                       <div className="btn-wrapper">
                         <Button

@@ -73,7 +73,7 @@ $colors: map-merge(
 
 $default: #505250 !default; //background (Login, Register), navbar background
 $primary: #aa2727 !default;
-$secondary: rgb(2, 59, 2) !default; //footer, collapsible buttons, forms
+$secondary: #FFFFFA !default; //footer, collapsible buttons, forms
 $success: $green !default;
 $info: $teal !default;
 $warning: $orange !default;
@@ -156,9 +156,9 @@ $shapes-primary-colors: map-merge(
 $shapes-default-colors: () !default;
 $shapes-default-colors: map-merge(
   (
-    "step-1-gradient-bg": #66838b,
-    "step-2-gradient-bg": #fff,
-    "step-3-gradient-bg": #0d0a0e,
+    "step-1-gradient-bg": #a8a8a8, //Main background
+    "step-2-gradient-bg": #797979, //Main background
+    "step-3-gradient-bg": #464646, //Main background
     "span-1-bg": #d33030,
     "span-2-bg": #7b9aff,
     "span-3-bg": #6f8ff8,

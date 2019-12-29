@@ -18,7 +18,7 @@ class CompanyOverview extends React.Component {
                 <div className="position-relative">
                   <div className="row">
                     <Col className="order-md-6" md="6">
-                      <div className="c_box_item">
+                      <div className="display-3">
                         <p className="lead">
                           <h2>Enterprise Class Vendors and Solutions</h2>
                         </p>
@@ -31,8 +31,8 @@ class CompanyOverview extends React.Component {
                       </div>
                     </Col>
                     <Col className="order-md-6" md="6">
-                      <div className="c_box_item">
-                        <p className="lead text-black">
+                      <div className="display-3">
+                        <p className="lead">
                           <h2>25+ Years Experience in System Integration</h2>
                         </p>
 
@@ -44,8 +44,8 @@ class CompanyOverview extends React.Component {
                       </div>
                     </Col>
                     <Col className="order-md-6" md="6">
-                      <div className="c_box_item">
-                        <p className="lead text-black">
+                      <div className="display-3">
+                        <p className="lead">
                           <h2>
                             Continual Commitment to Professional Excellence
                           </h2>

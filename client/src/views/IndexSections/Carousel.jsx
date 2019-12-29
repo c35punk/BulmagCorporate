@@ -69,7 +69,7 @@ class Carousel extends React.Component {
                 </div>
               </Col>
               <Col className="mb-5 mb-lg-0" lg="12">
-                <h1 className="display-6 text-primary justify-content-center">
+                <h1 className="display-6 text-secondary justify-content-center">
                   Over 25 Years of Experience in System Integration
                 </h1>
 

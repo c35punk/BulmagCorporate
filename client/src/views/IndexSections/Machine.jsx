@@ -32,12 +32,10 @@ class Machine extends React.Component {
 
     let status = isDateBeforeToday(currentDate) ? (
       <Badge color="secondary" pill className="mr-3">
-        <i className="ni ni-settings-gear-65" />
         In Maintenance
       </Badge>
     ) : (
       <Badge color="primary" pill className="mr-3">
-        <i className="ni ni-settings-gear-65" />
         Maintenance Expired
       </Badge>
     );
