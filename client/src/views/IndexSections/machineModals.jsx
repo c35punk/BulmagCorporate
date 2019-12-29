@@ -123,7 +123,7 @@ class MachineModals extends React.Component {
           type="button"
           onClick={() => this.toggleModal("notificationModal")}
         >
-          Edit/Delete
+          Edit/Delete Request
         </Button>
         <Modal
           className="modal-dialog-centered modal-primary modal-lg"
