@@ -27,7 +27,6 @@ class MachineModals extends React.Component {
       startDate: "",
       endDate: ""
     };
-    this.handleStartDate = this.handleStartDate.bind(this);
     this.handleEndDate = this.handleEndDate.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
@@ -41,11 +40,11 @@ class MachineModals extends React.Component {
     });
   };
 
-  handleStartDate(event) {
-    this.setState({ startDate: event.target.value + "T00:00:00.000Z" });
-  }
   handleEndDate(event) {
-    this.setState({ endDate: event.target.value + "T00:00:00.000Z" });
+    this.setState({
+      startDate: this.props.machine.startDate,
+      endDate: event.target.value + "T00:00:00.000Z"
+    });
   }
 
   handleEdit(event) {
@@ -79,7 +78,6 @@ class MachineModals extends React.Component {
   handleDelete(event) {
     event.preventDefault();
     const editedTokens = {
-      startDate: this.state.startDate,
       endDate: this.state.endDate
     };
 
