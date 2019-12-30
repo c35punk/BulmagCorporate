@@ -61,14 +61,14 @@ class Carousel extends React.Component {
             <span />
             <span />
           </div>
-          <Container className="py-lg mb-lg-cover col-lg-10">
+          <Container className="py-lg mb-lg-cover col-lg-9">
             <Row className="justify-content-between align-items-center justify-content-center">
               <Col className="mb-lg-cover" lg="12">
-                <div className="rounded shadow-lg overflow-hidden transform-perspective-center">
+                <div className="rounded shadow-lg overflow-hidden transform-perspective-right">
                   <UncontrolledCarousel items={items} />
                 </div>
               </Col>
-              <Col className="mb-5 mb-lg-0" lg="12">
+              {/* <Col className="mb-5 mb-lg-0" lg="12">
                 <h1 className="display-6 text-secondary justify-content-center">
                   Over 25 Years of Experience in System Integration
                 </h1>
@@ -82,7 +82,7 @@ class Carousel extends React.Component {
                 >
                   See all Projects
                 </Button>
-              </Col>
+              </Col> */}
             </Row>
           </Container>
         </section>
