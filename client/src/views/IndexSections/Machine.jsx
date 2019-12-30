@@ -57,6 +57,9 @@ class Machine extends React.Component {
       </Badge>
     );
 
+    console.log('Machine.JSX');
+    console.log(this.props);
+
     return (
       <Col lg="4">
         <Card className="card-lift--hover shadow border-0">

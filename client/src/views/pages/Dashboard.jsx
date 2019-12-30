@@ -66,12 +66,12 @@ class Dashboard extends React.Component {
                           <span className="btn-inner--text">Add system</span>
                         </Button>
 
-                        {/* <ContractModal
+                        <ContractModal
                           className="mt-3"
                           color="dark"
                           tag={Link}
                           machine={this.props.machine}
-                        /> */}
+                        />
                       </div>
                     </Col>
                   </Row>

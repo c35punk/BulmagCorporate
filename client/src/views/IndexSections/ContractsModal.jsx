@@ -1,6 +1,7 @@
 import React from "react";
 
-import machineService from "../../services/machine-service";
+import axios from "axios";
+import { dbConstants } from "../../constants/constants";
 // reactstrap components
 import {
   Button,
@@ -22,16 +23,11 @@ import {
 class MachineModals extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      startDate: "",
-      endDate: ""
-    };
-    this.handleStartDate = this.handleStartDate.bind(this);
-    this.handleEndDate = this.handleEndDate.bind(this);
-    this.handleEdit = this.handleEdit.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
-  }
 
+    this.state = {
+      machines: []
+    };
+  }
   state = {};
   toggleModal = state => {
     this.setState({
@@ -40,78 +36,19 @@ class MachineModals extends React.Component {
     });
   };
 
-  handleStartDate(event) {
-    this.setState({ startDate: event.target.value + "T00:00:00.000Z" });
-  }
-  handleEndDate(event) {
-    this.setState({ endDate: event.target.value + "T00:00:00.000Z" });
-  }
-
-  handleEdit(event) {
-    event.preventDefault();
-    const editedTokens = {
-      startDate: this.state.startDate,
-      endDate: this.state.endDate
-    };
-
-    console.log(editedTokens);
-
-    let machineId = this.props.machine._id;
-    machineService.editMachineById(machineId, editedTokens).then(res => {
-      if (res.status === 200) {
-        res.json().then(data => {
-          this.props.history.push(`/edit/${machineId}`);
-        });
-      } else {
-        res.json().then(err => {
-          console.log(err.message);
-        });
-      }
-    });
-    (() => {
-      this.toggleModal("notificationModal");
-
-      window.location = "/dashboard";
-    })();
-  }
-
-  handleDelete(event) {
-    event.preventDefault();
-    const editedTokens = {
-      startDate: this.state.startDate,
-      endDate: this.state.endDate
-    };
-
-    console.log(editedTokens);
-
-    let machineId = this.props.machine._id;
-    machineService.deleteMachine(machineId).then(res => {
-      if (res.status === 200) {
-        res.json().then(data => {
-          this.props.history.push(`/delete/${machineId}`);
-        });
-      } else {
-        res.json().then(err => {
-          console.log(err.message);
-        });
-      }
-    });
-    // (() => {
-    //   this.toggleModal("notificationModal");
-
-    //   window.location = "/dashboard";
-    // })();
+  componentDidMount() {
+    axios
+      .get(dbConstants.machinesUrl)
+      .then(res => {
+        this.setState({ machines: res.data });
+        console.log(res.data);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   }
 
   render() {
-    let {
-      machineName,
-      manufacturer,
-      serialNumber,
-      productNumber,
-
-      type
-    } = this.props.machine;
     console.log(this.state);
     return (
       <>
@@ -133,8 +70,7 @@ class MachineModals extends React.Component {
         >
           <div className="modal-header">
             <h6 className="modal-title" id="modal-title-notification">
-              {manufacturer + " "}
-              {machineName}
+              SOMETHING
             </h6>
             <button
               aria-label="Close"
@@ -169,7 +105,7 @@ class MachineModals extends React.Component {
                             name="select"
                             placeholder="Type (Server, Storage, Switch, etc.)"
                             name="manufacturer"
-                            value={manufacturer}
+                            value="{manufacturer}"
                             disabled
                           >
                             <option>Lenovo</option>
@@ -179,109 +115,6 @@ class MachineModals extends React.Component {
                             <option>CISCO</option>
                             <option>Other</option>
                           </Input>
-                        </InputGroup>
-                      </FormGroup>
-                      <FormGroup>
-                        <InputGroup className="input-group-alternative mb-3">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-single-copy-04" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder="Machine Model"
-                            type="text"
-                            name="machineName"
-                            value={machineName}
-                            disabled
-                          />
-                        </InputGroup>
-                      </FormGroup>
-                      <FormGroup>
-                        <InputGroup className="input-group-alternative mb-3">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-single-copy-04" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder={productNumber}
-                            type="text"
-                            name="productNumber"
-                            value={productNumber}
-                            disabled
-                          />
-                        </InputGroup>
-                      </FormGroup>
-                      <FormGroup>
-                        <InputGroup className="input-group-alternative mb-3">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-single-copy-04" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder={serialNumber}
-                            type="text"
-                            name="serialNumber"
-                            value={serialNumber}
-                            disabled
-                          />
-                        </InputGroup>
-                      </FormGroup>
-                      <FormGroup>
-                        <InputGroup className="input-group-alternative mb-3">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-align-left-2" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            type="select"
-                            name="select"
-                            placeholder="Type (Server, Storage, Switch, etc.)"
-                            name="type"
-                            value={type}
-                            disabled
-                          >
-                            <option>Server</option>
-                            <option>Storage</option>
-                            <option>Switch</option>
-                          </Input>
-                        </InputGroup>
-                      </FormGroup>
-                      <FormGroup>
-                        <InputGroup className="input-group-alternative">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-watch-time" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder="Start Date"
-                            type="date"
-                            autoComplete="off"
-                            name="startDate"
-                            value={this.state.startDate.substr(0, 10)}
-                            onChange={this.handleStartDate}
-                          />
-                        </InputGroup>
-                      </FormGroup>
-                      <FormGroup>
-                        <InputGroup className="input-group-alternative">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-watch-time" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder="End Date"
-                            type="date"
-                            name="endDate"
-                            autoComplete="off"
-                            value={this.state.endDate.substr(0, 10)}
-                            onChange={this.handleEndDate}
-                          />
                         </InputGroup>
                       </FormGroup>
 

@@ -16,7 +16,8 @@ import {
   Row,
   Jumbotron,
   Modal,
-  Col
+  Col,
+  Table
 } from "reactstrap";
 
 class MachineModals extends React.Component {
@@ -109,7 +110,7 @@ class MachineModals extends React.Component {
       manufacturer,
       serialNumber,
       productNumber,
-
+      startDate,
       type
     } = this.props.machine;
     console.log(this.state);
@@ -152,7 +153,7 @@ class MachineModals extends React.Component {
                 <Card className="bg-secondary shadow border-0">
                   <CardHeader className="bg-white pb-5">
                     <div className="text-center text-muted mb-4">
-                      <Jumbotron>Edit Subscription Period</Jumbotron>
+                      <>Fill in the new end date of your subscription</>
                     </div>
                   </CardHeader>
                   <CardBody className="px-lg-5 py-lg-5">
@@ -260,11 +261,11 @@ class MachineModals extends React.Component {
                           </InputGroupAddon>
                           <Input
                             placeholder="Start Date"
-                            type="date"
+                            type="text"
                             autoComplete="off"
                             name="startDate"
-                            value={this.state.startDate.substr(0, 10)}
-                            onChange={this.handleStartDate}
+                            value={startDate.substr(0, 10)}
+                            disabled
                           />
                         </InputGroup>
                       </FormGroup>
@@ -280,7 +281,6 @@ class MachineModals extends React.Component {
                             type="date"
                             name="endDate"
                             autoComplete="off"
-                            value={this.state.endDate.substr(0, 10)}
                             onChange={this.handleEndDate}
                           />
                         </InputGroup>
@@ -293,7 +293,7 @@ class MachineModals extends React.Component {
                           type="submit"
                           onClick={this.handleEdit}
                         >
-                          Edit Machine
+                          Request Extension
                         </Button>
                       </div>
                       <div className="text-center">
@@ -303,7 +303,7 @@ class MachineModals extends React.Component {
                           type="submit"
                           onClick={this.handleDelete}
                         >
-                          Delete Machine
+                          Cancel Contract
                         </Button>
                       </div>
                     </Form>
