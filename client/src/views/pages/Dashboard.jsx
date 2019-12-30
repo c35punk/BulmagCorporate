@@ -5,6 +5,7 @@ import axios from "axios";
 import Machine from "../IndexSections/Machine";
 import { UserConsumer } from "../../contexts/user-context";
 import { dbConstants } from "../../constants/constants";
+import ContractModal from "../IndexSections/ContractsModal";
 
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
@@ -33,6 +34,9 @@ class Dashboard extends React.Component {
     this.refs.main.scrollTop = 0;
   }
   render() {
+    console.log("Hello from DASHBOARD");
+    console.log(this.props);
+    console.log(this.state);
     return (
       <>
         <main ref="main">
@@ -61,19 +65,13 @@ class Dashboard extends React.Component {
                           </span>
                           <span className="btn-inner--text">Add system</span>
                         </Button>
-                        <Button
-                          className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
-                          color="default"
-                          to="/#"
+
+                        {/* <ContractModal
+                          className="mt-3"
+                          color="dark"
                           tag={Link}
-                        >
-                          <span className="btn-inner--icon mr-1">
-                            <i className="ni ni-cloud-download-95" />
-                          </span>
-                          <span className="btn-inner--text">
-                            View active contracts
-                          </span>
-                        </Button>
+                          machine={this.props.machine}
+                        /> */}
                       </div>
                     </Col>
                   </Row>
