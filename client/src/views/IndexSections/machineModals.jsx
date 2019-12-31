@@ -5,8 +5,9 @@ import { dbConstants } from "../../constants/constants";
 // reactstrap components
 import {
   Button,
+  Badge,
   Card,
-  CardHeader,
+  FormText,
   CardBody,
   FormGroup,
   Form,
@@ -48,6 +49,15 @@ class MachineModals extends React.Component {
 
   render() {
     console.log(this.state);
+    let {
+      manufacturer,
+      machineName,
+      productNumber,
+      serialNumber,
+      type,
+      startDate,
+      endDate
+    } = this.props.machine;
     return (
       <>
         <br />
@@ -58,7 +68,7 @@ class MachineModals extends React.Component {
           type="button"
           onClick={() => this.toggleModal("notificationModal")}
         >
-          SUBMIT SERVICE TICKET
+          SUBMIT SERVICE Ticket
         </Button>
         <Modal
           className="modal-dialog-centered modal-primary modal-lg"
@@ -68,7 +78,7 @@ class MachineModals extends React.Component {
         >
           <div className="modal-header">
             <h6 className="modal-title" id="modal-title-notification">
-              SOMETHING
+              {manufacturer} {machineName}
             </h6>
             <button
               aria-label="Close"
@@ -84,16 +94,37 @@ class MachineModals extends React.Component {
             <Row className="justify-content-center">
               <Col lg="5">
                 <Card className="bg-secondary shadow border-0">
-                  <CardHeader className="bg-white pb-5">
+                  <Badge color="default" pill className="mr-1">
                     <div className="text-center text-muted mb-4">
                       <Jumbotron>New Service Ticket</Jumbotron>
                     </div>
-                  </CardHeader>
+                  </Badge>
+                  <Badge color="dark" className="mr-1">
+                    <h5 className="text-dark">
+                      Vendor: <strong>{manufacturer}</strong>
+                    </h5>
+                  </Badge>
+                  <Badge color="dark" className="mr-1">
+                    <h6 className="text-dark">Machine: {machineName}</h6>
+                  </Badge>
+                  <Badge color="dark" className="mr-1">
+                    <h6 className="text-dark">PN: {productNumber}</h6>
+                  </Badge>
+                  <Badge color="dark" className="mr-1">
+                    <h6 className="text-dark">SN: {serialNumber}</h6>
+                  </Badge>
                   <CardBody className="px-lg-5 py-lg-5">
                     <Form role="form">
                       <FormGroup>
                         <Label for="ticketBody">Details</Label>
                         <Input type="textarea" name="text" id="ticketBody" />
+                      </FormGroup>
+                      <FormGroup>
+                        <Label for="exampleFile">Upload File</Label>
+                        <Input type="file" name="file" id="exampleFile" />
+                        <FormText color="muted">
+                        Allowed file size ~3MB
+                        </FormText>
                       </FormGroup>
 
                       <div className="text-center">
@@ -103,17 +134,7 @@ class MachineModals extends React.Component {
                           type="submit"
                           onClick={this.handleEdit}
                         >
-                          Edit Machine
-                        </Button>
-                      </div>
-                      <div className="text-center">
-                        <Button
-                          className="mt-4"
-                          color="default"
-                          type="submit"
-                          onClick={this.handleDelete}
-                        >
-                          Delete Machine
+                          Submit Ticket
                         </Button>
                       </div>
                     </Form>
