@@ -122,8 +122,7 @@ class MachineModals extends React.Component {
                         <InputGroup className="input-group-alternative mb-3">
                           <InputGroupAddon addonType="prepend">
                             <InputGroupText>
-                              <i className="ni ni-single-copy-04" />
-                              System Type
+                              <i className="ni ni-settings" /> System Type
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
@@ -144,8 +143,8 @@ class MachineModals extends React.Component {
                         <InputGroup className="input-group-alternative mb-3">
                           <InputGroupAddon addonType="prepend">
                             <InputGroupText>
-                              <i className="ni ni-single-copy-04" />
-                              Failed Component
+                              <i className="ni ni-settings" /> Failed
+                              Component
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
@@ -171,7 +170,7 @@ class MachineModals extends React.Component {
                         </InputGroup>
                       </FormGroup>
                       <FormGroup>
-                        <Label for="ticketBody">Details</Label>
+                        <Label for="ticketBody">Failure Description</Label>
                         <Input type="textarea" name="text" id="ticketBody" />
                       </FormGroup>
                       <FormGroup>
