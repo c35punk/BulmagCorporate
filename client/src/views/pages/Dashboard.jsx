@@ -68,7 +68,7 @@ class Dashboard extends React.Component {
 
                         <ContractModal
                           className="mt-3"
-                          color="dark"
+                          color="info"
                           tag={Link}
                           machine={this.props.machine}
                         />

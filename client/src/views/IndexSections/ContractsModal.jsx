@@ -11,9 +11,7 @@ import {
   FormGroup,
   Form,
   Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
+  Label,
   Row,
   Jumbotron,
   Modal,
@@ -88,34 +86,14 @@ class MachineModals extends React.Component {
                 <Card className="bg-secondary shadow border-0">
                   <CardHeader className="bg-white pb-5">
                     <div className="text-center text-muted mb-4">
-                      <Jumbotron>Submit Ticket</Jumbotron>
+                      <Jumbotron>New Service Ticket</Jumbotron>
                     </div>
                   </CardHeader>
                   <CardBody className="px-lg-5 py-lg-5">
                     <Form role="form">
                       <FormGroup>
-                        <InputGroup className="input-group-alternative mb-3">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-single-copy-04" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            type="select"
-                            name="select"
-                            placeholder="Type (Server, Storage, Switch, etc.)"
-                            name="manufacturer"
-                            value="{manufacturer}"
-                            disabled
-                          >
-                            <option>Lenovo</option>
-                            <option>Dell</option>
-                            <option>INFINIDAT</option>
-                            <option>HPE</option>
-                            <option>CISCO</option>
-                            <option>Other</option>
-                          </Input>
-                        </InputGroup>
+                        <Label for="ticketBody">Details</Label>
+                        <Input type="textarea" name="text" id="ticketBody" />
                       </FormGroup>
 
                       <div className="text-center">

@@ -151,7 +151,7 @@ class MachineModals extends React.Component {
                 <Card className="bg-secondary shadow border-0">
                   <CardHeader className="bg-white pb-5">
                     <div className="text-center text-muted mb-4">
-                      <>Fill in the new end date of your subscription</>
+                      <>Request a new end date of your subscription</>
                     </div>
                   </CardHeader>
                   <CardBody className="px-lg-5 py-lg-5">
