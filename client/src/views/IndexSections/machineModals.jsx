@@ -12,6 +12,9 @@ import {
   FormGroup,
   Form,
   Input,
+  InputGroup,
+  InputGroupText,
+  InputGroupAddon,
   Label,
   Row,
   Jumbotron,
@@ -116,17 +119,68 @@ class MachineModals extends React.Component {
                   <CardBody className="px-lg-5 py-lg-5">
                     <Form role="form">
                       <FormGroup>
+                        <InputGroup className="input-group-alternative mb-3">
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>
+                              <i className="ni ni-single-copy-04" />
+                              System Type
+                            </InputGroupText>
+                          </InputGroupAddon>
+                          <Input
+                            type="select"
+                            name="select"
+                            placeholder="Type (Server, Storage, Switch, etc.)"
+                            name="manufacturer"
+                            value={manufacturer}
+                            onChange={this.handleType}
+                          >
+                            <option>Server</option>
+                            <option>Storage</option>
+                            <option>Switch</option>
+                          </Input>
+                        </InputGroup>
+                      </FormGroup>
+                      <FormGroup>
+                        <InputGroup className="input-group-alternative mb-3">
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>
+                              <i className="ni ni-single-copy-04" />
+                              Failed Component
+                            </InputGroupText>
+                          </InputGroupAddon>
+                          <Input
+                            type="select"
+                            name="select"
+                            placeholder="Type (Server, Storage, Switch, etc.)"
+                            name="manufacturer"
+                            value={manufacturer}
+                            onChange={this.handleType}
+                          >
+                            <option>SAS/SATA Disk</option>
+                            <option>Memory</option>
+                            <option>RAID Controller</option>
+                            <option>Planar/Motherboard</option>
+                            <option>RAID Battery</option>
+                            <option>SSD Disk</option>
+                            <option>SFP Module</option>
+                            <option>Riser Card</option>
+                            <option>Expansion Card</option>
+                            <option>CPU</option>
+                            <option>Other</option>
+                          </Input>
+                        </InputGroup>
+                      </FormGroup>
+                      <FormGroup>
                         <Label for="ticketBody">Details</Label>
                         <Input type="textarea" name="text" id="ticketBody" />
                       </FormGroup>
                       <FormGroup>
-                        <Label for="exampleFile">Upload File</Label>
-                        <Input type="file" name="file" id="exampleFile" />
+                        <Label for="upload">Upload Log File/Screenshot</Label>
+                        <Input type="file" name="file" id="upload" />
                         <FormText color="muted">
-                        Allowed file size ~3MB
+                          Allowed file size ~3MB
                         </FormText>
                       </FormGroup>
-
                       <div className="text-center">
                         <Button
                           className="mt-4"
