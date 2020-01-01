@@ -27,7 +27,8 @@ class MachineModals extends React.Component {
     super(props);
     this.state = {
       systemType: "",
-      component: ""
+      component: "",
+      failureDescription: ""
     };
     this.handleComponent = this.handleComponent.bind(this);
     this.handleType = this.handleType.bind(this);
@@ -62,7 +63,8 @@ class MachineModals extends React.Component {
     axios
       .post("http://localhost:9949/add-ticket", ticket)
       .then(res => console.log(res.data));
-    console.log(machineToBeAdded);
+    console.log("ticket");
+    console.log(ticket);
     console.log(this.state);
 
     event.preventDefault();
@@ -204,7 +206,13 @@ class MachineModals extends React.Component {
                       </FormGroup>
                       <FormGroup>
                         <Label for="ticketBody">Failure Description</Label>
-                        <Input type="textarea" name="text" id="ticketBody" />
+                        <Input
+                          type="textarea"
+                          name="text"
+                          id="ticketBody"
+                          value={this.state.failureDescription}
+                          onChange={this.handleFailureDescription}
+                        />
                       </FormGroup>
                       <FormGroup>
                         <Label for="upload">Upload Log File/Screenshot</Label>
