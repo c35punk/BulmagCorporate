@@ -55,20 +55,12 @@ class MachineModals extends React.Component {
 
   handleSubmit(event) {
     console.log(this.state);
-    const machineToBeAdded = {
-      manufacturer: this.state.manufacturer,
-      machineName: this.state.machineName,
-      productNumber: this.state.productNumber,
-      serialNumber: this.state.serialNumber,
-      type: this.state.type,
-      startDate: this.state.startDate,
-      endDate: this.state.endDate,
-      agree: this.state.agree,
+    const ticket = {
       creatorID: this.props.id
     };
 
     axios
-      .post("http://localhost:9949/machines/create", machineToBeAdded)
+      .post("http://localhost:9949/add-ticket", ticket)
       .then(res => console.log(res.data));
     console.log(machineToBeAdded);
     console.log(this.state);
@@ -101,10 +93,7 @@ class MachineModals extends React.Component {
       manufacturer,
       machineName,
       productNumber,
-      serialNumber,
-      type,
-      startDate,
-      endDate
+      serialNumber
     } = this.props.machine;
     return (
       <>
