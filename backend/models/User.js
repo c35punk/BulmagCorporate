@@ -14,6 +14,7 @@ let userSchema = new mongoose.Schema({
   contactPerson: String,
   vatNumber: String,
   contracts: [],
+  tickets: [],
   roles: [String]
 })
 
@@ -46,7 +47,8 @@ module.exports.seedAdminUser = () => {
         contactPerson: 'Dobrin Danov',
         vatNumber: 'BG030008679',
         companyImage: 'https://team-vision.bg/wp-content/uploads/2019/08/Bulmag.png',
-        contracts: []
+        contracts: [],
+        tickets: []
       },
       {
         email: 'procurement@vivacom.bg',
@@ -59,7 +61,8 @@ module.exports.seedAdminUser = () => {
         contactPerson: 'Atanas Dobrev',
         vatNumber: 'BG7658830934',
         companyImage: 'http://www.vivacom.bg/web/files/richeditor/about/logo-600.png',
-        contracts: []
+        contracts: [],
+        tickets: []
       })
   })
 }
