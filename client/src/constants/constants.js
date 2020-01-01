@@ -6,17 +6,20 @@ const auth = {
 const baseUrl = "http://localhost:9949";
 const authUrl = `${baseUrl}/auth`;
 const machineUrl = `${baseUrl}/machines`;
-const ordersUrl = `${baseUrl}/orders`;
-const usersUrl = `${baseUrl}/users`;
-const statsUrl = `${baseUrl}/stats`;
+const addTicketUrl = `${baseUrl}/add-ticket`;
+const ticketUrl = `${baseUrl}/tickets`;
+
 
 const dbConstants = {
   // auth
   loginUrl: `${authUrl}/login`,
   logoutUrl: `${authUrl}/logout`,
   registerUrl: `${authUrl}/signup`,
+
   // machines
   machinesUrl: `${machineUrl}/`,
+  ticketsUrl: `${ticketUrl}/`,
+  addTicketsUrl: `${addTicketUrl}/`,
   machineCreateUrl: `${machineUrl}/create`,
   machineEditByIdUrl: `${machineUrl}/edit/`,
   machineDeleteByIdUrl: `${machineUrl}/delete/`,
@@ -26,22 +29,7 @@ const dbConstants = {
   machineFileUploadByIdUrl: `${machineUrl}/upload/`,
   machineFileDeleteByIdUrl: `${machineUrl}/upload/delete/`,
   machineFileDownloadByIdUrl: `${machineUrl}/download/`,
-  machinesAllUrl: `${machineUrl}/all`,
-  // orders
-  orderCreateUrl: `${ordersUrl}/submit`,
-  orderApproveByIdUrl: `${ordersUrl}/approve/`,
-  orderCancelByIdUrl: `${ordersUrl}/cancel/`,
-  orderDeliverByIdUrl: `${ordersUrl}/deliver/`,
-  ordersByUserUrl: `${ordersUrl}/user`,
-  ordersAllUrl: `${ordersUrl}/all`,
-  ordersApprovedUrl: `${ordersUrl}/approved`,
-  ordersCancelledUrl: `${ordersUrl}/cancelled`,
-  ordersDeliveredUrl: `${ordersUrl}/delivered`,
-  ordersPendingUrl: `${ordersUrl}/pending`,
-  // user
-  userProfileUrl: `${usersUrl}/profile`,
-  // stats
-  statsUrl: `${statsUrl}/`
+
 };
 
 // Input notifications

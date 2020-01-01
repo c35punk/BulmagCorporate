@@ -25,10 +25,14 @@ import {
 class MachineModals extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      machines: []
+      systemType: "",
+      component: ""
     };
+    this.handleComponent = this.handleComponent.bind(this);
+    this.handleType = this.handleType.bind(this);
+    this.handleFailureDescription = this.handleFailureDescription.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   state = {};
   toggleModal = state => {
@@ -37,6 +41,47 @@ class MachineModals extends React.Component {
       machine: this.props.machine
     });
   };
+
+  handleComponent(event) {
+    this.setState({ component: event.target.value });
+  }
+
+  handleType(event) {
+    this.setState({ systemType: event.target.value });
+  }
+  handleFailureDescription(event) {
+    this.setState({ failureDescription: event.target.value });
+  }
+
+  handleSubmit(event) {
+    console.log(this.state);
+    const machineToBeAdded = {
+      manufacturer: this.state.manufacturer,
+      machineName: this.state.machineName,
+      productNumber: this.state.productNumber,
+      serialNumber: this.state.serialNumber,
+      type: this.state.type,
+      startDate: this.state.startDate,
+      endDate: this.state.endDate,
+      agree: this.state.agree,
+      creatorID: this.props.id
+    };
+
+    axios
+      .post("http://localhost:9949/machines/create", machineToBeAdded)
+      .then(res => console.log(res.data));
+    console.log(machineToBeAdded);
+    console.log(this.state);
+
+    event.preventDefault();
+    window.location = "/dashboard";
+  }
+
+  componentDidMount() {
+    document.documentElement.scrollTop = 0;
+    document.scrollingElement.scrollTop = 0;
+    this.refs.main.scrollTop = 0;
+  }
 
   componentDidMount() {
     axios
@@ -117,7 +162,7 @@ class MachineModals extends React.Component {
                     <h6 className="text-dark">SN: {serialNumber}</h6>
                   </Badge>
                   <CardBody className="px-lg-5 py-lg-5">
-                    <Form role="form">
+                    <Form role="form" onSubmit={this.handleSubmit}>
                       <FormGroup>
                         <InputGroup className="input-group-alternative mb-3">
                           <InputGroupAddon addonType="prepend">
@@ -130,7 +175,7 @@ class MachineModals extends React.Component {
                             name="select"
                             placeholder="Type (Server, Storage, Switch, etc.)"
                             name="manufacturer"
-                            value={manufacturer}
+                            value={this.state.systemType}
                             onChange={this.handleType}
                           >
                             <option>Server</option>
@@ -143,8 +188,7 @@ class MachineModals extends React.Component {
                         <InputGroup className="input-group-alternative mb-3">
                           <InputGroupAddon addonType="prepend">
                             <InputGroupText>
-                              <i className="ni ni-settings" /> Failed
-                              Component
+                              <i className="ni ni-settings" /> Failed Component
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
@@ -152,8 +196,8 @@ class MachineModals extends React.Component {
                             name="select"
                             placeholder="Type (Server, Storage, Switch, etc.)"
                             name="manufacturer"
-                            value={manufacturer}
-                            onChange={this.handleType}
+                            value={this.state.component}
+                            onChange={this.handleComponent}
                           >
                             <option>SAS/SATA Disk</option>
                             <option>Memory</option>
@@ -181,12 +225,7 @@ class MachineModals extends React.Component {
                         </FormText>
                       </FormGroup>
                       <div className="text-center">
-                        <Button
-                          className="mt-4"
-                          color="default"
-                          type="submit"
-                          onClick={this.handleEdit}
-                        >
+                        <Button className="mt-4" color="default" type="submit">
                           Submit Ticket
                         </Button>
                       </div>
