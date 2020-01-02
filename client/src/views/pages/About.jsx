@@ -40,7 +40,7 @@ class About extends React.Component {
                 >
                   <polygon
                     className="fill-secondary"
-                    points="560 0 2560 100 0 100"
+                    points="2560 0 2560 100 0 100"
                   />
                 </svg>
               </div>

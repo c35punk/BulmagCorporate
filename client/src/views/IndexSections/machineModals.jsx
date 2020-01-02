@@ -57,7 +57,7 @@ class MachineModals extends React.Component {
 
   handleSubmit(event) {
     console.log(this.state);
-    const ticket = {
+    const ticketToBeAdded = {
       systemType: this.state.systemType,
       component: this.state.component,
       failureDescription: this.state.failureDescription,
@@ -65,11 +65,10 @@ class MachineModals extends React.Component {
     };
 
     axios
-      .post("http://localhost:9949/add-ticket", ticket)
+      .post("http://localhost:9949/machines/add-ticket", ticketToBeAdded)
       .then(res => console.log(res.data));
     console.log("ticket");
-    console.log(ticket);
-    console.log(this.state);
+    console.log(ticketToBeAdded);
     console.log(this.props);
 
     event.preventDefault();

@@ -85,9 +85,7 @@ class AddMachine extends React.Component {
     axios
       .post("http://localhost:9949/machines/create", machineToBeAdded)
       .then(res => console.log(res.data));
-    console.log(machineToBeAdded);
-    console.log(this.state);
-
+    
     event.preventDefault();
     window.location = "/dashboard";
   }
