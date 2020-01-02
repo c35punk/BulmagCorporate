@@ -72,7 +72,6 @@ class MachineModals extends React.Component {
       .then(res => console.log(res.data));
     console.log("ticket");
     console.log(ticketToBeAdded);
-    console.log(this.props);
 
     event.preventDefault();
     // window.location = "/dashboard";
