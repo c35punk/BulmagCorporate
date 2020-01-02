@@ -6,6 +6,8 @@ const auth = {
 const baseUrl = "http://localhost:9949";
 const authUrl = `${baseUrl}/auth`;
 const machineUrl = `${baseUrl}/machines`;
+const productUrl = `${baseUrl}/products`;
+const serviceUrl = `${baseUrl}/services`;
 const addTicketUrl = `${baseUrl}/add-ticket`;
 const ticketUrl = `${baseUrl}/tickets`;
 
@@ -16,8 +18,10 @@ const dbConstants = {
   logoutUrl: `${authUrl}/logout`,
   registerUrl: `${authUrl}/signup`,
 
-  // machines
+  // machines, products, services
   machinesUrl: `${machineUrl}/`,
+  productsUrl: `${productUrl}/`,
+  servicesUrl: `${serviceUrl}/`,
   ticketsUrl: `${ticketUrl}/`,
   addTicketsUrl: `${addTicketUrl}/`,
   machineCreateUrl: `${machineUrl}/create`,

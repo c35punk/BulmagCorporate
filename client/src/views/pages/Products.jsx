@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { dbConstants } from "../../constants/constants";
 
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
@@ -18,7 +19,7 @@ class Products extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:9949/products/")
+      .get(dbConstants.productsUrl)
       .then(res => {
         this.setState({ products: res.data });
       })
