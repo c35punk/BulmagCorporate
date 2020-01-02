@@ -14,10 +14,8 @@ import {
   InputGroupText,
   InputGroup,
   Row,
-  Jumbotron,
   Modal,
-  Col,
-  Table
+  Col
 } from "reactstrap";
 
 class MachineModals extends React.Component {

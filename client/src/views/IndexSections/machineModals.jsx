@@ -39,8 +39,7 @@ class MachineModals extends React.Component {
   state = {};
   toggleModal = state => {
     this.setState({
-      [state]: !this.state[state],
-      machine: this.props.machine
+      [state]: !this.state[state]
     });
   };
 
@@ -56,7 +55,6 @@ class MachineModals extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log(this.state);
     const ticketToBeAdded = {
       systemType: this.state.systemType,
       component: this.state.component,
@@ -65,7 +63,7 @@ class MachineModals extends React.Component {
     };
 
     axios
-      .post("http://localhost:9949/machines/add-ticket", ticketToBeAdded)
+      .post(dbConstants.addTicketsUrl, ticketToBeAdded)
       .then(res => console.log(res.data));
     console.log("ticket");
     console.log(ticketToBeAdded);
@@ -76,14 +74,14 @@ class MachineModals extends React.Component {
   }
 
   componentDidMount() {
-    axios
-      .get(dbConstants.machinesUrl)
-      .then(res => {
-        this.setState({ machines: res.data });
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+    // axios
+    //   .get(dbConstants.machinesUrl)
+    //   .then(res => {
+    //     this.setState({ machines: res.data });
+    //   })
+    //   .catch(function(error) {
+    //     console.log(error);
+    //   });
   }
 
   render() {
@@ -130,8 +128,8 @@ class MachineModals extends React.Component {
             <Row className="justify-content-center">
               <Col lg="5">
                 <Card className="bg-secondary shadow border-0">
-                  <Badge color="default" pill className="mr-1">
-                    <div className="text-center text-muted mb-4">
+                  <Badge color="default" pill>
+                    <div className="text-default">
                       <Jumbotron>New Service Ticket</Jumbotron>
                     </div>
                   </Badge>

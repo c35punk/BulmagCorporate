@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Alert from "../IndexSections/Alerts";
 import { UserConsumer } from "../../contexts/user-context";
+import { dbConstants } from "../../constants/constants";
 
 // reactstrap components
 import {
@@ -65,7 +66,7 @@ class Login extends React.Component {
       () => {
         try {
           axios
-            .post("http://localhost:9949/auth/login", credentials)
+            .post(dbConstants.loginUrl, credentials)
             .then(res => {
               // this.setState({ token: res.data.token });
               console.log("Success@@:");

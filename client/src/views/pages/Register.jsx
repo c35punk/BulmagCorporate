@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { dbConstants } from "../../constants/constants";
 
 // reactstrap components
 import {
@@ -100,7 +101,7 @@ class Register extends React.Component {
     };
 
     axios
-      .post("http://localhost:9949/auth/signup", newUser)
+      .post(dbConstants.registerUrl, newUser)
       .then(res => console.log(res.data));
     console.log("newUser");
     console.log(newUser);
