@@ -10,7 +10,7 @@ const ticketSchema = new Schema({
         required: true,
     },
     uploadedFile: {
-       type: String
+        type: String
     },
     creatorID: {
         type: String,

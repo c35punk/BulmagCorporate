@@ -35,6 +35,7 @@ class MachineModals extends React.Component {
     this.handleType = this.handleType.bind(this);
     this.handleFailureDescription = this.handleFailureDescription.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.onFileChange = this.onFileChange.bind(this);
   }
   state = {};
   toggleModal = state => {
@@ -53,12 +54,16 @@ class MachineModals extends React.Component {
   handleFailureDescription(event) {
     this.setState({ failureDescription: event.target.value });
   }
+  onFileChange(event) {
+    this.setState({ uploadedFile: event.target.files[0] });
+  }
 
   handleSubmit(event) {
     const ticketToBeAdded = {
       systemType: this.state.systemType,
       component: this.state.component,
       failureDescription: this.state.failureDescription,
+      uploadedFile: this.state.uploadedFile,
       creatorID: this.state.creatorID
     };
 
@@ -211,7 +216,12 @@ class MachineModals extends React.Component {
                       </FormGroup>
                       <FormGroup>
                         <Label for="upload">Upload Log File/Screenshot</Label>
-                        <Input type="file" name="file" id="upload" />
+                        <Input
+                          type="file"
+                          name="file"
+                          id="upload"
+                          onChange={this.onFileChange}
+                        />
                         <FormText color="muted">
                           Allowed file size ~3MB
                         </FormText>
