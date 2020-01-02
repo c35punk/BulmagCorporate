@@ -23,7 +23,7 @@ const dbConstants = {
   productsUrl: `${productUrl}/`,
   servicesUrl: `${serviceUrl}/`,
   ticketsUrl: `${ticketUrl}/`,
-  addTicketsUrl: `${addTicketUrl}/`,
+  addTicketsUrl: `${addTicketUrl}/add-ticket`,
   machineCreateUrl: `${machineUrl}/create`,
   machineEditByIdUrl: `${machineUrl}/edit/`,
   machineDeleteByIdUrl: `${machineUrl}/delete/`,

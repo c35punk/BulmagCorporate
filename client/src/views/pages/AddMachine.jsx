@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { UserConsumer } from "../../contexts/user-context";
+import { dbConstants } from "../../constants/constants";
 // reactstrap components
 import {
   Button,
@@ -83,7 +84,7 @@ class AddMachine extends React.Component {
     };
 
     axios
-      .post("http://localhost:9949/machines/create", machineToBeAdded)
+      .post(dbConstants.machineCreateUrl, machineToBeAdded)
       .then(res => console.log(res.data));
     
     event.preventDefault();
