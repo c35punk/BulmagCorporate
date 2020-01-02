@@ -26,9 +26,10 @@ class MachineModals extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      systemType: "",
-      component: "",
-      failureDescription: ""
+      systemType: "Server",
+      component: "SAS/SATA Disk",
+      failureDescription: "",
+      creatorID: this.props.machine.creatorID
     };
     this.handleComponent = this.handleComponent.bind(this);
     this.handleType = this.handleType.bind(this);
@@ -57,7 +58,10 @@ class MachineModals extends React.Component {
   handleSubmit(event) {
     console.log(this.state);
     const ticket = {
-      creatorID: this.props.id
+      systemType: this.state.systemType,
+      component: this.state.component,
+      failureDescription: this.state.failureDescription,
+      creatorID: this.state.creatorID
     };
 
     axios
@@ -66,15 +70,10 @@ class MachineModals extends React.Component {
     console.log("ticket");
     console.log(ticket);
     console.log(this.state);
+    console.log(this.props);
 
     event.preventDefault();
-    window.location = "/dashboard";
-  }
-
-  componentDidMount() {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-    this.refs.main.scrollTop = 0;
+    // window.location = "/dashboard";
   }
 
   componentDidMount() {
@@ -82,7 +81,6 @@ class MachineModals extends React.Component {
       .get(dbConstants.machinesUrl)
       .then(res => {
         this.setState({ machines: res.data });
-        console.log(res.data);
       })
       .catch(function(error) {
         console.log(error);
@@ -165,7 +163,7 @@ class MachineModals extends React.Component {
                             type="select"
                             name="select"
                             placeholder="Type (Server, Storage, Switch, etc.)"
-                            name="manufacturer"
+                            name="type"
                             value={this.state.systemType}
                             onChange={this.handleType}
                           >
