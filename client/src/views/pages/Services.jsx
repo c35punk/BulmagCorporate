@@ -60,7 +60,7 @@ class Services extends React.Component {
                 >
                   <polygon
                     className="fill-white"
-                    points="2560 0 2560 100 0 100"
+                    points="560 0 2560 100 0 100"
                   />
                 </svg>
               </div>
