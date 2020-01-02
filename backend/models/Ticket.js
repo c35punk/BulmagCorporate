@@ -5,10 +5,14 @@ const ticketSchema = new Schema({
         type: String,
         required: true,
     },
-    failureDescirption: {
-        type: String,
-        required: true,
+    systemType: {
+        type: String
     },
+    failureDescirption: {
+        type: String
+
+    },
+
     uploadedFile: {
         type: String
     },
