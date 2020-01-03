@@ -14,14 +14,14 @@ router.post("/create", (req, res) => {
   console.log(machineObj)
 
 
+
   const machineToSave = new Machine(machineObj);
   machineToSave.save()
     .then(() => res.json('Machine added!'))
     .catch(err => res.status(400).json('Error: ' + err))
 
 })
-
-const DIR = 'public';
+const DIR = '../public';
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -31,7 +31,8 @@ var storage = multer.diskStorage({
     cb(null, file.fieldname + '-' + Date.now())
   }
 })
-const upload = multer({ storage: storage })
+
+var upload = multer({ storage: storage })
 
 
 
@@ -43,14 +44,14 @@ router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
   const ticketObj = req.body;
 
   console.log(ticketObj)
-  console.log(req.file)
+  console.log(req.uploadedFile)
 
   const ticketToSave = new Ticket(
     {
       systemType: req.body.systemType,
       component: req.body.component,
       failureText: ticketObj.failureText,
-      uploadedFile: url + '/public/' + req.body.fileName,
+      fileLocation: url + '/public/' + req.body.fileName,
       creatorID: req.body.creatorID
     }
   );

@@ -29,6 +29,7 @@ class MachineModals extends React.Component {
       systemType: "Server",
       component: "SAS/SATA Disk",
       failureText: "",
+      uploadedFile: { File },
       uploadedFileName: "",
       creatorID: this.props.machine.creatorID
     };
@@ -67,6 +68,7 @@ class MachineModals extends React.Component {
       systemType: this.state.systemType,
       component: this.state.component,
       failureText: this.state.failureText,
+      fileLocation: this.state.fileLocation,
       uploadedFile: this.state.uploadedFile,
       fileName: this.state.uploadedFileName,
       creatorID: this.state.creatorID
@@ -156,7 +158,13 @@ class MachineModals extends React.Component {
                     <h6 className="text-dark">SN: {serialNumber}</h6>
                   </Badge>
                   <CardBody className="px-lg-5 py-lg-5">
-                    <Form role="form" onSubmit={this.handleSubmit}>
+                    <Form
+                      role="form"
+                      onSubmit={this.handleSubmit}
+                      encType="multipart/form-data"
+                      action="/add-ticket"
+                      method="post"
+                    >
                       <FormGroup>
                         <InputGroup className="input-group-alternative mb-3">
                           <InputGroupAddon addonType="prepend">

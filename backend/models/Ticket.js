@@ -11,7 +11,7 @@ const ticketSchema = new Schema({
     failureText: {
         type: String
     },
-    uploadedFile: {
+    fileLocation: {
         type: String
     },
     creatorID: {
@@ -32,7 +32,7 @@ module.exports.initialList = () => {
                 systemType: 'Server',
                 component: 'SAS/SATA Disk',
                 failureText: 'TEST',
-                uploadedFile: 'test/location',
+                fileLocation: 'test/location',
                 fileName: 'TEST.JPG',
                 creatorID: 'TEST'
             })
