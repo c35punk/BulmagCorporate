@@ -29,6 +29,7 @@ class MachineModals extends React.Component {
       systemType: "Server",
       component: "SAS/SATA Disk",
       failureDescription: "",
+      uploadedFileName: "",
       creatorID: this.props.machine.creatorID
     };
     this.handleComponent = this.handleComponent.bind(this);
@@ -55,7 +56,10 @@ class MachineModals extends React.Component {
     this.setState({ failureDescription: event.target.value });
   }
   onFileChange(event) {
-    this.setState({ uploadedFile: event.target.files[0] });
+    this.setState({
+      uploadedFile: event.target.files[0],
+      uploadedFileName: event.target.files[0].name
+    });
   }
 
   handleSubmit(event) {
@@ -64,14 +68,19 @@ class MachineModals extends React.Component {
       component: this.state.component,
       failureDescription: this.state.failureDescription,
       uploadedFile: this.state.uploadedFile,
+      fileName: this.state.uploadedFileName,
       creatorID: this.state.creatorID
     };
 
-    axios
-      .post(dbConstants.addTicketsUrl, ticketToBeAdded)
-      .then(res => console.log(res.data));
-    console.log("ticket");
     console.log(ticketToBeAdded);
+
+    const data = new FormData()
+    data.append('file', this.state.uploadedFile)
+   
+
+    axios
+      .post(dbConstants.addTicketsUrl, data)
+      .then(res => console.log(res.data));
 
     event.preventDefault();
     // window.location = "/dashboard";
@@ -100,7 +109,6 @@ class MachineModals extends React.Component {
       <>
         <br />
         <Button
-          
           className="mb-2"
           color="default"
           type="button"

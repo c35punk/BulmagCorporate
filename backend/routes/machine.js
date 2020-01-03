@@ -2,9 +2,8 @@ const express = require('express')
 const Machine = require('../models/Machine')
 const Ticket = require('../models/Ticket')
 const machineController = require('../controllers/machine-controller')
-const fileStorage = require('../config/file-upload').storage
-const fileUpload = require('../config/file-upload').upload
-
+const multer = require('multer')
+const authCheck = require("../config/auth-check");
 
 
 const router = new express.Router()
@@ -22,26 +21,40 @@ router.post("/create", (req, res) => {
 
 })
 
+const DIR = 'public';
 
-router.post("/add-ticket", (req, res) => {
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, DIR)
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname + '-' + Date.now())
+  }
+})
+const upload = multer(
+  console.log('Hello from Multer upload'),
+  { storage: storage })
+
+
+
+
+router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
 
 
   const url = req.protocol + '://' + req.get('host')
   const ticketObj = req.body;
 
-
-  console.log(fileStorage)
-  console.log(fileUpload)
   console.log(ticketObj)
 
-
-  const ticketToSave = new Ticket({
-    systemType: req.body.systemType,
-    component: req.body.component,
-    failureDescription: req.body.failureDescription,
-    uploadedFile: url + '/public/' + 'filename',
-    creatorID: req.body.creatorID
-  });
+  const ticketToSave = new Ticket(
+    {
+      systemType: req.body.systemType,
+      component: req.body.component,
+      failureDescription: req.body.failureDescription,
+      uploadedFile: url + '/public/' + req.body.fileName,
+      creatorID: req.body.creatorID
+    }
+  );
   ticketToSave.save()
     .then(() => res.json('Ticket added!'))
     .catch(err => res.status(400).json('Error: ' + err))

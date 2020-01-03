@@ -12,7 +12,7 @@ module.exports = (req, res, next) => {
   // decode the token using a secret key-phrase
   return jwt.verify(token, 'default@!@!@!', (err, decoded) => {
     if (err) {
-      return res.status(401).end()
+      return console.log('JWT ERROR!!!'), res.status(401).end()
     }
 
     const userId = decoded.sub
@@ -20,7 +20,7 @@ module.exports = (req, res, next) => {
       .findById(userId)
       .then(user => {
         if (!user) {
-          return res.status(401).end()
+          return console.log('No USER!!!'), res.status(401).end()
         }
 
         req.user = user
