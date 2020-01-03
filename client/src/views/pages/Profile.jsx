@@ -2,6 +2,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 import { UserConsumer } from "../../contexts/user-context";
+import { dbConstants } from "../../constants/constants";
 
 // reactstrap components
 import { Button, Badge, Card, Container, Row, Col } from "reactstrap";
@@ -21,7 +22,7 @@ class Profile extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:9949/machines/")
+      .get(dbConstants.machinesUrl)
       .then(res => {
         const userMachines = res.data.filter(
           x => x.creatorID === this.props.user.id
