@@ -32,10 +32,21 @@ var storage = multer.diskStorage({
   }
 })
 
-var upload = multer({ storage: storage })
-
-
-
+var upload = multer({
+  storage: storage,
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype == "image/png"
+      || file.mimetype == "text/txt"
+      || file.mimetype == "text/log"
+      || file.mimetype == "image/jpg"
+      || file.mimetype == "image/jpeg") {
+      cb(null, true);
+    } else {
+      cb(null, false);
+      return cb(new Error('Only .png, .jpg, .jpeg, .txt, and .log format allowed!'));
+    }
+  }
+});
 
 router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
 
@@ -43,8 +54,8 @@ router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
   const url = req.protocol + '://' + req.get('host')
   const ticketObj = req.body;
 
-  console.log(ticketObj)
-  console.log(req.uploadedFile)
+  console.log(ticketObj);
+  console.log(req.file);
 
   const ticketToSave = new Ticket(
     {

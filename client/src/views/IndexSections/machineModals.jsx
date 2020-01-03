@@ -162,8 +162,6 @@ class MachineModals extends React.Component {
                       role="form"
                       onSubmit={this.handleSubmit}
                       encType="multipart/form-data"
-                      action="/add-ticket"
-                      method="post"
                     >
                       <FormGroup>
                         <InputGroup className="input-group-alternative mb-3">
