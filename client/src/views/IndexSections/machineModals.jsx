@@ -174,7 +174,6 @@ class MachineModals extends React.Component {
                           </InputGroupAddon>
                           <Input
                             type="select"
-                            name="select"
                             placeholder="Type (Server, Storage, Switch, etc.)"
                             name="type"
                             value={this.state.systemType}
@@ -195,8 +194,7 @@ class MachineModals extends React.Component {
                           </InputGroupAddon>
                           <Input
                             type="select"
-                            name="select"
-                            placeholder="Type (Server, Storage, Switch, etc.)"
+                            placeholder="Failed Component"
                             name="manufacturer"
                             value={this.state.component}
                             onChange={this.handleComponent}

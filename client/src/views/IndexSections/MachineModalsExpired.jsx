@@ -163,7 +163,6 @@ class MachineModals extends React.Component {
                           </InputGroupAddon>
                           <Input
                             type="select"
-                            name="select"
                             placeholder="Type (Server, Storage, Switch, etc.)"
                             name="manufacturer"
                             value={manufacturer}
@@ -235,7 +234,6 @@ class MachineModals extends React.Component {
                           </InputGroupAddon>
                           <Input
                             type="select"
-                            name="select"
                             placeholder="Type (Server, Storage, Switch, etc.)"
                             name="type"
                             value={type}

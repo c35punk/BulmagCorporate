@@ -20,21 +20,22 @@ const ticketSchema = new Schema({
 
 });
 
+
 let Ticket = model('Ticket', ticketSchema)
 
 module.exports = Ticket
-module.exports.initialList = () => {
-    Ticket.find({}).then(tickets => {
-        if (tickets.length > 0) return
+// module.exports.initialList = () => {
+//     Ticket.find({}).then(tickets => {
+//         if (tickets.length > 0) return
 
-        Ticket.create(
-            {
-                systemType: 'Server',
-                component: 'SAS/SATA Disk',
-                failureText: 'TEST',
-                fileLocation: 'test/location',
-                fileName: 'TEST.JPG',
-                creatorID: 'TEST'
-            })
-    })
-}
+//         Ticket.create(
+//             {
+//                 systemType: 'Server',
+//                 component: 'SAS/SATA Disk',
+//                 failureText: 'TEST',
+//                 fileLocation: 'test/location',
+//                 fileName: 'TEST.JPG',
+//                 creatorID: 'TEST'
+//             })
+//     })
+// }

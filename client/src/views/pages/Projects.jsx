@@ -30,12 +30,14 @@ class Projects extends React.Component {
                         src="https://katina.bg/wp-content/uploads/2018/04/bl-euro.jpg"
                         width="150"
                         height="159"
+                        alt="..."
                       />
                       <img
                         className="alignright"
                         src="http://hemusconsult.com/wp-content/uploads/2015/04/flag-e1424683963972-s.jpg"
                         width="150"
                         height="136"
+                        alt="..."
                       />
                     </p>
                     <hr />

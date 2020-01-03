@@ -86,7 +86,7 @@ class AddMachine extends React.Component {
     axios
       .post(dbConstants.machineCreateUrl, machineToBeAdded)
       .then(res => console.log(res.data));
-    
+
     event.preventDefault();
     window.location = "/dashboard";
   }
@@ -159,7 +159,6 @@ class AddMachine extends React.Component {
                             </InputGroupAddon>
                             <Input
                               type="select"
-                              name="select"
                               placeholder="Type (Server, Storage, Switch, etc.)"
                               name="manufacturer"
                               value={this.state.manufacturer}
@@ -231,7 +230,6 @@ class AddMachine extends React.Component {
                             </InputGroupAddon>
                             <Input
                               type="select"
-                              name="select"
                               placeholder="Type (Server, Storage, Switch, etc.)"
                               name="type"
                               value={this.state.type}

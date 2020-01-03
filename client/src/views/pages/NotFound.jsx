@@ -1,7 +1,7 @@
 import React from "react";
 
 // reactstrap components
-import { Jumbotron, Row, Container } from "reactstrap";
+import { Jumbotron, Row } from "reactstrap";
 
 class NotFound extends React.Component {
   componentDidMount() {
