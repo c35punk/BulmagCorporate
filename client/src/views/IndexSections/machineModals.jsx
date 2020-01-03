@@ -28,13 +28,13 @@ class MachineModals extends React.Component {
     this.state = {
       systemType: "Server",
       component: "SAS/SATA Disk",
-      failureDescription: "",
+      failureText: "",
       uploadedFileName: "",
       creatorID: this.props.machine.creatorID
     };
     this.handleComponent = this.handleComponent.bind(this);
     this.handleType = this.handleType.bind(this);
-    this.handleFailureDescription = this.handleFailureDescription.bind(this);
+    this.handleFailureText = this.handleFailureText.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onFileChange = this.onFileChange.bind(this);
   }
@@ -52,8 +52,8 @@ class MachineModals extends React.Component {
   handleType(event) {
     this.setState({ systemType: event.target.value });
   }
-  handleFailureDescription(event) {
-    this.setState({ failureDescription: event.target.value });
+  handleFailureText(event) {
+    this.setState({ failureText: event.target.value });
   }
   onFileChange(event) {
     this.setState({
@@ -66,7 +66,7 @@ class MachineModals extends React.Component {
     const ticketToBeAdded = {
       systemType: this.state.systemType,
       component: this.state.component,
-      failureDescription: this.state.failureDescription,
+      failureText: this.state.failureText,
       uploadedFile: this.state.uploadedFile,
       fileName: this.state.uploadedFileName,
       creatorID: this.state.creatorID
@@ -74,12 +74,8 @@ class MachineModals extends React.Component {
 
     console.log(ticketToBeAdded);
 
-    const data = new FormData()
-    data.append('file', this.state.uploadedFile)
-   
-
     axios
-      .post(dbConstants.addTicketsUrl, data)
+      .post(dbConstants.addTicketsUrl, ticketToBeAdded)
       .then(res => console.log(res.data));
 
     event.preventDefault();
@@ -212,13 +208,13 @@ class MachineModals extends React.Component {
                         </InputGroup>
                       </FormGroup>
                       <FormGroup>
-                        <Label for="ticketBody">Failure Description</Label>
+                        <Label for="ticketBody">Failure Text</Label>
                         <Input
                           type="textarea"
                           name="text"
                           id="ticketBody"
-                          value={this.state.failureDescription}
-                          onChange={this.handleFailureDescription}
+                          value={this.state.failureText}
+                          onChange={this.handleFailureText}
                         />
                       </FormGroup>
                       <FormGroup>

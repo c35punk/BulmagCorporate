@@ -28,12 +28,10 @@ var storage = multer.diskStorage({
     cb(null, DIR)
   },
   filename: function (req, file, cb) {
-    cb(null, file.originalname + '-' + Date.now())
+    cb(null, file.fieldname + '-' + Date.now())
   }
 })
-const upload = multer(
-  console.log('Hello from Multer upload'),
-  { storage: storage })
+const upload = multer({ storage: storage })
 
 
 
@@ -45,12 +43,13 @@ router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
   const ticketObj = req.body;
 
   console.log(ticketObj)
+  console.log(req.file)
 
   const ticketToSave = new Ticket(
     {
       systemType: req.body.systemType,
       component: req.body.component,
-      failureDescription: req.body.failureDescription,
+      failureText: ticketObj.failureText,
       uploadedFile: url + '/public/' + req.body.fileName,
       creatorID: req.body.creatorID
     }
