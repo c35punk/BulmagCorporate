@@ -10,7 +10,6 @@ const ticketSchema = new Schema({
     },
     failureDescirption: {
         type: String
-
     },
 
     uploadedFile: {

@@ -100,7 +100,7 @@ class MachineModals extends React.Component {
       <>
         <br />
         <Button
-          block
+          
           className="mb-2"
           color="default"
           type="button"

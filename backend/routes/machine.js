@@ -2,6 +2,9 @@ const express = require('express')
 const Machine = require('../models/Machine')
 const Ticket = require('../models/Ticket')
 const machineController = require('../controllers/machine-controller')
+const fileStorage = require('../config/file-upload').storage
+const fileUpload = require('../config/file-upload').upload
+
 
 
 const router = new express.Router()
@@ -22,9 +25,13 @@ router.post("/create", (req, res) => {
 
 router.post("/add-ticket", (req, res) => {
 
+
+  const url = req.protocol + '://' + req.get('host')
   const ticketObj = req.body;
 
-  console.log(req)
+
+  console.log(fileStorage)
+  console.log(fileUpload)
   console.log(ticketObj)
 
 
@@ -32,7 +39,7 @@ router.post("/add-ticket", (req, res) => {
     systemType: req.body.systemType,
     component: req.body.component,
     failureDescription: req.body.failureDescription,
-    uploadedFile: req.body.uploadedFile,
+    uploadedFile: url + '/public/' + 'filename',
     creatorID: req.body.creatorID
   });
   ticketToSave.save()
