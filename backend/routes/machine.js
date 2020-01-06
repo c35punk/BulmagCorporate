@@ -50,16 +50,14 @@ var upload = multer({
 
 router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
 
-
   const url = req.protocol + '://' + req.get('host')
   const ticketObj = req.body;
 
   console.log(ticketObj);
-  console.log(req.file);
 
   const ticketToSave = new Ticket(
     {
-      systemType: req.body.systemType,
+      repairDate: req.body.repairDate,
       component: req.body.component,
       failureText: ticketObj.failureText,
       fileLocation: url + '/public/' + req.body.fileName,
@@ -72,7 +70,6 @@ router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
 
 })
 
-
 router.get('/', (req, res) => {
   Machine
     .find()
@@ -80,7 +77,6 @@ router.get('/', (req, res) => {
       res.status(200).json(machines)
     })
 })
-
 
 router.put('/edit/:machineId', machineController.edit)
 router.delete('/delete/:machineId', machineController.delete)

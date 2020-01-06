@@ -1,12 +1,12 @@
 const { Schema, model } = require('mongoose');
 
 const ticketSchema = new Schema({
-    systemType: {
-        type: String
+    repairDate: {
+        type: Date
     },
     component: {
         type: String,
-        required: true,
+        required: true
     },
     failureText: {
         type: String
@@ -24,18 +24,19 @@ const ticketSchema = new Schema({
 let Ticket = model('Ticket', ticketSchema)
 
 module.exports = Ticket
-// module.exports.initialList = () => {
-//     Ticket.find({}).then(tickets => {
-//         if (tickets.length > 0) return
+module.exports.initialList = () => {
+    Ticket.find({}).then(products => {
+        if (products.length > 0) return
 
-//         Ticket.create(
-//             {
-//                 systemType: 'Server',
-//                 component: 'SAS/SATA Disk',
-//                 failureText: 'TEST',
-//                 fileLocation: 'test/location',
-//                 fileName: 'TEST.JPG',
-//                 creatorID: 'TEST'
-//             })
-//     })
-// }
+        Ticket.create(
+
+            {
+                repairDate: 'Jan 06 2020',
+                component: 'SAS/SATA Disk',
+                failureText: 'Failed HDD',
+                fileLocation: 'http://localhost:9949/public/IMG_0278.JPG',
+                creatorID: '5df2119b086e0c61e8989503'
+            }            ,
+        )
+    })
+}

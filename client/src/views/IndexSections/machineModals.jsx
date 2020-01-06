@@ -26,15 +26,14 @@ class MachineModals extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      systemType: "Server",
+      repairDate: Date,
       component: "SAS/SATA Disk",
       failureText: "",
-      uploadedFile: { File },
+      uploadedFile: { },
       uploadedFileName: "",
       creatorID: this.props.machine.creatorID
     };
     this.handleComponent = this.handleComponent.bind(this);
-    this.handleType = this.handleType.bind(this);
     this.handleFailureText = this.handleFailureText.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onFileChange = this.onFileChange.bind(this);
@@ -42,16 +41,13 @@ class MachineModals extends React.Component {
   state = {};
   toggleModal = state => {
     this.setState({
-      [state]: !this.state[state]
+      [state]: !this.state[state],
+      repairDate: Date(Date.now())
     });
   };
 
   handleComponent(event) {
     this.setState({ component: event.target.value });
-  }
-
-  handleType(event) {
-    this.setState({ systemType: event.target.value });
   }
   handleFailureText(event) {
     this.setState({ failureText: event.target.value });
@@ -65,7 +61,7 @@ class MachineModals extends React.Component {
 
   handleSubmit(event) {
     const ticketToBeAdded = {
-      systemType: this.state.systemType,
+      repairDate: this.state.repairDate,
       component: this.state.component,
       failureText: this.state.failureText,
       fileLocation: this.state.fileLocation,
@@ -82,17 +78,6 @@ class MachineModals extends React.Component {
 
     event.preventDefault();
     // window.location = "/dashboard";
-  }
-
-  componentDidMount() {
-    // axios
-    //   .get(dbConstants.machinesUrl)
-    //   .then(res => {
-    //     this.setState({ machines: res.data });
-    //   })
-    //   .catch(function(error) {
-    //     console.log(error);
-    //   });
   }
 
   render() {
@@ -167,20 +152,15 @@ class MachineModals extends React.Component {
                         <InputGroup className="input-group-alternative mb-3">
                           <InputGroupAddon addonType="prepend">
                             <InputGroupText>
-                              <i className="ni ni-settings" /> System Type
+                              <i className="ni ni-watch-time" /> Repair Date
                             </InputGroupText>
                           </InputGroupAddon>
                           <Input
-                            type="select"
-                            placeholder="Type (Server, Storage, Switch, etc.)"
+                            type="text"
+                            placeholder="Repair Date"
                             name="type"
-                            value={this.state.systemType}
-                            onChange={this.handleType}
-                          >
-                            <option>Server</option>
-                            <option>Storage</option>
-                            <option>Switch</option>
-                          </Input>
+                            value={this.state.repairDate.toString().substr(4, 11)}
+                          ></Input>
                         </InputGroup>
                       </FormGroup>
                       <FormGroup>

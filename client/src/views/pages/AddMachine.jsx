@@ -113,28 +113,6 @@ class AddMachine extends React.Component {
               <span />
               <span />
               <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
             </div>
             <Container className="pt-lg-md">
               <Row className="justify-content-center">
@@ -241,22 +219,6 @@ class AddMachine extends React.Component {
                             </Input>
                           </InputGroup>
                         </FormGroup>
-                        {/* <FormGroup>
-                          <InputGroup className="input-group-alternative mb-3">
-                            <InputGroupAddon addonType="prepend">
-                              <InputGroupText>
-                                <i className="ni ni-email-83" />
-                              </InputGroupText>
-                            </InputGroupAddon>
-                            <Input
-                              placeholder="Type (Server, Storage, Switch, etc.)"
-                              type="text"
-                              name="type"
-                              value={this.state.type}
-                              onChange={this.handleType}
-                            />
-                          </InputGroup>
-                        </FormGroup> */}
                         <FormGroup>
                           <InputGroup className="input-group-alternative">
                             <InputGroupAddon addonType="prepend">
