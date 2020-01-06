@@ -68,10 +68,12 @@ class Dashboard extends React.Component {
                         </Button>
 
                         <ContractModal
-                          tag={Link}
                           machine={this.props.machine}
+                          machines={this.state.machines.filter(
+                            s => s.creatorID === this.props.id
+                          )}
                         />
-                        <TicketModal tag={Link} machine={this.props.machine} />
+                        <TicketModal machine={this.props.machine} />
                       </div>
                     </Col>
                   </Row>

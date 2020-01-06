@@ -51,10 +51,16 @@ class MachineModals extends React.Component {
     console.log(this.state);
     return (
       <>
-        <Button className="btn-icon mb-2 mb-sm-0" color="info">
+        <Button
+          className="btn-icon mb-3 mb-sm-0"
+          color="info"
+          type="button"
+          onClick={() => this.toggleModal("notificationModal")}
+        >
           <span className="btn-inner--icon mr-1">
             <i className="fa fa-wrench" />
-          </span> SERVICES TICKETS
+          </span>{" "}
+          SERVICES TICKETS
         </Button>
         <Modal
           className="modal-dialog-centered modal-primary modal-lg"
