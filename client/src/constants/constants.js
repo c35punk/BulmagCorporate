@@ -8,7 +8,7 @@ const authUrl = `${baseUrl}/auth`;
 const machineUrl = `${baseUrl}/machines`;
 const productUrl = `${baseUrl}/products`;
 const serviceUrl = `${baseUrl}/services`;
-const ticketUrl = `${baseUrl}/tickets`;
+const ticketUrl = `${machineUrl}/tickets`;
 
 
 const dbConstants = {

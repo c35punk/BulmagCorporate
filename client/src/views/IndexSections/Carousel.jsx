@@ -64,7 +64,7 @@ class Carousel extends React.Component {
           <Container className="py-lg mb-lg-cover col-lg-9">
             <Row className="justify-content-between align-items-center justify-content-center">
               <Col className="mb-lg-cover" lg="12">
-                <div className="rounded shadow-lg overflow-hidden transform-perspective-right">
+                <div className="rounded shadow-lg overflow-hidden transform-perspective-center">
                   <UncontrolledCarousel items={items} />
                 </div>
               </Col>

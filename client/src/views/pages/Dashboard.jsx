@@ -16,7 +16,8 @@ class Dashboard extends React.Component {
     super(props);
 
     this.state = {
-      machines: []
+      machines: [],
+      tickets: []
     };
   }
 
@@ -25,6 +26,15 @@ class Dashboard extends React.Component {
       .get(dbConstants.machinesUrl)
       .then(res => {
         this.setState({ machines: res.data });
+        console.log(res.data);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+    axios
+      .get(dbConstants.ticketsUrl)
+      .then(res => {
+        this.setState({ tickets: res.data });
         console.log(res.data);
       })
       .catch(function(error) {
@@ -73,7 +83,10 @@ class Dashboard extends React.Component {
                             s => s.creatorID === this.props.id
                           )}
                         />
-                        <TicketModal machine={this.props.machine} />
+                        <TicketModal
+                          machine={this.props.machine}
+                          ticket={this.state.tickets}
+                        />
                       </div>
                     </Col>
                   </Row>

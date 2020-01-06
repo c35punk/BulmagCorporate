@@ -77,6 +77,13 @@ router.get('/', (req, res) => {
       res.status(200).json(machines)
     })
 })
+router.get('/tickets', (req, res) => {
+  Ticket
+    .find()
+    .then(tickets => {
+      res.status(200).json(tickets)
+    })
+})
 
 router.put('/edit/:machineId', machineController.edit)
 router.delete('/delete/:machineId', machineController.delete)

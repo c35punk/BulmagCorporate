@@ -48,7 +48,10 @@ class MachineModals extends React.Component {
   }
 
   render() {
+    console.log("Hello from Tickets Modal");
     console.log(this.state);
+    console.log(this.props);
+
     return (
       <>
         <Button
@@ -70,7 +73,8 @@ class MachineModals extends React.Component {
         >
           <div className="modal-header">
             <h6 className="modal-title" id="modal-title-notification">
-              SOMETHING
+              You currently have {this.props.ticket.length} open{" "}
+              {this.props.ticket.length === 1 ? "ticket" : "tickets"}
             </h6>
             <button
               aria-label="Close"
