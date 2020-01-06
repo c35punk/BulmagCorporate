@@ -29,7 +29,7 @@ class MachineModals extends React.Component {
       repairDate: Date,
       component: "SAS/SATA Disk",
       failureText: "",
-      uploadedFile: { },
+      uploadedFile: {},
       uploadedFileName: "",
       creatorID: this.props.machine.creatorID
     };
@@ -67,7 +67,8 @@ class MachineModals extends React.Component {
       fileLocation: this.state.fileLocation,
       uploadedFile: this.state.uploadedFile,
       fileName: this.state.uploadedFileName,
-      creatorID: this.state.creatorID
+      creatorID: this.state.creatorID,
+      machineID: this.props.machine._id
     };
 
     console.log(ticketToBeAdded);
@@ -81,12 +82,16 @@ class MachineModals extends React.Component {
   }
 
   render() {
+    console.log("Hello From MM");
+    console.log(this.props);
     console.log(this.state);
+
     let {
       manufacturer,
       machineName,
       productNumber,
-      serialNumber
+      serialNumber,
+      _id
     } = this.props.machine;
     return (
       <>
@@ -133,6 +138,7 @@ class MachineModals extends React.Component {
                       Vendor: <strong>{manufacturer}</strong>
                     </h5>
                   </Badge>
+
                   <Badge color="dark" className="mr-1">
                     <h6 className="text-dark">Machine: {machineName}</h6>
                   </Badge>
@@ -159,7 +165,9 @@ class MachineModals extends React.Component {
                             type="text"
                             placeholder="Repair Date"
                             name="type"
-                            value={this.state.repairDate.toString().substr(4, 11)}
+                            value={this.state.repairDate
+                              .toString()
+                              .substr(4, 11)}
                           ></Input>
                         </InputGroup>
                       </FormGroup>

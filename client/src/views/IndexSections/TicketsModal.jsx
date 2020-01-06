@@ -98,8 +98,27 @@ class MachineModals extends React.Component {
                   <CardBody className="px-lg-5 py-lg-5">
                     <Form role="form">
                       <FormGroup>
-                        <Label for="ticketBody">Details</Label>
-                        <Input type="textarea" name="text" id="ticketBody" />
+                       
+                        <table
+                          id="mytable"
+                          class="table table-bordered exportable"
+                        >
+                          <thead>
+                            <tr>
+                              <th>Ticket Date</th>
+                              <th>Lastname</th>
+                              <th>Email</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>John</td>
+                              <td>Doe</td>
+                              <td>john@example.com</td>
+                            </tr>
+                           
+                          </tbody>
+                        </table>
                       </FormGroup>
 
                       <div className="text-center">
@@ -107,19 +126,9 @@ class MachineModals extends React.Component {
                           className="mt-4"
                           color="default"
                           type="submit"
-                          onClick={this.handleEdit}
-                        >
-                          Edit Machine
-                        </Button>
-                      </div>
-                      <div className="text-center">
-                        <Button
-                          className="mt-4"
-                          color="default"
-                          type="submit"
                           onClick={this.handleDelete}
                         >
-                          Delete Machine
+                          Export .xlsx file
                         </Button>
                       </div>
                     </Form>

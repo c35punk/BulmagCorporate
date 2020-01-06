@@ -61,7 +61,9 @@ router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
       component: req.body.component,
       failureText: ticketObj.failureText,
       fileLocation: url + '/public/' + req.body.fileName,
-      creatorID: req.body.creatorID
+      creatorID: req.body.creatorID,
+      machineID: req.body.machineID
+
     }
   );
   ticketToSave.save()

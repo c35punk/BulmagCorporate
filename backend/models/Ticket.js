@@ -15,8 +15,14 @@ const ticketSchema = new Schema({
         type: String
     },
     creatorID: {
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: 'users'
+    },
+    machineID: {
+        type: Schema.Types.ObjectId,
+        ref: 'machines'
     }
+
 
 });
 
