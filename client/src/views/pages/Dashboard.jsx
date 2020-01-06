@@ -6,6 +6,7 @@ import Machine from "../IndexSections/Machine";
 import { UserConsumer } from "../../contexts/user-context";
 import { dbConstants } from "../../constants/constants";
 import ContractModal from "../IndexSections/ContractsModal";
+import TicketModal from "../IndexSections/TicketsModal";
 
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
@@ -50,7 +51,7 @@ class Dashboard extends React.Component {
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                   <Row>
-                    <Col lg="6">
+                    <Col lg="12">
                       <h1 className="display-3 text-white">DASHBOARD</h1>
                       <p className="lead text-white">Systems in maintenance</p>
                       <div className="btn-wrapper">
@@ -67,11 +68,10 @@ class Dashboard extends React.Component {
                         </Button>
 
                         <ContractModal
-                          className="mt-3"
-                          color="info"
                           tag={Link}
                           machine={this.props.machine}
                         />
+                        <TicketModal tag={Link} machine={this.props.machine} />
                       </div>
                     </Col>
                   </Row>
