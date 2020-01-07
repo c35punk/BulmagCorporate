@@ -1,4 +1,4 @@
-import React from "react";
+  import React from "react";
 
 import axios from "axios";
 import { dbConstants } from "../../constants/constants";
@@ -74,7 +74,7 @@ class MachineModals extends React.Component {
     console.log(ticketToBeAdded);
 
     axios
-      .put(dbConstants.addTicketsUrl, ticketToBeAdded)
+      .post(dbConstants.addTicketsUrl, ticketToBeAdded)
       .then(res => console.log(res.data));
 
     event.preventDefault();
