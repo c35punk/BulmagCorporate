@@ -16,8 +16,7 @@ class Dashboard extends React.Component {
     super(props);
 
     this.state = {
-      machines: [],
-      tickets: []
+      machines: []
     };
   }
 
@@ -31,15 +30,7 @@ class Dashboard extends React.Component {
       .catch(function(error) {
         console.log(error);
       });
-    axios
-      .get(dbConstants.ticketsUrl)
-      .then(res => {
-        this.setState({ tickets: res.data });
-        console.log(res.data);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
@@ -78,17 +69,16 @@ class Dashboard extends React.Component {
                         </Button>
 
                         <ContractModal
-                          machine={this.props.machine}
                           machines={this.state.machines.filter(
                             s => s.creatorID === this.props.id
                           )}
-                          id={this.props.id}
+                          userID={this.props.id}
                         />
                         <TicketModal
-                          machine={this.props.machine}
-                          tickets={this.state.tickets}
-                          machines={this.state.machines}
-                          id={this.props.id}
+                          machines={this.state.machines.filter(
+                            s => s.creatorID === this.props.id
+                          )}
+                          userID={this.props.id}
                         />
                       </div>
                     </Col>

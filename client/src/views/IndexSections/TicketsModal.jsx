@@ -23,22 +23,35 @@ class MachineModals extends React.Component {
   toggleModal = state => {
     this.setState({
       [state]: !this.state[state],
-      machine: this.props.machine
+      myMachines: this.props.machine,
+      myTickets: []
     });
   };
 
   componentDidMount() {
     console.log(this.state.machine);
 
-    let myMachines = this.props.machines.filter(
-      x => x.creatorID == this.props.id
-    );
+    axios
+      .get(dbConstants.ticketsUrl)
+      .then(res => {
+        this.setState({ tickets: res.data });
+        console.log(res.data);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+
+    this.setState({
+      myMachines: this.props.machines.filter(
+        x => x.creatorID == this.props.userID
+      )
+    });
   }
 
   render() {
     console.log("Hello from Tickets Modal");
     console.log(this.props);
-    console.log(this.props.tickets);
+    console.log(this.state);
 
     return (
       <>
@@ -61,8 +74,8 @@ class MachineModals extends React.Component {
         >
           <div className="modal-header">
             <h6 className="modal-title" id="modal-title-notification">
-              You currently have {this.props.tickets.length} open{" "}
-              {this.props.tickets.length === 1 ? "ticket" : "tickets"}
+              {/* You currently have {this.state.tickets.length} open{" "}
+              {this.state.tickets.length === 1 ? "ticket" : "tickets"} */}
             </h6>
             <button
               aria-label="Close"

@@ -31,6 +31,8 @@ const machineSchema = new Schema({
         message: 'Status is invalid, valid values include [Server, Storage, Switch].'
     },
 
+    tickets: [{}],
+
     startDate: {
         type: Schema.Types.Date,
         required: REQUIRED_VALIDATION_MESSAGE
