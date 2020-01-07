@@ -72,13 +72,11 @@ class Dashboard extends React.Component {
                           machines={this.state.machines.filter(
                             s => s.creatorID === this.props.id
                           )}
-                          userID={this.props.id}
                         />
                         <TicketModal
                           machines={this.state.machines.filter(
                             s => s.creatorID === this.props.id
                           )}
-                          userID={this.props.id}
                         />
                       </div>
                     </Col>

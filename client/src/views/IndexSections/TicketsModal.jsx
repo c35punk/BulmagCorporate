@@ -31,19 +31,13 @@ class MachineModals extends React.Component {
   componentDidMount() {
     console.log(this.state.machine);
 
-    axios
-      .get(dbConstants.ticketsUrl)
-      .then(res => {
-        this.setState({ tickets: res.data });
-        console.log(res.data);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-
+  
     this.setState({
       myMachines: this.props.machines.filter(
         x => x.creatorID == this.props.userID
+      ),
+      machinesWithOpenTickets: this.props.tickets.filter(
+        x => x.machineID ==
       )
     });
   }
