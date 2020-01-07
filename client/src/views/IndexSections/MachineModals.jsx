@@ -74,7 +74,7 @@ class MachineModals extends React.Component {
     console.log(ticketToBeAdded);
 
     axios
-      .post(dbConstants.addTicketsUrl, ticketToBeAdded)
+      .put(dbConstants.addTicketsUrl, ticketToBeAdded)
       .then(res => console.log(res.data));
 
     event.preventDefault();
@@ -90,8 +90,7 @@ class MachineModals extends React.Component {
       manufacturer,
       machineName,
       productNumber,
-      serialNumber,
-      _id
+      serialNumber
     } = this.props.machine;
     return (
       <>

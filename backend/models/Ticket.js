@@ -16,11 +16,11 @@ const ticketSchema = new Schema({
     },
     creatorID: {
         type: Schema.Types.ObjectId,
-        ref: 'users'
+        ref: 'User'
     },
     machineID: {
         type: Schema.Types.ObjectId,
-        ref: 'machines'
+        ref: 'Machine'
     }
 
 

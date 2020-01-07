@@ -53,7 +53,6 @@ router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
   const url = req.protocol + '://' + req.get('host')
   const ticketObj = req.body;
 
-  console.log(ticketObj);
 
   const ticketToSave = new Ticket(
     {
@@ -69,6 +68,8 @@ router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
   ticketToSave.save()
     .then(() => res.json('Ticket added!'))
     .catch(err => res.status(400).json('Error: ' + err))
+
+
 
 })
 

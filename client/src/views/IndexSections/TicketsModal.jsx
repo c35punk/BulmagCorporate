@@ -6,15 +6,11 @@ import { dbConstants } from "../../constants/constants";
 import {
   Button,
   Card,
-  CardHeader,
+  Badge,
   CardBody,
   FormGroup,
   Form,
-  Input,
-  Label,
-  Link,
   Row,
-  Jumbotron,
   Modal,
   Col
 } from "reactstrap";
@@ -22,10 +18,6 @@ import {
 class MachineModals extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      machines: []
-    };
   }
   state = {};
   toggleModal = state => {
@@ -36,21 +28,17 @@ class MachineModals extends React.Component {
   };
 
   componentDidMount() {
-    axios
-      .get(dbConstants.machinesUrl)
-      .then(res => {
-        this.setState({ machines: res.data });
-        console.log(res.data);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+    console.log(this.state.machine);
+
+    let myMachines = this.props.machines.filter(
+      x => x.creatorID == this.props.id
+    );
   }
 
   render() {
     console.log("Hello from Tickets Modal");
-    console.log(this.state);
     console.log(this.props);
+    console.log(this.props.tickets);
 
     return (
       <>
@@ -73,8 +61,8 @@ class MachineModals extends React.Component {
         >
           <div className="modal-header">
             <h6 className="modal-title" id="modal-title-notification">
-              You currently have {this.props.ticket.length} open{" "}
-              {this.props.ticket.length === 1 ? "ticket" : "tickets"}
+              You currently have {this.props.tickets.length} open{" "}
+              {this.props.tickets.length === 1 ? "ticket" : "tickets"}
             </h6>
             <button
               aria-label="Close"
@@ -90,15 +78,26 @@ class MachineModals extends React.Component {
             <Row className="justify-content-center">
               <Col lg="5">
                 <Card className="bg-secondary shadow border-0">
-                  <CardHeader className="bg-white pb-5">
-                    <div className="text-center text-muted mb-4">
-                      <Jumbotron>New Service Ticket</Jumbotron>
-                    </div>
-                  </CardHeader>
-                  <CardBody className="px-lg-5 py-lg-5">
+                  <Badge color="default" pill>
+                    {/* <Badge color="dark" className="mr-1">
+                      <h5 className="text-dark">
+                        Vendor: <strong>{manufacturer}</strong>
+                      </h5>
+                    </Badge>
+
+                    <Badge color="dark" className="mr-1">
+                      <h6 className="text-dark">Machine: {machineName}</h6>
+                    </Badge>
+                    <Badge color="dark" className="mr-1">
+                      <h6 className="text-dark">PN: {productNumber}</h6>
+                    </Badge>
+                    <Badge color="dark" className="mr-1">
+                      <h6 className="text-dark">SN: {serialNumber}</h6>
+                    </Badge> */}
+                  </Badge>
+                  <CardBody className="px-lg-6 py-lg-5">
                     <Form role="form">
                       <FormGroup>
-                       
                         <table
                           id="mytable"
                           class="table table-bordered exportable"
@@ -116,7 +115,6 @@ class MachineModals extends React.Component {
                               <td>Doe</td>
                               <td>john@example.com</td>
                             </tr>
-                           
                           </tbody>
                         </table>
                       </FormGroup>
