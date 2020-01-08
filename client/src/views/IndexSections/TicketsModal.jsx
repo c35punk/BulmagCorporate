@@ -1,7 +1,5 @@
 import React from "react";
 
-import axios from "axios";
-import { dbConstants } from "../../constants/constants";
 // reactstrap components
 import {
   Button,
@@ -15,39 +13,35 @@ import {
   Col
 } from "reactstrap";
 
-class MachineModals extends React.Component {
+class TicketsModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      myMachines: [],
-      numberOfTickets: Number
+      machinesWithTickets: [],
+      numberOfTickets: 0
     };
   }
 
   state = {};
   toggleModal = state => {
     this.setState({
-      [state]: !this.state[state]
+      [state]: !this.state[state],
+      myMachines: this.props.machines
     });
   };
-  
 
   componentDidMount() {
-    this.state.myMachines.forEach(machine => {
-      this.setState({
-        numberOfTickets: this.state.numberOfTickets + machine.tickets.length,
-        myMachines: this.props.machines
-      });
-    });
-
-    console.log(this.state.machine);
+    let temp = 0;
+    let machines = this.props.machines.filter(
+      machine => machine.tickets.length !== 0
+    );
+    machines.map(x => (temp += x.tickets.length));
+    this.setState({ numberOfTickets: temp });
   }
 
   render() {
     console.log("Hello from Tickets Modal");
-    console.log(this.props);
     console.log(this.state);
-
     return (
       <>
         <Button
@@ -149,4 +143,4 @@ class MachineModals extends React.Component {
   }
 }
 
-export default MachineModals;
+export default TicketsModal;

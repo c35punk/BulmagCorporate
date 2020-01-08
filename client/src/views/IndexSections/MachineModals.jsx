@@ -82,10 +82,6 @@ class MachineModals extends React.Component {
   }
 
   render() {
-    console.log("Hello From MM");
-    console.log(this.props);
-    console.log(this.state);
-
     let {
       manufacturer,
       machineName,
