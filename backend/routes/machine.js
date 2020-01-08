@@ -53,9 +53,6 @@ router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
   const url = req.protocol + '://' + req.get('host')
   const ticketObj = req.body;
 
-
-
-
   const ticketToSave = new Ticket(
     {
       repairDate: req.body.repairDate,
@@ -71,7 +68,6 @@ router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
   const filter = { _id: ticketToSave.machineID };
   const update = {
     tickets: [ticketToSave]
-
   };
 
   // `doc` is the document _after_ `update` was applied because of
