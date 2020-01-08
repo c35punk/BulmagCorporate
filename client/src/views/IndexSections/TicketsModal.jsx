@@ -30,6 +30,7 @@ class MachineModals extends React.Component {
       [state]: !this.state[state]
     });
   };
+  
 
   componentDidMount() {
     this.state.myMachines.forEach(machine => {
@@ -107,7 +108,7 @@ class MachineModals extends React.Component {
                       <FormGroup>
                         <table
                           id="mytable"
-                          class="table table-bordered exportable"
+                          className="table table-bordered exportable"
                         >
                           <thead>
                             <tr>

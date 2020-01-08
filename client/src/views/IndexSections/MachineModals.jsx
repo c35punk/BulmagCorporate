@@ -78,7 +78,7 @@ class MachineModals extends React.Component {
       .then(res => console.log(res.data));
 
     event.preventDefault();
-    // window.location = "/dashboard";
+    window.location = "/dashboard";
   }
 
   render() {
