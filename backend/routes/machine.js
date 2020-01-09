@@ -68,11 +68,12 @@ router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
   const filter = { _id: ticketToSave.machineID };
   const update = {
     tickets: [ticketToSave]
+
   };
 
   // `doc` is the document _after_ `update` was applied because of
   // `new: true`
-  Machine.findOneAndUpdate(filter, update, {
+  Machine.findOneAndUpdate(filter, { $push: update }, {
     new: true
   }).then(() => res.json('Ticket added!'))
     .catch(err => res.status(400).json('Error: ' + err))

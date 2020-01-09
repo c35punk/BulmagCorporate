@@ -35,6 +35,8 @@ class TicketsModal extends React.Component {
     let machines = this.props.machines.filter(
       machine => machine.tickets.length !== 0
     );
+
+    console.log(machines);
     machines.map(x => (temp += x.tickets.length));
     this.setState({ numberOfTickets: temp });
   }
