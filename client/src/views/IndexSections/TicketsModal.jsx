@@ -17,8 +17,7 @@ class TicketsModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      machinesWithTickets: [],
-      numberOfTickets: 0
+      machinesWithTickets: []
     };
   }
 
@@ -26,7 +25,10 @@ class TicketsModal extends React.Component {
   toggleModal = state => {
     this.setState({
       [state]: !this.state[state],
-      myMachines: this.props.machines
+      myMachines: this.props.machines,
+      machinesWithTickets: this.props.machines.filter(
+        x => x.tickets.length != 0
+      )
     });
   };
 
@@ -44,6 +46,13 @@ class TicketsModal extends React.Component {
   render() {
     console.log("Hello from Tickets Modal");
     console.log(this.state);
+
+    let numberOfTickets = 0;
+
+    for (let x = 0; x < this.state.machinesWithTickets.length; x++) {
+      numberOfTickets += this.state.machinesWithTickets[x].tickets.length;
+    }
+
     return (
       <>
         <Button
@@ -65,7 +74,7 @@ class TicketsModal extends React.Component {
         >
           <div className="modal-header">
             <h6 className="modal-title" id="modal-title-notification">
-              You currently have {this.state.numberOfTickets} open{" "}
+              You currently have {numberOfTickets} open{" "}
               {this.state.numberOfTickets === 1 ? "ticket" : "tickets"}
             </h6>
             <button
@@ -114,11 +123,22 @@ class TicketsModal extends React.Component {
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td>John</td>
-                              <td>Doe</td>
-                              <td>john@example.com</td>
-                            </tr>
+                            {this.state.machinesWithTickets.map(ticket => {
+                              return (
+                                <>
+                                  <tr>
+                                    <td>
+                                      {ticket.tickets[0].repairDate.substr(
+                                        0,
+                                        10
+                                      )}
+                                    </td>
+                                    <td>Doe</td>
+                                    <td>john@example.com</td>
+                                  </tr>
+                                </>
+                              );
+                            })}
                           </tbody>
                         </table>
                       </FormGroup>
