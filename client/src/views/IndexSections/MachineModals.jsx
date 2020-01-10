@@ -121,7 +121,7 @@ class MachineModals extends React.Component {
           </div>
           <div className="modal-body">
             <Row className="justify-content-center">
-              <Col lg="5">
+              <Col lg="12">
                 <Card className="bg-secondary shadow border-0">
                   <Badge color="default" pill>
                     <div className="text-default">

@@ -89,7 +89,7 @@ class TicketsModal extends React.Component {
           </div>
           <div className="modal-body">
             <Row className="justify-content-center">
-              <Col lg="5">
+              <Col lg="12">
                 <Card className="bg-secondary shadow border-0">
                   <Badge color="default" pill>
                     {/* <Badge color="dark" className="mr-1">
@@ -108,7 +108,7 @@ class TicketsModal extends React.Component {
                       <h6 className="text-dark">SN: {serialNumber}</h6>
                     </Badge> */}
                   </Badge>
-                  <CardBody className="px-lg-6 py-lg-5">
+                  <CardBody className="px-lg-12 py-lg-12">
                     <Form role="form">
                       <FormGroup>
                         <table
@@ -117,24 +117,34 @@ class TicketsModal extends React.Component {
                         >
                           <thead>
                             <tr>
+                              <th>Machine Name</th>
+                              <th>Machine SN</th>
+                              <th>Ticket Number</th>
                               <th>Ticket Date</th>
-                              <th>Lastname</th>
-                              <th>Email</th>
+                              <th>Description</th>
+                              <th>Failed Component</th>
                             </tr>
                           </thead>
                           <tbody>
-                            {this.state.machinesWithTickets.map(ticket => {
+                            {this.state.machinesWithTickets.map(machine => {
                               return (
                                 <>
                                   <tr>
                                     <td>
-                                      {ticket.tickets[0].repairDate.substr(
+                                      {machine.manufacturer +
+                                        " " +
+                                        machine.machineName}
+                                    </td>
+                                    <td>{machine.serialNumber}</td>
+                                    <td></td>
+                                    <td>
+                                      {machine.tickets[0].repairDate.substr(
                                         0,
                                         10
                                       )}
                                     </td>
-                                    <td>Doe</td>
-                                    <td>john@example.com</td>
+                                    <td>{machine.tickets[0].failureText}</td>
+                                    <td>{machine.tickets[0].component}</td>
                                   </tr>
                                 </>
                               );
