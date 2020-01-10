@@ -56,6 +56,12 @@ router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
 
   let salt = encryption.generateSalt()
   let ticketHash = encryption.generateHashedTicketNumber(salt, Date(Date.now()).toString())
+  let ticketNr = ticketHash.substr(0, 7)
+
+  console.log('TEST FROM MACHINE ROUTE  ')
+  console.log(ticketHash)
+  console.log(ticketNr)
+  console.log(salt)
 
 
   const ticketToSave = new Ticket(
@@ -64,7 +70,7 @@ router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
       component: req.body.component,
       failureText: ticketObj.failureText,
       fileLocation: url + '/public/' + req.body.fileName,
-      ticketNumber: ticketHash,
+      ticketNumber: ticketNr,
       creatorID: req.body.creatorID,
       machineID: req.body.machineID
 
