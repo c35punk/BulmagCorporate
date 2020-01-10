@@ -136,7 +136,7 @@ class TicketsModal extends React.Component {
                                         machine.machineName}
                                     </td>
                                     <td>{machine.serialNumber}</td>
-                                    <td></td>
+                                      <td>{machine.tickets[0].ticketNumber || 'N/A'}</td>
                                     <td>
                                       {machine.tickets[0].repairDate.substr(
                                         0,

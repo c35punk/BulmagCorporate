@@ -3,6 +3,7 @@ const Machine = require('../models/Machine')
 const Ticket = require('../models/Ticket')
 const machineController = require('../controllers/machine-controller')
 const multer = require('multer')
+const encryption = require('../utilities/encryption')
 const authCheck = require("../config/auth-check");
 
 
@@ -53,12 +54,17 @@ router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
   const url = req.protocol + '://' + req.get('host')
   const ticketObj = req.body;
 
+  let salt = encryption.generateSalt()
+  let ticketHash = encryption.generateHashedTicketNumber(salt, Date(Date.now()).toString())
+
+
   const ticketToSave = new Ticket(
     {
       repairDate: req.body.repairDate,
       component: req.body.component,
       failureText: ticketObj.failureText,
       fileLocation: url + '/public/' + req.body.fileName,
+      ticketNumber: ticketHash,
       creatorID: req.body.creatorID,
       machineID: req.body.machineID
 

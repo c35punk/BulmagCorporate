@@ -14,6 +14,9 @@ const ticketSchema = new Schema({
     fileLocation: {
         type: String
     },
+    ticketNumber: {
+        type: String
+    },
     creatorID: {
         type: Schema.Types.ObjectId,
         ref: 'User'
