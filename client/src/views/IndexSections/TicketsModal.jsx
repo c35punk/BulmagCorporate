@@ -137,18 +137,25 @@ class TicketsModal extends React.Component {
                                     </td>
                                     <td>{machine.serialNumber}</td>
                                     <td>
-                                      {machine.tickets.length > 1
-                                        ? "Larger than 1"
-                                        : "N/A"}
+                                      {machine.tickets.map(x => {
+                                        return x.ticketNumber;
+                                      })}
                                     </td>
                                     <td>
-                                      {machine.tickets[0].repairDate.substr(
-                                        0,
-                                        10
-                                      )}
+                                      {machine.tickets.map(x => {
+                                        return x.repairDate.substr(0, 10) + " ";
+                                      })}
                                     </td>
-                                    <td>{machine.tickets[0].failureText}</td>
-                                    <td>{machine.tickets[0].component}</td>
+                                    <td>
+                                      {machine.tickets.map(x => {
+                                        return x.failureText + " ";
+                                      })}
+                                    </td>
+                                    <td>
+                                      {machine.tickets.map(x => {
+                                        return x.component;
+                                      })}
+                                    </td>
                                   </tr>
                                 </>
                               );
