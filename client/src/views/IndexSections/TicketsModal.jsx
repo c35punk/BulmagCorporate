@@ -56,6 +56,8 @@ class TicketsModal extends React.Component {
 
     let ticketsArray = [];
 
+    
+
     return (
       <>
         <Button
@@ -67,7 +69,7 @@ class TicketsModal extends React.Component {
           <span className="btn-inner--icon mr-1">
             <i className="fa fa-wrench" />
           </span>{" "}
-          SERVICES TICKETS
+          SERVICE TICKETS
         </Button>
         <Modal
           className="modal-dialog-centered modal-primary modal-lg"
@@ -173,7 +175,7 @@ class TicketsModal extends React.Component {
                       <div className="text-center">
                         <ExportXLSX
                           csvData={ticketsArray}
-                          fileName={"repairs"}
+                          fileName={"repairs-report"}
                         />
                       </div>
                     </Form>
