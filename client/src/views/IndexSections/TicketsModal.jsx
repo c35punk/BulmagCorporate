@@ -56,8 +56,6 @@ class TicketsModal extends React.Component {
 
     let ticketsArray = [];
 
-    
-
     return (
       <>
         <Button
@@ -143,6 +141,11 @@ class TicketsModal extends React.Component {
                                     <td>{machine.serialNumber}</td>
                                     <td>
                                       {machine.tickets.map(x => {
+                                        delete x.creatorID;
+                                        delete x.machineID;
+                                        delete x.fileLocaton;
+                                        delete x._id;
+
                                         ticketsArray.push(x);
                                         return "\r\n" + x.ticketNumber + "\r\n";
                                       })}

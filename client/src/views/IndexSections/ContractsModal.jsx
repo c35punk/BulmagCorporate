@@ -3,20 +3,7 @@ import React from "react";
 import axios from "axios";
 import { dbConstants } from "../../constants/constants";
 // reactstrap components
-import {
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  FormGroup,
-  Form,
-  Input,
-  Label,
-  Row,
-  Jumbotron,
-  Modal,
-  Col
-} from "reactstrap";
+import { Button, Row, Modal, Col } from "reactstrap";
 
 class MachineModals extends React.Component {
   constructor(props) {
