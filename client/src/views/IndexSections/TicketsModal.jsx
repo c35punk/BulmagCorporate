@@ -54,6 +54,8 @@ class TicketsModal extends React.Component {
       numberOfTickets += this.state.machinesWithTickets[x].tickets.length;
     }
 
+    let ticketsArray = [];
+
     return (
       <>
         <Button
@@ -139,6 +141,7 @@ class TicketsModal extends React.Component {
                                     <td>{machine.serialNumber}</td>
                                     <td>
                                       {machine.tickets.map(x => {
+                                        ticketsArray.push(x);
                                         return "\r\n" + x.ticketNumber + "\r\n";
                                       })}
                                     </td>
@@ -169,7 +172,7 @@ class TicketsModal extends React.Component {
 
                       <div className="text-center">
                         <ExportXLSX
-                          csvData={this.state.machinesWithTickets}
+                          csvData={ticketsArray}
                           fileName={"repairs"}
                         />
                       </div>
