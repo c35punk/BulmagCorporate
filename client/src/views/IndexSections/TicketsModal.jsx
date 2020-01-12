@@ -12,6 +12,7 @@ import {
   Modal,
   Col
 } from "reactstrap";
+import { ExportCSV } from "./ExportCSV";
 
 class TicketsModal extends React.Component {
   constructor(props) {
@@ -138,22 +139,24 @@ class TicketsModal extends React.Component {
                                     <td>{machine.serialNumber}</td>
                                     <td>
                                       {machine.tickets.map(x => {
-                                        return x.ticketNumber;
+                                        return "\r\n" + x.ticketNumber + "\r\n";
                                       })}
                                     </td>
                                     <td>
                                       {machine.tickets.map(x => {
-                                        return x.repairDate.substr(0, 10) + " ";
+                                        return (
+                                          "\r\n" + x.repairDate.substr(0, 10)
+                                        );
                                       })}
                                     </td>
                                     <td>
                                       {machine.tickets.map(x => {
-                                        return x.failureText + " ";
+                                        return "\r\n" + x.failureText + "\r\n";
                                       })}
                                     </td>
                                     <td>
                                       {machine.tickets.map(x => {
-                                        return x.component;
+                                        return "\r\n" + x.component + "\r\n";
                                       })}
                                     </td>
                                   </tr>
@@ -165,14 +168,7 @@ class TicketsModal extends React.Component {
                       </FormGroup>
 
                       <div className="text-center">
-                        <Button
-                          className="mt-4"
-                          color="default"
-                          type="submit"
-                          onClick={this.handleDelete}
-                        >
-                          Export .xlsx file
-                        </Button>
+                        <ExportCSV />
                       </div>
                     </Form>
                   </CardBody>

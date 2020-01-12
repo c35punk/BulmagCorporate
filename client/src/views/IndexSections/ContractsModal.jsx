@@ -83,43 +83,11 @@ class MachineModals extends React.Component {
           </div>
           <div className="modal-body">
             <Row className="justify-content-center">
-              <Col lg="5">
-                <Card className="bg-secondary shadow border-0">
-                  <CardHeader className="bg-white pb-5">
-                    <div className="text-center text-muted mb-4">
-                      <Jumbotron>New Service Ticket</Jumbotron>
-                    </div>
-                  </CardHeader>
-                  <CardBody className="px-lg-5 py-lg-5">
-                    <Form role="form">
-                      <FormGroup>
-                        <Label for="ticketBody">Details</Label>
-                        <Input type="textarea" name="text" id="ticketBody" />
-                      </FormGroup>
-
-                      <div className="text-center">
-                        <Button
-                          className="mt-4"
-                          color="default"
-                          type="submit"
-                          onClick={this.handleEdit}
-                        >
-                          Edit Machine
-                        </Button>
-                      </div>
-                      <div className="text-center">
-                        <Button
-                          className="mt-4"
-                          color="default"
-                          type="submit"
-                          onClick={this.handleDelete}
-                        >
-                          Delete Machine
-                        </Button>
-                      </div>
-                    </Form>
-                  </CardBody>
-                </Card>
+              <Col lg="12">
+                <iframe
+                  src="https://www.lenovofiles.com/3dtours/products/superblaze/sr850/index.html"
+                  frameborder="0"
+                ></iframe>
               </Col>
             </Row>
           </div>

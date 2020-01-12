@@ -25,8 +25,6 @@ class Product extends React.Component {
             <Modal
               className="mt-3"
               color="primary"
-              to="/profile"
-              tag={Link}
               productUrl={this.props.product.productUrl}
               description={this.props.product.description}
             />
