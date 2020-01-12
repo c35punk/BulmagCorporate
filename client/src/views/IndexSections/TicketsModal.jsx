@@ -12,7 +12,7 @@ import {
   Modal,
   Col
 } from "reactstrap";
-import { ExportCSV } from "./ExportCSV";
+import { ExportXLSX } from "./ExportXLSX";
 
 class TicketsModal extends React.Component {
   constructor(props) {
@@ -76,7 +76,7 @@ class TicketsModal extends React.Component {
           <div className="modal-header">
             <h6 className="modal-title" id="modal-title-notification">
               You currently have {numberOfTickets} open{" "}
-              {this.state.numberOfTickets === 1 ? "ticket" : "tickets"}
+              {numberOfTickets === 1 ? "ticket" : "tickets"}
             </h6>
             <button
               aria-label="Close"
@@ -168,7 +168,10 @@ class TicketsModal extends React.Component {
                       </FormGroup>
 
                       <div className="text-center">
-                        <ExportCSV />
+                        <ExportXLSX
+                          csvData={this.state.machinesWithTickets}
+                          fileName={"repairs"}
+                        />
                       </div>
                     </Form>
                   </CardBody>
