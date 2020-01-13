@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Modal from "./Modals";
 
 import { Card, CardBody, Badge, Col } from "reactstrap";
