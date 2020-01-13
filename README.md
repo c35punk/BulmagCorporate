@@ -60,7 +60,7 @@ After installing all dependencies and starting the app you should see something 
 
 - [NodeJS](https://nodejs.org/en/) - Open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser
 - [ExpressJS](https://expressjs.com/) - Web application framework for Node.js
-- [MongoDB](https://www.mongodb.com/) - Cross-platform document-oriented database program
+- [MongoDB](https://www.mongodb.com/) - Cross-platform document-oriented database
 - [ReactJS](https://reactjs.org/) - JavaScript library for building user interfaces
 
 ## Authors
