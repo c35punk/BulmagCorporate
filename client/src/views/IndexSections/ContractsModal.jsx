@@ -104,8 +104,8 @@ class TicketsModal extends React.Component {
                               <th>Machine PN</th>
                               <th>Machine SN</th>
                               <th>Type</th>
-                              <th>Maintenanct Start Date</th>
-                              <th>Maintenanct End Date</th>
+                              <th>Start Date</th>
+                              <th>End Date</th>
                             </tr>
                           </thead>
                           <tbody>

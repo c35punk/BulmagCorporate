@@ -141,10 +141,10 @@ class TicketsModal extends React.Component {
                                     <td>{machine.serialNumber}</td>
                                     <td>
                                       {machine.tickets.map(x => {
-                                        delete x.creatorID;
-                                        delete x.fileLocaton;
-                                        delete x.machineID;
                                         delete x._id;
+                                        delete x.fileLocaton;
+                                        delete x.creatorID;
+                                        delete x.machineID;
 
                                         ticketsArray.push(x);
                                         return "\r\n" + x.ticketNumber + "\r\n";
