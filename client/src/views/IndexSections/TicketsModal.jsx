@@ -142,8 +142,8 @@ class TicketsModal extends React.Component {
                                     <td>
                                       {machine.tickets.map(x => {
                                         delete x.creatorID;
-                                        delete x.machineID;
                                         delete x.fileLocaton;
+                                        delete x.machineID;
                                         delete x._id;
 
                                         ticketsArray.push(x);

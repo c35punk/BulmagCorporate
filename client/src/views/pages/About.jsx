@@ -5,7 +5,6 @@ import { Container } from "reactstrap";
 
 // index page sections
 import Tabs from "../IndexSections/Tabs";
-import CustomControls from "views/IndexSections/CustomControls";
 
 class About extends React.Component {
   state = {};
@@ -49,7 +48,6 @@ class About extends React.Component {
             {/* 1st Hero Variation */}
           </div>
         </main>
-        <CustomControls />
       </>
     );
   }

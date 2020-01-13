@@ -10,7 +10,10 @@ export const ExportXLSX = ({ csvData, fileName }) => {
 
   const exportToXLSX = (csvData, fileName) => {
     const ws = XLSX.utils.json_to_sheet(csvData);
-    const wb = { Sheets: { Repairs: ws }, SheetNames: ["Repairs"], SheetHeader: ["One"] };
+    const wb = {
+      Sheets: { Repairs: ws, Conctacts: ws },
+      SheetNames: ["Repairs", "Conctacts"]
+    };
     const excelBuffer = XLSX.write(wb, { bookType: "xlsx", type: "array" });
     const data = new Blob([excelBuffer], { type: fileType });
     FileSaver.saveAs(data, fileName + fileExtension);
