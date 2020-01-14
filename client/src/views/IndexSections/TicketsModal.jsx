@@ -141,30 +141,46 @@ class TicketsModal extends React.Component {
                                     <td>{machine.serialNumber}</td>
                                     <td>
                                       {machine.tickets.map(x => {
-                                        delete x._id;
-                                        delete x.fileLocaton;
                                         delete x.creatorID;
                                         delete x.machineID;
+                                        delete x._id;
+                                        delete x.fileLocation;
+
+                                        x["Serial Number"] =
+                                          machine.serialNumber;
+                                        x["Ticket Number"] = x.ticketNumber;
+                                        x["Repair Date"] = x.repairDate;
+                                        x["Component"] = x.component;
+                                        x["Description"] = x.failureText;
+                                        delete x.ticketNumber;
+                                        delete x.repairDate;
+                                        delete x.component;
+                                        delete x.failureText;
 
                                         ticketsArray.push(x);
-                                        return "\r\n" + x.ticketNumber + "\r\n";
-                                      })}
-                                    </td>
-                                    <td>
-                                      {machine.tickets.map(x => {
                                         return (
-                                          "\r\n" + x.repairDate.substr(0, 10)
+                                          "\r\n" + x["Ticket Number"] + "\r\n"
                                         );
                                       })}
                                     </td>
                                     <td>
                                       {machine.tickets.map(x => {
-                                        return "\r\n" + x.failureText + "\r\n";
+                                        return (
+                                          "\r\n" +
+                                          x["Repair Date"].substr(0, 10)
+                                        );
                                       })}
                                     </td>
                                     <td>
                                       {machine.tickets.map(x => {
-                                        return "\r\n" + x.component + "\r\n";
+                                        return (
+                                          "\r\n" + x["Description"] + "\r\n"
+                                        );
+                                      })}
+                                    </td>
+                                    <td>
+                                      {machine.tickets.map(x => {
+                                        return "\r\n" + x["Component"] + "\r\n";
                                       })}
                                     </td>
                                   </tr>

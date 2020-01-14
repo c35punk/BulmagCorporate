@@ -9,11 +9,11 @@ export const ExportXLSX = ({ csvData, fileName }) => {
   const fileExtension = ".xlsx";
 
   const exportToXLSX = (csvData, fileName) => {
-    
     const ws = XLSX.utils.json_to_sheet(csvData);
     const wb = {
-      Sheets: { Repairs: ws, Conctacts: ws },
-      SheetNames: ["Repairs", "Conctacts"]
+      Sheets:
+        fileName === "contracts-report" ? { Contracts: ws } : { Repairs: ws },
+      SheetNames: fileName === "contracts-report" ? ["Contracts"] : ["Repairs"]
     };
     const excelBuffer = XLSX.write(wb, { bookType: "xlsx", type: "array" });
     const data = new Blob([excelBuffer], { type: fileType });
