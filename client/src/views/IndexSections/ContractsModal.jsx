@@ -110,6 +110,7 @@ class TicketsModal extends React.Component {
                           </thead>
                           <tbody>
                             {this.state.myMachines.map(machine => {
+                              
                               delete machine.tickets;
                               delete machine._id;
                               delete machine.agree;

@@ -72,7 +72,8 @@ router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
       fileLocation: url + '/public/' + req.body.fileName,
       ticketNumber: ticketNr,
       creatorID: req.body.creatorID,
-      machineID: req.body.machineID
+      machineID: req.body.machineID,
+      ticketStatus: req.body.ticketStatus
 
     }
   );

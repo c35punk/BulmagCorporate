@@ -22,27 +22,15 @@ class TicketsModal extends React.Component {
     };
   }
 
+  componentDidMount() {}
+
   state = {};
   toggleModal = state => {
     this.setState({
       [state]: !this.state[state],
-      myMachines: this.props.machines,
-      machinesWithTickets: this.props.machines.filter(
-        x => x.tickets.length != 0
-      )
+      machinesWithTickets: this.props.machinesWithTickets
     });
   };
-
-  componentDidMount() {
-    let temp = 0;
-    let machines = this.props.machines.filter(
-      machine => machine.tickets.length !== 0
-    );
-
-    console.log(machines);
-    machines.map(x => (temp += x.tickets.length));
-    this.setState({ numberOfTickets: temp });
-  }
 
   render() {
     console.log("Hello from Tickets Modal");
@@ -53,6 +41,10 @@ class TicketsModal extends React.Component {
     for (let x = 0; x < this.state.machinesWithTickets.length; x++) {
       numberOfTickets += this.state.machinesWithTickets[x].tickets.length;
     }
+
+    let ticketsMachines = this.state.machinesWithTickets;
+
+    let machine = {};
 
     let ticketsArray = [];
 
@@ -126,10 +118,12 @@ class TicketsModal extends React.Component {
                               <th>Ticket Date</th>
                               <th>Description</th>
                               <th>Failed Component</th>
+                              <th>Status</th>
                             </tr>
                           </thead>
                           <tbody>
-                            {this.state.machinesWithTickets.map(machine => {
+                            {ticketsMachines.map(g => {
+                              machine = g;
                               return (
                                 <>
                                   <tr>
@@ -141,21 +135,13 @@ class TicketsModal extends React.Component {
                                     <td>{machine.serialNumber}</td>
                                     <td>
                                       {machine.tickets.map(x => {
-                                        delete x.creatorID;
-                                        delete x.machineID;
-                                        delete x._id;
-                                        delete x.fileLocation;
-
                                         x["Serial Number"] =
                                           machine.serialNumber;
                                         x["Ticket Number"] = x.ticketNumber;
                                         x["Repair Date"] = x.repairDate;
                                         x["Component"] = x.component;
                                         x["Description"] = x.failureText;
-                                        delete x.ticketNumber;
-                                        delete x.repairDate;
-                                        delete x.component;
-                                        delete x.failureText;
+                                        x["Status"] = x.ticketStatus || false;
 
                                         ticketsArray.push(x);
                                         return (
@@ -167,7 +153,9 @@ class TicketsModal extends React.Component {
                                       {machine.tickets.map(x => {
                                         return (
                                           "\r\n" +
-                                          x["Repair Date"].substr(0, 10)
+                                          (x["Repair Date"]
+                                            ? x["Repair Date"].substr(0, 10)
+                                            : false)
                                         );
                                       })}
                                     </td>
@@ -181,6 +169,15 @@ class TicketsModal extends React.Component {
                                     <td>
                                       {machine.tickets.map(x => {
                                         return "\r\n" + x["Component"] + "\r\n";
+                                      })}
+                                    </td>
+                                    <td>
+                                      {machine.tickets.map(x => {
+                                        return (
+                                          "\r\n" +
+                                          (x["Status"] ? "Open" : "Closed") +
+                                          "\r\n"
+                                        );
                                       })}
                                     </td>
                                   </tr>

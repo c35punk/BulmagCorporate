@@ -25,11 +25,8 @@ class Dashboard extends React.Component {
       .get(dbConstants.machinesUrl)
       .then(res => {
         this.setState({ machines: res.data });
-        console.log(res.data);
       })
-      .catch(function(error) {
-        console.log(error);
-      });
+      .catch(function(error) {});
 
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
@@ -39,6 +36,15 @@ class Dashboard extends React.Component {
     console.log("Hello from DASHBOARD");
     console.log(this.props);
     console.log(this.state);
+
+    let myMachines = this.state.machines.filter(
+      s => s.creatorID === this.props.id
+    );
+
+    let machinesWithTickets = myMachines.filter(
+      machine => machine.tickets.length !== 0
+    );
+
     return (
       <>
         <main ref="main">
@@ -68,15 +74,9 @@ class Dashboard extends React.Component {
                           <span className="btn-inner--text">Add system</span>
                         </Button>
 
-                        <ContractModal
-                          machines={this.state.machines.filter(
-                            s => s.creatorID === this.props.id
-                          )}
-                        />
+                        <ContractModal machines={myMachines} />
                         <TicketModal
-                          machines={this.state.machines.filter(
-                            s => s.creatorID === this.props.id
-                          )}
+                          machinesWithTickets={machinesWithTickets}
                         />
                       </div>
                     </Col>

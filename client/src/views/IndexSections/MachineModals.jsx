@@ -31,6 +31,7 @@ class MachineModals extends React.Component {
       failureText: "",
       uploadedFile: {},
       uploadedFileName: "",
+      ticketStatus: true,
       creatorID: this.props.machine.creatorID
     };
     this.handleComponent = this.handleComponent.bind(this);
@@ -68,7 +69,8 @@ class MachineModals extends React.Component {
       uploadedFile: this.state.uploadedFile,
       fileName: this.state.uploadedFileName,
       creatorID: this.state.creatorID,
-      machineID: this.props.machine._id
+      machineID: this.props.machine._id,
+      ticketStatus: this.state.ticketStatus
     };
 
     console.log(ticketToBeAdded);

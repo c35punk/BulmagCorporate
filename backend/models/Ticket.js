@@ -24,6 +24,9 @@ const ticketSchema = new Schema({
     machineID: {
         type: Schema.Types.ObjectId,
         ref: 'Machine'
+    },
+    ticketStatus: {
+        type: Boolean
     }
 
 
