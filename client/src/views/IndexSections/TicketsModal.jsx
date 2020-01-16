@@ -18,11 +18,10 @@ class TicketsModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      machinesWithTickets: []
+      machinesWithTickets: [],
+      numberOfTickets: 0
     };
   }
-
-  componentDidMount() {}
 
   state = {};
   toggleModal = state => {
@@ -41,10 +40,6 @@ class TicketsModal extends React.Component {
     for (let x = 0; x < this.state.machinesWithTickets.length; x++) {
       numberOfTickets += this.state.machinesWithTickets[x].tickets.length;
     }
-
-    let ticketsMachines = this.state.machinesWithTickets;
-
-    let machine = {};
 
     let ticketsArray = [];
 
@@ -122,8 +117,7 @@ class TicketsModal extends React.Component {
                             </tr>
                           </thead>
                           <tbody>
-                            {ticketsMachines.map(g => {
-                              machine = g;
+                            {this.state.machinesWithTickets.map(machine => {
                               return (
                                 <>
                                   <tr>
@@ -132,6 +126,7 @@ class TicketsModal extends React.Component {
                                         " " +
                                         machine.machineName}
                                     </td>
+
                                     <td>{machine.serialNumber}</td>
                                     <td>
                                       {machine.tickets.map(x => {

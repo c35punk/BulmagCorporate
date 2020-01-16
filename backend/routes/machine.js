@@ -58,7 +58,7 @@ router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
   let ticketHash = encryption.generateHashedTicketNumber(salt, Date(Date.now()).toString())
   let ticketNr = ticketHash.substr(0, 7)
 
-  console.log('TEST FROM MACHINE ROUTE  ')
+  console.log('TEST FROM MACHINE ROUTE')
   console.log(ticketHash)
   console.log(ticketNr)
   console.log(salt)

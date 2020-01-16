@@ -186,6 +186,11 @@ class MachineModals extends React.Component {
                             <option>Memory</option>
                             <option>RAID Controller</option>
                             <option>Planar/Motherboard</option>
+                            <option>ETH Port</option>
+                            <option>PSU</option>
+                            <option>PDU</option>
+                            <option>Front Panel</option>
+                            <option>BIOS Battery</option>
                             <option>RAID Battery</option>
                             <option>SSD Disk</option>
                             <option>SFP Module</option>

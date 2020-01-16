@@ -7,16 +7,19 @@ export const ExportXLSX = ({ csvData, fileName }) => {
   const fileType =
     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8";
   const fileExtension = ".xlsx";
-  for (let x = 0; x < csvData.length; x++) {
-    delete csvData[x].creatorID;
-    delete csvData[x].machineID;
-    delete csvData[x]._id;
-    delete csvData[x].fileLocation;
-    delete csvData[x].ticketNumber;
-    delete csvData[x].repairDate;
-    delete csvData[x].component;
-    delete csvData[x].failureText;
-  }
+
+
+  
+  // for (let x = 0; x < csvData.length; x++) {
+  //   delete csvData[x].creatorID;
+  //   delete csvData[x].machineID;
+  //   delete csvData[x]._id;
+  //   delete csvData[x].fileLocation;
+  //   delete csvData[x].ticketNumber;
+  //   delete csvData[x].repairDate;
+  //   delete csvData[x].component;
+  //   delete csvData[x].failureText;
+  // }
 
   console.log(csvData);
 

@@ -57,7 +57,7 @@ class TicketsModal extends React.Component {
         >
           <div className="modal-header">
             <h6 className="modal-title" id="modal-title-notification">
-              You currently have {numberOfMachine} active{" "}
+              You currently have {numberOfMachine}{" "}
               {numberOfMachine === 1 ? "contract" : "contracts"}
             </h6>
             <button
@@ -106,11 +106,11 @@ class TicketsModal extends React.Component {
                               <th>Type</th>
                               <th>Start Date</th>
                               <th>End Date</th>
+                              <th>Active</th>
                             </tr>
                           </thead>
                           <tbody>
                             {this.state.myMachines.map(machine => {
-                              
                               delete machine.tickets;
                               delete machine._id;
                               delete machine.agree;
@@ -131,6 +131,11 @@ class TicketsModal extends React.Component {
                                     <td>{machine.type}</td>
                                     <td>{machine.startDate.substr(0, 10)}</td>
                                     <td>{machine.endDate.substr(0, 10)}</td>
+                                    <td>
+                                      {machine.endDate < Date(Date.now())
+                                        ? "Yes"
+                                        : "No"}
+                                    </td>
                                   </tr>
                                 </>
                               );
