@@ -16,18 +16,7 @@ const functions = {
       new Date(typeof date === String ? date : date.toDateString()) > new Date(new Date().toDateString())
     );
   },
-  numberOfOpenTickets(arr) {
-    let numberOfTickets = 0;
-
-    for (let x = 0; x < arr.length; x++) {
-      for (let i = 0; i < arr[x].tickets.length; i++) {
-        if (arr[x].tickets[i].ticketStatus) {
-          numberOfTickets++;
-        }
-      }
-    }
-    return numberOfTickets
-  }
+ 
 }
 
 

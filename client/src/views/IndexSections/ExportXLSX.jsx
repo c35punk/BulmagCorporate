@@ -17,16 +17,7 @@ export const ExportXLSX = ({ csvData, fileName }) => {
         fileName === "contracts-report" ? { Contracts: ws } : { Repairs: ws },
       SheetNames: fileName === "contracts-report" ? ["Contracts"] : ["Repairs"]
     };
-    // for (let x = 0; x < csvData.length; x++) {
-    //   delete csvData[x].creatorID;
-    //   delete csvData[x].machineID;
-    //   delete csvData[x]._id;
-    //   delete csvData[x].fileLocation;
-    //   delete csvData[x].ticketNumber;
-    //   delete csvData[x].repairDate;
-    //   delete csvData[x].component;
-    //   delete csvData[x].failureText;
-    // }
+
     const excelBuffer = XLSX.write(wb, { bookType: "xlsx", type: "array" });
     const data = new Blob([excelBuffer], { type: fileType });
     FileSaver.saveAs(data, fileName + fileExtension);
