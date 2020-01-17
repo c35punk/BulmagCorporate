@@ -24,6 +24,7 @@ class Dashboard extends React.Component {
     axios
       .get(dbConstants.machinesUrl)
       .then(res => {
+        console.log(res);
         this.setState({ machines: res.data });
       })
       .catch(function(error) {});

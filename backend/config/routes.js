@@ -2,6 +2,7 @@ const authRoutes = require("../routes/auth");
 const machineRoutes = require("../routes/machine");
 const productRoutes = require("../routes/product");
 const serviceRoutes = require("../routes/service");
+const mailRoutes = require("../routes/mail")
 const cors = require('cors')
 
 module.exports = app => {
@@ -15,4 +16,5 @@ module.exports = app => {
   app.use("/products", productRoutes);
   app.use("/machines", machineRoutes);
   app.use("/services", serviceRoutes)
+  app.use("/mail", mailRoutes)
 };

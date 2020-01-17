@@ -8,6 +8,7 @@ const authUrl = `${baseUrl}/auth`;
 const machineUrl = `${baseUrl}/machines`;
 const productUrl = `${baseUrl}/products`;
 const serviceUrl = `${baseUrl}/services`;
+const mailUrl = `${baseUrl}/mail`;
 const ticketUrl = `${machineUrl}/tickets`;
 
 const functions = {
@@ -16,7 +17,7 @@ const functions = {
       new Date(typeof date === String ? date : date.toDateString()) > new Date(new Date().toDateString())
     );
   },
- 
+
 }
 
 
@@ -26,10 +27,11 @@ const dbConstants = {
   logoutUrl: `${authUrl}/logout`,
   registerUrl: `${authUrl}/signup`,
 
-  // machines, products, services
+  // machines, products, services, mail
   machinesUrl: `${machineUrl}/`,
   productsUrl: `${productUrl}/`,
   servicesUrl: `${serviceUrl}/`,
+  mailsUrl: `${mailUrl}/`,
   ticketsUrl: `${ticketUrl}/`,
   addTicketsUrl: `${machineUrl}/add-ticket`,
   machineCreateUrl: `${machineUrl}/create`,

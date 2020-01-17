@@ -1,6 +1,9 @@
 import React from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
+import axios from "axios";
+
+import { dbConstants } from "../../constants/constants";
 
 // reactstrap components
 import {
@@ -14,7 +17,8 @@ import {
   InputGroup,
   Container,
   Row,
-  Col
+  Col,
+  Form
 } from "reactstrap";
 
 // index page sections
@@ -25,6 +29,29 @@ class Contacts extends React.Component {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+    axios({
+      method: "POST",
+      url: dbConstants.mailsUrl,
+      data: {
+        name: name,
+        email: email,
+        messsage: message
+      }
+    }).then(response => {
+      if (response.data.msg === "success") {
+        alert("Message Sent.");
+        this.resetForm();
+      } else if (response.data.msg === "fail") {
+        alert("Message failed to send.");
+      }
+    });
   }
   render() {
     return (
@@ -81,65 +108,82 @@ class Contacts extends React.Component {
                       <p className="mt-0">
                         Your project is very important to us.
                       </p>
-                      <FormGroup
-                        className={classnames("mt-5", {
-                          focused: this.state.nameFocused
-                        })}
+                      <Form
+                        id="contact-form"
+                        onSubmit={this.handleSubmit.bind(this)}
+                        method="POST"
                       >
-                        <InputGroup className="input-group-alternative">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-user-run" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder="Your name"
-                            type="text"
-                            onFocus={e => this.setState({ nameFocused: true })}
-                            onBlur={e => this.setState({ nameFocused: false })}
-                          />
-                        </InputGroup>
-                      </FormGroup>
-                      <FormGroup
-                        className={classnames({
-                          focused: this.state.emailFocused
-                        })}
-                      >
-                        <InputGroup className="input-group-alternative">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-email-83" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder="Email address"
-                            type="email"
-                            onFocus={e => this.setState({ emailFocused: true })}
-                            onBlur={e => this.setState({ emailFocused: false })}
-                          />
-                        </InputGroup>
-                      </FormGroup>
-                      <FormGroup className="mb-4">
-                        <Input
-                          className="form-control-alternative"
-                          cols="80"
-                          name="name"
-                          placeholder="Type a message..."
-                          rows="4"
-                          type="textarea"
-                        />
-                      </FormGroup>
-                      <div>
-                        <Button
-                          block
-                          className="btn-round"
-                          color="default"
-                          size="lg"
-                          type="button"
+                        <FormGroup
+                          className={classnames("mt-5", {
+                            focused: this.state.nameFocused
+                          })}
                         >
-                          Send Message
-                        </Button>
-                      </div>
+                          <InputGroup className="input-group-alternative">
+                            <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
+                                <i className="ni ni-user-run" />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                              placeholder="Your name"
+                              type="text"
+                              id="name"
+                              onFocus={e =>
+                                this.setState({ nameFocused: true })
+                              }
+                              onBlur={e =>
+                                this.setState({ nameFocused: false })
+                              }
+                            />
+                          </InputGroup>
+                        </FormGroup>
+                        <FormGroup
+                          className={classnames({
+                            focused: this.state.emailFocused
+                          })}
+                        >
+                          <InputGroup className="input-group-alternative">
+                            <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
+                                <i className="ni ni-email-83" />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                              placeholder="Email address"
+                              type="email"
+                              id="email"
+                              onFocus={e =>
+                                this.setState({ emailFocused: true })
+                              }
+                              onBlur={e =>
+                                this.setState({ emailFocused: false })
+                              }
+                            />
+                          </InputGroup>
+                        </FormGroup>
+                        <FormGroup className="mb-4">
+                          <Input
+                            className="form-control-alternative"
+                            cols="80"
+                            name="name"
+                            placeholder="Type a message..."
+                            rows="4"
+                            type="textarea"
+                            id="message"
+                          />
+                        </FormGroup>
+                        <div>
+                          <Button
+                            block
+                            className="btn-round"
+                            color="default"
+                            size="lg"
+                            type="submit"
+                          >
+                            Send Message
+                          </Button>
+                        </div>
+                      </Form>
                     </CardBody>
                   </Card>
                 </Col>
