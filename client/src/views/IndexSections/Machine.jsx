@@ -45,7 +45,7 @@ class Machine extends React.Component {
     console.log(functions.isDateBeforeToday(currentDate));
 
     let status = functions.isDateBeforeToday(currentDate) ? (
-      <Badge color="info" pill className="mr-3">
+      <Badge color="success" pill className="mr-3">
         In Maintenance
       </Badge>
     ) : (

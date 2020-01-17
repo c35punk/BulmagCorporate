@@ -94,8 +94,9 @@ class MachineModals extends React.Component {
       <>
         <br />
         <Button
+          block
           className="mb-2"
-          color="default"
+          color="info"
           type="button"
           onClick={() => this.toggleModal("notificationModal")}
         >
