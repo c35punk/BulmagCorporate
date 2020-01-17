@@ -10,6 +10,26 @@ const productUrl = `${baseUrl}/products`;
 const serviceUrl = `${baseUrl}/services`;
 const ticketUrl = `${machineUrl}/tickets`;
 
+const functions = {
+  isDateBeforeToday(date) {
+    return (
+      new Date(typeof date === String ? date : date.toDateString()) > new Date(new Date().toDateString())
+    );
+  },
+  numberOfOpenTickets(arr) {
+    let numberOfTickets = 0;
+
+    for (let x = 0; x < arr.length; x++) {
+      for (let i = 0; i < arr[x].tickets.length; i++) {
+        if (arr[x].tickets[i].ticketStatus) {
+          numberOfTickets++;
+        }
+      }
+    }
+    return numberOfTickets
+  }
+}
+
 
 const dbConstants = {
   // auth
@@ -156,5 +176,6 @@ export {
   notifications,
   notificationMessages,
   paths,
-  roles
+  roles,
+  functions
 };

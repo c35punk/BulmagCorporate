@@ -26,7 +26,8 @@ const ticketSchema = new Schema({
         ref: 'Machine'
     },
     ticketStatus: {
-        type: Boolean
+        type: Boolean,
+        default: false
     }
 
 

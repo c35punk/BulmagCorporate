@@ -1,5 +1,6 @@
 import React from "react";
 
+
 // reactstrap components
 import {
   Button,
@@ -27,6 +28,10 @@ class TicketsModal extends React.Component {
       myMachines: this.props.machines
     });
   };
+
+  componentDidMount() {
+    console.log(this.state.myMachines[0]);
+  }
 
   render() {
     console.log("Hello from Contracts Modal");
@@ -131,11 +136,7 @@ class TicketsModal extends React.Component {
                                     <td>{machine.type}</td>
                                     <td>{machine.startDate.substr(0, 10)}</td>
                                     <td>{machine.endDate.substr(0, 10)}</td>
-                                    <td>
-                                      {machine.endDate < Date(Date.now())
-                                        ? "Yes"
-                                        : "No"}
-                                    </td>
+                                    <td>{}</td>
                                   </tr>
                                 </>
                               );

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Modal from "./MachineModals";
 import ExpiredModal from "./MachineModalsExpired";
+import { functions } from "../../constants/constants";
 
 import { Card, CardBody, Badge, Col } from "reactstrap";
 
@@ -24,7 +25,7 @@ class Machine extends React.Component {
 
     let currentDate = new Date(endDate);
 
-    let maintenanceChecker = isDateBeforeToday(currentDate) ? (
+    let maintenanceChecker = functions.isDateBeforeToday(currentDate) ? (
       <Modal
         className="mt-3"
         color="dark"
@@ -40,14 +41,10 @@ class Machine extends React.Component {
       />
     );
 
-    function isDateBeforeToday(date) {
-      return (
-        new Date(date.toDateString()) > new Date(new Date().toDateString())
-      );
-    }
-    console.log(isDateBeforeToday(currentDate));
+   
+    console.log(functions.isDateBeforeToday(currentDate));
 
-    let status = isDateBeforeToday(currentDate) ? (
+    let status = functions.isDateBeforeToday(currentDate) ? (
       <Badge color="info" pill className="mr-3">
         In Maintenance
       </Badge>
@@ -57,7 +54,7 @@ class Machine extends React.Component {
       </Badge>
     );
 
-    console.log('Machine.JSX');
+    console.log("Machine.JSX");
     console.log(this.props);
 
     return (

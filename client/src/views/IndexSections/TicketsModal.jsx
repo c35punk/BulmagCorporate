@@ -1,5 +1,6 @@
 import React from "react";
 
+
 // reactstrap components
 import {
   Button,
@@ -37,8 +38,14 @@ class TicketsModal extends React.Component {
 
     let numberOfTickets = 0;
 
-    for (let x = 0; x < this.state.machinesWithTickets.length; x++) {
-      numberOfTickets += this.state.machinesWithTickets[x].tickets.length;
+    let arr = this.state.machinesWithTickets;
+
+    for (let x = 0; x < arr.length; x++) {
+      for (let i = 0; i < arr[x].tickets.length; i++) {
+        if (arr[x].tickets[i].ticketStatus) {
+          numberOfTickets++;
+        }
+      }
     }
 
     let ticketsArray = [];
