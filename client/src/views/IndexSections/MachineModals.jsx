@@ -165,7 +165,7 @@ class MachineModals extends React.Component {
                             value={this.state.repairDate
                               .toString()
                               .substr(4, 11)}
-                              disabled
+                            disabled
                           ></Input>
                         </InputGroup>
                       </FormGroup>
