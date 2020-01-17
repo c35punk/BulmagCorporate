@@ -91,7 +91,7 @@ class Contacts extends React.Component {
                 >
                   <polygon
                     className="fill-white"
-                    points="962 0 2560 100 0 100"
+                    points="2327 0 2560 100 0 100"
                   />
                 </svg>
               </div>
