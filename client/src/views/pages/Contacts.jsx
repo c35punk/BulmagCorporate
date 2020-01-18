@@ -24,37 +24,57 @@ import {
 // index page sections
 
 class Contacts extends React.Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      senderName: "",
+      senderEmail: "",
+      message: ""
+    };
+    this.handleSenderName = this.handleSenderName.bind(this);
+    this.handleSenderEmail = this.handleSenderEmail.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleMessage = this.handleMessage.bind(this);
+  }
+
+  handleSenderName(event) {
+    this.setState({ senderName: event.target.value });
+  }
+  handleSenderEmail(event) {
+    this.setState({ senderEmail: event.target.value });
+  }
+  handleMessage(event) {
+    this.setState({ message: event.target.value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+
+    let data = {
+      name: this.state.senderName,
+      email: this.state.senderEmail,
+      message: this.state.message
+    };
+
+    axios.post(dbConstants.mailsUrl, data).then(response => {
+      if (response.data.msg === "success") {
+        console.log("Message Sent.");
+        window.location = "/";
+      } else if (response.data.msg === "fail") {
+        console.log(response);
+        console.log("Message failed to send.");
+        // window.location = "/contacts";
+      }
+    });
+  }
+
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
+  h;
 
-  handleSubmit(e) {
-    e.preventDefault();
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
-    axios({
-      method: "POST",
-      url: dbConstants.mailsUrl,
-      data: {
-        name: name,
-        email: email,
-        messsage: message
-      }
-    }).then(response => {
-      if (response.data.msg === "success") {
-        console.log("Message Sent.");
-        window.location = "/contacts";
-      } else if (response.data.msg === "fail") {
-        console.log(response);
-        console.log("Message failed to send.");
-        window.location = "/contacts";
-      }
-    });
-  }
   render() {
     return (
       <>
@@ -111,9 +131,9 @@ class Contacts extends React.Component {
                         Your project is very important to us.
                       </p>
                       <Form
-                        id="contact-form"
-                        onSubmit={this.handleSubmit.bind(this)}
-                        method="POST"
+                        role="form"
+                        onSubmit={this.handleSubmit}
+                        encType="multipart/form-data"
                       >
                         <FormGroup
                           className={classnames("mt-5", {
@@ -130,6 +150,8 @@ class Contacts extends React.Component {
                               placeholder="Your name"
                               type="text"
                               id="name"
+                              value={this.state.senderName}
+                              onChange={this.handleSenderName}
                               onFocus={e =>
                                 this.setState({ nameFocused: true })
                               }
@@ -154,6 +176,8 @@ class Contacts extends React.Component {
                               placeholder="Email address"
                               type="email"
                               id="email"
+                              value={this.state.senderEmail}
+                              onChange={this.handleSenderEmail}
                               onFocus={e =>
                                 this.setState({ emailFocused: true })
                               }
@@ -172,6 +196,8 @@ class Contacts extends React.Component {
                             rows="4"
                             type="textarea"
                             id="message"
+                            value={this.state.message}
+                            onChange={this.handleMessage}
                           />
                         </FormGroup>
                         <div>

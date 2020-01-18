@@ -4,7 +4,7 @@ var nodemailer = require('nodemailer');
 const creds = require('../config/mailCredentials');
 
 var transport = {
-    host: 'mail.bulmag.bg',
+    host: 'smtp.bulmag.bg',
     auth: {
         user: creds.USER,
         pass: creds.PASS

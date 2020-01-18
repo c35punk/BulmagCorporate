@@ -5,7 +5,7 @@ const Product = require("../models/Product");
 
 const router = new express.Router();
 
-router.post("/add-product", (req, res) => {
+router.post("/add-product", authCheck, (req, res) => {
   const productObj = req.body;
 
   const productToSave = new Product(productObj);
