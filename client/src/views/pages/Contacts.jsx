@@ -46,10 +46,12 @@ class Contacts extends React.Component {
       }
     }).then(response => {
       if (response.data.msg === "success") {
-        alert("Message Sent.");
-        this.resetForm();
+        console.log("Message Sent.");
+        window.location = "/contacts";
       } else if (response.data.msg === "fail") {
-        alert("Message failed to send.");
+        console.log(response);
+        console.log("Message failed to send.");
+        window.location = "/contacts";
       }
     });
   }
@@ -91,7 +93,7 @@ class Contacts extends React.Component {
                 >
                   <polygon
                     className="fill-white"
-                    points="2327 0 2560 100 0 100"
+                    points="962 0 2560 100 0 100"
                   />
                 </svg>
               </div>

@@ -31,7 +31,7 @@ const dbConstants = {
   machinesUrl: `${machineUrl}/`,
   productsUrl: `${productUrl}/`,
   servicesUrl: `${serviceUrl}/`,
-  mailsUrl: `${mailUrl}/`,
+  mailsUrl: `${mailUrl}/send`,
   ticketsUrl: `${ticketUrl}/`,
   addTicketsUrl: `${machineUrl}/add-ticket`,
   machineCreateUrl: `${machineUrl}/create`,
