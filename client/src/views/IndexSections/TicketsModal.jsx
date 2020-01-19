@@ -1,11 +1,9 @@
 import React from "react";
 
-
 // reactstrap components
 import {
   Button,
   Card,
-  Badge,
   CardBody,
   FormGroup,
   Form,
@@ -88,23 +86,6 @@ class TicketsModal extends React.Component {
             <Row className="justify-content-center">
               <Col lg="12">
                 <Card className="bg-secondary shadow border-0">
-                  <Badge color="default" pill>
-                    {/* <Badge color="dark" className="mr-1">
-                      <h5 className="text-dark">
-                        Vendor: <strong>{manufacturer}</strong>
-                      </h5>
-                    </Badge>
-
-                    <Badge color="dark" className="mr-1">
-                      <h6 className="text-dark">Machine: {machineName}</h6>
-                    </Badge>
-                    <Badge color="dark" className="mr-1">
-                      <h6 className="text-dark">PN: {productNumber}</h6>
-                    </Badge>
-                    <Badge color="dark" className="mr-1">
-                      <h6 className="text-dark">SN: {serialNumber}</h6>
-                    </Badge> */}
-                  </Badge>
                   <CardBody className="px-lg-12 py-lg-12">
                     <Form role="form">
                       <FormGroup>
@@ -189,7 +170,6 @@ class TicketsModal extends React.Component {
                           </tbody>
                         </table>
                       </FormGroup>
-
                       <div className="text-center">
                         <ExportXLSX
                           csvData={ticketsArray}
