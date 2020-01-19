@@ -17,7 +17,7 @@ class Modals extends React.Component {
         <Button
           block
           className="mb-2"
-          color="default"
+          color="dark"
           type="button"
           onClick={() => this.toggleModal("notificationModal")}
         >

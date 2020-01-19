@@ -17,13 +17,13 @@ class Product extends React.Component {
 
             <h6 className="text-primary">{this.props.product.description}</h6>
             <div>
-              <Badge color="primary" pill className="mr-1">
+              <Badge color="info" pill className="mr-1">
                 {this.props.product.name}
               </Badge>
             </div>
             <Modal
               className="mt-3"
-              color="primary"
+              color="info"
               productUrl={this.props.product.productUrl}
               description={this.props.product.description}
             />

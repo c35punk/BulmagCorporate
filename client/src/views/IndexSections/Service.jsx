@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Modal from "./Modals";
 
 import { Card, CardBody, Badge, Col } from "reactstrap";
@@ -18,15 +17,13 @@ class Service extends React.Component {
 
             <h6 className="text-primary">{this.props.service.description}</h6>
             <div>
-              <Badge color="primary" pill className="mr-1">
+              <Badge color="info" pill className="mr-1">
                 {this.props.service.name}
               </Badge>
             </div>
             <Modal
               className="mt-3"
-              color="primary"
-              to="/profile"
-              tag={Link}
+              color="dark"
               serviceUrl={this.props.service.serviceUrl}
               description={this.props.service.description}
             />
