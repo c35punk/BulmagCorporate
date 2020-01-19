@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { UserConsumer } from "../../contexts/user-context";
 import { dbConstants } from "../../constants/constants";
+import { isMobile } from "react-device-detect";
 
 // reactstrap components
 import { Button, Badge, Card, Container, Row, Col } from "reactstrap";
@@ -156,31 +157,35 @@ class Profile extends React.Component {
                 </Row>
                 <div className="text-center mt-5">
                   <Row className="align-items-center justify-content-center">
-                    <iframe
-                      src="https://www.oreilly.com/"
-                      width="800"
-                      height="450"
-                      frameborder="0"
-                      allow
-                    ></iframe>
+                    {isMobile ? (
+                      <p>Nothing to view on a mobile device</p>
+                    ) : (
+                      <iframe
+                        src="https://www.oreilly.com/"
+                        width="800"
+                        height="450"
+                        frameborder="0"
+                        allow
+                      ></iframe>
+                    )}
                   </Row>
                 </div>
                 <div className="mt-5 py-5 border-top text-center">
                   <Row className="justify-content-center">
                     <Col lg="9">
-                      <Badge color="default" pill className="mr-2">
+                      <Badge color="info" className="mr-3">
                         {this.props.user.companyName}
                       </Badge>
-                      <Badge color="primary" pill className="mr-1">
+                      <Badge color="info" className="mr-3">
                         Address: {this.props.user.address}
                       </Badge>
-                      <Badge color="primary" pill className="mr-1">
+                      <Badge color="info" className="mr-3">
                         VAT Nr.: {this.props.user.vatNumber}
                       </Badge>
-                      <Badge color="primary" pill className="mr-1">
+                      <Badge color="info" className="mr-3">
                         Contact Person: {this.props.user.contactPerson}
                       </Badge>
-                      <Badge color="primary" pill className="mr-1">
+                      <Badge color="info" className="mr-3">
                         @mail: {this.props.user.email}
                       </Badge>
                     </Col>
