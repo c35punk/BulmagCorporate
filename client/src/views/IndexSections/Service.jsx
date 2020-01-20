@@ -17,7 +17,11 @@ class Service extends React.Component {
 
             <h6 className="text-primary">{this.props.service.description}</h6>
             <div>
-              <Badge color="info" pill className="mr-1">
+              <Badge
+                color="info"
+                pill
+                className="mr-1"
+              >
                 {this.props.service.name}
               </Badge>
             </div>
