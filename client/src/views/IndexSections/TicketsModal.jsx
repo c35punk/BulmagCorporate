@@ -40,6 +40,7 @@ class TicketsModal extends React.Component {
 
     for (let x = 0; x < arr.length; x++) {
       for (let i = 0; i < arr[x].tickets.length; i++) {
+        console.log(arr[x].tickets.length);
         if (arr[x].tickets[i].ticketStatus) {
           numberOfTickets++;
         }
@@ -125,8 +126,6 @@ class TicketsModal extends React.Component {
                                         x["Component"] = x.component;
                                         x["Description"] = x.failureText;
                                         x["Status"] = x.ticketStatus || false;
-
-                                        
 
                                         ticketsArray.push(x);
                                         return (

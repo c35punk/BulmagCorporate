@@ -5,7 +5,9 @@ import { Button, Container, Row, Col, UncontrolledCarousel } from "reactstrap";
 
 const items = [
   {
-    src: "https://wallpaperaccess.com/full/1398628.jpg",
+    src:
+      "https://blog.bookaway.com/blog/wp-content/uploads/2019/08/Downtown-Hong-Kong-and-technology.jpg",
+    alt: "HEllo",
     caption: (
       <Button
         className="btn-white mt-4"
@@ -36,7 +38,7 @@ const items = [
   },
   {
     src:
-      "https://www.larutadelsorigens.cat/wallpic/full/31-316749_sql-server-wallpaper-data-center-wallpaper-4k.jpg",
+      "https://wordatom.com/wp-content/uploads/2017/12/data-center-of-a-web-hosting-company.jpg",
     caption: (
       <Button
         className="btn-white mt-4"
@@ -55,52 +57,21 @@ class Carousel extends React.Component {
   render() {
     return (
       <>
-        <section className="section section-shaped">
+        <section>
           <div className="shape shape-style-1 shape-default">
             <span />
             <span />
             <span />
           </div>
-          <Container className="py-lg mb-lg-cover col-lg-9">
+          <Container className="col-lg-12">
             <Row className="justify-content-between align-items-center justify-content-center">
               <Col className="mb-lg-cover" lg="12">
                 <div className="rounded shadow-lg overflow-hidden transform-perspective-center">
                   <UncontrolledCarousel items={items} />
                 </div>
               </Col>
-              {/* <Col className="mb-5 mb-lg-0" lg="12">
-                <h1 className="display-6 text-secondary justify-content-center">
-                  Over 25 Years of Experience in System Integration
-                </h1>
-
-                <Button
-                  className="btn-white mt-4 justify-content-center"
-                  lg="12"
-                  color="default"
-                  to="/projects"
-                  tag={Link}
-                >
-                  See all Projects
-                </Button>
-              </Col> */}
             </Row>
           </Container>
-          {/* SVG separator */}
-          <div className="separator separator-bottom separator-skew zindex-100">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="none"
-              version="1.1"
-              viewBox="0 0 2560 100"
-              x="0"
-              y="0"
-            >
-              <polygon
-                className="fill-white"
-                points="2560 0 2560 100 0 100"
-              />
-            </svg>
-          </div>
         </section>
       </>
     );
