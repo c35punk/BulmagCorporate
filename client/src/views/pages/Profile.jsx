@@ -96,7 +96,7 @@ class Profile extends React.Component {
             <Container>
               <Card className="card-profile shadow mt--300">
                 <Row className="justify-content-center">
-                  <Col className="order-lg-2" lg="3">
+                  <Col className="order-lg-2" lg="4">
                     <div className="card-profile-image">
                       <Link to="/dashboard">
                         <img

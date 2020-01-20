@@ -47,7 +47,6 @@ class Modals extends React.Component {
             <div className="py-6 text-center">
               <div class="embed-responsive embed-responsive-16by9">
                 <Loading />
-
                 <iframe
                   class="embed-responsive-item"
                   src={this.props.productUrl || this.props.serviceUrl}

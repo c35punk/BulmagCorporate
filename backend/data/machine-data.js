@@ -23,7 +23,7 @@ module.exports = {
             Object.keys(newMachineInput).forEach(newProp => {
                 machine[newProp] = newMachineInput[newProp];
             });
-
+            
             await machine.save();
             return { msg: 'Edited successfully' };
         } catch (err) {
