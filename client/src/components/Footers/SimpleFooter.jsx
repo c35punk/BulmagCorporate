@@ -17,16 +17,14 @@ class SimpleFooter extends Component {
     return (
       <>
         <footer className=" footer">
-        <Container>
+          <Container>
             <Row className="row-grid align-items-center my-md">
               <Col lg="6">
                 <h3 className="text-primary font-weight-light mb-2">
                   Thank you for choosing us!
                 </h3>
-               
               </Col>
               <Col className="text-lg-center btn-wrapper" lg="6">
-                
                 <Button
                   className="btn-neutral btn-icon-only btn-round ml-1"
                   color="facebook"
@@ -34,13 +32,14 @@ class SimpleFooter extends Component {
                   id="tooltip837440414"
                   size="lg"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fa fa-facebook-square" />
                 </Button>
                 <UncontrolledTooltip delay={0} target="tooltip837440414">
                   Like us
                 </UncontrolledTooltip>
-               
+
                 <Button
                   className="btn-neutral btn-icon-only btn-round ml-1"
                   color="github"
@@ -48,6 +47,7 @@ class SimpleFooter extends Component {
                   id="tooltip495507257"
                   size="lg"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <i className="fa fa-github" />
                 </Button>
@@ -64,6 +64,7 @@ class SimpleFooter extends Component {
                   <a
                     href="https://www.linkedin.com/in/liubomir-djantov-a109759b/"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Design by ldj5
                   </a>
@@ -72,22 +73,16 @@ class SimpleFooter extends Component {
               </Col>
               <Col md="6">
                 <Nav className="nav-footer justify-content-end">
-
                   <NavItem>
-                    <NavLink
-                      to="/contacts" tag={Link}
-                    >
+                    <NavLink to="/contacts" tag={Link}>
                       Contacts
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink
-                      to="/about" tag={Link}
-                    >
+                    <NavLink to="/about" tag={Link}>
                       About Us
                     </NavLink>
                   </NavItem>
-
                 </Nav>
               </Col>
             </Row>

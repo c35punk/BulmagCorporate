@@ -52,6 +52,7 @@ class Modals extends React.Component {
                   class="embed-responsive-item"
                   src={this.props.productUrl || this.props.serviceUrl}
                   allowfullscreen
+                  title="Product URL"
                 ></iframe>
               </div>
             </div>

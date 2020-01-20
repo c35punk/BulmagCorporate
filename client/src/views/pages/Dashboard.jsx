@@ -27,7 +27,9 @@ class Dashboard extends React.Component {
         console.log(res);
         this.setState({ machines: res.data });
       })
-      .catch(function(error) {});
+      .catch(function(error) {
+        console.log(error);
+      });
 
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;

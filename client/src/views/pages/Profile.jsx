@@ -161,11 +161,12 @@ class Profile extends React.Component {
                       <p>Nothing to view on a mobile device</p>
                     ) : (
                       <iframe
-                        src="https://www.oreilly.com/"
-                        width="800"
+                        src="https://www.kaldata.com/it-%D0%BD%D0%BE%D0%B2%D0%B8%D0%BD%D0%B8"
+                        width="900"
                         height="450"
                         frameborder="0"
                         allow
+                        title="Relevant News"
                       ></iframe>
                     )}
                   </Row>

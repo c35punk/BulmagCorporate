@@ -92,7 +92,7 @@ class Contacts extends React.Component {
                         <span>Give us a call or drop a line</span>
                       </h1>
                       <div id="map_div" className="section-lg">
-                        <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Bulmag+AD,+Sofia,+Bulgaria&amp;aq=0&amp;oq=bulmag+ad+sofia&amp;sll=37.0625,-95.677068&amp;sspn=57.292148,135.263672&amp;t=m&amp;ie=UTF8&amp;hq=Bulmag+AD,&amp;hnear=Sofia,+Sofia-city,+Bulgaria&amp;ll=42.654856,23.372898&amp;spn=0.018937,0.025749&amp;z=14&amp;iwloc=A&amp;output=embed&amp;iwloc=near"></iframe>
+                        <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Bulmag+AD,+Sofia,+Bulgaria&amp;aq=0&amp;oq=bulmag+ad+sofia&amp;sll=37.0625,-95.677068&amp;sspn=57.292148,135.263672&amp;t=m&amp;ie=UTF8&amp;hq=Bulmag+AD,&amp;hnear=Sofia,+Sofia-city,+Bulgaria&amp;ll=42.654856,23.372898&amp;spn=0.018937,0.025749&amp;z=14&amp;iwloc=A&amp;output=embed&amp;iwloc=near" title="Location"></iframe>
                       </div>
                       <p className="lead text-black">
                         We are here to answer all your questions
