@@ -126,6 +126,8 @@ class TicketsModal extends React.Component {
                                         x["Description"] = x.failureText;
                                         x["Status"] = x.ticketStatus || false;
 
+                                        
+
                                         ticketsArray.push(x);
                                         return (
                                           "\r\n" + x["Ticket Number"] + "\r\n"

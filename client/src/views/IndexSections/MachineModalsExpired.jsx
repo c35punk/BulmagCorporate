@@ -69,7 +69,7 @@ class MachineModals extends React.Component {
     (() => {
       this.toggleModal("notificationModal");
 
-      // window.location = "/dashboard";
+      window.location = "/dashboard";
     })();
   }
 
