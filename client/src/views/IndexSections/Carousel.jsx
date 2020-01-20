@@ -7,7 +7,7 @@ const items = [
   {
     src:
       "https://blog.bookaway.com/blog/wp-content/uploads/2019/08/Downtown-Hong-Kong-and-technology.jpg",
-    alt: "HEllo",
+    
     caption: (
       <Button
         className="btn-white mt-4"
