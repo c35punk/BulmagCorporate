@@ -2,8 +2,6 @@ const mongoose = require('mongoose')
 const User = require('../models/User');
 const Product = require('../models/Product')
 const Service = require('../models/Service')
-const Ticket = require('../models/Ticket')
-
 
 mongoose.Promise = global.Promise
 
