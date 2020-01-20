@@ -6,7 +6,7 @@ const mailRoutes = require("../routes/mail")
 const cors = require('cors')
 
 module.exports = app => {
-  app.use(cors())
+  app.use(cors({ origin: '*' }));
   app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Content-Type");

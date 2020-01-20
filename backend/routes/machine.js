@@ -9,7 +9,7 @@ const authCheck = require("../config/auth-check");
 
 const router = new express.Router()
 
-router.post("/create", (req, res) => {
+router.post("/create", authCheck, (req, res) => {
   const machineObj = req.body;
 
   console.log(machineObj)
