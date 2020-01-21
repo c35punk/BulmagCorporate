@@ -13,7 +13,7 @@ const SupportBanner = () => {
               <img
                 alt="..."
                 className="img-center img-fluid"
-                src="https://ze-robot.com/dl/da/data-center-1600%C3%97900.jpg"
+                src="https://www.jvzoohost.com/img/jvZoo-images/solutions-server.png"
               />
             </div>
           </Col>

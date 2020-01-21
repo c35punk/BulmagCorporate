@@ -914,3 +914,17 @@ $footer-link-color: $gray-600 !default;
 $footer-link-hover-color: $gray-700 !default;
 $footer-heading-color: $gray-600 !default;
 $footer-heading-font-size: $font-size-sm !default;
+
+.product-title {
+  cursor: pointer;
+  padding-top: 35px;
+  text-align: center;
+  font-size: 24px;
+  font-optical-sizing: auto;
+  color: black;
+  font-family: "Microsoft JhengHei Light", sans-serif;
+  border-radius: 20px;
+  border-style: solid;
+  border-color: #aa2727;
+  border-bottom-color: transparent;
+}

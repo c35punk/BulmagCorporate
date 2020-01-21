@@ -1,39 +1,73 @@
 import React from "react";
-import Modal from "./Modals";
 
-import { Card, CardBody, Badge, Col } from "reactstrap";
+import {
+  Card,
+  CardBody,
+  Nav,
+  NavItem,
+  NavLink,
+  TabContent,
+  TabPane,
+  Row,
+  Col
+} from "reactstrap";
+import classnames from "classnames";
 
 class Service extends React.Component {
+  state = {
+    iconTabs: 1,
+    plainTabs: 1
+  };
+  toggleNavs = (e, state, index) => {
+    e.preventDefault();
+    this.setState({
+      [state]: index
+    });
+  };
   render() {
     return (
-      <Col lg="4">
-        <Card className="card-lift--hover shadow border-0">
-          <CardBody className="py-5">
-            <img
-              src={this.props.service.image}
-              alt=""
-              style={{ width: "150px" }}
-            />
-
-            <h6 className="text-primary">{this.props.service.description}</h6>
-            <div>
-              <Badge
-                color="info"
-                pill
-                className="mr-1"
+      <>
+        {/* Menu */}
+        <div className="nav-wrapper">
+          <Nav
+            className="nav-fill flex-column flex-md-row"
+            id="tabs-icons-text"
+            pills
+            role="tablist"
+          >
+            <NavItem>
+              <NavLink
+                aria-selected={this.state.plainTabs === 1}
+                className={classnames("mb-sm-3 mb-md-0", {
+                  active: this.state.plainTabs === 1
+                })}
+                onClick={e => this.toggleNavs(e, "plainTabs", 1)}
+                href="#"
+                role="tab"
               >
-                {this.props.service.name}
-              </Badge>
-            </div>
-            <Modal
-              className="mt-3"
-              color="dark"
-              serviceUrl={this.props.service.serviceUrl}
-              description={this.props.service.description}
-            />
+                Main Activities
+              </NavLink>
+            </NavItem>
+          </Nav>
+        </div>
+        <Card className="shadow">
+          <CardBody>
+            <TabContent activeTab={"plainTabs" + this.state.plainTabs}>
+              <TabPane tabId="plainTabs1">
+                <p className="description">
+                  Bulmag AD is providing to clients IT System integration
+                  elements in various combinations: Hardware &amp; Software
+                  Delivery, Professional Services, Consultations Rendering,
+                  Training, Authorized Warranty (Lenovo Think, NetApp, Datecs,
+                  Pax) and Post-Warranty Service Provider, Servicing and
+                  Maintenance, Specific Solutions Development, Design and
+                  Implementation.
+                </p>
+              </TabPane>
+            </TabContent>
           </CardBody>
         </Card>
-      </Col>
+      </>
     );
   }
 }

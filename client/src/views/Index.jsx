@@ -21,7 +21,6 @@ import About from "./pages/About.jsx";
 import Navigation from "../components/Navbars/Navigation";
 import SimpleFooter from "../components/Footers/SimpleFooter";
 import AddProduct from "./pages/AddProduct";
-import AddService from "./pages/AddService";
 import NotFound from "./pages/NotFound";
 
 class Index extends Component {
@@ -58,7 +57,11 @@ class Index extends Component {
           <Navigation />
           <Switch>
             <Route path="/" exact render={props => <Main {...props} />} />
-            <Route path="/not-found" exact render={props => <NotFound {...props} />} />
+            <Route
+              path="/not-found"
+              exact
+              render={props => <NotFound {...props} />}
+            />
             <Route path="/about" exact render={props => <About {...props} />} />
             <Route
               path="/projects"
@@ -110,11 +113,6 @@ class Index extends Component {
               path="/add-product"
               exact
               render={props => <AddProduct {...props} />}
-            />
-            <AdminRoute
-              path="/add-service"
-              exact
-              render={props => <AddService {...props} />}
             />
           </Switch>
           <SimpleFooter />

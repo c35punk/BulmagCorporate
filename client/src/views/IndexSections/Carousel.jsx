@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 // reactstrap components
-import { Button, Container, Row, Col, UncontrolledCarousel } from "reactstrap";
+import { Button, Container, Row, UncontrolledCarousel } from "reactstrap";
 
 const items = [
   {
@@ -11,7 +11,7 @@ const items = [
     caption: (
       <Button
         className="btn-white mt-4"
-        color="default"
+        color="info"
         to="/products#HW"
         tag={Link}
       >
@@ -27,7 +27,7 @@ const items = [
     caption: (
       <Button
         className="btn-white mt-4"
-        color="default"
+        color="info"
         to="/products#Banking"
         tag={Link}
       >
@@ -42,7 +42,7 @@ const items = [
     caption: (
       <Button
         className="btn-white mt-4"
-        color="default"
+        color="info"
         to="/services#Maintenance"
         tag={Link}
       >
