@@ -7,7 +7,7 @@ const items = [
   {
     src:
       "https://blog.bookaway.com/blog/wp-content/uploads/2019/08/Downtown-Hong-Kong-and-technology.jpg",
-    
+
     caption: (
       <Button
         className="btn-white mt-4"
@@ -57,22 +57,13 @@ class Carousel extends React.Component {
   render() {
     return (
       <>
-        <section>
-          <div className="shape shape-style-1 shape-default">
-            <span />
-            <span />
-            <span />
-          </div>
-          <Container className="col-lg-12">
-            <Row className="justify-content-between align-items-center justify-content-center">
-              <Col className="mb-lg-cover" lg="12">
-                <div className="rounded shadow-lg overflow-hidden transform-perspective-center">
-                  <UncontrolledCarousel items={items} />
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </section>
+        <Container className="col-12">
+          <Row className="justify-content-between align-items-center justify-content-center">
+            <div className="rounded shadow-lg overflow-hidden transform-perspective-center">
+              <UncontrolledCarousel items={items} />
+            </div>
+          </Row>
+        </Container>
       </>
     );
   }

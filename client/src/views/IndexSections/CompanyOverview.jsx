@@ -7,7 +7,7 @@ class CompanyOverview extends React.Component {
   render() {
     return (
       <>
-        <section className="section section-lg ">
+        <section className="section section-lg footer ">
           <Container>
             <Row className="row-grid justify-content-center">
               <Col className="text-center" lg="8">
@@ -20,7 +20,9 @@ class CompanyOverview extends React.Component {
                     <Col className="order-md-6" md="6">
                       <div className="display-3">
                         <p className="lead">
-                          <h2>Enterprise Class Vendors and Solutions</h2>
+                          <h2 className="text-main">
+                            Enterprise Class Vendors and Solutions
+                          </h2>
                         </p>
 
                         <p>
@@ -33,7 +35,9 @@ class CompanyOverview extends React.Component {
                     <Col className="order-md-6" md="6">
                       <div className="display-3">
                         <p className="lead">
-                          <h2>25+ Years Experience in System Integration</h2>
+                          <h2 className="text-main">
+                            25+ Years Experience in System Integration
+                          </h2>
                         </p>
 
                         <p>
@@ -46,7 +50,7 @@ class CompanyOverview extends React.Component {
                     <Col className="order-md-6" md="6">
                       <div className="display-3">
                         <p className="lead">
-                          <h2>
+                          <h2 className="text-main">
                             Continual Commitment to Professional Excellence
                           </h2>
                         </p>

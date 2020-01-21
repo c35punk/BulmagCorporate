@@ -16,7 +16,7 @@ class SimpleFooter extends Component {
   render() {
     return (
       <>
-        <footer className=" footer">
+        <footer className="footer">
           <Container>
             <Row className="row-grid align-items-center my-md">
               <Col lg="6">
