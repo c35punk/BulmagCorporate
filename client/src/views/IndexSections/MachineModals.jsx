@@ -95,12 +95,12 @@ class MachineModals extends React.Component {
         <br />
         <Button
           block
-          className="mb-2"
+          className="mb-1"
           color="info"
           type="button"
           onClick={() => this.toggleModal("notificationModal")}
         >
-          SUBMIT SERVICE Ticket
+          SUBMIT TICKET
         </Button>
         <Modal
           className="modal-dialog-centered modal-primary modal-lg"

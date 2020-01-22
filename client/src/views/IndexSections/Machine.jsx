@@ -41,7 +41,6 @@ class Machine extends React.Component {
       />
     );
 
-   
     console.log(functions.isDateBeforeToday(currentDate));
 
     let status = functions.isDateBeforeToday(currentDate) ? (
@@ -58,17 +57,22 @@ class Machine extends React.Component {
     console.log(this.props);
 
     return (
-      <Col lg="4">
-        <Card className="card-lift--hover shadow border-0">
-          <CardBody className="py-5">
+      <Col lg="3">
+        <Card className="card-lift--hover shadow">
+          <CardBody className="py-4">
             {status}
             <h5 className="text-dark">
-              Vendor: <strong>{manufacturer}</strong>
+              <strong>{manufacturer}</strong>
             </h5>
             <img src={image} alt="" style={{ width: "150px" }} />
-            <h6 className="text-dark">Machine: {machineName}</h6>
-            <h6 className="text-dark">PN: {productNumber}</h6>
-            <h6 className="text-dark">SN: {serialNumber}</h6>
+            <div className="text-dark">
+              {machineName}
+              <br />
+              PN: {productNumber}
+              <br />
+              SN: {serialNumber}
+            </div>
+
             <div>
               <Badge color="dark" pill className="mr-1">
                 <i className="ni ni-watch-time" /> Starts:{" "}
