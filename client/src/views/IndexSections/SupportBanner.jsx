@@ -2,21 +2,26 @@ import React from "react";
 
 import { Container, Row, Col, Card, CardBody, Button } from "reactstrap";
 import { Link } from "react-router-dom";
+import { isMobile } from "react-device-detect";
 
 const SupportBanner = () => {
+  let imageShow = !isMobile ? (
+    <Col className="order-lg-2 ml-lg-auto" md="6">
+      <div className="position-relative pl-md-5">
+        <img
+          alt="..."
+          className="img-center img-fluid"
+          src="https://www.jvzoohost.com/img/jvZoo-images/solutions-server.png"
+        />
+      </div>
+    </Col>
+  ) : null;
+
   return (
     <section>
       <Container>
         <Row className="row-grid align-items-center">
-          <Col className="order-lg-2 ml-lg-auto" md="6">
-            <div className="position-relative pl-md-5">
-              <img
-                alt="..."
-                className="img-center img-fluid"
-                src="https://www.jvzoohost.com/img/jvZoo-images/solutions-server.png"
-              />
-            </div>
-          </Col>
+          {imageShow}
           <Col className="order-lg-1" lg="6">
             <Card className="shadow shadow-lg--hover mt-5">
               <CardBody>

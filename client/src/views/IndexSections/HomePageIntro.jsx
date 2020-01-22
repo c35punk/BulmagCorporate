@@ -12,7 +12,7 @@ const HomePageIntro = props => {
           </Col>
         </Row>
         <Row className="row-grid mt-5">
-          <Col lg="4">
+          <Col lg="4" className="text-center justify-content-center">
             <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
               <i className="ni ni-circle-08 text-primary" />
             </div>
@@ -21,7 +21,7 @@ const HomePageIntro = props => {
               We design, provide, install, and support
             </p>
           </Col>
-          <Col lg="4">
+          <Col lg="4" className="text-center justify-content-center">
             <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
               <i className="ni ni-settings text-primary" />
             </div>
@@ -30,7 +30,7 @@ const HomePageIntro = props => {
               Post-warranty Enterprise Multi-vendor Maintenance
             </p>
           </Col>
-          <Col lg="4">
+          <Col lg="4" className="text-center justify-content-center">
             <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
               <i className="ni ni-ruler-pencil text-primary" />
             </div>

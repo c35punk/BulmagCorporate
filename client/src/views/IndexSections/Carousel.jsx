@@ -11,7 +11,7 @@ const items = [
     caption: (
       <Button
         className="btn-white mt-4"
-        color="info"
+        
         to="/products#HW"
         tag={Link}
       >
@@ -26,8 +26,8 @@ const items = [
 
     caption: (
       <Button
-        className="btn-white mt-4"
-        color="info"
+        className="btn-white mt-4 text-info"
+        
         to="/products#Banking"
         tag={Link}
       >
@@ -42,7 +42,7 @@ const items = [
     caption: (
       <Button
         className="btn-white mt-4"
-        color="info"
+        
         to="/services#Maintenance"
         tag={Link}
       >
