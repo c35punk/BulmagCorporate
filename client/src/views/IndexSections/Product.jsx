@@ -6,13 +6,17 @@ import { Card, CardBody, Badge, Col } from "reactstrap";
 class Product extends React.Component {
   render() {
     return (
-      <Col lg="4">
+      <Col lg="3">
         <Card className="card-lift--hover shadow border-0">
           <CardBody className="py-5">
             <img
               src={this.props.product.image}
               alt=""
-              style={{ width: "150px" }}
+              style={{
+                width: "130px",
+                height: "155px",
+                objectFit: "scale-down"
+              }}
             />
 
             <h6 className="text-primary">{this.props.product.description}</h6>
