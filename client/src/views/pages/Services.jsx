@@ -115,8 +115,8 @@ class TabsSection extends React.Component {
                           href="#"
                           role="tab"
                         >
-                          <i className="fa fa-2x fa-cloud">&nbsp;</i>
-                          <p className="mt-5 mt-lg-2">Cloud Offerings</p>
+                          <i className="fa fa-2x fa-black-tie">&nbsp;</i>
+                          <p className="mt-5 mt-lg-2">Consulting Services</p>
                         </NavLink>
                       </NavItem>
                       <NavItem>
@@ -388,88 +388,109 @@ class TabsSection extends React.Component {
                         </TabPane>
                         <TabPane tabId="plainTabs3">
                           <p className="description">
-                            <div id="cloud">
-                              <h6 className="text-dark">Cloud Services</h6>
-                              <div class="table-single-cell">
+                            <div id="consultancy">
+                              <h6 className="text-darker">
+                                Consulting Services
+                              </h6>
+                              <div>
                                 <h6 className="text-dark">
-                                  Before the blooming of cloud computing, a
-                                  business would build their IT infrastructure
-                                  from scratch. Thanks to cloud computing
-                                  offerings high entry barrier to the world of
-                                  enterprise computing. With cloud computing,
-                                  entrepreneurs can now consume enterprise
-                                  computing services.
+                                  Bulmag AD has successfully navigated the
+                                  ever-evolving technology landscape, helping
+                                  organizations in a variety of industries to
+                                  remain competitive.
                                 </h6>
 
-                                <h5 class="lead-thin">
-                                  We offer Infrastructure as a Service, Platform
-                                  as a Service, and Software as a Service
+                                <h5 className="text-dark">
+                                  We have proven record in solving complex
+                                  business challenges with technology,
+                                  delivering smoother operations.
                                 </h5>
 
                                 <div class="row row-table">
-                                  <div class="col-md-4 column text-left">
-                                    <h5 className="text-darker">
-                                      <strong>IaaS</strong>
-                                    </h5>
-                                    <p className="text-dark">
-                                      <span>
-                                        We offer pre-configured hardware
-                                        resources. Does not include applications
-                                        or even an operating system
-                                        (implementing all of that is left up to
-                                        the customer). Optionally we can provide
-                                        extra storage for corporate data
-                                        backups, more network bandwidth, etc.
-                                      </span>
-                                    </p>
-                                  </div>
-                                  <div class="col-md-4 column text-left">
-                                    <h5 className="text-darker">
-                                      <strong>PaaS</strong>
+                                  <div class="col-md-6 column text-left">
+                                    <h5 className="text-dark">
+                                      <strong>Digital Transformation</strong>
                                     </h5>
                                     <p>
                                       <span>
-                                        Our offering includes base operating
-                                        system and a suite of applications and
-                                        development tools. Bulmag AD's PaaS
-                                        eliminates the need for organizations to
-                                        build and maintain the infrastructure
-                                        traditionally used to develop
-                                        applications. Streamline your software
-                                        development.
+                                        With the right choice of
+                                        business-supporting technologies, we
+                                        help enterprises go beyond automating
+                                        traditional methods and processes and
+                                        explore new ways to boost business and
+                                        even transform business models. We
+                                        operate in various domains including
+                                        healthcare, retail, banking, telecoms,
+                                        manufacturing and more and carefully
+                                        gather experience in delivering reliable
+                                        IT solutions with the focus on industry
+                                        specifics. We are ready to join your IT
+                                        journey regardless of your digital
+                                        maturity level and help choose most
+                                        profitable technology innovations to
+                                        leverage your business and improve the
+                                        experience of your employees and
+                                        customers.
                                       </span>
                                     </p>
                                   </div>
-                                  <div class="col-md-4 column text-left">
+                                  <div class="col-md-6 column text-left">
                                     <h5 className="text-darker">
-                                      <strong>SaaS</strong>
+                                      <strong>IT Strategy</strong>
                                     </h5>
                                     <p>
                                       <span>
-                                        Bulmag AD offers web-based backup and
-                                        restore subscription-based application,
-                                        including embedded encryption, history,
-                                        secure upload and download.{" "}
+                                        With almost three decades in IT
+                                        business, we know that it’s a daunting
+                                        task to devise and implement a concise
+                                        IT strategy aligned with business goals.
+                                        We are happy to share our experience to
+                                        support you in technology roadmapping
+                                        and exploring most efficient ways to use
+                                        available resources and technology
+                                        trends. We can develop a new technology
+                                        agenda or adjust the existing one to a
+                                        changing business strategy, for example:
+                                        geographical expansion new products and
+                                        services mergers and acquisitions If you
+                                        have little time for IT strategic
+                                        planning, feel uncertain about new
+                                        initiatives or are still in two minds
+                                        about choosing most profitable
+                                        directions of IT development, we are
+                                        here to accompany you in IT strategy
+                                        development and execution to help your
+                                        business scale to a new level of market
+                                        competitiveness and get the most from
+                                        your investments.
                                       </span>
                                     </p>
                                   </div>
+                                </div>
+                                <div>
+                                  <h5 className="text-darker">
+                                    <strong>
+                                      Round the clock availability
+                                    </strong>
+                                  </h5>
+                                  <p>
+                                    Relying on the best HW and SW solutions in
+                                    the business and backed by certified
+                                    professionals with deep experience in
+                                    enterprise maintenance.
+                                  </p>
                                 </div>
 
                                 <div>
-                                  <h5>
-                                    <strong>Customizable cloud</strong>
+                                  <h5 className="text-darker">
+                                    <strong>Flexible SLAs</strong>
                                   </h5>
-                                  <p>
-                                    Whether you choose our SaaS, PaaS, or IaaS
-                                    service it'll be tailored to meet virtually
-                                    every IT need you might have. Suitable for
-                                    organizations who demand better prices,
-                                    better coverage, better performance, and
-                                    better service.
+                                  <p className="text-dark">
+                                    The SLAs in Bulmag AD's outsourcing services
+                                    are flexible in order to fit individually
+                                    for your financial institution's way of
+                                    work.
                                   </p>
-                                </div>
-                                <div class="divider">
-                                  <span></span>
                                 </div>
                               </div>
                             </div>
@@ -578,9 +599,9 @@ class TabsSection extends React.Component {
                         <TabPane tabId="plainTabs5">
                           <p className="description">
                             <div id="integration">
-                              <h4 className="text-darker">
+                              <h6 className="text-darker">
                                 Integration Services
-                              </h4>
+                              </h6>
 
                               <div>
                                 <h6 className="text-dark">
