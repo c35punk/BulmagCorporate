@@ -70,36 +70,6 @@ class Products extends React.Component {
             <Container>
               <Row className="justify-content-center">
                 <Button
-                  className="btn-icon mb-12 mb-lg-0"
-                  color="primary"
-                  id="HW"
-                >
-                  <span className="btn-inner--icon mr-1">
-                    <i className="fa fa-server" />
-                  </span>
-                  <span className="btn-inner--text">
-                    System Integration Hardware
-                  </span>
-                </Button>
-                <Col lg="12">
-                  <Row className="row-grid">
-                    {this.state.products
-                      .filter(x => x.type === "HW")
-                      .map(product => {
-                        return (
-                          <>
-                            <Product product={product} />
-                            <br />
-                          </>
-                        );
-                      })}
-                  </Row>
-                </Col>
-              </Row>
-            </Container>
-            <Container>
-              <Row className="justify-content-center">
-                <Button
                   className="btn-icon mb-2 mb-lg-0"
                   color="primary"
                   id="HCI"
@@ -115,6 +85,37 @@ class Products extends React.Component {
                   <Row className="row-grid">
                     {this.state.products
                       .filter(x => x.type === "HCI")
+                      .map(product => {
+                        return (
+                          <>
+                            <Product product={product} />
+                            <br />
+                          </>
+                        );
+                      })}
+                  </Row>
+                </Col>
+              </Row>
+            </Container>
+
+            <Container>
+              <Row className="justify-content-center">
+                <Button
+                  className="btn-icon mb-12 mb-lg-0"
+                  color="primary"
+                  id="HW"
+                >
+                  <span className="btn-inner--icon mr-1">
+                    <i className="fa fa-server" />
+                  </span>
+                  <span className="btn-inner--text">
+                    System Integration Hardware
+                  </span>
+                </Button>
+                <Col lg="12">
+                  <Row className="row-grid">
+                    {this.state.products
+                      .filter(x => x.type === "HW")
                       .map(product => {
                         return (
                           <>

@@ -55,19 +55,6 @@ class TabsSection extends React.Component {
                 </NavItem>
                 <NavItem>
                   <NavLink
-                    aria-selected={this.state.plainTabs === 2}
-                    className={classnames("mb-sm-3 mb-md-0", {
-                      active: this.state.plainTabs === 2
-                    })}
-                    onClick={e => this.toggleNavs(e, "plainTabs", 2)}
-                    href="#"
-                    role="tab"
-                  >
-                    Customers
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink
                     aria-selected={this.state.plainTabs === 3}
                     className={classnames("mb-sm-3 mb-md-0", {
                       active: this.state.plainTabs === 3
@@ -77,6 +64,20 @@ class TabsSection extends React.Component {
                     role="tab"
                   >
                     History Points
+                  </NavLink>
+                </NavItem>
+
+                <NavItem>
+                  <NavLink
+                    aria-selected={this.state.plainTabs === 2}
+                    className={classnames("mb-sm-3 mb-md-0", {
+                      active: this.state.plainTabs === 2
+                    })}
+                    onClick={e => this.toggleNavs(e, "plainTabs", 2)}
+                    href="#"
+                    role="tab"
+                  >
+                    Customers
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -156,7 +157,7 @@ class TabsSection extends React.Component {
                                     Main activities
                                   </h3>
 
-                                  <ul>
+                                  <ul className="text-dark">
                                     System integration, including:
                                     <li>
                                       <em>Design of information systems;</em>
@@ -220,9 +221,9 @@ class TabsSection extends React.Component {
                                 <div className="static_main_content">
                                   <div className="static_text">
                                     <div>
-                                      <h3>Customers</h3>
+                                      <h3 className="text-darker">Customers</h3>
                                       <br />
-                                      <h5>
+                                      <h5 className="text-dark">
                                         <strong> Bulmag AD</strong> implemented
                                         solutions with numerous clients of which
                                         the following are worth mentioning:
@@ -243,7 +244,8 @@ class TabsSection extends React.Component {
                                       [
                                       <a
                                         href="http://www.rbb.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.rbb.bg
                                       </a>
@@ -278,7 +280,8 @@ class TabsSection extends React.Component {
                                       <strong>BORICA-BANKSERVICE JSC</strong> [
                                       <a
                                         href="http://www.bobs.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.bobs.bg
                                       </a>
@@ -337,7 +340,8 @@ class TabsSection extends React.Component {
                                       [
                                       <a
                                         href="http://www.ubb.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.ubb.bg
                                       </a>
@@ -408,7 +412,8 @@ class TabsSection extends React.Component {
                                       [
                                       <a
                                         href="http://www.fibank.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.fibank.bg
                                       </a>
@@ -428,7 +433,8 @@ class TabsSection extends React.Component {
                                       <strong> D COMMERCE BANK AD</strong> [
                                       <a
                                         href="http://www.dbank.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.dbank.bg
                                       </a>
@@ -451,7 +457,8 @@ class TabsSection extends React.Component {
                                       <strong> UNICREDIT BULBANK AD</strong> [
                                       <a
                                         href="http://www.unicreditbulbank.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.unicreditbulbank.bg
                                       </a>
@@ -478,7 +485,8 @@ class TabsSection extends React.Component {
                                       . [
                                       <a
                                         href="http://www.ccbank.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.ccbank.bg
                                       </a>
@@ -498,7 +506,8 @@ class TabsSection extends React.Component {
                                       <strong> DSK BANK</strong> [
                                       <a
                                         href="http://www.dskbank.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.dskbank.bg
                                       </a>
@@ -524,7 +533,8 @@ class TabsSection extends React.Component {
                                       [
                                       <a
                                         href="http://www.bnpparibas.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.bnpparibas.bg
                                       </a>
@@ -548,7 +558,8 @@ class TabsSection extends React.Component {
                                       [
                                       <a
                                         href="http://www.vivacom.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.vivacom.bg
                                       </a>
@@ -573,7 +584,8 @@ class TabsSection extends React.Component {
                                       [
                                       <a
                                         href="http://www.danone.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.danone.bg
                                       </a>
@@ -597,7 +609,8 @@ class TabsSection extends React.Component {
                                       [
                                       <a
                                         href="http://en.coca-colahellenic.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         en.coca-colahellenic.bg
                                       </a>
@@ -622,7 +635,8 @@ class TabsSection extends React.Component {
                                       [
                                       <a
                                         href="http://www.kavenorbico.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.kavenorbico.bg
                                       </a>
@@ -649,7 +663,8 @@ class TabsSection extends React.Component {
                                       [
                                       <a
                                         href="http://www.demax.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.demax.bg
                                       </a>
@@ -674,7 +689,8 @@ class TabsSection extends React.Component {
                                       [
                                       <a
                                         href="http://www.nalis.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.nalis.bg
                                       </a>
@@ -700,7 +716,8 @@ class TabsSection extends React.Component {
                                       [
                                       <a
                                         href="http://www.kznpp.org/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.kznpp.org
                                       </a>
@@ -726,7 +743,8 @@ class TabsSection extends React.Component {
                                       [
                                       <a
                                         href="http://www.sofiyskavoda.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.sofiyskavoda.bg
                                       </a>
@@ -753,7 +771,8 @@ class TabsSection extends React.Component {
                                       [
                                       <a
                                         href="http://www.bulgartransgaz.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.bulgartransgaz.bg
                                       </a>
@@ -778,7 +797,8 @@ class TabsSection extends React.Component {
                                       [
                                       <a
                                         href="http://www.nek.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.nek.bg
                                       </a>
@@ -802,7 +822,8 @@ class TabsSection extends React.Component {
                                       – [
                                       <a
                                         href="http://www.sac.government.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.sac.government.bg
                                       </a>
@@ -826,7 +847,8 @@ class TabsSection extends React.Component {
                                       [
                                       <a
                                         href="http://www.ing.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.ing.bg
                                       </a>
@@ -850,7 +872,8 @@ class TabsSection extends React.Component {
                                       [
                                       <a
                                         href="http://www.dir.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.dir.bg
                                       </a>
@@ -875,7 +898,8 @@ class TabsSection extends React.Component {
                                       [
                                       <a
                                         href="http://www.marica-iztok.com/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.marica-iztok.com
                                       </a>
@@ -901,7 +925,8 @@ class TabsSection extends React.Component {
                                       [
                                       <a
                                         href="http://www.metro.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.metro.bg
                                       </a>
@@ -927,7 +952,8 @@ class TabsSection extends React.Component {
                                       [
                                       <a
                                         href="http://www.praktiker.bg/"
-                                         target="_blank" rel="noopener noreferrer"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                       >
                                         www.praktiker.bg
                                       </a>
@@ -1011,53 +1037,45 @@ class TabsSection extends React.Component {
                   </TabPane>
                   <TabPane tabId="plainTabs3">
                     <p className="description">
-                      <ul>1991 — Bulmag Ltd (in Bulgarian - OOD) Foundation</ul>
-                      <ul>1992 — IBM® Business Partner</ul>
-                      <ul>1996 — Certified IBM® Service</ul>
-                      <ul>1999 — IBM® Top Performer for Bulgaria</ul>
-                      <ul>2002 — ISO 9001:2000 Certification</ul>
-                      <ul>2003 — Bulmag AD (JSC)</ul>
-                      <ul>2006 — IBM® Premier Business Partner</ul>
-                      <ul>2007 — Lenovo® Premier Business Partner</ul>
-                      <ul>2015 — HPE® Business Partner</ul>
-                      <ul>2015 — SAP Labs® Business Partner</ul>
-                      <ul>2016 — Transaction Systems® Business Partner</ul>
-                      <ul>2019 — eBulmag® Online Shop</ul>
+                      <ul className="text-dark">
+                        1991 — Bulmag Ltd (in Bulgarian - OOD) Foundation
+                      </ul>
+                      <ul className="text-dark">
+                        1992 — IBM® Business Partner
+                      </ul>
+                      <ul className="text-dark">
+                        1996 — Certified IBM® Service
+                      </ul>
+                      <ul className="text-dark">
+                        1999 — IBM® Top Performer for Bulgaria
+                      </ul>
+                      <ul className="text-dark">
+                        2002 — ISO 9001:2000 Certification
+                      </ul>
+                      <ul className="text-dark">2003 — Bulmag AD (JSC)</ul>
+                      <ul className="text-dark">
+                        2006 — IBM® Premier Business Partner
+                      </ul>
+                      <ul className="text-dark">
+                        2007 — Lenovo® Premier Business Partner
+                      </ul>
+                      <ul className="text-dark">
+                        2015 — HPE® Business Partner
+                      </ul>
+                      <ul className="text-dark">
+                        2015 — SAP Labs® Business Partner
+                      </ul>
+                      <ul className="text-dark">
+                        2016 — Transaction Systems® Business Partner
+                      </ul>
+                      <ul className="text-dark">2019 — eBulmag® Online Shop</ul>
+                      <ul className="text-dark">
+                        2020 — Authorised INFINIDAT Service Center
+                      </ul>
                     </p>
                   </TabPane>
                   <TabPane tabId="plainTabs4">
-                    <p className="description">
-                      <ul>
-                        System integration, including:
-                        <li>
-                          <em>Design of information systems;</em>
-                        </li>
-                        <li>
-                          <em>Delivery of hardware and software products;</em>
-                        </li>
-                        <li>
-                          <em>Professional and consultancy services;</em>
-                        </li>
-                        <li>
-                          <em>Training;</em>
-                        </li>
-                        <li>
-                          <em>Maintenance and support;</em>
-                        </li>
-                        <li>
-                          <em>
-                            Development and implementation of customer-specific
-                            solutions;
-                          </em>
-                        </li>
-                        <li>
-                          <em>
-                            Implementation of high availability and disaster
-                            recovery systems.
-                          </em>
-                        </li>
-                      </ul>
-                    </p>
+                    <p className="description"></p>
                   </TabPane>
                 </TabContent>
               </CardBody>
