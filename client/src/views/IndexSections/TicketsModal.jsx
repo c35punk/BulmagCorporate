@@ -30,6 +30,10 @@ class TicketsModal extends React.Component {
     });
   };
 
+  // componentDidCatch(error, info) {
+  //   logErrorToMyService(error, info);
+  // }
+
   render() {
     console.log("Hello from Tickets Modal");
     console.log(this.state);
@@ -94,7 +98,7 @@ class TicketsModal extends React.Component {
                           id="mytable"
                           className="table table-bordered exportable"
                         >
-                          <thead>
+                          <thead key="thead">
                             <tr>
                               <th>Machine Name</th>
                               <th>Machine SN</th>
@@ -105,7 +109,7 @@ class TicketsModal extends React.Component {
                               <th>Status</th>
                             </tr>
                           </thead>
-                          <tbody>
+                          <tbody key="tbody">
                             {this.state.machinesWithTickets.map(machine => {
                               return (
                                 <>
