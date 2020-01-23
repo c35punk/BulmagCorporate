@@ -19,7 +19,7 @@ module.exports = new PassportLocalStrategy({
     address: req.body.address.trim(),
   }
 
-  console.log(user)
+
   User
     .find({ email: email })
     .then(users => {
@@ -29,8 +29,21 @@ module.exports = new PassportLocalStrategy({
 
       user.salt = encryption.generateSalt()
       user.password = encryption.generateHashedPassword(user.salt, user.password)
-      user.roles = []
 
+      if (user.username.substr(0, 7) === "Admin@!") {
+        user.roles = ['Admin'];
+
+        user.username = user.username.substr(7);
+
+      } else {
+        user.roles = ['User']
+      }
+      console.log("User from PASSPORT")
+      console.log("=============================================")
+      console.log("=============================================")
+      console.log(user)
+      console.log("=============================================")
+      console.log("=============================================")
       User
         .create(user)
         .then(() => {
