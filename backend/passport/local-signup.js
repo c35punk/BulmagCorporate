@@ -38,12 +38,7 @@ module.exports = new PassportLocalStrategy({
       } else {
         user.roles = ['User']
       }
-      console.log("User from PASSPORT")
-      console.log("=============================================")
-      console.log("=============================================")
-      console.log(user)
-      console.log("=============================================")
-      console.log("=============================================")
+   
       User
         .create(user)
         .then(() => {
