@@ -24,8 +24,8 @@ class NotFound extends React.Component {
           </section>
           <section className="section section-lg pt-lg-0 mt--200">
             <Row className="row-grid justify-content-center">
-              <Jumbotron>
-                <h1 className="display-3">NOT AUTHORIZED TO VIEW THIS PAGE</h1>
+              <Jumbotron >
+                <h1 className="text-primary">NOT AUTHORIZED TO VIEW THIS PAGE</h1>
               </Jumbotron>
             </Row>
           </section>
