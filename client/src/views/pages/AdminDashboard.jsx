@@ -49,7 +49,7 @@ class AdminDashboard extends React.Component {
   }
   render() {
     console.log("Hello from ADMIN DASHBOARD");
-    console.log(this.props);
+    console.log("this.state");
     console.log(this.state);
 
     let myMachines = this.state.machines.filter(

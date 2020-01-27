@@ -95,7 +95,24 @@ router.get('/users', (req, res) => {
   User
     .find()
     .then(users => {
-      res.status(200).json(users)
+      let usersToReturn = [];
+      users.forEach(user => {
+        let userToAdd = {
+          id: user._id,
+          email: user.email,
+          roles: user.roles,
+          username: user.username,
+          companyName: user.companyName,
+          address: user.address,
+          contactPerson: user.contactPerson,
+          vatNumber: user.vatNumber,
+          companyImage: user.companyImage
+        }
+
+        usersToReturn.push(userToAdd)
+      });
+
+      res.status(200).json(usersToReturn)
     })
 })
 
