@@ -33,14 +33,15 @@ class AdminDashboard extends React.Component {
         console.log(error);
       });
 
-    // axios.get(dbConstants.getUsersUrl).then(res => {
-    //   console.log(res);
-    //   this.setState({
-    //     contracts: res.data
-    //   }).catch(function(error) {
-    //     console.log(error);
-    //   });
-    // });
+    axios
+      .get(dbConstants.getUsersUrl)
+      .then(res => {
+        console.log(res);
+        this.setState({ contracts: res.data });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
 
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;

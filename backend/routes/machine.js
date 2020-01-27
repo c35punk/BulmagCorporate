@@ -58,12 +58,6 @@ router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
   let ticketHash = encryption.generateHashedTicketNumber(salt, Date(Date.now()).toString())
   let ticketNr = ticketHash.substr(0, 7)
 
-  console.log('TEST FROM MACHINE ROUTE')
-  console.log(ticketHash)
-  console.log(ticketNr)
-  console.log(salt)
-
-
   const ticketToSave = new Ticket(
     {
       repairDate: req.body.repairDate,
@@ -84,14 +78,11 @@ router.post("/add-ticket", upload.single('uploadedFile'), (req, res) => {
 
   };
 
-  // `doc` is the document _after_ `update` was applied because of
-  // `new: true`
+
   Machine.findOneAndUpdate(filter, { $push: update }, {
     new: true
   }).then(() => res.json('Ticket added!'))
     .catch(err => res.status(400).json('Error: ' + err))
-
-
 
 })
 
