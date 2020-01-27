@@ -14,8 +14,8 @@ const UserRouteContext = (props) => {
     return (
         <UserConsumer>
             {
-                ({ isLoggedIn }) => (
-                    <UserRoute {...props} isLoggedIn={isLoggedIn} />
+                ({ isLoggedIn, roles = ['User'] }) => (
+                    <UserRoute {...props} roles={roles} {...props} isLoggedIn={isLoggedIn} />
                 )
             }
         </UserConsumer>

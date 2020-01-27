@@ -26,6 +26,7 @@ const dbConstants = {
   loginUrl: `${authUrl}/login`,
   logoutUrl: `${authUrl}/logout`,
   registerUrl: `${authUrl}/signup`,
+  getUsersUrl: `${authUrl}/users`,
 
   // machines, products, services, mail
   machinesUrl: `${machineUrl}/`,

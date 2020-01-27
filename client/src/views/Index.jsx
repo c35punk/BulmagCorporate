@@ -15,6 +15,7 @@ import Contacts from "./pages/Contacts.jsx";
 import Products from "./pages/Products";
 import Services from "./pages/Services";
 import Dashboard from "./pages/Dashboard";
+import AdminDashboard from "./pages/AdminDashboard";
 import AddMachine from "./pages/AddMachine";
 import Logout from "./pages/Logout";
 import About from "./pages/About.jsx";
@@ -98,6 +99,12 @@ class Index extends Component {
               path="/dashboard"
               exact
               render={props => <Dashboard {...props} />}
+            />
+            />
+            <UserRoute
+              path="/admin-dashboard"
+              exact
+              render={props => <AdminDashboard {...props} />}
             />
             <UserRoute
               path="/logout"
