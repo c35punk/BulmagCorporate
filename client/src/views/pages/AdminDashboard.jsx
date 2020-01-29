@@ -7,7 +7,6 @@ import ContractModal from "../IndexSections/ContractsModal";
 import TicketModal from "../IndexSections/TicketsModal";
 // reactstrap components
 import {
-  Button,
   Container,
   Row,
   Col,
@@ -57,6 +56,7 @@ class AdminDashboard extends React.Component {
     console.log("Hello from ADMIN DASHBOARD");
     console.log("this.state");
     console.log(this.state);
+
     let number = 0;
     return (
       <>
@@ -136,7 +136,9 @@ class AdminDashboard extends React.Component {
                                     <td>
                                       {" "}
                                       <ContractModal
-                                        machines={this.state.machines}
+                                        machines={this.state.machines.filter(
+                                          x => x.creatorID === contract._id
+                                        )}
                                       />
                                     </td>
                                     <td>
