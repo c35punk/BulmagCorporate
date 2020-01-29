@@ -93,7 +93,13 @@ router.post('/signup', (req, res, next) => {
 
 router.get('/users', (req, res) => {
   User
-    .find()
+    .find({ $or: [{ roles: ['User'] }, { roles: [] }] }, function (err, result) {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(result);
+      }
+    })
     .then(users => {
       let usersToReturn = [];
       users.forEach(user => {

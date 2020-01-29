@@ -57,7 +57,7 @@ class AdminDashboard extends React.Component {
     console.log("Hello from ADMIN DASHBOARD");
     console.log("this.state");
     console.log(this.state);
-
+    let number = 0;
     return (
       <>
         <main ref="main">
@@ -109,6 +109,7 @@ class AdminDashboard extends React.Component {
                         >
                           <thead key="thead">
                             <tr>
+                              <th>Nr</th>
                               <th>Company Name</th>
                               <th>Contact Name</th>
                               <th>Contact Email</th>
@@ -121,9 +122,11 @@ class AdminDashboard extends React.Component {
                           </thead>
                           <tbody key="tbody">
                             {this.state.contracts.map(contract => {
+                              number++;
                               return (
                                 <>
                                   <tr>
+                                    <td>{number}</td>
                                     <td>{contract.companyName}</td>
                                     <td>{contract.username}</td>
                                     <td>{contract.email}</td>
