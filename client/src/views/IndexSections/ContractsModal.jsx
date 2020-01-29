@@ -22,7 +22,9 @@ class TicketsModal extends React.Component {
   state = {};
   toggleModal = state => {
     if (this.state.notificationModal) {
-      window.location = '/dashboard'
+      this.props.isAdmin
+        ? (window.location = "/dashboard")
+        : (window.location = "/admin-dashboard");
     }
     this.setState({
       [state]: !this.state[state],

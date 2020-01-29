@@ -3,10 +3,19 @@ import React from "react";
 import axios from "axios";
 import { UserConsumer } from "../../contexts/user-context";
 import { dbConstants } from "../../constants/constants";
-import Machine from "../IndexSections/Machine";
-
+import ContractModal from "../IndexSections/ContractsModal";
+import TicketModal from "../IndexSections/TicketsModal";
 // reactstrap components
-import { Button, Container, Row, Col } from "reactstrap";
+import {
+  Button,
+  Container,
+  Row,
+  Col,
+  Card,
+  CardBody,
+  Form,
+  FormGroup
+} from "reactstrap";
 
 class AdminDashboard extends React.Component {
   constructor(props) {
@@ -88,34 +97,65 @@ class AdminDashboard extends React.Component {
             {/* 1st Hero Variation */}
           </div>
           <section className="section section-lg pt-lg-0 mt--200">
-            <Container>
-              <Row className="justify-content-center">
-                <Button
-                  className="btn-icon mb-2 mb-lg-0"
-                  color="primary"
-                  id="Contracts"
-                >
-                  <span className="btn-inner--text">Contracts</span>
-                </Button>
-              </Row>
-            </Container>
-            <Col lg="12">
-              <Row className="row-grid">
-                {this.state.machines
-                  .filter(x => x.type === "Server")
-                  .filter(s => s.creatorID === this.props.id)
-                  .map(machine => {
-                    return (
-                      <>
-                        <Machine
-                          machine={machine}
-                          image="https://www.lenovo.com/medias/lenovo-data-center-rack-server-thinksystem-sr590-subseries-hero.png?context=bWFzdGVyfHJvb3R8Njk2NTV8aW1hZ2UvcG5nfGg1Zi9oZjYvOTU4NjA5MjgzNDg0Ni5wbmd8NDFmMzhmNWYyOGIwZWJhZWZhYWIxNzVjZGEyYmM0YjY5MzdiNDg3MDg1Y2NmOWZmMmJjNTBlNWI1YzYzZGI2ZQ"
-                        />
-                      </>
-                    );
-                  })}
-              </Row>
-            </Col>
+            <Row className="justify-content-center">
+              <Col lg="12">
+                <Card className="bg-secondary shadow border-0">
+                  <CardBody className="px-lg-9 py-lg-9">
+                    <Form role="form">
+                      <FormGroup>
+                        <table
+                          id="mytable"
+                          className="table table-bordered exportable"
+                        >
+                          <thead key="thead">
+                            <tr>
+                              <th>Company Name</th>
+                              <th>Contact Name</th>
+                              <th>Contact Email</th>
+                              <th>CEO/GM</th>
+                              <th>Address</th>
+                              <th>VAT Number</th>
+                              <th>Machines in Maintenance</th>
+                              <th>Tickets</th>
+                            </tr>
+                          </thead>
+                          <tbody key="tbody">
+                            {this.state.contracts.map(contract => {
+                              return (
+                                <>
+                                  <tr>
+                                    <td>{contract.companyName}</td>
+                                    <td>{contract.username}</td>
+                                    <td>{contract.email}</td>
+                                    <td>{contract.contactPerson}</td>
+                                    <td>{contract.address}</td>
+                                    <td>{contract.vatNumber}</td>
+                                    <td>
+                                      {" "}
+                                      <ContractModal
+                                        machines={this.state.machines}
+                                      />
+                                    </td>
+                                    <td>
+                                      {" "}
+                                      <TicketModal
+                                        machinesWithTickets={
+                                          this.state.machines
+                                        }
+                                      />
+                                    </td>
+                                  </tr>
+                                </>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </FormGroup>
+                    </Form>
+                  </CardBody>
+                </Card>
+              </Col>
+            </Row>
           </section>
         </main>
       </>
