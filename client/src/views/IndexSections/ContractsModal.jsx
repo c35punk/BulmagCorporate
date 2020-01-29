@@ -65,7 +65,7 @@ class TicketsModal extends React.Component {
         >
           <div className="modal-header">
             <h6 className="modal-title" id="modal-title-notification">
-              {numberOfMachine}{" "}
+              There are currently {numberOfMachine} active{" "}
               {numberOfMachine === 1 ? "contract" : "contracts"}
             </h6>
             <button

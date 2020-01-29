@@ -13,7 +13,8 @@ import {
   Card,
   CardBody,
   Form,
-  FormGroup
+  FormGroup,
+  Button
 } from "reactstrap";
 
 class AdminDashboard extends React.Component {
@@ -129,7 +130,17 @@ class AdminDashboard extends React.Component {
                                     <td>{number}</td>
                                     <td>{contract.companyName}</td>
                                     <td>{contract.username}</td>
-                                    <td>{contract.email}</td>
+                                    <td>
+                                      {" "}
+                                      <Button
+                                        className="float-center"
+                                        color="default"
+                                        href="mailto:"
+                                        size="sm"
+                                      >
+                                        {contract.email}
+                                      </Button>
+                                    </td>
                                     <td>{contract.contactPerson}</td>
                                     <td>{contract.address}</td>
                                     <td>{contract.vatNumber}</td>
@@ -144,9 +155,11 @@ class AdminDashboard extends React.Component {
                                     <td>
                                       {" "}
                                       <TicketModal
-                                        machinesWithTickets={
-                                          this.state.machines
-                                        }
+                                        machinesWithTickets={this.state.machines
+                                          .filter(
+                                            x => x.creatorID === contract._id
+                                          )
+                                          .filter(x => x.tickets.length != 0)}
                                       />
                                     </td>
                                   </tr>

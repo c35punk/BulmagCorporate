@@ -74,7 +74,7 @@ class TicketsModal extends React.Component {
         >
           <div className="modal-header">
             <h6 className="modal-title" id="modal-title-notification">
-              You currently have {numberOfTickets} open{" "}
+              There are currently {numberOfTickets} open{" "}
               {numberOfTickets === 1 ? "ticket" : "tickets"}
             </h6>
             <button
