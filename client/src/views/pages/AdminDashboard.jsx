@@ -1,15 +1,12 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
 import axios from "axios";
-import Machine from "../IndexSections/Machine";
 import { UserConsumer } from "../../contexts/user-context";
 import { dbConstants } from "../../constants/constants";
-import ContractModal from "../IndexSections/ContractsModal";
-import TicketModal from "../IndexSections/TicketsModal";
+import Machine from "../IndexSections/Machine";
 
 // reactstrap components
-import { Button, Container, Row, Col, Collapse } from "reactstrap";
+import { Button, Container, Row, Col } from "reactstrap";
 
 class AdminDashboard extends React.Component {
   constructor(props) {
@@ -51,14 +48,6 @@ class AdminDashboard extends React.Component {
     console.log("Hello from ADMIN DASHBOARD");
     console.log("this.state");
     console.log(this.state);
-
-    let myMachines = this.state.machines.filter(
-      s => s.creatorID === this.props.id
-    );
-
-    let machinesWithTickets = myMachines.filter(
-      machine => machine.tickets.length !== 0
-    );
 
     return (
       <>
@@ -110,6 +99,23 @@ class AdminDashboard extends React.Component {
                 </Button>
               </Row>
             </Container>
+            <Col lg="12">
+              <Row className="row-grid">
+                {this.state.machines
+                  .filter(x => x.type === "Server")
+                  .filter(s => s.creatorID === this.props.id)
+                  .map(machine => {
+                    return (
+                      <>
+                        <Machine
+                          machine={machine}
+                          image="https://www.lenovo.com/medias/lenovo-data-center-rack-server-thinksystem-sr590-subseries-hero.png?context=bWFzdGVyfHJvb3R8Njk2NTV8aW1hZ2UvcG5nfGg1Zi9oZjYvOTU4NjA5MjgzNDg0Ni5wbmd8NDFmMzhmNWYyOGIwZWJhZWZhYWIxNzVjZGEyYmM0YjY5MzdiNDg3MDg1Y2NmOWZmMmJjNTBlNWI1YzYzZGI2ZQ"
+                        />
+                      </>
+                    );
+                  })}
+              </Row>
+            </Col>
           </section>
         </main>
       </>
