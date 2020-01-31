@@ -14,6 +14,7 @@ import {
   InputGroupText,
   InputGroup,
   Row,
+  Label,
   Modal,
   Col
 } from "reactstrap";
@@ -266,6 +267,7 @@ class MachineModals extends React.Component {
                       <FormGroup>
                         <InputGroup className="input-group-alternative">
                           <InputGroupAddon addonType="prepend">
+                            <Label className="justify-content-center align-items-center text-primary">New End Date</Label>
                             <InputGroupText>
                               <i className="ni ni-watch-time" />
                             </InputGroupText>

@@ -134,8 +134,8 @@ class AdminDashboard extends React.Component {
                                       {" "}
                                       <Button
                                         className="float-center"
-                                        color="default"
-                                        href="mailto:"
+                                        color="info"
+                                        href="mailto:" 
                                         size="sm"
                                       >
                                         {contract.email}
@@ -150,6 +150,7 @@ class AdminDashboard extends React.Component {
                                         machines={this.state.machines.filter(
                                           x => x.creatorID === contract._id
                                         )}
+                                        company={contract.companyName}
                                       />
                                     </td>
                                     <td>
@@ -160,6 +161,7 @@ class AdminDashboard extends React.Component {
                                             x => x.creatorID === contract._id
                                           )
                                           .filter(x => x.tickets.length != 0)}
+                                        company={contract.companyName}
                                       />
                                     </td>
                                   </tr>
