@@ -41,6 +41,10 @@ const machineSchema = new Schema({
         type: Schema.Types.Date,
         required: REQUIRED_VALIDATION_MESSAGE
     },
+    proposedDate: {
+        type: Schema.Types.Date,
+        required: REQUIRED_VALIDATION_MESSAGE
+    },
 
     agree: {
         type: Schema.Types.Boolean

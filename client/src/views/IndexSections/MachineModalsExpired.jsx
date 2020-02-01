@@ -1,6 +1,8 @@
 import React from "react";
 
 import machineService from "../../services/machine-service";
+import { functions } from "../../constants/constants";
+
 // reactstrap components
 import {
   Button,
@@ -267,7 +269,9 @@ class MachineModals extends React.Component {
                       <FormGroup>
                         <InputGroup className="input-group-alternative">
                           <InputGroupAddon addonType="prepend">
-                            <Label className="justify-content-center align-items-center text-primary">New End Date</Label>
+                            <Label className="justify-content-center align-items-center text-info">
+                              New End Date
+                            </Label>
                             <InputGroupText>
                               <i className="ni ni-watch-time" />
                             </InputGroupText>

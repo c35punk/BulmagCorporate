@@ -99,6 +99,13 @@ class AdminDashboard extends React.Component {
           </div>
           <section className="section section-lg pt-lg-0 mt--200">
             <Row className="justify-content-center">
+              <Button
+                className="btn-icon mb-12 mb-lg-0 "
+                color="primary"
+                id="INFO"
+              >
+                <span className="btn-inner--text">ACCOUNTS INFO</span>
+              </Button>
               <Col lg="12">
                 <Card className="bg-secondary shadow border-0">
                   <CardBody className="px-lg-9 py-lg-9">
@@ -135,7 +142,7 @@ class AdminDashboard extends React.Component {
                                       <Button
                                         className="float-center"
                                         color="info"
-                                        href="mailto:" 
+                                        href="mailto:"
                                         size="sm"
                                       >
                                         {contract.email}
@@ -160,9 +167,78 @@ class AdminDashboard extends React.Component {
                                           .filter(
                                             x => x.creatorID === contract._id
                                           )
-                                          .filter(x => x.tickets.length != 0)}
+                                          .filter(x => x.tickets.length !== 0)}
                                         company={contract.companyName}
                                       />
+                                    </td>
+                                  </tr>
+                                </>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </FormGroup>
+                    </Form>
+                  </CardBody>
+                </Card>
+              </Col>
+            </Row>
+            <Row className="justify-content-center">
+              <Button
+                className="btn-icon mb-12 mb-lg-0 "
+                color="primary"
+                id="INFO"
+              >
+                <span className="btn-inner--text">EXTENSION REQUESTS</span>
+              </Button>
+              <Col lg="12">
+                <Card className="bg-secondary shadow border-0">
+                  <CardBody className="px-lg-9 py-lg-9">
+                    <Form role="form">
+                      <FormGroup>
+                        <table
+                          id="mytable"
+                          className="table table-bordered exportable"
+                        >
+                          <thead key="thead">
+                            <tr>
+                              <th>Company Name</th>
+                              <th>Contact Name</th>
+                              <th>Contact Email</th>
+                              <th>Address</th>
+                              <th>VAT Number</th>
+                              <th>Extenstion Date Review</th>
+                            </tr>
+                          </thead>
+                          <tbody key="tbody">
+                            {this.state.contracts.map(contract => {
+                              number++;
+                              return (
+                                <>
+                                  <tr>
+                                    <td>{contract.companyName}</td>
+                                    <td>{contract.username}</td>
+                                    <td>
+                                      {" "}
+                                      <Button
+                                        className="float-center"
+                                        color="info"
+                                        size="sm"
+                                      >
+                                        {contract.email}
+                                      </Button>
+                                    </td>
+                                    <td>{contract.address}</td>
+                                    <td>{contract.vatNumber}</td>
+                                    <td>
+                                      {" "}
+                                      <Button
+                                        className="float-center"
+                                        color="info"
+                                        size="sm"
+                                      >
+                                        {contract.email}
+                                      </Button>
                                     </td>
                                   </tr>
                                 </>

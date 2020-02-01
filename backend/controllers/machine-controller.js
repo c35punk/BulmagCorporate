@@ -38,6 +38,22 @@ module.exports = {
                 console.log(err)
             });
     },
+    editConfirmedByAdmin: (req, res) => {
+        const id = req.params.machineId;
+
+        console.log("req.body")
+        console.log(req.body)
+        console.log("id")
+        console.log(id)
+
+        machineData.editConfirmedByAdmin(id, req.body)
+            .then(data => {
+                console.log("data");
+                console.log(data);
+            }).catch(err => {
+                console.log(err)
+            });
+    },
     delete: (req, res) => {
         const id = req.params.machineId;
 

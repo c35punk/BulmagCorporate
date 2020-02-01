@@ -16,14 +16,30 @@ module.exports = {
         try {
             const machine = await Machine.findById(id);
 
-            console.log(machine)
-         
+            console.log("newMachineInput")
+            console.log(newMachineInput)
+            console.log("id")
+            console.log(id)
 
+            machine['proposedDate'] = newMachineInput.endDate
+
+            await machine.save();
+            return { msg: 'Edited successfully' };
+        } catch (err) {
+            console.log(err);
+            throw new Error('Failed to edit machine');
+        }
+    },
+    editConfirmedByadmin: async (id, newMachineInput) => {
+        try {
+            const machine = await Machine.findById(id);
+
+            console.log(machine)
 
             Object.keys(newMachineInput).forEach(newProp => {
                 machine[newProp] = newMachineInput[newProp];
             });
-            
+
             await machine.save();
             return { msg: 'Edited successfully' };
         } catch (err) {
