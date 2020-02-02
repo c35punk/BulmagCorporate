@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Link } from "react";
 
 import axios from "axios";
 import { UserConsumer } from "../../contexts/user-context";
@@ -16,6 +16,7 @@ import {
   FormGroup,
   Button
 } from "reactstrap";
+import ConfirmExtension from "views/IndexSections/ConfirmExtension";
 
 class AdminDashboard extends React.Component {
   constructor(props) {
@@ -243,6 +244,7 @@ class AdminDashboard extends React.Component {
                                                 className="float-center"
                                                 color="info"
                                                 size="sm"
+                                                disabled
                                               >
                                                 {machine.serialNumber}
                                               </Button>
@@ -264,12 +266,18 @@ class AdminDashboard extends React.Component {
                                                 className="float-center"
                                                 color="primary"
                                                 size="sm"
+                                                disabled
                                               >
                                                 {machine.proposedDate.substr(
                                                   0,
                                                   10
                                                 )}
                                               </Button>
+                                              <ConfirmExtension
+                                                tag={Link}
+                                                machine={machine}
+                                                endDate={machine.proposedDate}
+                                              />
 
                                               <br></br>
                                             </>
@@ -279,6 +287,7 @@ class AdminDashboard extends React.Component {
                                                 className="float-center"
                                                 color="info"
                                                 size="sm"
+                                                disabled
                                               >
                                                 {"Machine have active contract"}
                                               </Button>
