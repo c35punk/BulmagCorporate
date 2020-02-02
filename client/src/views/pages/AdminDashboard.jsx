@@ -207,6 +207,7 @@ class AdminDashboard extends React.Component {
                               <th>Contact Email</th>
                               <th>Address</th>
                               <th>VAT Number</th>
+                              <th>Machine Serial Number</th>
                               <th>Extenstion Date Review</th>
                             </tr>
                           </thead>
@@ -231,14 +232,61 @@ class AdminDashboard extends React.Component {
                                     <td>{contract.address}</td>
                                     <td>{contract.vatNumber}</td>
                                     <td>
-                                      {" "}
-                                      <Button
-                                        className="float-center"
-                                        color="info"
-                                        size="sm"
-                                      >
-                                        {contract.email}
-                                      </Button>
+                                      {this.state.machines
+                                        .filter(
+                                          x => x.creatorID === contract._id
+                                        )
+                                        .map(machine => {
+                                          return (
+                                            <>
+                                              <Button
+                                                className="float-center"
+                                                color="info"
+                                                size="sm"
+                                              >
+                                                {machine.serialNumber}
+                                              </Button>
+
+                                              <br></br>
+                                            </>
+                                          );
+                                        })}
+                                    </td>
+                                    <td>
+                                      {this.state.machines
+                                        .filter(
+                                          x => x.creatorID === contract._id
+                                        )
+                                        .map(machine => {
+                                          return machine.proposedDate ? (
+                                            <>
+                                              <Button
+                                                className="float-center"
+                                                color="primary"
+                                                size="sm"
+                                              >
+                                                {machine.proposedDate.substr(
+                                                  0,
+                                                  10
+                                                )}
+                                              </Button>
+
+                                              <br></br>
+                                            </>
+                                          ) : (
+                                            <>
+                                              <Button
+                                                className="float-center"
+                                                color="info"
+                                                size="sm"
+                                              >
+                                                {"Machine have active contract"}
+                                              </Button>
+
+                                              <br></br>
+                                            </>
+                                          );
+                                        })}
                                     </td>
                                   </tr>
                                 </>
