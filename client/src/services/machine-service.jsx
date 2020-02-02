@@ -8,7 +8,7 @@ const machineService = {
       body: JSON.stringify(machine)
     });
   },
-
+ 
   deleteMachine: id => {
     return fetch(`${dbConstants.machinesUrl}/delete/${id}`, {
       method: "DELETE"

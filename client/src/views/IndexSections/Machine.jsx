@@ -23,8 +23,6 @@ class Machine extends React.Component {
 
     let { image } = this.props;
 
-    let currentDate = new Date(endDate);
-
     let maintenanceChecker = functions.isDateBeforeToday(currentDate) ? (
       <Modal
         className="mt-3"

@@ -25,10 +25,9 @@ module.exports = {
     edit: (req, res) => {
         const id = req.params.machineId;
 
-        console.log("req.body")
+        console.log("req.body") 
         console.log(req.body)
-        console.log("id")
-        console.log(id)
+     
 
         machineData.edit(id, req.body)
             .then(data => {
@@ -38,15 +37,14 @@ module.exports = {
                 console.log(err)
             });
     },
-    editConfirmedByAdmin: (req, res) => {
+    editByAdmin: (req, res) => {
         const id = req.params.machineId;
 
-        console.log("req.body")
+        console.log("req.body by admin")
         console.log(req.body)
-        console.log("id")
-        console.log(id)
+   
 
-        machineData.editConfirmedByAdmin(id, req.body)
+        machineData.editByAdmin(id, req.body)
             .then(data => {
                 console.log("data");
                 console.log(data);

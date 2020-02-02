@@ -1,4 +1,4 @@
-const Machine = require('../models/Machine');
+            const Machine = require('../models/Machine');
 
 module.exports = {
     getById: async (machineId) => {
@@ -18,8 +18,6 @@ module.exports = {
 
             console.log("newMachineInput")
             console.log(newMachineInput)
-            console.log("id")
-            console.log(id)
 
             machine['proposedDate'] = newMachineInput.endDate
 
@@ -30,18 +28,16 @@ module.exports = {
             throw new Error('Failed to edit machine');
         }
     },
-    editConfirmedByadmin: async (id, newMachineInput) => {
+    editByAdmin: async (id, newMachineInput) => {
         try {
             const machine = await Machine.findById(id);
 
             console.log(machine)
 
-            Object.keys(newMachineInput).forEach(newProp => {
-                machine[newProp] = newMachineInput[newProp];
-            });
+                machine["endDate"] = newMachineInput.proposedDate
 
             await machine.save();
-            return { msg: 'Edited successfully' };
+            return { msg: 'Edited successfully by admin' };
         } catch (err) {
             console.log(err);
             throw new Error('Failed to edit machine');

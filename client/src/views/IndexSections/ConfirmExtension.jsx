@@ -1,6 +1,7 @@
 import React from "react";
 
-import machineService from "../../services/machine-service";
+import axios from "axios";
+import { dbConstants } from "../../constants/constants";
 
 // reactstrap components
 import {
@@ -25,7 +26,7 @@ class ConfirmExtension extends React.Component {
     super(props);
     this.state = {
       startDate: "",
-      endDate: this.props.endDate.substr(0, 10)
+      endDate: this.props.endDate
     };
     this.handleConfirm = this.handleConfirm.bind(this);
   }
@@ -48,17 +49,23 @@ class ConfirmExtension extends React.Component {
     console.log(editedTokens);
 
     let machineId = this.props.machine._id;
-    machineService.editMachineById(machineId, editedTokens).then(res => {
-      if (res.status === 200) {
-        res.json().then(data => {
-          this.props.history.push(`/edit/${machineId}`);
-        });
-      } else {
-        res.json().then(err => {
-          console.log(err.message);
-        });
-      }
-    });
+    axios
+      .put(
+        `${dbConstants.machinesUrl}/editByAdmin/${machineId}`,
+        machineId,
+        editedTokens
+      )
+      .then(res => {
+        if (res.status === 200) {
+          res.json().then(data => {
+            this.props.history.push(`/edit/${machineId}`);
+          });
+        } else {
+          res.json().then(err => {
+            console.log(err.message);
+          });
+        }
+      });
     (() => {
       this.toggleModal("notificationModal");
 
@@ -231,9 +238,9 @@ class ConfirmExtension extends React.Component {
                         </InputGroup>
                       </FormGroup>
                       <FormGroup>
-                        <InputGroup className="input-group-alternative">
+                        <InputGroup className="input-group-alternative ">
                           <InputGroupAddon addonType="prepend">
-                            <Label className="justify-content-center align-items-center text-info">
+                            <Label className="text-primary">
                               Confirm End Date
                             </Label>
                             <InputGroupText>
@@ -245,7 +252,7 @@ class ConfirmExtension extends React.Component {
                             type="date"
                             name="endDate"
                             autoComplete="off"
-                            value={this.state.endDate}
+                            value={this.state.endDate.substr(0, 10)}
                             disabled
                           />
                         </InputGroup>

@@ -206,8 +206,7 @@ class AdminDashboard extends React.Component {
                               <th>Company Name</th>
                               <th>Contact Name</th>
                               <th>Contact Email</th>
-                              <th>Address</th>
-                              <th>VAT Number</th>
+
                               <th>Machine Serial Number</th>
                               <th>Extenstion Date Review</th>
                             </tr>
@@ -230,8 +229,7 @@ class AdminDashboard extends React.Component {
                                         {contract.email}
                                       </Button>
                                     </td>
-                                    <td>{contract.address}</td>
-                                    <td>{contract.vatNumber}</td>
+
                                     <td>
                                       {this.state.machines
                                         .filter(
@@ -289,7 +287,8 @@ class AdminDashboard extends React.Component {
                                                 size="sm"
                                                 disabled
                                               >
-                                                {"Machine have active contract"}
+                                                {"Active contract until " +
+                                                  machine.endDate.substr(0, 10)}
                                               </Button>
 
                                               <br></br>

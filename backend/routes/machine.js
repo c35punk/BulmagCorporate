@@ -102,6 +102,7 @@ router.get('/tickets', (req, res) => {
 })
 
 router.put('/edit/:machineId', machineController.edit)
+router.put('/editByAdmin/:machineId', machineController.editByAdmin)
 router.delete('/delete/:machineId', machineController.delete)
 
 module.exports = router
