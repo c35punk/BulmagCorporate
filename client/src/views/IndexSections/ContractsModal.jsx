@@ -140,7 +140,7 @@ class TicketsModal extends React.Component {
                       <div className="text-center">
                         <ExportXLSX
                           csvData={machinesToExport}
-                          fileName={"contracts-report"}
+                          fileName={this.props.company + "-contracts-report"}
                         />
                       </div>
                     </Form>

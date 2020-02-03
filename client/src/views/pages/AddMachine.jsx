@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Link } from "react";
 import axios from "axios";
 import { UserConsumer } from "../../contexts/user-context";
 import { dbConstants } from "../../constants/constants";
@@ -70,7 +70,6 @@ class AddMachine extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log(this.state);
     const machineToBeAdded = {
       manufacturer: this.state.manufacturer,
       machineName: this.state.machineName,
@@ -82,6 +81,8 @@ class AddMachine extends React.Component {
       agree: this.state.agree,
       creatorID: this.props.id
     };
+
+    console.log(machineToBeAdded);
 
     axios
       .post(dbConstants.machineCreateUrl, machineToBeAdded)
@@ -281,7 +282,8 @@ class AddMachine extends React.Component {
                             className="mt-4"
                             color="default"
                             type="submit"
-                            // to="/dashboard" tag={Link}
+                            to="/dashboard"
+                            tag={Link}
                           >
                             Add Machine
                           </Button>

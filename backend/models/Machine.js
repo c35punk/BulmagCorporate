@@ -43,7 +43,6 @@ const machineSchema = new Schema({
     },
     proposedDate: {
         type: Schema.Types.Date,
-        required: REQUIRED_VALIDATION_MESSAGE
     },
 
     agree: {

@@ -75,7 +75,6 @@ class TicketsModal extends React.Component {
           <div className="modal-header">
             <h6 className="modal-title" id="modal-title-notification">
               {this.props.company ? this.props.company : "You "} currently have{" "}
-              
               {numberOfTickets} open{" "}
               {numberOfTickets === 1 ? "ticket" : "tickets"}
             </h6>
@@ -180,7 +179,7 @@ class TicketsModal extends React.Component {
                       <div className="text-center">
                         <ExportXLSX
                           csvData={ticketsArray}
-                          fileName={"repairs-report"}
+                          fileName={this.props.company + "-repairs-report"}
                         />
                       </div>
                     </Form>

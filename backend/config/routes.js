@@ -8,11 +8,11 @@ module.exports = app => {
   app.use(cors({ origin: '*' }));
   app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Content-Type");
+    // res.header("Access-Control-Allow-Headers", "Content-Type");
     next();
   });
   app.use("/auth", authRoutes);
   app.use("/products", productRoutes);
   app.use("/machines", machineRoutes);
   app.use("/mail", mailRoutes)
-};
+}
