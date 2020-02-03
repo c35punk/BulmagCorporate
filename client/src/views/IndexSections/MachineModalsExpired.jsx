@@ -1,7 +1,6 @@
 import React from "react";
 
 import machineService from "../../services/machine-service";
-import { functions } from "../../constants/constants";
 
 // reactstrap components
 import {
@@ -96,11 +95,6 @@ class MachineModals extends React.Component {
         });
       }
     });
-    // (() => {
-    //   this.toggleModal("notificationModal");
-
-    //   window.location = "/dashboard";
-    // })();
   }
 
   render() {
@@ -113,18 +107,27 @@ class MachineModals extends React.Component {
       type
     } = this.props.machine;
     console.log(this.state);
+
+    let button = !this.props.machine.proposedDate ? (
+      <Button
+        block
+        className="mb-2"
+        color="default"
+        type="button"
+        onClick={() => this.toggleModal("notificationModal")}
+      >
+      Extension Request
+      </Button>
+    ) : (
+      <Button block color="default" type="button" disabled>
+      AWAITING APPROVAL
+      </Button>
+    );
+
     return (
       <>
         <br />
-        <Button
-          block
-          className="mb-2"
-          color="default"
-          type="button"
-          onClick={() => this.toggleModal("notificationModal")}
-        >
-          Extension Request
-        </Button>
+        {button}
         <Modal
           className="modal-dialog-centered modal-primary modal-lg"
           contentClassName="bg-gradient-default"
