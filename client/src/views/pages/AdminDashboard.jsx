@@ -258,7 +258,8 @@ class AdminDashboard extends React.Component {
                                           x => x.creatorID === contract._id
                                         )
                                         .map(machine => {
-                                          return machine.proposedDate ? (
+                                          return machine.proposedDate >
+                                            machine.endDate ? (
                                             <>
                                               <Button
                                                 className="float-center"

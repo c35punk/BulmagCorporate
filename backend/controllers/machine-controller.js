@@ -40,13 +40,9 @@ module.exports = {
     editByAdmin: (req, res) => {
         const id = req.params.machineId;
 
-        console.log("req.body by admin")
-        console.log(req)
-
 
         machineData.editByAdmin(id, req.body)
             .then(data => {
-                console.log("data");
                 console.log(data);
             }).catch(err => {
                 console.log(err)

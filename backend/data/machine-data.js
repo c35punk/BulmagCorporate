@@ -29,12 +29,14 @@ module.exports = {
         }
     },
     editByAdmin: async (id, newMachineInput) => {
+
+
         try {
-            const machine = await Machine.findById(id);
+            const machine = await Machine.findById(id)
 
-            console.log("========================================================================")
-            console.log(newMachineInput)
+            machine["endDate"] = newMachineInput.newEndDate
 
+            console.log(machine)
             await machine.save();
             return { msg: 'Edited successfully by admin' };
         } catch (err) {
