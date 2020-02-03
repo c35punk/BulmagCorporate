@@ -41,14 +41,11 @@ class ConfirmExtension extends React.Component {
 
   handleConfirm(event) {
     event.preventDefault();
-    const editedTokens = {
-      startDate: this.state.startDate,
-      endDate: this.state.endDate
-    };
+    const editedTokens = this.props.endDate;
 
     console.log(editedTokens);
-
     let machineId = this.props.machine._id;
+
     axios
       .put(
         `${dbConstants.machinesUrl}/editByAdmin/${machineId}`,
@@ -69,7 +66,7 @@ class ConfirmExtension extends React.Component {
     (() => {
       this.toggleModal("notificationModal");
 
-      window.location = "/admin-dashboard";
+      // window.location = "/admin-dashboard";
     })();
   }
 

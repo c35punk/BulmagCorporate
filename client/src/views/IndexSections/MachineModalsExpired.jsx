@@ -119,7 +119,7 @@ class MachineModals extends React.Component {
       Extension Request
       </Button>
     ) : (
-      <Button block color="default" type="button" disabled>
+      <Button block className="mb-2" color="default" type="button" disabled>
       AWAITING APPROVAL
       </Button>
     );

@@ -1,4 +1,4 @@
-            const Machine = require('../models/Machine');
+const Machine = require('../models/Machine');
 
 module.exports = {
     getById: async (machineId) => {
@@ -32,9 +32,8 @@ module.exports = {
         try {
             const machine = await Machine.findById(id);
 
-            console.log(machine)
-
-                machine["endDate"] = newMachineInput.proposedDate
+            console.log("========================================================================")
+            console.log(newMachineInput)
 
             await machine.save();
             return { msg: 'Edited successfully by admin' };
