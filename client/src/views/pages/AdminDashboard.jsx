@@ -5,6 +5,7 @@ import { UserConsumer } from "../../contexts/user-context";
 import { dbConstants } from "../../constants/constants";
 import ContractModal from "../IndexSections/ContractsModal";
 import TicketModal from "../IndexSections/TicketsModal";
+import { functions } from "../../constants/constants";
 // reactstrap components
 import {
   Container,
@@ -277,6 +278,22 @@ class AdminDashboard extends React.Component {
                                                 machine={machine}
                                                 endDate={machine.proposedDate}
                                               />
+
+                                              <br></br>
+                                            </>
+                                          ) : !functions.isDateBeforeToday(
+                                              new Date(machine.endDate)
+                                            ) ? (
+                                            <>
+                                              <Button
+                                                className="float-center"
+                                                color="primary"
+                                                size="sm"
+                                                disabled
+                                              >
+                                                {"Contract expired on " +
+                                                  machine.endDate.substr(0, 10)}
+                                              </Button>
 
                                               <br></br>
                                             </>

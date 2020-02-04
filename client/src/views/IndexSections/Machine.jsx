@@ -22,7 +22,6 @@ class Machine extends React.Component {
     } = this.props.machine;
 
     let { image } = this.props;
-
     let currentDate = new Date(endDate);
 
     let maintenanceChecker = functions.isDateBeforeToday(currentDate) ? (
@@ -42,7 +41,6 @@ class Machine extends React.Component {
     );
 
     console.log(functions.isDateBeforeToday(currentDate));
-
     let status = functions.isDateBeforeToday(currentDate) ? (
       <Badge color="success" pill className="mr-3">
         In Maintenance
