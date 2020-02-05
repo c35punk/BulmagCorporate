@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 
 //constants & components
 import { UserProvider, defaultState } from "../contexts/user-context";
+import { isMobile } from "react-device-detect";
 
 import UserRoute from "../routes/user-route";
 import AdminRoute from "../routes/auth-route";
@@ -23,6 +24,7 @@ import Navigation from "../components/Navbars/Navigation";
 import SimpleFooter from "../components/Footers/SimpleFooter";
 import AddProduct from "./pages/AddProduct";
 import NotFound from "./pages/NotFound";
+import CardsFooter from "components/Footers/CardsFooter";
 
 class Index extends Component {
   constructor(props) {
@@ -52,6 +54,9 @@ class Index extends Component {
 
     console.log("Hello from Index.jsx");
     console.log(this.state);
+
+    let footer = isMobile ? <SimpleFooter /> : <CardsFooter />;
+
     return (
       <div>
         <UserProvider value={user}>
@@ -122,7 +127,7 @@ class Index extends Component {
               render={props => <AddProduct {...props} />}
             />
           </Switch>
-          <SimpleFooter />
+          {footer}
         </UserProvider>
       </div>
     );

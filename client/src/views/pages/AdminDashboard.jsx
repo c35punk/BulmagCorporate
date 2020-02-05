@@ -31,29 +31,33 @@ class AdminDashboard extends React.Component {
   }
 
   componentDidMount() {
-    axios
-      .get(dbConstants.machinesUrl)
-      .then(res => {
-        console.log(res);
-        this.setState({ machines: res.data });
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+    if (this.props.isAdmin) {
+      axios
+        .get(dbConstants.machinesUrl)
+        .then(res => {
+          console.log(res);
+          this.setState({ machines: res.data });
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
 
-    axios
-      .get(dbConstants.getUsersUrl)
-      .then(res => {
-        console.log(res);
-        this.setState({ contracts: res.data });
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+      axios
+        .get(dbConstants.getUsersUrl)
+        .then(res => {
+          console.log(res);
+          this.setState({ contracts: res.data });
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
 
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-    this.refs.main.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+      document.scrollingElement.scrollTop = 0;
+      this.refs.main.scrollTop = 0;
+    } else {
+      window.location = "/not-found";
+    }
   }
   render() {
     console.log("Hello from ADMIN DASHBOARD");
@@ -207,7 +211,6 @@ class AdminDashboard extends React.Component {
                               <th>Company Name</th>
                               <th>Contact Name</th>
                               <th>Contact Email</th>
-
                               <th>Machine Serial Number</th>
                               <th>Extenstion Date Review</th>
                             </tr>
