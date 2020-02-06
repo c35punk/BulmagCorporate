@@ -4,6 +4,7 @@ import classnames from "classnames";
 import axios from "axios";
 
 import { dbConstants } from "../../constants/constants";
+import { loadReCaptcha, ReCaptcha } from "react-recaptcha-google";
 
 // reactstrap components
 import {
@@ -35,6 +36,8 @@ class Contacts extends React.Component {
     this.handleSenderEmail = this.handleSenderEmail.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleMessage = this.handleMessage.bind(this);
+    this.onLoadRecaptcha = this.onLoadRecaptcha.bind(this);
+    this.verifyCallback = this.verifyCallback.bind(this);
   }
 
   handleSenderName(event) {
@@ -72,8 +75,21 @@ class Contacts extends React.Component {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
+    if (this.captchaDemo) {
+      console.log("started, just a second...");
+      this.captchaDemo.reset();
+    }
+    loadReCaptcha();
   }
-  h;
+
+  onLoadRecaptcha() {
+    if (this.captchaDemo) {
+      this.captchaDemo.reset();
+    }
+  }
+  verifyCallback(recaptchaToken) {
+    console.log(recaptchaToken, "<= your recaptcha token");
+  }
 
   render() {
     return (
@@ -244,6 +260,17 @@ class Contacts extends React.Component {
                             onChange={this.handleMessage}
                           />
                         </FormGroup>
+
+                        <ReCaptcha
+                          ref={el => {
+                            this.captchaDemo = el;
+                          }}
+                          render="explicit"
+                          sitekey="6Lewg9YUAAAAAO97KGOMJcXXJUN1-QFRH9Kj3R8a"
+                          onloadCallback={this.onLoadRecaptcha}
+                          verifyCallback={this.verifyCallback}
+                        />
+
                         <div>
                           <Button
                             block
