@@ -164,6 +164,7 @@ class AdminDashboard extends React.Component {
                                           x => x.creatorID === contract._id
                                         )}
                                         company={contract.companyName}
+                                        isAdmin={this.props.isAdmin}
                                       />
                                     </td>
                                     <td>

@@ -87,13 +87,58 @@ class Contacts extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="6">
-                      <h1 className="display-3 text-white ">
-                        CONTACTS
-                        <span>Give us a call or drop a line</span>
-                      </h1>
-                      <div id="map_div" className="section-lg">
-                        <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Bulmag+AD,+Sofia,+Bulgaria&amp;aq=0&amp;oq=bulmag+ad+sofia&amp;sll=37.0625,-95.677068&amp;sspn=57.292148,135.263672&amp;t=m&amp;ie=UTF8&amp;hq=Bulmag+AD,&amp;hnear=Sofia,+Sofia-city,+Bulgaria&amp;ll=42.654856,23.372898&amp;spn=0.018937,0.025749&amp;z=14&amp;iwloc=A&amp;output=embed&amp;iwloc=near" title="Location"></iframe>
+                      <h1 className="display-3 text-white ">CONTACTS</h1>
+                    </Col>
+                    <Row lg="12">
+                      <div className="justify-content-center ">
+                        <div className="justify-content-center">
+                          <h4>Sales Department</h4>
+                          <a href="#">+359 2 817 90 40</a>
+                          <br />
+                          <a href="mailto:office@bulmag.bg">office@bulmag.bg</a>
+                        </div>
+                        <div className="justify-content-center">
+                          <h4>Service Center</h4>
+                          <a href="#">+359 2 817 90 60</a>
+                          <br />
+
+                          <a href="mailto:service@bulmag.bg">
+                            service@bulmag.bg
+                          </a>
+                        </div>
+                        <div className="justify-content-center">
+                          <h4>Online Shop</h4>
+                          <a href="#">+359 2 817 90 10</a>
+                          <br />
+
+                          <a href="mailto:store@e-bulmag.bg">
+                            store@e-bulmag.bg
+                          </a>
+                        </div>
                       </div>
+                    </Row>
+                    <Col
+                      lg="12"
+                      style={{
+                        overflow: "hidden",
+                        "padding-top": " 56.25%",
+                        position: "relative"
+                      }}
+                    >
+                      <iframe
+                        src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Bulmag+AD,+Sofia,+Bulgaria&amp;aq=0&amp;oq=bulmag+ad+sofia&amp;sll=37.0625,-95.677068&amp;sspn=57.292148,135.263672&amp;t=m&amp;ie=UTF8&amp;hq=Bulmag+AD,&amp;hnear=Sofia,+Sofia-city,+Bulgaria&amp;ll=42.654856,23.372898&amp;spn=0.018937,0.025749&amp;z=14&amp;iwloc=A&amp;output=embed&amp;iwloc=near"
+                        title="Location"
+                        style={{
+                          border: "0",
+                          height: "100%",
+                          left: "0",
+                          position: "absolute",
+                          top: "0",
+                          width: "100%",
+                          borderRadius: "5px"
+                        }}
+                      ></iframe>
+                      <span>Give us a call or drop a line</span>
                       <p className="lead text-black">
                         We are here to answer all your questions
                       </p>
@@ -123,7 +168,7 @@ class Contacts extends React.Component {
           <section className="section section-lg pt-lg-0 section-contact-us">
             <Container>
               <Row className="justify-content-left mt--300">
-                <Col lg="8">
+                <Col lg="12">
                   <Card className="bg-gradient-secondary shadow">
                     <CardBody className="p-lg-5">
                       <h4 className="mb-1">Want to work with us?</h4>

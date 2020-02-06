@@ -93,6 +93,19 @@ class TabsSection extends React.Component {
                     Certificates
                   </NavLink>
                 </NavItem>
+                <NavItem>
+                  <NavLink
+                    aria-selected={this.state.plainTabs === 5}
+                    className={classnames("mb-sm-3 mb-md-0", {
+                      active: this.state.plainTabs === 5
+                    })}
+                    onClick={e => this.toggleNavs(e, "plainTabs", 5)}
+                    href="#"
+                    role="tab"
+                  >
+                    Bank Accounts
+                  </NavLink>
+                </NavItem>
               </Nav>
             </div>
             <Card className="shadow">
@@ -1076,6 +1089,73 @@ class TabsSection extends React.Component {
                   </TabPane>
                   <TabPane tabId="plainTabs4">
                     <p className="description"></p>
+                  </TabPane>
+                  <TabPane tabId="plainTabs5">
+                    <p className="description">
+                      <div className="static_text">
+                        <h3 className="text-primary">UniCredit Bulbank AD</h3>
+                        <table className="bordered">
+                          <thead>
+                            <tr>
+                              <th width="80">CURRENCY</th>
+                              <th width="90">SWIFT/BIC</th>
+                              <th width="90">BAE</th>
+                              <th>IBAN</th>
+                            </tr>
+                          </thead>
+                          <tr>
+                            <td>BGN</td>
+                            <td>UNCRBGSF</td>
+                            <td>UNCR7630</td>
+                            <td>BG10 UNCR 7630 1007 6022 07</td>
+                          </tr>
+                          <tr>
+                            <td>USD</td>
+                            <td>UNCRBGSF</td>
+                            <td>UNCR7630</td>
+                            <td>BG34 UNCR 7630 1175 6999 62</td>
+                          </tr>
+                          <tr>
+                            <td>EUR</td>
+                            <td>UNCRBGSF</td>
+                            <td>UNCR7630</td>
+                            <td>BG92 UNCR 7000 1500 6762 96</td>
+                          </tr>
+                        </table>
+
+                        <h3 className="text-primary">
+                          RaiffeisenBank (Bulgaria) EAD
+                        </h3>
+                        <table className="bordered">
+                          <thead>
+                            <tr>
+                              <th width="80">CURRENCY</th>
+                              <th width="90">SWIFT BIC</th>
+                              <th width="90">BAE</th>
+                              <th>IBAN</th>
+                            </tr>
+                          </thead>
+                          <tr>
+                            <td>BGN</td>
+                            <td>RZBBBGSF</td>
+                            <td>RZBB9155</td>
+                            <td>BG42 RZBB 9155 1060 1801 19</td>
+                          </tr>
+                          <tr>
+                            <td>USD</td>
+                            <td>RZBBBGSF</td>
+                            <td>RZBB9155</td>
+                            <td>BG81 RZBB 9155 1160 1801 12</td>
+                          </tr>
+                          <tr>
+                            <td>EUR</td>
+                            <td>RZBBBGSF</td>
+                            <td>RZBB9155</td>
+                            <td>BG30 RZBB 9155 1460 1801 08</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </p>
                   </TabPane>
                 </TabContent>
               </CardBody>

@@ -32,14 +32,7 @@ class TicketsModal extends React.Component {
     });
   };
 
-  componentDidMount() {
-    console.log(this.state.myMachines[0]);
-  }
-
   render() {
-    console.log("Hello from Contracts Modal");
-    console.log(this.state);
-
     let numberOfMachine = this.state.myMachines.length;
 
     let machinesToExport = [];

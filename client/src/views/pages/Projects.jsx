@@ -16,8 +16,25 @@ class Projects extends React.Component {
         <main ref="main">
           <div className="position-relative">
             {/* shape Hero */}
+
             <section className="section section-lg section-shaped pb-250">
               <div className="shape shape-style-1 shape-default"></div>
+              {/* SVG separator */}
+              <div className="separator separator-bottom separator-skew">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="none"
+                  version="1.1"
+                  viewBox="0 0 2560 100"
+                  x="0"
+                  y="0"
+                >
+                  <polygon
+                    className="fill-white"
+                    points="2560 0 2560 100 0 100"
+                  />
+                </svg>
+              </div>
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                   <Row>
@@ -26,13 +43,7 @@ class Projects extends React.Component {
                     </Col>
                     <p>
                       <img
-                        className="alignleft"
                         src="https://katina.bg/wp-content/uploads/2018/04/bl-euro.jpg"
-                        alt="..."
-                      />
-                      <img
-                        className="alignright"
-                        src="http://hemusconsult.com/wp-content/uploads/2015/04/flag-e1424683963972-s.jpg"
                         alt="..."
                       />
                     </p>
@@ -104,22 +115,6 @@ class Projects extends React.Component {
                   </Row>
                 </div>
               </Container>
-              {/* SVG separator */}
-              <div className="separator separator-bottom separator-skew">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  preserveAspectRatio="none"
-                  version="1.1"
-                  viewBox="0 0 2560 100"
-                  x="0"
-                  y="0"
-                >
-                  <polygon
-                    className="fill-secondary"
-                    points="560 0 2560 100 0 100"
-                  />
-                </svg>
-              </div>
             </section>
           </div>
         </main>

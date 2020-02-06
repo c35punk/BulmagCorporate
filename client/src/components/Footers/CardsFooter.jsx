@@ -22,57 +22,45 @@ class CardsFooter extends React.Component {
           <Container className="container-lg">
             <Row>
               <Col className="mb-5 mb-md-0" md="3">
-                <Card className="card-lift--hover">
-                  <CardImg
-                    alt="..."
-                    src="https://www.paymentcomponents.com/wp-content/uploads/2018/05/press3.png"
-                    style={{
-                      width: "auto",
-                      height: "120px",
-                      objectFit: "scale-down"
-                    }}
-                  />
+                <Card className="card-lift--hover shadow border-0">
+                  <Link to="/products">
+                    <CardImg
+                      alt="..."
+                      src="https://www.paymentcomponents.com/wp-content/uploads/2018/05/press3.png"
+                  
+                    />
+                  </Link>
                 </Card>
               </Col>
               <Col className="mb-5 mb-lg-0" md="3">
-                <Card className="card-lift--hover">
+                <Card className="card-lift--hover shadow border-0">
                   <Link to="/products">
                     <CardImg
                       alt="..."
                       src="https://www.lenovopartnernetwork.com/assets/Uploads/2e3f24153f/lenovo-default-social.jpg"
-                      style={{
-                        width: "auto",
-                        height: "120px",
-                        objectFit: "scale-down"
-                      }}
+                  
                     />
                   </Link>
                 </Card>
               </Col>
               <Col className="mb-5 mb-lg-2" md="3">
-                <Card className="card-lift--hover">
+                <Card className="card-lift--hover shadow border-0">
                   <Link to="/products">
                     <CardImg
                       alt="..."
                       src="https://i.ytimg.com/vi/Tygk0HnjG-o/maxresdefault.jpg"
-                      style={{
-                        width: "auto",
-                        height: "120px"
-                      }}
+                    
                     />
                   </Link>
                 </Card>
               </Col>
               <Col className="mb-5 mb-lg-0" md="3">
-                <Card className="card-lift--hover">
+                <Card className="card-lift--hover shadow border-0">
                   <Link to="/products">
                     <CardImg
                       alt="..."
                       src="http://www.uzdaily.com/storage/img/Askar-foto/2-mfCd_q_iw.jpg"
-                      style={{
-                        width: "auto",
-                        height: "120px"
-                      }}
+                
                     />
                   </Link>
                 </Card>
