@@ -107,24 +107,21 @@ class Contacts extends React.Component {
                     </Col>
                     <div className="justify-content-center ">
                       <Col>
-                        <h4 className="justify-content-center">
-                          Sales Department
-                        </h4>
+                        <h4 className="justify-content-center">Phones</h4>
+                        <h6>Sales Department</h6>
                         <a href="tel:+35928179040">+359 2 817 90 40</a>
                         <br />
                         <a href="mailto:office@bulmag.bg">office@bulmag.bg</a>
                       </Col>
                       <Col>
-                        <h4 className="justify-content-center">
-                          Service Center
-                        </h4>
+                        <h6>Service Center</h6>
                         <a href="tel:+35928179060">+359 2 817 90 60</a>
                         <br />
 
                         <a href="mailto:service@bulmag.bg">service@bulmag.bg</a>
                       </Col>
                       <Col>
-                        <h4 className="justify-content-center">Online Shop</h4>
+                        <h6>Online Shop</h6>
                         <a href="tel:+35928179010">+359 2 817 90 10</a>
                         <br />
                         <a href="mailto:store@e-bulmag.bg">store@e-bulmag.bg</a>
@@ -132,6 +129,15 @@ class Contacts extends React.Component {
                         <br />
                       </Col>
                     </div>
+                    <div className="justify-content-center ">
+                      <Col>
+                        <h4 className="justify-content-center">Address</h4>
+                        <h6>Bulmag HQ</h6>
+                        <a href="map:">7 Grigorii Gorbatenko str.</a>
+                        <br />
+                      </Col>
+                    </div>
+
                     <Col
                       lg="12"
                       style={{
@@ -270,7 +276,7 @@ class Contacts extends React.Component {
                           onloadCallback={this.onLoadRecaptcha}
                           verifyCallback={this.verifyCallback}
                         />
-
+                        <br />
                         <div>
                           <Button
                             block
