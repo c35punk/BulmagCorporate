@@ -2,6 +2,7 @@ import React from "react";
 
 import { Button, Modal } from "reactstrap";
 import Loading from "./Loading";
+import { isMobile } from "react-device-detect";
 
 class Modals extends React.Component {
   state = {};
@@ -10,7 +11,9 @@ class Modals extends React.Component {
       [state]: !this.state[state]
     });
   };
+
   render() {
+    let url = this.props.productUrl || this.props.serviceUrl;
     return (
       <>
         <br />
@@ -19,7 +22,11 @@ class Modals extends React.Component {
           className="mb-2"
           color="dark"
           type="button"
-          onClick={() => this.toggleModal("notificationModal")}
+          onClick={() =>
+            !isMobile
+              ? this.toggleModal("notificationModal")
+              : window.open(url, "_self")
+          }
         >
           Details
         </Button>

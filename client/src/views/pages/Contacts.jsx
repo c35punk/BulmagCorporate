@@ -94,7 +94,7 @@ class Contacts extends React.Component {
                         <h4 className="justify-content-center">
                           Sales Department
                         </h4>
-                        <a href="#">+359 2 817 90 40</a>
+                        <a href="tel:+35928179040">+359 2 817 90 40</a>
                         <br />
                         <a href="mailto:office@bulmag.bg">office@bulmag.bg</a>
                       </Col>
@@ -102,14 +102,14 @@ class Contacts extends React.Component {
                         <h4 className="justify-content-center">
                           Service Center
                         </h4>
-                        <a href="#">+359 2 817 90 60</a>
+                        <a href="tel:+35928179060">+359 2 817 90 60</a>
                         <br />
 
                         <a href="mailto:service@bulmag.bg">service@bulmag.bg</a>
                       </Col>
                       <Col>
                         <h4 className="justify-content-center">Online Shop</h4>
-                        <a href="#">+359 2 817 90 10</a>
+                        <a href="tel:+35928179010">+359 2 817 90 10</a>
                         <br />
                         <a href="mailto:store@e-bulmag.bg">store@e-bulmag.bg</a>
                         <br /> <br />
@@ -128,7 +128,7 @@ class Contacts extends React.Component {
                         src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Bulmag+AD,+Sofia,+Bulgaria&amp;aq=0&amp;oq=bulmag+ad+sofia&amp;sll=37.0625,-95.677068&amp;sspn=57.292148,135.263672&amp;t=m&amp;ie=UTF8&amp;hq=Bulmag+AD,&amp;hnear=Sofia,+Sofia-city,+Bulgaria&amp;ll=42.654856,23.372898&amp;spn=0.018937,0.025749&amp;z=14&amp;iwloc=A&amp;output=embed&amp;iwloc=near"
                         title="Location"
                         style={{
-                          border: "0",
+                          border: "solid #aa2727",
                           height: "100%",
                           left: "0",
                           position: "absolute",
