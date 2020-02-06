@@ -135,6 +135,8 @@ class Contacts extends React.Component {
                         <h6>Bulmag HQ</h6>
                         <a href="map:">7 Grigorii Gorbatenko str.</a>
                         <br />
+                        <br />
+                        <br />
                       </Col>
                     </div>
 
