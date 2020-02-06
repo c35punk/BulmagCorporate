@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 //constants & components
 import { UserProvider, defaultState } from "../contexts/user-context";
 import { isMobile } from "react-device-detect";
+import CookieConsent, { Cookies } from "react-cookie-consent";
 
 import UserRoute from "../routes/user-route";
 import AdminRoute from "../routes/auth-route";
@@ -60,6 +61,9 @@ class Index extends Component {
     return (
       <div>
         <UserProvider value={user}>
+          <CookieConsent style={{ color: "white" }}>
+            This website uses cookies to enhance the user experience.
+          </CookieConsent>
           <Navigation />
           <Switch>
             <Route path="/" exact render={props => <Main {...props} />} />
