@@ -89,34 +89,33 @@ class Contacts extends React.Component {
                     <Col lg="6">
                       <h1 className="display-3 text-white ">CONTACTS</h1>
                     </Col>
-                    <Row lg="12">
-                      <div className="justify-content-center ">
-                        <div className="justify-content-center">
-                          <h4>Sales Department</h4>
-                          <a href="#">+359 2 817 90 40</a>
-                          <br />
-                          <a href="mailto:office@bulmag.bg">office@bulmag.bg</a>
-                        </div>
-                        <div className="justify-content-center">
-                          <h4>Service Center</h4>
-                          <a href="#">+359 2 817 90 60</a>
-                          <br />
+                    <div className="justify-content-center ">
+                      <Col>
+                        <h4 className="justify-content-center">
+                          Sales Department
+                        </h4>
+                        <a href="#">+359 2 817 90 40</a>
+                        <br />
+                        <a href="mailto:office@bulmag.bg">office@bulmag.bg</a>
+                      </Col>
+                      <Col>
+                        <h4 className="justify-content-center">
+                          Service Center
+                        </h4>
+                        <a href="#">+359 2 817 90 60</a>
+                        <br />
 
-                          <a href="mailto:service@bulmag.bg">
-                            service@bulmag.bg
-                          </a>
-                        </div>
-                        <div className="justify-content-center">
-                          <h4>Online Shop</h4>
-                          <a href="#">+359 2 817 90 10</a>
-                          <br />
-
-                          <a href="mailto:store@e-bulmag.bg">
-                            store@e-bulmag.bg
-                          </a>
-                        </div>
-                      </div>
-                    </Row>
+                        <a href="mailto:service@bulmag.bg">service@bulmag.bg</a>
+                      </Col>
+                      <Col>
+                        <h4 className="justify-content-center">Online Shop</h4>
+                        <a href="#">+359 2 817 90 10</a>
+                        <br />
+                        <a href="mailto:store@e-bulmag.bg">store@e-bulmag.bg</a>
+                        <br /> <br />
+                        <br />
+                      </Col>
+                    </div>
                     <Col
                       lg="12"
                       style={{
