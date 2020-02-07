@@ -274,7 +274,7 @@ class Contacts extends React.Component {
                             this.captchaDemo = el;
                           }}
                           render="explicit"
-                          sitekey="6Lewg9YUAAAAAO97KGOMJcXXJUN1-QFRH9Kj3R8a"
+                          sitekey="6LfindYUAAAAAEkTz9Xo_LYQSIApdN586bDSsZny"
                           onloadCallback={this.onLoadRecaptcha}
                           verifyCallback={this.verifyCallback}
                         />

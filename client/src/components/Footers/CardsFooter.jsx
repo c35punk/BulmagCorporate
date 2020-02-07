@@ -34,34 +34,8 @@ class CardsFooter extends React.Component {
                 <h6 className="text-primary"> Tr-Sys </h6>
               </a>
 
-              <a href="https://www.technogroup.com/">
-                <h6 className="text-primary"> TechnoGroup </h6>
-              </a>
-
-              <a href="https://www.cisco.com/">
-                <h6 className="text-primary"> CISCO </h6>
-              </a>
-            </Col>
-
-            <Col>
-              <a href="https://www.vmware.com/">
-                <h6 className="text-primary"> VMware </h6>
-              </a>
-
-              <a href="https://www.microsoft.com/bg-bg/">
-                <h6 className="text-primary"> Microsoft </h6>
-              </a>
-
-              <a href="https://www.redhat.com/en">
-                <h6 className="text-primary"> Red Hat </h6>
-              </a>
-
-              <a href="https://www.vibbek.com/en/">
-                <h6 className="text-primary"> Vibbek VCT </h6>
-              </a>
-
-              <a href="https://www.nutanix.com/en">
-                <h6 className="text-primary"> Nutanix </h6>
+              <a href="https://www.openway.com/">
+                <h6 className="text-primary"> OpenWay </h6>
               </a>
             </Col>
           </Row>
