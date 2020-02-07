@@ -139,7 +139,6 @@ class Contacts extends React.Component {
                         <br />
                       </Col>
                     </div>
-
                     <Col
                       lg="12"
                       style={{
@@ -152,7 +151,7 @@ class Contacts extends React.Component {
                         src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Bulmag+AD,+Sofia,+Bulgaria&amp;aq=0&amp;oq=bulmag+ad+sofia&amp;sll=37.0625,-95.677068&amp;sspn=57.292148,135.263672&amp;t=m&amp;ie=UTF8&amp;hq=Bulmag+AD,&amp;hnear=Sofia,+Sofia-city,+Bulgaria&amp;ll=42.654856,23.372898&amp;spn=0.018937,0.025749&amp;z=14&amp;iwloc=A&amp;output=embed&amp;iwloc=near"
                         title="Location"
                         style={{
-                          border: "solid #aa2727",
+                          border: "solid 1px #aa2727",
                           height: "100%",
                           left: "0",
                           position: "absolute",
@@ -161,11 +160,10 @@ class Contacts extends React.Component {
                           borderRadius: "5px"
                         }}
                       ></iframe>
-                      <span>Give us a call or drop a line</span>
-                      <p className="lead text-black">
-                        We are here to answer all your questions
-                      </p>
                     </Col>
+                    <p className="lead text-black">
+                      We are here to answer all your questions
+                    </p>
                   </Row>
                 </div>
               </Container>

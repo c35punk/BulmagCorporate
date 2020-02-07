@@ -4,7 +4,7 @@ var nodemailer = require('nodemailer');
 const creds = require('../config/mailCredentials');
 
 var transport = {
-    host: 'smtp.bulmag.bg',
+    host: 'mail.bulmag.bg',
     auth: {
         user: creds.USER,
         pass: creds.PASS
@@ -25,7 +25,7 @@ router.post('/send', (req, res, next) => {
     var name = req.body.name
     var email = req.body.email
     var message = req.body.message
-    var content = `name: ${name} \n email: ${email} \n message: ${message} `
+    var content = `name: ${name}\n email: ${email}\n message: ${message} `
 
     console.log(content)
 
@@ -36,7 +36,10 @@ router.post('/send', (req, res, next) => {
         text: content
     }
 
-    console.log(res)
+    console.log("40")
+    console.log(req.body)
+    console.log("42")
+    console.log(res.headers)
 
     transporter.sendMail(mail, (err, data) => {
         if (err) {
