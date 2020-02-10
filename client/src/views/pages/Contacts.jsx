@@ -5,6 +5,7 @@ import axios from "axios";
 
 import { dbConstants } from "../../constants/constants";
 import { loadReCaptcha, ReCaptcha } from "react-recaptcha-google";
+import { Parallax } from "react-parallax";
 
 // reactstrap components
 import {
@@ -100,8 +101,8 @@ class Contacts extends React.Component {
             <section className="section section-lg section-shaped pb-250 justify-content-center ">
               <div className="shape shape-style-1 shape-default"></div>
               <Container className="py-lg-md d-flex">
-                <div className="col px-0">
-                  <Row>
+                <div className="col px-0 ">
+                  <Row className="justify-content-left mb--100">
                     <Col lg="6">
                       <h1 className="display-3 text-white ">CONTACTS</h1>
                     </Col>
@@ -161,14 +162,19 @@ class Contacts extends React.Component {
                         }}
                       ></iframe>
                     </Col>
-                    <p className="lead text-black">
-                      We are here to answer all your questions
-                    </p>
                   </Row>
                 </div>
               </Container>
+              <Parallax
+                blur={{ min: -15, max: 15 }}
+                bgImage={require("../../assets/img/pics-vte5/business card.jpg")}
+                bgImageAlt="the dog"
+                strength={450}
+              >
+                <div style={{ height: "550px" }} />
+              </Parallax>
               {/* SVG separator */}
-              <div className="separator separator-bottom separator-skew">
+              {/* <div className="separator separator-bottom separator-skew">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   preserveAspectRatio="none"
@@ -182,7 +188,7 @@ class Contacts extends React.Component {
                     points="962 0 2560 100 0 100"
                   />
                 </svg>
-              </div>
+              </div> */}
             </section>
             {/* 1st Hero Variation */}
           </div>
