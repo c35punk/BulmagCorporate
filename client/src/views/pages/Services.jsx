@@ -1,6 +1,7 @@
 import React from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
+import { Parallax } from "react-parallax";
 
 // reactstrap components
 import {
@@ -33,19 +34,27 @@ class TabsSection extends React.Component {
         <main ref="main">
           <div className="position-relative">
             {/* shape Hero */}
-            <section className="section section-lg section-shaped pb-250">
-              <div className="shape shape-style-1 shape-default"></div>
-              <Container className="py-lg-md d-flex">
-                <div className="col px-0">
-                  <Row>
-                    <Col lg="6">
-                      <h1 className="display-3 text-white">SERVICES</h1>
-                    </Col>
-                  </Row>
-                </div>
-              </Container>
-              {/* SVG separator */}
-              <div className="separator separator-bottom separator-skew">
+            <Parallax
+              blur={{ min: -45, max: 45 }}
+              bgImage={require("../../assets/img/pics-vte5/IMG_0870.jpg")}
+              bgImageAlt="the dog"
+              strength={450}
+            >
+              <div className="shape shape-style-1 shape-default "></div>
+              <section className="section section-md section-shaped mb--200">
+                <Container className="py-lg-md d-flex">
+                  <div className="col px-0 mb--200">
+                    <Row>
+                      <Col lg="6">
+                        <h1 className="display-3 text-white">SERVICES</h1>
+                      </Col>
+                    </Row>
+                  </div>
+                </Container>
+                <div style={{ height: "350px" }} />
+
+                {/* SVG separator */}
+                {/* <div className="separator separator-bottom separator-skew">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   preserveAspectRatio="none"
@@ -59,8 +68,9 @@ class TabsSection extends React.Component {
                     points="560 0 2560 100 0 100"
                   />
                 </svg>
-              </div>
-            </section>
+              </div> */}
+              </section>
+            </Parallax>
           </div>
           <section className="section section-lg pt-lg-0 mt--200">
             <Container>
