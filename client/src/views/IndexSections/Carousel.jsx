@@ -9,12 +9,7 @@ const items = [
       "https://blog.bookaway.com/blog/wp-content/uploads/2019/08/Downtown-Hong-Kong-and-technology.jpg",
 
     caption: (
-      <Button
-        className="btn-white mt-4"
-        
-        to="/products#HW"
-        tag={Link}
-      >
+      <Button className="btn-white mt-4" to="/products#HW" tag={Link}>
         Learn more
       </Button>
     ),
@@ -27,7 +22,6 @@ const items = [
     caption: (
       <Button
         className="btn-white mt-4 text-info"
-        
         to="/products#Banking"
         tag={Link}
       >
@@ -40,12 +34,7 @@ const items = [
     src:
       "https://wordatom.com/wp-content/uploads/2017/12/data-center-of-a-web-hosting-company.jpg",
     caption: (
-      <Button
-        className="btn-white mt-4"
-        
-        to="/services#Maintenance"
-        tag={Link}
-      >
+      <Button className="btn-white mt-4" to="/services#Maintenance" tag={Link}>
         Learn more
       </Button>
     ),
