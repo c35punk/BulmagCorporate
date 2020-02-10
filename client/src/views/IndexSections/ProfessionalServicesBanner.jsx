@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const ProfessionalServicesBanner = () => {
   return (
-    <section className="section section-lg pt-0 footer">
+    <section className="section section-lg pt-0 mb--250">
       <Container>
         <Card className="bg-gradient-warning shadow-lg border-0">
           <div className="p-5">

@@ -18,8 +18,8 @@ class Main extends React.Component {
         <Carousel />
         <SupportBanner />
         <CompanyOverview />
-        <ProfessionalServicesBanner />
         <HomePageIntro />
+        <ProfessionalServicesBanner />
       </main>
     );
   }
