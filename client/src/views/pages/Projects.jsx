@@ -2,6 +2,7 @@ import React from "react";
 
 // reactstrap components
 import { Container, Row, Col } from "reactstrap";
+import { Parallax } from "react-parallax";
 
 class Projects extends React.Component {
   state = {};
@@ -15,9 +16,29 @@ class Projects extends React.Component {
       <>
         <main ref="main">
           <div className="position-relative">
+            <Parallax
+              blur={{ min: -15, max: 15 }}
+              bgImage={require("../../assets/img/pics-vte5/IMG_0854.jpg")}
+              bgImageAlt="the dog"
+              strength={450}
+            >
+              <div className="shape shape-style-1 shape-default "></div>
+              <section className="section section-md section-shaped mb--200">
+                <Container className="py-lg-md d-flex">
+                  <div className="col px-0 mb--200">
+                    <Row>
+                      <Col lg="6">
+                        <h1 className="display-3 text-white">PROJECTS</h1>
+                      </Col>
+                    </Row>
+                  </div>
+                </Container>
+                <div style={{ height: "350px" }} />
+              </section>
+            </Parallax>
             {/* shape Hero */}
 
-            <section className="section section-lg section-shaped pb-250">
+            <section className="section section-lg pt-lg-0 mt--200">
               <div className="shape shape-style-1 shape-default"></div>
               {/* SVG separator */}
               <div className="separator separator-bottom separator-skew">
@@ -38,9 +59,6 @@ class Projects extends React.Component {
               <Container className="py-lg-md d-flex">
                 <div className="col px-0">
                   <Row>
-                    <Col lg="6">
-                      <h1 className="display-3 text-white">PROJECTS</h1>
-                    </Col>
                     <p>
                       <img
                         src="https://katina.bg/wp-content/uploads/2018/04/bl-euro.jpg"

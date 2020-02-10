@@ -39,7 +39,7 @@ router.post('/send', (req, res, next) => {
     console.log("40")
     console.log(req.body)
     console.log("42")
-    console.log(res.headers)
+    console.log(res)
 
     transporter.sendMail(mail, (err, data) => {
         if (err) {
