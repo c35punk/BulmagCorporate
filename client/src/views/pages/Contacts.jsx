@@ -134,10 +134,8 @@ class Contacts extends React.Component {
                       <Col>
                         <h4 className="justify-content-center">Address</h4>
                         <h6>Bulmag HQ</h6>
-                        <a href="map:">7 Grigorii Gorbatenko str.</a>
-                        <br />
-                        <br />
-                        <br />
+                        <a href="#">1784</a> <br />
+                        <a href="map:">Sofia, 7 Grigorii Gorbatenko str.</a>
                       </Col>
                     </div>
                     <Col
