@@ -6,7 +6,7 @@ import { Button, Container, Row, UncontrolledCarousel } from "reactstrap";
 const items = [
   {
     src:
-      "https://blog.bookaway.com/blog/wp-content/uploads/2019/08/Downtown-Hong-Kong-and-technology.jpg",
+      "https://www.abb-conversations.com/wp-content/uploads/2015/11/new-york-540807_1920-1920x800.jpg",
 
     caption: (
       <Button className="btn-white mt-4" to="/products#HW" tag={Link}>
@@ -17,7 +17,7 @@ const items = [
   },
   {
     src:
-      "https://i.pinimg.com/originals/bd/16/c5/bd16c57405f3142d4cc740e0ee44d536.jpg",
+      "https://damassets.autodesk.net/content/dam/autodesk/www/solutions/bim/images/stories/the-david-miller-story-story-page-header-1920x800.jpg",
 
     caption: (
       <Button
@@ -32,7 +32,7 @@ const items = [
   },
   {
     src:
-      "https://wordatom.com/wp-content/uploads/2017/12/data-center-of-a-web-hosting-company.jpg",
+      "https://atfip-formations.fr/wp-content/uploads/2018/10/technicien-datacenter-1920x800.jpg",
     caption: (
       <Button className="btn-white mt-4" to="/services#Maintenance" tag={Link}>
         Learn more

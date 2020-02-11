@@ -17,6 +17,30 @@ class SimpleFooter extends Component {
     return (
       <>
         <footer className="footer">
+        <Container>
+          <h3 className="text-primary">Partners</h3>
+          <Row>
+            <Col>
+              <a href="https://www.lenovo.com/us/en/data-center">
+                <h6 className="text-primary"> Lenovo DCG </h6>
+              </a>
+
+              <a href="https://www.infinidat.com/products-technology/infinibox">
+                <h6 className="text-primary"> INFINIDAT </h6>
+              </a>
+
+              <a href="https://tr-sys.com/home/">
+                <h6 className="text-primary"> Tr-Sys </h6>
+              </a>
+
+              <a href="https://www.openway.com/">
+                <h6 className="text-primary"> OpenWay </h6>
+              </a>
+            </Col>
+          </Row>
+
+        </Container>
+     
           <Container>
             <Row className="row-grid align-items-center my-md">
               <Col lg="6">

@@ -20,65 +20,46 @@ class CardsFooter extends React.Component {
       <>
         <Container>
           <h3 className="text-primary">Partners</h3>
-          <Row>
-            <Col>
-              <a href="https://www.lenovo.com/us/en/data-center/storage/c/storage">
-                <h6 className="text-primary"> Lenovo DCG </h6>
-              </a>
-
-              <a href="https://www.infinidat.com/products-technology/infinibox">
-                <h6 className="text-primary"> INFINIDAT </h6>
-              </a>
-
-              <a href="https://tr-sys.com/home/">
-                <h6 className="text-primary"> Tr-Sys </h6>
-              </a>
-
-              <a href="https://www.openway.com/">
-                <h6 className="text-primary"> OpenWay </h6>
-              </a>
-            </Col>
-          </Row>
 
           <Row>
             <Col className="mb-5 mb-md-0" md="3">
               <Card className="card-lift--hover shadow border-0">
-                <Link to="/products">
+                <a href="https://tr-sys.com/home/">
                   <CardImg
                     alt="..."
                     src="https://www.paymentcomponents.com/wp-content/uploads/2018/05/press3.png"
                   />
-                </Link>
+                </a>
               </Card>
             </Col>
             <Col className="mb-5 mb-lg-0" md="3">
               <Card className="card-lift--hover shadow border-0">
-                <Link to="/products">
+                <a href="https://www.lenovo.com/us/en/data-center">
                   <CardImg
                     alt="..."
-                    src="https://www.lenovopartnernetwork.com/assets/Uploads/2e3f24153f/lenovo-default-social.jpg"
+                    src="https://www.elsetge.cat/myimg/f/114-1145719_center-for-international-maritime-security-lord-of-the.png"
                   />
-                </Link>
+                </a>
               </Card>
             </Col>
             <Col className="mb-5 mb-lg-2" md="3">
               <Card className="card-lift--hover shadow border-0">
-                <Link to="/products">
+                <a href="https://www.infinidat.com/products-technology/infinibox">
                   <CardImg
                     alt="..."
                     src="https://i.ytimg.com/vi/Tygk0HnjG-o/maxresdefault.jpg"
                   />
-                </Link>
+                </a>
               </Card>
             </Col>
             <Col className="mb-5 mb-lg-0" md="3">
               <Card className="card-lift--hover shadow border-0">
-                <Link to="/products">
+                <a href="https://www.openway.com/">
                   <CardImg
                     alt="..."
                     src="http://www.uzdaily.com/storage/img/Askar-foto/2-mfCd_q_iw.jpg"
                   />
-                </Link>
+                </a>
               </Card>
             </Col>
           </Row>
