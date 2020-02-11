@@ -116,7 +116,15 @@ class Navigation extends React.Component {
                 <UncontrolledDropdown nav>
                   <DropdownToggle nav>
                     <i className="ni ni-collection d-lg-none mr-1" />
-                    <span className="nav-link-inner--text">Portfolio</span>
+                    <span
+                      className="nav-link-inner--text"
+                      style={{
+                        "text-shadow":
+                          "-1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey"
+                      }}
+                    >
+                      Portfolio
+                    </span>
                   </DropdownToggle>
                   <DropdownMenu className="dropdown-menu-xl">
                     <div className="dropdown-menu-inner">
@@ -152,7 +160,15 @@ class Navigation extends React.Component {
                 <UncontrolledDropdown nav>
                   <DropdownToggle nav>
                     <i className="ni ni-building d-lg-none mr-1" />
-                    <span className="nav-link-inner--text">Company</span>
+                    <span
+                      className="nav-link-inner--text"
+                      style={{
+                        "text-shadow":
+                          "-1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey"
+                      }}
+                    >
+                      Company
+                    </span>
                   </DropdownToggle>
                   <DropdownMenu>
                     <DropdownItem to="/about" tag={Link}>
@@ -169,7 +185,13 @@ class Navigation extends React.Component {
                 <UncontrolledDropdown nav>
                   <DropdownToggle nav>
                     <i className="ni ni-badge d-lg-none mr-1" />
-                    <span className="nav-link-inner--text">
+                    <span
+                      className="nav-link-inner--text"
+                      style={{
+                        "text-shadow":
+                          "-1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey"
+                      }}
+                    >
                       {this.props.isLoggedIn ? (
                         <>Hello, {this.props.username}!</>
                       ) : (
