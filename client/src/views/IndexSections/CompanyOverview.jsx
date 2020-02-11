@@ -10,10 +10,10 @@ class CompanyOverview extends React.Component {
     return (
       <>
         <Parallax
-          blur={{ min: -265, max: 265 }}
+          blur={{ min: -5, max: 5 }}
           bgImage={require("../../assets/img/pics-vte5/IMG_0864.jpg")}
           bgImageAlt="the dog"
-          strength={200}
+          strength={1000}
         >
           <div style={{ height: "250px" }} />
 
@@ -59,9 +59,7 @@ class CompanyOverview extends React.Component {
                     <Col className="order-md-6" md="6">
                       <div className="display-3">
                         <p className="lead">
-                          <h2 className="text-main">
-                            Professional Excellence
-                          </h2>
+                          <h2 className="text-main">Professional Excellence</h2>
                         </p>
 
                         <p className="text-secondary">
@@ -75,7 +73,9 @@ class CompanyOverview extends React.Component {
                     <Col className="order-md-6" md="6">
                       <div className="display-3">
                         <p className="lead">
-                          <h2 className="text-main">Customizable Cloud Offerings</h2>
+                          <h2 className="text-main">
+                            Customizable Cloud Offerings
+                          </h2>
                         </p>
 
                         <p className="text-secondary">

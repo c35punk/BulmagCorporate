@@ -99,7 +99,7 @@ class Contacts extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <section className="section section-lg section-shaped pb-250 justify-content-center ">
-              <div className="shape shape-style-1 shape-default"></div>
+              <div className="shape shape-default"></div>
               <Container className="py-lg-md d-flex">
                 <div className="col px-0 ">
                   <Row className="justify-content-left mb--100">
@@ -134,7 +134,7 @@ class Contacts extends React.Component {
                       <Col>
                         <h4 className="justify-content-center">Address</h4>
                         <h6>Bulmag HQ</h6>
-                        <a href="#">1784</a> <br />
+                        <a href="#">1784</a> <br/>
                         <a href="map:">Sofia, 7 Grigorii Gorbatenko str.</a>
                       </Col>
                     </div>
@@ -164,10 +164,9 @@ class Contacts extends React.Component {
                 </div>
               </Container>
               <Parallax
-                blur={{ min: -15, max: 15 }}
                 bgImage={require("../../assets/img/pics-vte5/business card.jpg")}
-                bgImageAlt="the dog"
-                strength={450}
+                bgImageAlt="Business Card"
+                strength={750}
               >
                 <div style={{ height: "550px" }} />
               </Parallax>
