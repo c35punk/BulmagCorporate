@@ -31,7 +31,8 @@ class Contacts extends React.Component {
     this.state = {
       senderName: "",
       senderEmail: "",
-      message: ""
+      message: "",
+      captchaCheck: false
     };
     this.handleSenderName = this.handleSenderName.bind(this);
     this.handleSenderEmail = this.handleSenderEmail.bind(this);
@@ -60,16 +61,20 @@ class Contacts extends React.Component {
       message: this.state.message
     };
 
-    axios.post(dbConstants.mailsUrl, data).then(response => {
-      if (response.data.msg === "success") {
-        console.log("Message Sent.");
-        window.location = "/";
-      } else if (response.data.msg === "fail") {
-        console.log(response);
-        console.log("Message failed to send.");
-        // window.location = "/contacts";
-      }
-    });
+    if (this.state.captchaCheck) {
+      axios.post(dbConstants.mailsUrl, data).then(response => {
+        if (response.data.msg === "success") {
+          console.log("Message Sent.");
+          window.location = "/";
+        } else if (response.data.msg === "fail") {
+          console.log(response);
+          console.log("Message failed to send.");
+          // window.location = "/contacts";
+        }
+      });
+    } else {
+      console.log("No CAPTCHA TOKEN FOUND");
+    }
   }
 
   componentDidMount() {
@@ -89,6 +94,9 @@ class Contacts extends React.Component {
     }
   }
   verifyCallback(recaptchaToken) {
+    if (recaptchaToken) {
+      this.setState({ captchaCheck: true });
+    }
     console.log(recaptchaToken, "<= your recaptcha token");
   }
 
