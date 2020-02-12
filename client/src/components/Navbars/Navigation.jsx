@@ -82,6 +82,7 @@ class Navigation extends React.Component {
           className="navbar-main navbar-transparent navbar-light headroom"
           expand="lg"
           id="navbar-main"
+          style={{ backgroundColor: "rgba(0, 0, 0, 0.65)" }}
         >
           <Container>
             <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
@@ -120,7 +121,7 @@ class Navigation extends React.Component {
                       className="nav-link-inner--text"
                       style={{
                         textShadow:
-                          "-1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey"
+                          "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
                       }}
                     >
                       Portfolio
@@ -142,7 +143,7 @@ class Navigation extends React.Component {
                         </Media>
                       </Media>
                       <Media>
-                        <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
+                        <div className="icon icon-shape bg-gradient-primary rounded-circle text-white">
                           <i className="ni ni-support-16" />
                         </div>
                         <Media body className="ml-3">
@@ -164,7 +165,7 @@ class Navigation extends React.Component {
                       className="nav-link-inner--text"
                       style={{
                         textShadow:
-                          "-1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey"
+                          "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
                       }}
                     >
                       Company
@@ -189,7 +190,7 @@ class Navigation extends React.Component {
                       className="nav-link-inner--text"
                       style={{
                         textShadow:
-                          "-1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey"
+                          "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
                       }}
                     >
                       {this.props.isLoggedIn ? (

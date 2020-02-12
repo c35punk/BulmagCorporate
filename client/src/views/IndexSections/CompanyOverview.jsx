@@ -13,7 +13,7 @@ class CompanyOverview extends React.Component {
           blur={{ min: -5, max: 5 }}
           bgImage={require("../../assets/img/pics-vte5/IMG_0864.jpg")}
           bgImageAlt="the dog"
-          strength={1000}
+          strength={400}
         >
           <div style={{ height: "250px" }} />
 

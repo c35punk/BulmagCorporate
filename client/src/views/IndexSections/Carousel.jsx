@@ -13,7 +13,16 @@ const items = [
         Learn more
       </Button>
     ),
-    header: "System Integration Services"
+    header: (
+      <div
+        style={{
+          textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black",
+          backgroundColor: "rgba(0, 0, 0, 0.4)"
+        }}
+      >
+        System Integration Services
+      </div>
+    )
   },
   {
     src:
@@ -28,7 +37,16 @@ const items = [
         Learn more
       </Button>
     ),
-    header: "Payment Solutions"
+    header: (
+      <div
+        style={{
+          textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black",
+          backgroundColor: "rgba(0, 0, 0, 0.4)"
+        }}
+      >
+        Payment Solutions
+      </div>
+    )
   },
   {
     src:
@@ -38,7 +56,16 @@ const items = [
         Learn more
       </Button>
     ),
-    header: "Post Warranty Enterprise Maintenance"
+    header: (
+      <div
+        style={{
+          textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black",
+          backgroundColor: "rgba(0, 0, 0, 0.4)"
+        }}
+      >
+        Post Warranty Enterprise Maintenance
+      </div>
+    )
   }
 ];
 

@@ -30,7 +30,7 @@ class TabsSection extends React.Component {
   render() {
     return (
       <>
-        <Row className="justify-content-center">
+        <Row className="justify-content-center text-darker">
           <Col className="mt-5 mt-lg-0" lg="6">
             {/* Menu */}
             <div className="nav-wrapper">

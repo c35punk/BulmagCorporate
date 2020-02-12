@@ -27,12 +27,12 @@ const SupportBanner = () => {
               <CardBody>
                 <div className="d-flex px-3">
                   <div>
-                    <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
+                    <div className="icon icon-shape bg-gradient-primary rounded-circle text-white">
                       <i className="ni ni-satisfied" />
                     </div>
                   </div>
                   <div className="pl-4">
-                    <h5 className="title text-success">High-end Products</h5>
+                    <h5 className="title text-primary">High-end Products</h5>
                     <p>
                       Bulmag AD offer full range of Lenovo®, NetApp®,
                       INFINIDAT®, VMware®, RedHat®, Microsoft®, Cisco®,
