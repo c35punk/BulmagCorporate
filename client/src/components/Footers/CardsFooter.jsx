@@ -37,7 +37,7 @@ class CardsFooter extends React.Component {
                 <a href="https://www.lenovo.com/us/en/data-center">
                   <CardImg
                     alt="..."
-                    src="https://www.elsetge.cat/myimg/f/114-1145719_center-for-international-maritime-security-lord-of-the.png"
+                    src="https://www.lenovopartnernetwork.com/assets/Uploads/2e3f24153f/lenovo-default-social.jpg"
                   />
                 </a>
               </Card>

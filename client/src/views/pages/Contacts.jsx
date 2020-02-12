@@ -77,7 +77,7 @@ class Contacts extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
     if (this.captchaDemo) {
-      console.log("started, just a second...");
+      console.log("CAPTCHA started...");
       this.captchaDemo.reset();
     }
     loadReCaptcha();
@@ -134,7 +134,7 @@ class Contacts extends React.Component {
                       <Col>
                         <h4 className="justify-content-center">Address</h4>
                         <h6>Bulmag HQ</h6>
-                        <a href="#">1784</a> <br/>
+                        <a href="#">1784</a> <br />
                         <a href="map:">Sofia, 7 Grigorii Gorbatenko str.</a>
                       </Col>
                     </div>
@@ -142,7 +142,7 @@ class Contacts extends React.Component {
                       lg="12"
                       style={{
                         overflow: "hidden",
-                        "padding-top": " 56.25%",
+                        paddingTop: " 56.25%",
                         position: "relative"
                       }}
                     >

@@ -119,7 +119,7 @@ class Navigation extends React.Component {
                     <span
                       className="nav-link-inner--text"
                       style={{
-                        "text-shadow":
+                        textShadow:
                           "-1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey"
                       }}
                     >
@@ -163,7 +163,7 @@ class Navigation extends React.Component {
                     <span
                       className="nav-link-inner--text"
                       style={{
-                        "text-shadow":
+                        textShadow:
                           "-1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey"
                       }}
                     >
@@ -188,7 +188,7 @@ class Navigation extends React.Component {
                     <span
                       className="nav-link-inner--text"
                       style={{
-                        "text-shadow":
+                        textShadow:
                           "-1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey"
                       }}
                     >
