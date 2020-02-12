@@ -22,9 +22,9 @@ const productSchema = new Schema({
         required: true,
         enum: {
             values: [
-                'HW', 'Banking', 'HCI'
+                'HW', 'Banking', 'HCI', 'InHouse'
             ],
-            message: 'Status is invalid, valid values include [HW, Banking, HCI].'
+            message: 'Status is invalid, valid values include [HW, Banking, HCI, InHouse].'
           },
     },
 });

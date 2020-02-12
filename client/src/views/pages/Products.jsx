@@ -149,6 +149,34 @@ class Products extends React.Component {
                 </Col>
               </Row>
             </Container>
+            <Container>
+              <Row className="justify-content-center">
+                <Button
+                  className="btn-icon mb-2 mb-lg-0"
+                  color="primary"
+                  id="Banking"
+                >
+                  <span className="btn-inner--icon mr-1">
+                    <i className="fa fa-server" />
+                  </span>
+                  <span className="btn-inner--text">In-house developed products</span>
+                </Button>
+                <Col lg="12">
+                  <Row className="row-grid">
+                    {this.state.products
+                      .filter(x => x.type === "InHouse")
+                      .map(product => {
+                        return (
+                          <>
+                            <Product product={product} />
+                            <br />
+                          </>
+                        );
+                      })}
+                  </Row>
+                </Col>
+              </Row>
+            </Container>
           </section>
         </main>
       </>

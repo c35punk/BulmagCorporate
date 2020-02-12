@@ -1,5 +1,5 @@
 var nodemailer = require('nodemailer');
-const creds = require('../config/mail-credentials');
+// const creds = require('../config/mail-credentials');
 
 var testAccount = nodemailer.createTestAccount().then(result => console.log(result));
 
@@ -7,10 +7,10 @@ var transport = {
     host: "smtp.ethereal.email",
     port: 587,
     secure: false,
-    auth: {
-        user: testAccount.user,
-        pass: testAccount.pass
-    }
+    // auth: {
+    //     user: testAccount.user,
+    //     pass: testAccount.pass
+    // }
 };
 var transporter = nodemailer.createTransport(transport)
 
@@ -20,7 +20,7 @@ transporter.verify((error, success) => {
         console.log(error);
         console.log("===================================================");
     } else {
-        console.log('Server is ready to take messages');
+        console.log('Mail ready to take messages...');
     }
 });
 

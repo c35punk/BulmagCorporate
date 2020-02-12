@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 //constants & components
 import { UserProvider, defaultState } from "../contexts/user-context";
 import { isMobile } from "react-device-detect";
-import CookieConsent, { Cookies } from "react-cookie-consent";
+import CookieConsent from "react-cookie-consent";
 
 import UserRoute from "../routes/user-route";
 import AdminRoute from "../routes/auth-route";
