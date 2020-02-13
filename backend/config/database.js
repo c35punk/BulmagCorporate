@@ -5,7 +5,7 @@ const Product = require('../models/Product')
 mongoose.Promise = global.Promise
 
 module.exports = (options) => {
-  mongoose.connect(options.db, { useNewUrlParser: true, useUnifiedTopology: true })
+  mongoose.connect(options.db, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
   let db = mongoose.connection
 
   db.once('open', err => {

@@ -14,7 +14,7 @@ class Projects extends React.Component {
   render() {
     return (
       <>
-        <main ref="main">
+        <main ref="main" className="text-darker">
           <div className="position-relative">
             <Parallax
               blur={{ min: -15, max: 15 }}

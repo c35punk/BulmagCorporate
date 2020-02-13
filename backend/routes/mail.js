@@ -4,23 +4,29 @@ var transporter = require('../config/transporter')
 
 
 router.post('/send', (req, res, next) => {
+
     var name = req.body.name
     var email = req.body.email
     var message = req.body.message
     var content = `name: ${name}\n email: ${email}\n message: ${message} `
 
-    console.log(content)
 
     var mail = {
         from: name,
-        to: 'ldjantov@bulmag.bg',  //Change to email address that you want to receive messages on
+        to: 'ldjantov@bulmag.bg, support@bulmag.bg, bulmag@bulmag.bg, vterziyski@bulmag.bg',  //Change to email address that you want to receive messages on
         subject: 'New Message from Contact Form',
-        text: message
+        text: 'New Message',
+        html: `You have received message from <h1>${name}:</h1><br /><h4>${message}</h4>`
     }
+
 
     console.log("40")
     console.log(req.body)
-    console.log("42")
+    console.log("transporter")
+
+    console.log(transporter)
+    console.log("MAILWHJUDIEWDGFQYUGEQYUFGEQYUGQEMAIL")
+    console.log(mail)
 
     transporter.sendMail(mail, (err, data) => {
         if (err) {

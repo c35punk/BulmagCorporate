@@ -17,7 +17,7 @@ const items = [
       <div
         style={{
           textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black",
-          backgroundColor: "rgba(0, 0, 0, 0.4)"
+          backgroundColor: "rgba(79, 79, 79, 0.65)"
         }}
       >
         System Integration Services
@@ -41,7 +41,7 @@ const items = [
       <div
         style={{
           textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black",
-          backgroundColor: "rgba(0, 0, 0, 0.4)"
+          backgroundColor: "rgba(79, 79, 79, 0.65)"
         }}
       >
         Payment Solutions
@@ -60,7 +60,7 @@ const items = [
       <div
         style={{
           textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black",
-          backgroundColor: "rgba(0, 0, 0, 0.4)"
+          backgroundColor: "rgba(79, 79, 79, 0.65)"
         }}
       >
         Post Warranty Enterprise Maintenance
