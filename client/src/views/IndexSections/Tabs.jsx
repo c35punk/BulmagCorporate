@@ -163,8 +163,7 @@ class TabsSection extends React.Component {
                                   quality of products offered and sold and
                                   services rendered as well as successful return
                                   on their investment.
-                                </div>
-                                s{" "}
+                                </div>{" "}
                                 <div>
                                   <h3 className="text-darker">
                                     Main activities
@@ -1050,40 +1049,73 @@ class TabsSection extends React.Component {
                   </TabPane>
                   <TabPane tabId="plainTabs3">
                     <p className="description">
+                      <ul>
+                        <h5 className="text-darker">
+                          1991 — Bulmag Ltd (in Bulgarian - OOD) Foundation
+                        </h5>
+                      </ul>
+                      <ul>
+                        <h5 className="text-darker">
+                          {" "}
+                          1992 — IBM® Business Partner
+                        </h5>
+                      </ul>
+                      <ul>
+                        <h5 className="text-darker">
+                          1996 — Certified IBM® Service
+                        </h5>
+                      </ul>
+                      <ul>
+                        <h5 className="text-darker">
+                          {" "}
+                          1999 — IBM® Top Performer for Bulgaria
+                        </h5>
+                      </ul>
+                      <ul>
+                        <h5 className="text-darker">
+                          {" "}
+                          2002 — ISO 9001:2000 Certification
+                        </h5>
+                      </ul>
+                      <ul>
+                        <h5 className="text-darker">2003 — Bulmag AD (JSC)</h5>
+                      </ul>
+                      <ul>
+                        <h5 className="text-darker">
+                          2006 — IBM® Premier Business Partner
+                        </h5>
+                      </ul>
+                      <ul>
+                        <h5 className="text-darker">
+                          2007 — Lenovo® Premier Business Partner
+                        </h5>
+                      </ul>
+                      <ul>
+                        <h5 className="text-darker">
+                          2015 — HPE® Business Partner
+                        </h5>
+                      </ul>
+                      <ul>
+                        <h5 className="text-darker">
+                          {" "}
+                          2015 — SAP Labs® Business Partner
+                        </h5>
+                      </ul>
+                      <ul>
+                        <h5 className="text-darker">
+                          2016 — Transaction Systems® Business Partner
+                        </h5>
+                      </ul>
+
                       <ul className="text-dark">
-                        1991 — Bulmag Ltd (in Bulgarian - OOD) Foundation
+                        <h5 className="text-darker">
+                          2019 — eBulmag® Online Shop
+                        </h5>
                       </ul>
                       <ul className="text-dark">
-                        1992 — IBM® Business Partner
-                      </ul>
-                      <ul className="text-dark">
-                        1996 — Certified IBM® Service
-                      </ul>
-                      <ul className="text-dark">
-                        1999 — IBM® Top Performer for Bulgaria
-                      </ul>
-                      <ul className="text-dark">
-                        2002 — ISO 9001:2000 Certification
-                      </ul>
-                      <ul className="text-dark">2003 — Bulmag AD (JSC)</ul>
-                      <ul className="text-dark">
-                        2006 — IBM® Premier Business Partner
-                      </ul>
-                      <ul className="text-dark">
-                        2007 — Lenovo® Premier Business Partner
-                      </ul>
-                      <ul className="text-dark">
-                        2015 — HPE® Business Partner
-                      </ul>
-                      <ul className="text-dark">
-                        2015 — SAP Labs® Business Partner
-                      </ul>
-                      <ul className="text-dark">
-                        2016 — Transaction Systems® Business Partner
-                      </ul>
-                      <ul className="text-dark">2019 — eBulmag® Online Shop</ul>
-                      <ul className="text-dark">
-                        2020 — Authorised INFINIDAT Service Center
+                        <h5 className="text-darker">
+                          2020 — Authorised INFINIDAT Service Center
+                        </h5>
                       </ul>
                     </p>
                   </TabPane>

@@ -1,13 +1,9 @@
 var nodemailer = require('nodemailer');
 // const creds = require('../config/mail-credentials');
 
-let transporterToExport;
-
-function getTransporter(tr) {
-    transporterToExport = tr;
-}
 
 var tempAccount = nodemailer.createTestAccount().then(result => {
+
     var transport = {
         host: "smtp.ethereal.email",
         port: 587,
@@ -16,14 +12,9 @@ var tempAccount = nodemailer.createTestAccount().then(result => {
             user: result.user,
             pass: result.pass
         }
+
     };
-
-
-    var transporter = nodemailer.createTransport(transport).then(
-        tr => {
-            getTransporter(tr)
-        }
-    ).catch(err => { console.log("*@&#*@&#(*!&@^#*&^@!#*&^@!"), console.log(err) })
+    var transporter = nodemailer.createTransport(transport)
 
 
 
@@ -37,3 +28,5 @@ var tempAccount = nodemailer.createTestAccount().then(result => {
         }
     });
 })
+
+module.exports = tempAccount;

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "dev": "nodemon --exec npm start"
+    "prod": "nodemon --exec npm start"
   },
   "author": "ldj5",
   "license": "ISC",
