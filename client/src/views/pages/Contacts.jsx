@@ -65,7 +65,7 @@ class Contacts extends React.Component {
       axios.post(dbConstants.mailsUrl, data).then(response => {
         if (response.data.msg === "success") {
           console.log("Message Sent.");
-          window.location = "/";
+          window.location = "/contacts";
         } else if (response.data.msg === "fail") {
           console.log(response);
           console.log("Message failed to send.");
