@@ -91,6 +91,7 @@ class Contacts extends React.Component {
   onLoadRecaptcha() {
     if (this.captchaDemo) {
       this.captchaDemo.reset();
+      this.setState({ captchaCheck: false });
     }
   }
   verifyCallback(recaptchaToken) {

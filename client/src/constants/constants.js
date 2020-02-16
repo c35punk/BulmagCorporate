@@ -59,13 +59,6 @@ const notifications = {
   passwordRequired: "Please provide your password",
   passwordsDoNotMatch: "Passwords do not match",
   usernameRequired: "Please provide your username",
-  machineTitleRequired: "Please provide machine title",
-  machineAuthorRequired: "Please provide machine author",
-  machineGenresRequired: "Please provide machine genres",
-  machineImageRequired: "Please provide machine image URL",
-  machinePriceRequired: "Please provide valid machine price",
-  machineDescriptionRequired: "Please provide machine description",
-  machineDataRequired: "Please provide machine data"
 };
 
 const notificationMessages = {

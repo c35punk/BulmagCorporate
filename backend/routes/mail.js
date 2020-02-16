@@ -20,7 +20,7 @@ router.post('/send', (req, res, next) => {
     var client = nodemailer.createTransport(sgTransport(options));
     var mail = {
         from: email,
-        to: 'ldjantov@gmail.com, vterziyski@bulmag.bg, office@bulmag.bg, bulmag@bulmag.bg',
+        to: 'ldjantov@bulmag.bg' /*, vterziyski@bulmag.bg, office@bulmag.bg, bulmag@bulmag.bg'*/,
         subject: 'New Message from Contact Form',
         html: `You have received message from <h1>${name}:</h1><br /><h4>${message}</h4>`
     }

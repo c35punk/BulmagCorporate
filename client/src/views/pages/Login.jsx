@@ -21,6 +21,7 @@ import {
   Row,
   Col
 } from "reactstrap";
+import { toast, ToastContainer } from "react-toastify";
 
 class Login extends React.Component {
   constructor(props) {
@@ -65,41 +66,37 @@ class Login extends React.Component {
       },
       () => {
         try {
-          axios
-            .post(dbConstants.loginUrl, credentials)
-            .then(res => {
-              // this.setState({ token: res.data.token });
-              console.log("Success@@:");
-              console.log(res);
+          axios.post(dbConstants.loginUrl, credentials).then(res => {
+            // this.setState({ token: res.data.token });
+            console.log("Success@@:");
+            console.log(res);
 
-              const isAdmin = res.data.user.roles
-                .map(role => role.toLowerCase())
-                .some(role => role === "admin");
+            const isAdmin = res.data.user.roles
+              .map(role => role.toLowerCase())
+              .some(role => role === "admin");
 
-              console.log("isAdmin");
-              console.log(isAdmin);
+            console.log("isAdmin");
+            console.log(isAdmin);
 
-              window.localStorage.setItem("auth_token", res.data.token);
-              window.localStorage.setItem(
-                "user",
-                JSON.stringify({
-                  ...res.data.user,
-                  isAdmin: isAdmin,
-                  isLoggedIn: true
-                })
-              );
-              updateUser({
-                isAdmin,
-                isLoggedIn: true,
-                updateUser,
-                ...res.data.user
-              });
-              isAdmin
-                ? (window.location = "/")
-                : (window.location = "/profile");
-              console.log(window.localStorage);
-              console.log(res.data.user.roles);
+            window.localStorage.setItem("auth_token", res.data.token);
+            window.localStorage.setItem(
+              "user",
+              JSON.stringify({
+                ...res.data.user,
+                isAdmin: isAdmin,
+                isLoggedIn: true
+              })
+            );
+            updateUser({
+              isAdmin,
+              isLoggedIn: true,
+              updateUser,
+              ...res.data.user
             });
+            isAdmin ? (window.location = "/") : (window.location = "/profile");
+            console.log(window.localStorage);
+            console.log(res.data.user.roles);
+          });
         } catch (error) {
           this.setState({
             error: error.message
@@ -113,6 +110,7 @@ class Login extends React.Component {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
+    toast.configure();
   }
 
   render() {
