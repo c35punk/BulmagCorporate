@@ -56,7 +56,7 @@ function validateLoginForm(payload) {
   }
 
   if (!isFormValid) {
-    message = 'Check the form for errors.'
+    message = 'Incorrect username or password.'
   }
 
   return {

@@ -21,7 +21,6 @@ import {
   Row,
   Col
 } from "reactstrap";
-import { toast, ToastContainer } from "react-toastify";
 
 class Login extends React.Component {
   constructor(props) {
@@ -30,7 +29,8 @@ class Login extends React.Component {
     this.state = {
       email: "",
       password: "",
-      error: ""
+      error: "",
+      formSubmitted: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -60,74 +60,65 @@ class Login extends React.Component {
       password
     };
 
-    this.setState(
-      {
-        error: ""
-      },
-      () => {
-        try {
-          axios.post(dbConstants.loginUrl, credentials).then(res => {
-            // this.setState({ token: res.data.token });
-            console.log("Success@@:");
-            console.log(res);
+    this.setState({ formSubmitted: true }, () => {
+      try {
+        axios.post(dbConstants.loginUrl, credentials).then(res => {
+          // this.setState({ token: res.data.token });
+          console.log("Success@@:");
+          console.log(res.data);
 
-            const isAdmin = res.data.user.roles
-              .map(role => role.toLowerCase())
-              .some(role => role === "admin");
+          if (!res.data.success) {
+            this.setState({ error: res.data.message, formSubmitted: false });
+            return;
+          }
 
-            console.log("isAdmin");
-            console.log(isAdmin);
+          const isAdmin = res.data.user.roles
+            .map(role => role.toLowerCase())
+            .some(role => role === "admin");
 
-            window.localStorage.setItem("auth_token", res.data.token);
-            window.localStorage.setItem(
-              "user",
-              JSON.stringify({
-                ...res.data.user,
-                isAdmin: isAdmin,
-                isLoggedIn: true
-              })
-            );
-            updateUser({
-              isAdmin,
-              isLoggedIn: true,
-              updateUser,
-              ...res.data.user
-            });
-            isAdmin ? (window.location = "/") : (window.location = "/profile");
-            console.log(window.localStorage);
-            console.log(res.data.user.roles);
+          window.localStorage.setItem("auth_token", res.data.token);
+          window.localStorage.setItem(
+            "user",
+            JSON.stringify({
+              ...res.data.user,
+              isAdmin: isAdmin,
+              isLoggedIn: true
+            })
+          );
+          updateUser({
+            isAdmin,
+            isLoggedIn: true,
+            updateUser,
+            ...res.data.user
           });
-        } catch (error) {
-          this.setState({
-            error: error.message
-          });
-        }
+
+          isAdmin
+            ? (window.location = "/admin-dashboard")
+            : (window.location = "/profile");
+        });
+      } catch (e) {
+        console.log(e);
       }
-    );
+    });
   }
 
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
-    toast.configure();
   }
 
   render() {
-    const { email, password, error } = this.state;
+    const { email, password, error, formSubmitted } = this.state;
 
     console.log("this.props");
     console.log(this.props);
+    console.log(this.state);
 
     return (
       <>
         <main ref="main">
           <section className="section section-shaped section-lg">
-            {error.length ? (
-              <Alert dismissible className="alert" variant="danger">
-                {error}
-              </Alert>
-            ) : null}
             <div className="shape shape-style-1 bg-gradient-default">
               <span />
 
@@ -146,6 +137,7 @@ class Login extends React.Component {
                           {error}
                         </Alert>
                       ) : null}
+
                       <div className="btn-wrapper text-center">
                         <Button
                           className="btn-neutral btn-icon"
