@@ -8,15 +8,12 @@ const router = new express.Router()
 function validateSignupForm(payload) {
   const errors = {}
   let isFormValid = true
-  let message = ''
+
+  console.log(payload)
 
   if (!payload || typeof payload.username !== 'string' || payload.username.trim().length < 4) {
     isFormValid = false
     errors.username = 'Username must be at least 4 characters long'
-  }
-  if (!payload || !payload.passwordMatch) {
-    isFormValid = false
-    errors.passwordMatch = 'Passwords must match'
   }
 
   if (!payload || typeof payload.email !== 'string' || !validator.isEmail(payload.email)) {
@@ -28,14 +25,43 @@ function validateSignupForm(payload) {
     isFormValid = false
     errors.password = 'Password must be at least 8 characters long'
   }
+  if (!payload || !payload.passwordMatch) {
+    isFormValid = false
+    errors.passwordMatch = 'Passwords must match'
+  }
+  if (!payload || typeof payload.companyName !== 'string' || payload.username.trim().length < 2) {
+    isFormValid = false
+    errors.companyName = 'Company name must be at least 2 characters long'
+  }
+
+  if (!payload || typeof payload.address !== 'string' || payload.address.trim().length < 8) {
+    isFormValid = false
+    errors.address = 'Address must be at least 8 characters long'
+  }
+  if (!payload || typeof payload.contactPerson !== 'string' || payload.contactPerson.trim().length < 8) {
+    isFormValid = false
+    errors.contactPerson = 'Contact Person must be at least 3 characters long'
+  }
+  if (!payload || typeof payload.vatNumber !== 'string' || payload.vatNumber.substr(0, 2) !== 'BG') {
+    isFormValid = false
+    errors.vatNumber = 'VAT Number must start with "BG" followed by 9 digits'
+  }
+
+  if (!payload || typeof payload.companyImage !== 'string' || payload.companyImage.substr(0, 4) !== 'http') {
+    isFormValid = false
+    errors.companyImage = 'IMAGE link must start with "http"'
+  }
+  if (!payload || !payload.agree) {
+    isFormValid = false
+    errors.agree = 'You must accept our Terms and Conditions'
+  }
 
   if (!isFormValid) {
-    message = 'Check the form for errors.'
+    errors.message = 'Check the form for errors.'
   }
 
   return {
     success: isFormValid,
-    message,
     errors
   }
 }
@@ -71,7 +97,6 @@ router.post('/signup', (req, res, next) => {
   if (!validationResult.success) {
     return res.status(200).json({
       success: false,
-      message: validationResult.message,
       errors: validationResult.errors
     })
   }

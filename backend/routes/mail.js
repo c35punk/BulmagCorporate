@@ -3,7 +3,48 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 const sgTransport = require('nodemailer-sendgrid-transport');
 
+
+function validateMailForm(payload) {
+    const errors = {}
+    let isFormValid = true
+
+    if (!payload || typeof payload.name !== 'string' || payload.name.trim().length === 0) {
+        isFormValid = false
+        errors.name = 'Please provide your name.'
+    }
+
+    if (!payload || typeof payload.email !== 'string' || payload.email.trim().length === 0 || !validator.isEmail(payload.email)) {
+        isFormValid = false
+        errors.email = 'Please provide your email address.'
+    }
+    if (!payload || typeof payload.message !== 'string' || payload.message.trim().length === 0 || !validator.isEmail(payload.message)) {
+        isFormValid = false
+        errors.message = 'Please write us a message.'
+    }
+
+
+    if (!isFormValid) {
+        errors.message = 'Check mail form for errors'
+    }
+
+    return {
+        success: isFormValid,
+        errors
+    }
+}
+
+
 router.post('/send', (req, res, next) => {
+
+
+    const validationResult = validateMailForm(req.body)
+    if (!validationResult.success) {
+        return res.status(200).json({
+            success: false,
+            errors: validationResult.errors
+        })
+    }
+
     var name = req.body.name
     var email = req.body.email
     var message = req.body.message

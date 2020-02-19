@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { dbConstants } from "../../constants/constants";
-
+import { dbConstants, functions } from "../../constants/constants";
+import { isMobile } from "react-device-detect";
 // reactstrap components
 import {
   Button,
@@ -17,7 +17,9 @@ import {
   InputGroup,
   Container,
   Row,
-  Col
+  Col,
+  UncontrolledAlert,
+  UncontrolledTooltip
 } from "reactstrap";
 
 class Register extends React.Component {
@@ -34,7 +36,8 @@ class Register extends React.Component {
       vatNumber: "",
       contactPerson: "",
       companyImage: "",
-      address: ""
+      address: "",
+      error: ""
     };
 
     this.handleName = this.handleName.bind(this);
@@ -47,7 +50,6 @@ class Register extends React.Component {
     this.handleVatNumber = this.handleVatNumber.bind(this);
     this.handleContactPerson = this.handleContactPerson.bind(this);
     this.handleAddress = this.handleAddress.bind(this);
-
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -97,19 +99,22 @@ class Register extends React.Component {
       vatNumber: this.state.vatNumber,
       contactPerson: this.state.contactPerson,
       companyImage: this.state.companyImage,
-      address: this.state.address
+      address: this.state.address,
+      agree: this.state.agree
     };
 
-    axios
-      .post(dbConstants.registerUrl, newUser)
-      .then(res => console.log(res.data));
-    console.log("newUser");
-    console.log(newUser);
-    console.log(this.state);
+    axios.post(dbConstants.registerUrl, newUser).then(res => {
+      if (!res.data.success) {
+        this.setState({ error: res.data.errors });
+        console.log(this.state.error);
+        return;
+      }
+      console.log(res.data);
+    });
 
     event.preventDefault();
 
-    window.location = "/login";
+    // window.location = "/login";
   }
 
   componentDidMount() {
@@ -119,15 +124,42 @@ class Register extends React.Component {
   }
 
   render() {
+    let alertToShow = this.state.error ? (
+      <UncontrolledAlert color="danger" fade={true}>
+        <span className="alert-inner--text ml-1">
+          {this.state.error.message}
+        </span>
+      </UncontrolledAlert>
+    ) : null;
+
+    function errorTooltip(field) {
+      return this.state.error ? (
+        <UncontrolledTooltip
+          style={{ backgroundColor: "red", color: "black" }}
+          delay={0}
+          target={field}
+          placement="right"
+        >
+          <span className="alert-inner--text ml-1">
+            {this.state.error[{ field }]}
+          </span>
+        </UncontrolledTooltip>
+      ) : null;
+    }
+
+    function showTip(info, id) {
+      return !isMobile ? (
+        <UncontrolledTooltip delay={0} target={id} placement="right">
+          {info}
+        </UncontrolledTooltip>
+      ) : null;
+    }
+
     return (
       <>
         <main ref="main">
           <section className="section section-shaped section-lg">
             <div className="shape shape-style-1 bg-gradient-default">
-              <span />
-              <span />
-              <span />
-              <span />
               <span />
               <span />
               <span />
@@ -138,45 +170,13 @@ class Register extends React.Component {
                 <Col lg="5">
                   <Card className="bg-secondary shadow border-0">
                     <CardHeader className="bg-white pb-5">
-                      <div className="text-muted text-center mb-3">
-                        <small>Sign up with</small>
-                      </div>
-                      <div className="text-center">
-                        <Button
-                          className="btn-neutral btn-icon mr-4"
-                          color="default"
-                          to="/login"
-                          tag={Link}
-                        >
-                          <span className="btn-inner--icon mr-1">
-                            <img
-                              alt="..."
-                              src={require("assets/img/icons/common/github.svg")}
-                            />
-                          </span>
-                          <span className="btn-inner--text">Github</span>
-                        </Button>
-                        <Button
-                          className="btn-neutral btn-icon ml-1"
-                          color="default"
-                          to="/login"
-                          tag={Link}
-                        >
-                          <span className="btn-inner--icon mr-1">
-                            <img
-                              alt="..."
-                              src={require("assets/img/icons/common/google.svg")}
-                            />
-                          </span>
-                          <span className="btn-inner--text">Google</span>
-                        </Button>
-                      </div>
+                      <div className=" text-center display-3 text-primary">
+                        Register
+                      </div>{" "}
                     </CardHeader>
                     <CardBody className="px-lg-5 py-lg-5">
-                      <div className="text-center text-muted mb-4">
-                        <small>Or sign up with credentials</small>
-                      </div>
                       <Form role="form" onSubmit={this.handleSubmit}>
+                        {alertToShow}
                         <FormGroup>
                           <InputGroup className="input-group-alternative mb-3">
                             <InputGroupAddon addonType="prepend">
@@ -187,10 +187,12 @@ class Register extends React.Component {
                             <Input
                               placeholder="Username"
                               type="text"
-                              name="name"
-                              value={this.state.name}
+                              name="username"
+                              id="username"
+                              value={this.state.username}
                               onChange={this.handleName}
                             />
+                            {showTip("Minimum 4 chars", "username")}
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -204,9 +206,14 @@ class Register extends React.Component {
                               placeholder="Email"
                               type="email"
                               name="email"
+                              id="email"
                               value={this.state.email}
                               onChange={this.handleEmail}
                             />
+                            {showTip(
+                              "Please provide correct email address",
+                              "email"
+                            )}
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -219,11 +226,13 @@ class Register extends React.Component {
                             <Input
                               placeholder="Password"
                               type="password"
+                              id="password"
                               autoComplete="off"
                               name="password"
                               value={this.state.password}
                               onChange={this.handlePassword}
                             />
+                            {showTip("Minimum 8 chars", "password")}
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -237,10 +246,12 @@ class Register extends React.Component {
                               placeholder="Repeat Password"
                               type="password"
                               name="repeatPassword"
+                              id="repeatPassword"
                               autoComplete="off"
                               value={this.state.repeatPassword}
                               onChange={this.handleRepeatPassword}
                             />
+                            {showTip("Passwords must match", "repeatPassword")}
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -254,9 +265,11 @@ class Register extends React.Component {
                               placeholder="Company Name"
                               type="text"
                               name="companyName"
+                              id="companyName"
                               value={this.state.companyName}
                               onChange={this.handleCompanyName}
                             />
+                            {showTip("Minimum 2 chars", "companyName")}
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -270,10 +283,15 @@ class Register extends React.Component {
                               placeholder="Company Address"
                               type="text"
                               name="address"
+                              id="address"
                               autoComplete="off"
                               value={this.state.address}
                               onChange={this.handleAddress}
                             />
+                            {showTip(
+                              "Country, City, Street, Postal Code",
+                              "address"
+                            )}
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -287,10 +305,12 @@ class Register extends React.Component {
                               placeholder="Contact Person"
                               type="text"
                               name="contactPerson"
+                              id="contactPerson"
                               autoComplete="off"
                               value={this.state.contactPerson}
                               onChange={this.handleContactPerson}
                             />
+                            {showTip("Company GM/CEO/Owner", "contactPerson")}
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -304,10 +324,12 @@ class Register extends React.Component {
                               placeholder="VAT Number"
                               type="text"
                               name="vatNumber"
+                              id="vatNumber"
                               autoComplete="off"
                               value={this.state.vatNumber}
                               onChange={this.handleVatNumber}
                             />
+                            {showTip("BGXXXXXXXXX", "vatNumber")}
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -321,10 +343,15 @@ class Register extends React.Component {
                               placeholder="Link to Company Logo Image"
                               type="text"
                               name="companyImage"
+                              id="companyImage"
                               autoComplete="off"
                               value={this.state.companyImage}
                               onChange={this.handleCompanyImage}
                             />
+                            {showTip(
+                              'Link should start with "http"',
+                              "companyImage"
+                            )}
                           </InputGroup>
                         </FormGroup>
                         <div className="text-muted font-italic">
