@@ -8,19 +8,19 @@ function validateMailForm(payload) {
     const errors = {}
     let isFormValid = true
 
-    if (!payload || typeof payload.name !== 'string' || payload.name.trim().length === 0) {
-        isFormValid = false
-        errors.name = 'Please provide your name.'
-    }
+    // if (!payload || typeof payload.name !== 'string' || payload.name.trim().length === 0) {
+    //     isFormValid = false
+    //     errors.name = 'Please provide your name.'
+    // }
 
-    if (!payload || typeof payload.email !== 'string' || payload.email.trim().length === 0 || !validator.isEmail(payload.email)) {
-        isFormValid = false
-        errors.email = 'Please provide your email address.'
-    }
-    if (!payload || typeof payload.message !== 'string' || payload.message.trim().length === 0 || !validator.isEmail(payload.message)) {
-        isFormValid = false
-        errors.message = 'Please write us a message.'
-    }
+    // if (!payload || typeof payload.email !== 'string' || payload.email.trim().length === 0 || !validator.isEmail(payload.email)) {
+    //     isFormValid = false
+    //     errors.email = 'Please provide your email address.'
+    // }
+    // if (!payload || typeof payload.message !== 'string' || payload.message.trim().length === 0 || !validator.isEmail(payload.message)) {
+    //     isFormValid = false
+    //     errors.message = 'Please write us a message.'
+    // }
 
 
     if (!isFormValid) {
@@ -59,7 +59,7 @@ router.post('/send', (req, res, next) => {
     var client = nodemailer.createTransport(sgTransport(options));
     var mail = {
         from: email,
-        to: 'ldjantov@bulmag.bg, vterziyski@bulmag.bg, office@bulmag.bg, bulmag@bulmag.bg',
+        to: 'ldjantov@bulmag.bg',
         subject: 'New Contact Form Message',
         html: `<img src="https://team-vision.bg/wp-content/uploads/2019/08/Bulmag.png" alt="BULMAG AD"/><br/><h2>${name}</h2><h4>${message}</h4>`
     }

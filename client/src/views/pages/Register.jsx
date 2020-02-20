@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { dbConstants, functions } from "../../constants/constants";
+import { dbConstants } from "../../constants/constants";
 import { isMobile } from "react-device-detect";
 // reactstrap components
 import {
@@ -124,25 +124,27 @@ class Register extends React.Component {
   }
 
   render() {
-    let alertToShow = this.state.error ? (
-      <UncontrolledAlert color="danger" fade={true}>
-        <span className="alert-inner--text ml-1">
-          {this.state.error.message}
-        </span>
+    let { error, password, passwordMatch } = this.state;
+
+    let alertToShow = error ? (
+      <UncontrolledAlert style={{ backgroundColor: "#aa2727" }} fade={true}>
+        <span className="alert-inner--text ml-1">{error.message}</span>
       </UncontrolledAlert>
     ) : null;
 
     function errorTooltip(field) {
-      return this.state.error ? (
+      return !isMobile && error[field] ? (
         <UncontrolledTooltip
-          style={{ backgroundColor: "red", color: "black" }}
-          delay={0}
+          style={{
+            backgroundColor: "#aa2727",
+            color: "black",
+            visability: "visible"
+          }}
+          delay={{ show: 0, hide: 1 }}
           target={field}
           placement="right"
         >
-          <span className="alert-inner--text ml-1">
-            {this.state.error[{ field }]}
-          </span>
+          <span className="alert-inner--text ml-1">{error[field]}</span>
         </UncontrolledTooltip>
       ) : null;
     }
@@ -154,6 +156,8 @@ class Register extends React.Component {
         </UncontrolledTooltip>
       ) : null;
     }
+
+    console.log(this.state);
 
     return (
       <>
@@ -192,7 +196,9 @@ class Register extends React.Component {
                               value={this.state.username}
                               onChange={this.handleName}
                             />
-                            {showTip("Minimum 4 chars", "username")}
+                            {!error
+                              ? showTip("Minimum 4 chars", "username")
+                              : errorTooltip("username")}
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -210,10 +216,12 @@ class Register extends React.Component {
                               value={this.state.email}
                               onChange={this.handleEmail}
                             />
-                            {showTip(
-                              "Please provide correct email address",
-                              "email"
-                            )}
+                            {!error
+                              ? showTip(
+                                  "Please provide correct email address",
+                                  "email"
+                                )
+                              : errorTooltip("email")}
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -232,7 +240,9 @@ class Register extends React.Component {
                               value={this.state.password}
                               onChange={this.handlePassword}
                             />
-                            {showTip("Minimum 8 chars", "password")}
+                            {!error
+                              ? showTip("Minimum 8 chars", "password")
+                              : errorTooltip("password")}
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -251,7 +261,12 @@ class Register extends React.Component {
                               value={this.state.repeatPassword}
                               onChange={this.handleRepeatPassword}
                             />
-                            {showTip("Passwords must match", "repeatPassword")}
+                            {!error
+                              ? showTip(
+                                  "Passwords must match",
+                                  "repeatPassword"
+                                )
+                              : errorTooltip("repeatPassword")}
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -269,7 +284,9 @@ class Register extends React.Component {
                               value={this.state.companyName}
                               onChange={this.handleCompanyName}
                             />
-                            {showTip("Minimum 2 chars", "companyName")}
+                            {!error
+                              ? showTip("Minimum 2 chars", "companyName")
+                              : errorTooltip("companyName")}
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -288,10 +305,12 @@ class Register extends React.Component {
                               value={this.state.address}
                               onChange={this.handleAddress}
                             />
-                            {showTip(
-                              "Country, City, Street, Postal Code",
-                              "address"
-                            )}
+                            {!error
+                              ? showTip(
+                                  "Country, City, Street, Postal Code",
+                                  "address"
+                                )
+                              : errorTooltip("address")}
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -310,7 +329,9 @@ class Register extends React.Component {
                               value={this.state.contactPerson}
                               onChange={this.handleContactPerson}
                             />
-                            {showTip("Company GM/CEO/Owner", "contactPerson")}
+                            {!error
+                              ? showTip("Company GM/CEO/Owner", "contactPerson")
+                              : errorTooltip("contactPerson")}
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -329,7 +350,9 @@ class Register extends React.Component {
                               value={this.state.vatNumber}
                               onChange={this.handleVatNumber}
                             />
-                            {showTip("BGXXXXXXXXX", "vatNumber")}
+                            {!error
+                              ? showTip("BGXXXXXXXXX", "vatNumber")
+                              : errorTooltip("vatNumber")}
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
@@ -348,18 +371,26 @@ class Register extends React.Component {
                               value={this.state.companyImage}
                               onChange={this.handleCompanyImage}
                             />
-                            {showTip(
-                              'Link should start with "http"',
-                              "companyImage"
-                            )}
+                            {!error
+                              ? showTip(
+                                  'Link should start with "http"',
+                                  "companyImage"
+                                )
+                              : errorTooltip("companyImage")}
                           </InputGroup>
                         </FormGroup>
                         <div className="text-muted font-italic">
                           <small>
                             password strength:{" "}
-                            <span className="text-success font-weight-700">
-                              strong
-                            </span>
+                            {RegExp(password).test("12345678") ? (
+                              <span className="text-danger font-weight-700">
+                                Your password is weak
+                              </span>
+                            ) : (
+                              <span className="text-success font-weight-700">
+                                Your password is strong
+                              </span>
+                            )}
                           </small>
                         </div>
                         <Row className="my-4">

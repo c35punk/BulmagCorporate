@@ -25,11 +25,11 @@ function validateSignupForm(payload) {
     isFormValid = false
     errors.password = 'Password must be at least 8 characters long'
   }
-  if (!payload || !payload.passwordMatch) {
+  if (!payload || !payload.repeatPassword) {
     isFormValid = false
-    errors.passwordMatch = 'Passwords must match'
+    errors.repeatPassword = 'Passwords must match'
   }
-  if (!payload || typeof payload.companyName !== 'string' || payload.username.trim().length < 2) {
+  if (!payload || typeof payload.companyName !== 'string' || payload.companyName.trim().length < 2) {
     isFormValid = false
     errors.companyName = 'Company name must be at least 2 characters long'
   }
