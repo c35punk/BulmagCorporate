@@ -25,7 +25,7 @@ function validateSignupForm(payload) {
     isFormValid = false
     errors.password = 'Password must be at least 8 characters long'
   }
-  if (!payload || !payload.repeatPassword) {
+  if (!payload || !payload.passwordMatch) {
     isFormValid = false
     errors.repeatPassword = 'Passwords must match'
   }
