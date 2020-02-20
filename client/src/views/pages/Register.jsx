@@ -124,7 +124,7 @@ class Register extends React.Component {
   }
 
   render() {
-    let { error, password, passwordMatch } = this.state;
+    let { error, password } = this.state;
 
     let alertToShow = error ? (
       <UncontrolledAlert style={{ backgroundColor: "#aa2727" }} fade={true}>
@@ -382,13 +382,15 @@ class Register extends React.Component {
                         <div className="text-muted font-italic">
                           <small>
                             password strength:{" "}
-                            {RegExp(password).test("12345678") ? (
+                            {!RegExp(
+                              /^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{8,})/g
+                            ).test(password) ? (
                               <span className="text-danger font-weight-700">
-                                Your password is weak
+                                weak
                               </span>
                             ) : (
                               <span className="text-success font-weight-700">
-                                Your password is strong
+                                strong
                               </span>
                             )}
                           </small>
