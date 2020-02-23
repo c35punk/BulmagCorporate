@@ -6,6 +6,7 @@ import axios from "axios";
 import { dbConstants } from "../../constants/constants";
 import { loadReCaptcha, ReCaptcha } from "react-recaptcha-google";
 import { Parallax } from "react-parallax";
+import { isMobile } from "react-device-detect";
 
 // reactstrap components
 import {
@@ -18,6 +19,7 @@ import {
   InputGroupText,
   InputGroup,
   Container,
+  UncontrolledAlert,
   Row,
   Col,
   Form
@@ -80,7 +82,7 @@ class Contacts extends React.Component {
         } else if (response.data.msg === "fail") {
           console.log(response);
           console.log("Message failed to send.");
-          // window.location = "/contacts";
+          window.location = "/contacts";
         }
       });
     } else {
@@ -112,6 +114,15 @@ class Contacts extends React.Component {
   }
 
   render() {
+    let alertToShow = this.state.error ? (
+      !isMobile ? (
+        <UncontrolledAlert color="danger" fade={true}>
+          <span className="alert-inner--text ml-1">
+            {this.state.error.message}
+          </span>
+        </UncontrolledAlert>
+      ) : null
+    ) : null;
     return (
       <>
         <main ref="main">
