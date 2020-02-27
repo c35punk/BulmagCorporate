@@ -129,7 +129,7 @@ class Login extends React.Component {
                 <Col lg="5">
                   <Card className="bg-secondary shadow border-0">
                     <CardHeader className="bg-white pb-5">
-                      {formSubmitted ? (
+                      {error ? (
                         <Alert dismissible className="alert" variant="danger">
                           {error}
                         </Alert>

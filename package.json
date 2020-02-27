@@ -7,7 +7,7 @@
   "license": "MIT",
   "homepage": "https://www.bulmag.bg",
   "scripts": {
-    "start": "concurrently \"cd backend && npm run prod\" \"cd client && npm run build\""
+    "start": "concurrently \"cd backend && npm run prod\" \"cd client && npm serve -p 80 -s build\""
   },
   "dependencies": {
     "concurrently": "^4.0.1"
