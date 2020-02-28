@@ -41,7 +41,7 @@ class Products extends React.Component {
         bgImageAlt="the dog"
         strength={450}
       >
-        {" "}
+    
         <div className="shape shape-style-1 shape-default "></div>
         <section className="section section-md section-shaped mb--200">
           <Container className="py-lg-md d-flex">
@@ -54,6 +54,7 @@ class Products extends React.Component {
             </div>
           </Container>
           <div style={{ height: "350px" }} />
+          
         </section>
       </Parallax>
     ) : (
