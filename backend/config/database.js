@@ -12,9 +12,9 @@ module.exports = (options) => {
     if (err) {
       throw err
     }
-    console.log('MongoDB up and running...')
     User.seedAdminUser()
     Product.initialList()
+    console.log('MongoDB up and running...')
   })
   db.on('error', err => console.log(`Database error: ${err}`))
 }
