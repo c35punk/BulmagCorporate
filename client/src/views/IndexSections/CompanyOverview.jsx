@@ -1,19 +1,21 @@
 import React from "react";
 
 import { Parallax } from "react-parallax";
+import { isMobile } from "react-device-detect";
 
 // reactstrap components
 import { Container, Row, Col } from "reactstrap";
 
 class CompanyOverview extends React.Component {
   render() {
+    let strengthImage = isMobile ? 100 : 400;
     return (
       <>
         <Parallax
           blur={{ min: -5, max: 5 }}
-          bgImage={require("../../assets/img/pics-vte5/IMG_0864.jpg")}
-          bgImageAlt="the dog"
-          strength={400}
+          bgImage={require("../../assets/img/pics-vte5/nasa-Q1p7bh3SHj8-unsplash.jpg")}
+          bgImageAlt="Bulmag DC"
+          strength={strengthImage}
         >
           <div style={{ height: "250px" }} />
 
@@ -29,7 +31,7 @@ class CompanyOverview extends React.Component {
                     <Col className="order-md-6" md="6">
                       <div className="display-3">
                         <p className="lead">
-                          <h2 className="text-main">
+                          <h2 className="text-secondary">
                             Enterprise Class Vendors and Solutions
                           </h2>
                         </p>
@@ -44,7 +46,7 @@ class CompanyOverview extends React.Component {
                     <Col className="order-md-6" md="6">
                       <div className="display-3">
                         <p className="lead">
-                          <h2 className="text-main">
+                          <h2 className="text-secondary">
                             25+ Years Experience in System Integration
                           </h2>
                         </p>
@@ -59,7 +61,9 @@ class CompanyOverview extends React.Component {
                     <Col className="order-md-6" md="6">
                       <div className="display-3">
                         <p className="lead">
-                          <h2 className="text-main">Professional Excellence</h2>
+                          <h2 className="text-secondary">
+                            Professional Excellence
+                          </h2>
                         </p>
 
                         <p className="text-secondary">
@@ -73,7 +77,7 @@ class CompanyOverview extends React.Component {
                     <Col className="order-md-6" md="6">
                       <div className="display-3">
                         <p className="lead">
-                          <h2 className="text-main">
+                          <h2 className="text-secondary">
                             Customizable Cloud Offerings
                           </h2>
                         </p>
