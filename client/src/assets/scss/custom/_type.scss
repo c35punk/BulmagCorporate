@@ -120,7 +120,7 @@ $letterStagger: 0.1s;
   color: #fff;
   
   @mixin sliderReady {
-    .slider.s--ready & {
+    .slider.x--ready & {
       @content;
     }
   }
