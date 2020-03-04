@@ -16,8 +16,7 @@ const items = [
     header: (
       <div
         style={{
-          textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black",
-          
+          textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
         }}
       >
         System Integration Services
@@ -40,8 +39,7 @@ const items = [
     header: (
       <div
         style={{
-          textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black",
-          
+          textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
         }}
       >
         Payment Solutions
@@ -59,8 +57,7 @@ const items = [
     header: (
       <div
         style={{
-          textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black",
-          
+          textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
         }}
       >
         Post Warranty Enterprise Maintenance

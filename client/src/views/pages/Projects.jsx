@@ -14,27 +14,6 @@ class Projects extends React.Component {
     this.refs.main.scrollTop = 0;
   }
   render() {
-    let image = isMobile ? (
-      <Col>
-        <img
-          src="https://katina.bg/wp-content/uploads/2018/04/bl-euro.jpg"
-          alt="..."
-          style={{
-            width: "330px",
-            height: "455px",
-            objectFit: "contain"
-          }}
-        />
-      </Col>
-    ) : (
-      <Col>
-        <img
-          src="https://katina.bg/wp-content/uploads/2018/04/bl-euro.jpg"
-          alt="..."
-        />
-      </Col>
-    );
-
     return (
       <>
         <main ref="main" className="text-darker">
