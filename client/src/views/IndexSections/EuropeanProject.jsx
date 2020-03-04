@@ -15,7 +15,7 @@ const EuropeanProjectInfo = () => {
         alt="..."
         style={{
           width: "330px",
-          height: "455px",
+          height: "205px",
           objectFit: "contain"
         }}
       />
@@ -31,6 +31,30 @@ const EuropeanProjectInfo = () => {
 
   let languageVersion = checked ? (
     <Row id="bgVer">
+      <p>
+        На 24.02.2020г. Булмаг АД сключи договор за безвъзмездна финансова помощ
+        по Оперативна Програма „Иновации и конкурентоспособност“ 2014-2020,
+        процедура за „Подобряване на производствения капацитет в МСП“.{" "}
+        <p>
+          {" "}
+          Общата стойност на проекта е 1 071 000.00 лв., от които 637 245.00 лв.
+          европейско финансиране, 112 455.00 лв. национално съфинансиран, както
+          и 321 300.00 лв. самофинансиране от бенефициента.
+        </p>{" "}
+        Основната цел на проекта е подобряване на производствения капацитет на
+        Булмаг АД с цел повишаване на конкурентоспособността и засилване на
+        експортния потенциал на предприятието. Поставената цел ще бъде
+        постигната посредством инвестицията във високотехнологично оборудване и
+        специализиран софтуер за предоставяне на услуги в областта на
+        информационните технологии. Вследствие на изпълнението на проект
+        „Подобряване на производствения капацитет на Булмаг АД“ очакваме да
+        постигнем следните резултати: повишаване конкурентоспособността на
+        предприятието и по-успешното му присъствие на националните и външни
+        пазари чрез увеличаване обема на услугите, които предоставя,
+        оптимизиране на процесите, постигане на по-висока ефективност,
+        намаляване на разходите, подобряване на предлаганите услуги. Начало на
+        проекта: 24.02.2020г. Край на проекта: 24.02.2021г.
+      </p>
       <p>
         На 29.03.2016 г. <strong>Булмаг АД</strong> подписа договор за
         безвъзмездни средства по{" "}
@@ -91,6 +115,31 @@ const EuropeanProjectInfo = () => {
   ) : (
     <Row id="enVer">
       <p>
+        On 02/24/2020 Bulmag AD has concluded a grant contract under Operational
+        Program "Innovation and Competitiveness" 2014-2020, procedure for
+        "Improving the production capacity in SMEs".{" "}
+        <p>
+          The total value of the project is 1 071 000.00 BGN, of which 637
+          245.00 BGN is European funding, 112 455.00 BGN is nationally
+          co-financed, and 321 300.00 BGN is self-financing from the
+          beneficiary.
+        </p>{" "}
+        The main objective of the project is to improve the production capacity
+        of Bulmag AD in order to increase the competitiveness and enhance the
+        export potential of the company. The goal will be achieved by investing
+        in high-tech equipment and specialized software to provide information
+        technology services.{" "}
+        <p>
+          {" "}
+          As a result of the implementation of the project "Improving the
+          production capacity of Bulmag AD" we expect to achieve the following
+          results: increasing the competitiveness of the company and its more
+          successful presence on national and foreign markets by increasing the
+          volume of services it provides, optimizing the processes, achieving
+          higher efficiency, reduced costs, improved service delivery.
+        </p>
+      </p>
+      <p>
         On 29/03/2016, the <strong>Bulmag AD</strong> signed a contract for
         grants under the{" "}
         <strong>
@@ -145,8 +194,6 @@ const EuropeanProjectInfo = () => {
       </p>
     </Row>
   );
-
-  console.log(checked);
 
   return (
     <section className="section section-lg pt-lg-0 mt--200">
