@@ -19,8 +19,8 @@ class AltCarousel extends React.Component {
       sliderReady: false,
       slides: [
         {
-          offering: "Services",
-          upper: "System Integration",
+          offering: "Transformation",
+          upper: "Digital",
           img:
             "https://www.abb-conversations.com/wp-content/uploads/2015/11/new-york-540807_1920-1920x800.jpg",
           button: (
@@ -53,7 +53,8 @@ class AltCarousel extends React.Component {
         {
           offering: "Maintenance",
           upper: "Post-Warranty",
-          img: "https://atfip-formations.fr/wp-content/uploads/2018/10/technicien-datacenter-1920x800.jpg",
+          img:
+            "https://atfip-formations.fr/wp-content/uploads/2018/10/technicien-datacenter-1920x800.jpg",
           button: (
             <p className="slider__slide-readmore">
               {" "}
@@ -103,6 +104,10 @@ class AltCarousel extends React.Component {
         <div className="slider__slides">
           {this.state.slides.map((slide, index) => (
             <div
+              style={{
+                textShadow:
+                  "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
+              }}
               className={classNames("slider__slide", {
                 "s--active": activeSlide === index,
                 "s--prev": prevSlide === index

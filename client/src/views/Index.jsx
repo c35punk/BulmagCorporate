@@ -22,10 +22,9 @@ import AddMachine from "./pages/AddMachine";
 import Logout from "./pages/Logout";
 import About from "./pages/About.jsx";
 import Navigation from "../components/Navbars/Navigation";
-import SimpleFooter from "../components/Footers/SimpleFooter";
 import AddProduct from "./pages/AddProduct";
 import NotFound from "./pages/NotFound";
-import CardsFooter from "components/Footers/CardsFooter";
+import Footer from "components/Footers/Footer";
 
 class Index extends Component {
   constructor(props) {
@@ -52,11 +51,6 @@ class Index extends Component {
 
   render() {
     const { user } = this.state;
-
-    console.log("Hello from Index.jsx");
-    console.log(this.state);
-
-    let footer = isMobile ? <SimpleFooter /> : <CardsFooter />;
 
     return (
       <div>
@@ -131,7 +125,7 @@ class Index extends Component {
               render={props => <AddProduct {...props} />}
             />
           </Switch>
-          {footer}
+          <Footer />
         </UserProvider>
       </div>
     );
