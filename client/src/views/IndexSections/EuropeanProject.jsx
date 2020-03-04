@@ -32,14 +32,17 @@ const EuropeanProjectInfo = () => {
   let languageVersion = checked ? (
     <Row id="bgVer">
       <p>
-        На 24.02.2020г. Булмаг АД сключи договор за безвъзмездна финансова помощ
-        по Оперативна Програма „Иновации и конкурентоспособност“ 2014-2020,
-        процедура за „Подобряване на производствения капацитет в МСП“.{" "}
+        На 24.02.2020г. <strong>Булмаг АД</strong> подписа договор за
+        безвъзмездни средства по{" "}
+        <strong>
+          Оперативна програма „Иновации и конкурентоспособност“ 2014-2020
+          процедура „Подобряване на производствения капацитет на МСП“.
+        </strong>
         <p>
           {" "}
-          Общата стойност на проекта е 1 071 000.00 лв., от които 637 245.00 лв.
-          европейско финансиране, 112 455.00 лв. национално съфинансиран, както
-          и 321 300.00 лв. самофинансиране от бенефициента.
+          Общата стойност на проекта е <strong>1 071 000.00 лв.</strong>, от
+          които 637 245.00 лв. европейско финансиране, 112 455.00 лв. национално
+          съфинансиран, както и 321 300.00 лв. самофинансиране от бенефициента.
         </p>{" "}
         Основната цел на проекта е подобряване на производствения капацитет на
         Булмаг АД с цел повишаване на конкурентоспособността и засилване на
@@ -62,7 +65,6 @@ const EuropeanProjectInfo = () => {
           Оперативна програма „Иновации и конкурентоспособност“ 2014-2020
           процедура „Подобряване на производствения капацитет на МСП“.
         </strong>
-        .
       </p>
       <p>
         Общата стойност на проекта е <strong>1 088 520,00 лева</strong>, от
@@ -115,9 +117,12 @@ const EuropeanProjectInfo = () => {
   ) : (
     <Row id="enVer">
       <p>
-        On 02/24/2020 Bulmag AD has concluded a grant contract under Operational
-        Program "Innovation and Competitiveness" 2014-2020, procedure for
-        "Improving the production capacity in SMEs".{" "}
+        On 02/24/2020 <strong>Bulmag AD</strong> has concluded a grant contract
+        under{" "}
+        <strong>
+          Operational Programme "Innovation and Competitiveness" 2014-2020
+          procedure "Improving the production capacity of SMEs"
+        </strong>{" "}
         <p>
           The total value of the project is 1 071 000.00 BGN, of which 637
           245.00 BGN is European funding, 112 455.00 BGN is nationally
@@ -202,6 +207,9 @@ const EuropeanProjectInfo = () => {
           {image}
           <Row>
             <Col className="justify-content-center align-items-center">
+              <Row className={checked ? "text-primary" : "text-darker"}>
+                Български
+              </Row>
               <Label className="custom-toggle">
                 <Input
                   type="checkbox"

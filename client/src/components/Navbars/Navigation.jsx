@@ -223,22 +223,6 @@ class Navigation extends React.Component {
                   </UncontrolledTooltip>
                 </NavItem>
 
-                <NavItem>
-                  <NavLink
-                    className="nav-link-icon"
-                    href="https://github.com/c35punk/BulmagCorporate"
-                    id="tooltip112445449"
-                    target="_blank"
-                  >
-                    <i className="fa fa-github" />
-                    <span className="nav-link-inner--text d-lg-none ml-2">
-                      Github
-                    </span>
-                  </NavLink>
-                  <UncontrolledTooltip delay={0} target="tooltip112445449">
-                    Star this project on Github
-                  </UncontrolledTooltip>
-                </NavItem>
                 <NavItem className="d-none d-lg-block lg-4">
                   <NavLink
                     className="nav-link-icon"

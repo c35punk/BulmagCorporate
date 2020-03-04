@@ -1,7 +1,7 @@
 import React from "react";
 
 // reactstrap components
-import { Container, Row, Col, Input, Label } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import { Parallax } from "react-parallax";
 import { isMobile } from "react-device-detect";
 import EuropeanProjectInfo from "views/IndexSections/EuropeanProject";

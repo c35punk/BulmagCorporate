@@ -92,15 +92,15 @@ class CardsFooter extends React.Component {
               <Button
                 className="btn-neutral btn-icon-only btn-round ml-1"
                 color="github"
-                href="https://github.com/c35punk/BulmagCorporate"
+                href="https://www.e-bulmag.bg"
                 id="tooltip495507257"
                 size="lg"
                 target="_blank"
               >
-                <i className="fa fa-github" />
+                <i className="fa fa-shopping-cart" />
               </Button>
               <UncontrolledTooltip delay={0} target="tooltip495507257">
-                Star on Github
+                Visit our eShop
               </UncontrolledTooltip>
             </Col>
           </Row>
@@ -108,14 +108,7 @@ class CardsFooter extends React.Component {
           <Row className="align-items-center justify-content-md-between">
             <Col md="6">
               <div className="copyright">
-                © {new Date().getFullYear()}{" "}
-                <a
-                  href="https://www.linkedin.com/in/liubomir-djantov-a109759b/"
-                  target="_blank"
-                >
-                  Design by ldj5
-                </a>
-                .
+                © {new Date().getFullYear()} Design by Bulmag AD
               </div>
             </Col>
             <Col md="6">

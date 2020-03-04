@@ -17,30 +17,29 @@ class SimpleFooter extends Component {
     return (
       <>
         <footer className="footer">
-        <Container>
-          <h3 className="text-primary">Partners</h3>
-          <Row>
-            <Col>
-              <a href="https://www.lenovo.com/us/en/data-center">
-                <h6 className="text-primary"> Lenovo DCG </h6>
-              </a>
+          <Container>
+            <h3 className="text-primary">Partners</h3>
+            <Row>
+              <Col>
+                <a href="https://www.lenovo.com/us/en/data-center">
+                  <h6 className="text-primary"> Lenovo DCG </h6>
+                </a>
 
-              <a href="https://www.infinidat.com/products-technology/infinibox">
-                <h6 className="text-primary"> INFINIDAT </h6>
-              </a>
+                <a href="https://www.infinidat.com/products-technology/infinibox">
+                  <h6 className="text-primary"> INFINIDAT </h6>
+                </a>
 
-              <a href="https://tr-sys.com/home/">
-                <h6 className="text-primary"> Tr-Sys </h6>
-              </a>
+                <a href="https://tr-sys.com/home/">
+                  <h6 className="text-primary"> Tr-Sys </h6>
+                </a>
 
-              <a href="https://www.openway.com/">
-                <h6 className="text-primary"> OpenWay </h6>
-              </a>
-            </Col>
-          </Row>
+                <a href="https://www.openway.com/">
+                  <h6 className="text-primary"> OpenWay </h6>
+                </a>
+              </Col>
+            </Row>
+          </Container>
 
-        </Container>
-     
           <Container>
             <Row className="row-grid align-items-center my-md">
               <Col lg="6">
@@ -84,15 +83,7 @@ class SimpleFooter extends Component {
             <Row className="align-items-center justify-content-md-between">
               <Col md="6">
                 <div className="copyright">
-                  © {new Date().getFullYear()}{" "}
-                  <a
-                    href="https://www.linkedin.com/in/liubomir-djantov-a109759b/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Design by ldj5
-                  </a>
-                  .
+                  © {new Date().getFullYear()} Design by Bulmag AD
                 </div>
               </Col>
               <Col md="6">

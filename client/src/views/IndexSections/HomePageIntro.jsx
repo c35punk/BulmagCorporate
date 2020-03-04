@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Container, Row, Col } from "reactstrap";
+import { isMobile } from "react-device-detect";
 
 const HomePageIntro = props => {
   return (
@@ -51,7 +52,10 @@ const HomePageIntro = props => {
           x="0"
           y="0"
         >
-          <polygon className="fill-white" points="2560 0 2560 100 0 100" />
+          <polygon
+            className={isMobile ? "fill-secondary" : "fill-white"}
+            points="2560 0 2560 100 0 100"
+          />
         </svg>
       </div>
     </section>
