@@ -8,23 +8,18 @@ import { Container, Row, Col } from "reactstrap";
 
 class CompanyOverview extends React.Component {
   render() {
-    let strengthImage = isMobile ? 100 : 400;
+    let strengthImage = isMobile ? 800 : 900;
     return (
       <>
         <Parallax
-          blur={{ min: -5, max: 5 }}
           bgImage={require("../../assets/img/pics-vte5/nasa-Q1p7bh3SHj8-unsplash.jpg")}
           bgImageAlt="Bulmag DC"
           strength={strengthImage}
         >
-          <div style={{ height: "250px" }} />
-
           <Container>
             <Row className="row-grid justify-content-center">
               <Col className="text-center" lg="8">
-                <h2 className="display-3">
-                  <span className="text-danger">Company Overview</span>
-                </h2>
+                
 
                 <div className="position-relative">
                   <div

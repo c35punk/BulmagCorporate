@@ -11,7 +11,7 @@ const SupportBanner = () => {
         <img
           alt="..."
           className="img-center img-fluid"
-          src="https://www.jvzoohost.com/img/jvZoo-images/solutions-server.png"
+          src={require("../../assets/img/pics-vte5/kisspng-data-center-structured-cabling-information-system-5b58c0372956a0-removebg-preview.png")}
         />
       </div>
     </Col>

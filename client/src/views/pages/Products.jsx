@@ -43,7 +43,7 @@ class Products extends React.Component {
               blur={{ min: -45, max: 45 }}
               bgImage={require("../../assets/img/pics-vte5/IMG_0857.jpg")}
               bgImageAlt="the dog"
-              strength={isMobile ? 150 : 450}
+              strength={isMobile ? 600 : 650}
             >
               {" "}
               <div className="shape shape-style-1 shape-default "></div>

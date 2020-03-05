@@ -12,7 +12,7 @@ const ProfessionalServicesBanner = () => {
             <Row className="align-items-center">
               <Col lg="8">
                 <h3 className="text-white">
-                  PROFESSIONAL SERVICES AND ENTERPRISE MAINTENANCE
+                  PROFESSIONAL IT SERVICES AND ENTERPRISE MAINTENANCE
                 </h3>
                 <p className="lead text-white mt-3">
                Find the right service for your business
@@ -23,11 +23,11 @@ const ProfessionalServicesBanner = () => {
                   block
                   className="btn-white"
                   color="default"
-                  to="/services"
+                  to="/contacts"
                   tag={Link}
                   size="lg"
                 >
-                  LEARN MORE
+                  Contact us
                 </Button>
               </Col>
             </Row>

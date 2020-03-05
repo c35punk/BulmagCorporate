@@ -36,10 +36,10 @@ class TabsSection extends React.Component {
           <div className="position-relative">
             {/* shape Hero */}
             <Parallax
-              blur={{ min: -45, max: 45 }}
+              blur={{ min: -5, max: 5 }}
               bgImage={require("../../assets/img/pics-vte5/IMG_0870.jpg")}
-              bgImageAlt="the dog"
-              strength={isMobile ? 150 : 450}
+              bgImageAlt="Cables"
+              strength={isMobile ? 150 : 1000}
             >
               <div className="shape shape-style-1 shape-default "></div>
               <section className="section section-md section-shaped mb--200">
