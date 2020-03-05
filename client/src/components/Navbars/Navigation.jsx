@@ -102,7 +102,7 @@ class Navigation extends React.Component {
                     <Link to="/">
                       <img
                         alt="..."
-                        src={require("assets/img/brand/bulmag-react.png")}
+                        src={require("assets/img/brand/bulmag-react-white.png")}
                       />
                     </Link>
                   </Col>
