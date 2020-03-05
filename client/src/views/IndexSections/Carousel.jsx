@@ -19,7 +19,7 @@ const items = [
           textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
         }}
       >
-        System Integration Services
+        Digital Transformation Services
       </div>
     )
   },

@@ -2,6 +2,7 @@ import React from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
 import { Parallax } from "react-parallax";
+import { isMobile } from "react-device-detect";
 
 // reactstrap components
 import {
@@ -38,7 +39,7 @@ class TabsSection extends React.Component {
               blur={{ min: -45, max: 45 }}
               bgImage={require("../../assets/img/pics-vte5/IMG_0870.jpg")}
               bgImageAlt="the dog"
-              strength={450}
+              strength={isMobile ? 150 : 450}
             >
               <div className="shape shape-style-1 shape-default "></div>
               <section className="section section-md section-shaped mb--200">
@@ -59,7 +60,7 @@ class TabsSection extends React.Component {
                     </Row>
                   </div>
                 </Container>
-                <div style={{ height: "350px" }} />
+                <div style={{ height: isMobile ? "70px" : "350px"  }} />
 
                 {/* SVG separator */}
                 {/* <div className="separator separator-bottom separator-skew">

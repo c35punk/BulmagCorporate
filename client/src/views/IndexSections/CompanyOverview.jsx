@@ -27,16 +27,20 @@ class CompanyOverview extends React.Component {
                 </h2>
 
                 <div className="position-relative">
-                  <div className="row">
+                  <div
+                    className="row text-white"
+                    style={{
+                      textShadow:
+                        "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
+                    }}
+                  >
                     <Col className="order-md-6" md="6">
                       <div className="display-3">
                         <p className="lead">
-                          <h2 className="text-secondary">
-                            Enterprise Class Vendors and Solutions
-                          </h2>
+                          <h2>Enterprise Class Vendors and Solutions</h2>
                         </p>
 
-                        <p className="text-secondary">
+                        <p>
                           Bulmag AD offer full range of Lenovo®, NetApp®,
                           INFINIDAT®, VMware®, RedHat®, Microsoft®, Cisco®,
                           TransactionSystems®, PAX®, and Datecs® products.
@@ -46,12 +50,10 @@ class CompanyOverview extends React.Component {
                     <Col className="order-md-6" md="6">
                       <div className="display-3">
                         <p className="lead">
-                          <h2 className="text-secondary">
-                            25+ Years Experience in System Integration
-                          </h2>
+                          <h2>25+ Years Experience in System Integration</h2>
                         </p>
 
-                        <p className="text-secondary">
+                        <p>
                           With more than 100+ successful projects, Bulmag AD is
                           surely your trusted companion on the path to digital
                           transformation.
@@ -61,12 +63,10 @@ class CompanyOverview extends React.Component {
                     <Col className="order-md-6" md="6">
                       <div className="display-3">
                         <p className="lead">
-                          <h2 className="text-secondary">
-                            Professional Excellence
-                          </h2>
+                          <h2>Professional Excellence</h2>
                         </p>
 
-                        <p className="text-secondary">
+                        <p>
                           We are maintaining the tools and resources needed to
                           deliver our services more effectively yielding great
                           returns, more efficient work cycles, while achieving
@@ -77,12 +77,10 @@ class CompanyOverview extends React.Component {
                     <Col className="order-md-6" md="6">
                       <div className="display-3">
                         <p className="lead">
-                          <h2 className="text-secondary">
-                            Customizable Cloud Offerings
-                          </h2>
+                          <h2>Customizable Cloud Offerings</h2>
                         </p>
 
-                        <p className="text-secondary">
+                        <p>
                           Whether you choose our SaaS, PaaS, or IaaS service
                           it'll be tailored to meet virtually every IT need you
                           might have. Suitable for organizations who demand

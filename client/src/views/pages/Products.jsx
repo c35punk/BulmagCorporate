@@ -34,58 +34,32 @@ class Products extends React.Component {
   }
 
   render() {
-    let pictureSize = !isMobile ? (
-      <Parallax
-        blur={{ min: -45, max: 45 }}
-        bgImage={require("../../assets/img/pics-vte5/IMG_0857.jpg")}
-        bgImageAlt="the dog"
-        strength={450}
-      >
-    
-        <div className="shape shape-style-1 shape-default "></div>
-        <section className="section section-md section-shaped mb--200">
-          <Container className="py-lg-md d-flex">
-            <div className="col px-0 mb--200">
-              <Row>
-                <Col lg="6">
-                  <h1 className="display-3 text-white">PRODUCTS</h1>
-                </Col>
-              </Row>
-            </div>
-          </Container>
-          <div style={{ height: "350px" }} />
-          
-        </section>
-      </Parallax>
-    ) : (
-      <Parallax
-        blur={{ min: -45, max: 45 }}
-        bgImage={require("../../assets/img/pics-vte5/IMG_0857.jpg")}
-        bgImageAlt="the dog"
-        strength={150}
-      >
-        {" "}
-        <div className="shape shape-style-1 shape-default "></div>
-        <section className="section section-md section-shaped mb--200">
-          <Container className="py-lg-md d-flex">
-            <div className="col px-0 mb--200">
-              <Row>
-                <Col lg="6">
-                  <h1 className="display-3 text-white">PRODUCTS</h1>
-                </Col>
-              </Row>
-            </div>
-          </Container>
-          <div style={{ height: "70px" }} />
-        </section>
-      </Parallax>
-    );
     return (
       <>
         <main ref="main">
           <div className="position-relative">
             {/* shape Hero */}
-            {pictureSize}
+            <Parallax
+              blur={{ min: -45, max: 45 }}
+              bgImage={require("../../assets/img/pics-vte5/IMG_0857.jpg")}
+              bgImageAlt="the dog"
+              strength={isMobile ? 150 : 450}
+            >
+              {" "}
+              <div className="shape shape-style-1 shape-default "></div>
+              <section className="section section-md section-shaped mb--200">
+                <Container className="py-lg-md d-flex">
+                  <div className="col px-0 mb--200">
+                    <Row>
+                      <Col lg="6">
+                        <h1 className="display-3 text-white">PRODUCTS</h1>
+                      </Col>
+                    </Row>
+                  </div>
+                </Container>
+                <div style={{ height: isMobile ? "70px" : "350px" }} />
+              </section>
+            </Parallax>
           </div>
           <section className="section section-lg pt-lg-0 mt--200">
             <Container>
@@ -98,9 +72,7 @@ class Products extends React.Component {
                   <span className="btn-inner--icon mr-1">
                     <i className="fa fa-server" />
                   </span>
-                  <span className="btn-inner--text">
-                    Hyper-converged Infrastructure & Cloud
-                  </span>
+                  <span className="btn-inner--text">HCI & Cloud</span>
                 </Button>
                 <Col lg="12">
                   <Row className="row-grid">
@@ -130,7 +102,7 @@ class Products extends React.Component {
                     <i className="fa fa-server" />
                   </span>
                   <span className="btn-inner--text">
-                    System Integration Hardware
+                    Digital Transformation Hardware
                   </span>
                 </Button>
                 <Col lg="12">
