@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 // JavaScript plugin that hides or shows a component based on your scroll
 import Headroom from "headroom.js";
 import { UserConsumer } from "../../contexts/user-context";
+import { isMobile } from "react-device-detect";
 
 // reactstrap components
 import {
@@ -120,8 +121,9 @@ class Navigation extends React.Component {
                     <span
                       className="nav-link-inner--text"
                       style={{
-                        textShadow:
-                          "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
+                        textShadow: !isMobile
+                          ? "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
+                          : null
                       }}
                     >
                       Portfolio
@@ -164,8 +166,9 @@ class Navigation extends React.Component {
                     <span
                       className="nav-link-inner--text"
                       style={{
-                        textShadow:
-                          "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
+                        textShadow: !isMobile
+                          ? "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
+                          : null
                       }}
                     >
                       Company
@@ -189,8 +192,9 @@ class Navigation extends React.Component {
                     <span
                       className="nav-link-inner--text"
                       style={{
-                        textShadow:
-                          "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
+                        textShadow: !isMobile
+                          ? "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
+                          : null
                       }}
                     >
                       {this.props.isLoggedIn ? (
@@ -223,7 +227,7 @@ class Navigation extends React.Component {
                   </UncontrolledTooltip>
                 </NavItem>
 
-                <NavItem className="d-none d-lg-block lg-4">
+                <NavItem>
                   <NavLink
                     className="nav-link-icon"
                     href="https://e-bulmag.bg/"

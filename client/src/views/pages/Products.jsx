@@ -42,8 +42,8 @@ class Products extends React.Component {
             <Parallax
               blur={{ min: -45, max: 45 }}
               bgImage={require("../../assets/img/pics-vte5/IMG_0857.jpg")}
-              bgImageAlt="the dog"
-              strength={isMobile ? 600 : 650}
+              bgImageAlt="Products"
+              strength={isMobile ? 150 : 450}
             >
               {" "}
               <div className="shape shape-style-1 shape-default "></div>
@@ -57,7 +57,7 @@ class Products extends React.Component {
                     </Row>
                   </div>
                 </Container>
-                <div style={{ height: isMobile ? "70px" : "350px" }} />
+                <div style={{ height: isMobile ? "70px" : "450px" }} />
               </section>
             </Parallax>
           </div>
