@@ -11,7 +11,8 @@ import {
   Container,
   Row,
   Col,
-  UncontrolledTooltip
+  UncontrolledTooltip,
+  NavLink
 } from "reactstrap";
 import { isMobile } from "react-device-detect";
 
@@ -142,14 +143,14 @@ class CardsFooter extends React.Component {
             <Col md="6">
               <Nav className="nav-footer justify-content-end">
                 <NavItem>
-                  <Modal to="/contacts" tag={Link}>
+                  <NavLink to="/contacts" tag={Link}>
                     Privacy Policy
-                  </Modal>
+                  </NavLink>
                 </NavItem>
                 <NavItem>
-                  <Modal to="/about" tag={Link}>
+                  <NavLink to="/about" tag={Link}>
                     Disclaimer
-                  </Modal>
+                  </NavLink>
                 </NavItem>
               </Nav>
             </Col>

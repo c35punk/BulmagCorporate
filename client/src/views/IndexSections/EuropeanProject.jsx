@@ -207,7 +207,7 @@ const EuropeanProjectInfo = () => {
           {image}
           <Row>
             <Col className="justify-content-center align-items-center">
-              <Row className={checked ? "text-primary" : "text-darker"}>
+              <Row className={checked ? "text-primary" : "text-secondary"}>
                 Български
               </Row>
               <Label className="custom-toggle">
