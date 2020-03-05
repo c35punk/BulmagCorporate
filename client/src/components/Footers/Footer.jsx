@@ -5,14 +5,10 @@ import {
   Button,
   Card,
   CardImg,
-  NavItem,
-  Modal,
-  Nav,
   Container,
   Row,
   Col,
-  UncontrolledTooltip,
-  NavLink
+  UncontrolledTooltip
 } from "reactstrap";
 import { isMobile } from "react-device-detect";
 
@@ -92,9 +88,9 @@ class CardsFooter extends React.Component {
 
     return (
       <>
-        {partners}
         <Container>
           <Row className="row-grid align-items-center my-md">
+            {partners}
             <Col lg="6">
               <h3 className="text-primary font-weight-light mb-2">
                 Thank you for choosing us!
@@ -139,20 +135,7 @@ class CardsFooter extends React.Component {
               <div className="copyright">
                 © {new Date().getFullYear()} Design by Bulmag AD
               </div>
-            </Col>
-            <Col md="6">
-              <Nav className="nav-footer justify-content-end">
-                <NavItem>
-                  <NavLink to="/contacts" tag={Link}>
-                    Privacy Policy
-                  </NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink to="/about" tag={Link}>
-                    Disclaimer
-                  </NavLink>
-                </NavItem>
-              </Nav>
+              <br />
             </Col>
           </Row>
         </Container>

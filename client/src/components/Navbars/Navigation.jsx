@@ -236,7 +236,7 @@ class Navigation extends React.Component {
                   >
                     <i className="fa fa-shopping-cart" />
                     <span className="nav-link-inner--text d-lg-none ml-2">
-                      eBulmag
+                      Bulmag Online Shop
                     </span>
                   </NavLink>
                   <UncontrolledTooltip delay={0} target="online-store">
