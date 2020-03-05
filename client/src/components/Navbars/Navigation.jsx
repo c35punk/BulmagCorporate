@@ -96,7 +96,7 @@ class Navigation extends React.Component {
               <span className="navbar-toggler-icon" />
             </button>
             <UncontrolledCollapse navbar toggler="#navbar_global">
-              <div className="navbar-collapse-header">
+              <div className="navbar-collapse-header ">
                 <Row>
                   <Col className="collapse-brand" xs="6">
                     <Link to="/">
@@ -129,13 +129,20 @@ class Navigation extends React.Component {
                       Portfolio
                     </span>
                   </DropdownToggle>
-                  <DropdownMenu className="dropdown-menu-xl">
+                  <DropdownMenu className="dropdown-menu-xl bg-gradient-white">
                     <div className="dropdown-menu-inner">
                       <Media>
-                        <div className="icon icon-shape bg-gradient-primary rounded-circle text-white">
-                          <i className="ni ni-briefcase-24" />
-                        </div>
-                        <Media body className="ml-3">
+                        {isMobile ? null : (
+                          <div className="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                            <i className="ni ni-briefcase-24" />
+                          </div>
+                        )}
+                        <Media
+                          body
+                          className={
+                            !isMobile ? "ml-3" : "sm-4"
+                          }
+                        >
                           <Link to="/products">
                             <Button>Products</Button>
                           </Link>
@@ -145,10 +152,17 @@ class Navigation extends React.Component {
                         </Media>
                       </Media>
                       <Media>
-                        <div className="icon icon-shape bg-gradient-primary rounded-circle text-white">
-                          <i className="ni ni-support-16" />
-                        </div>
-                        <Media body className="ml-3">
+                        {!isMobile ? (
+                          <div className="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                            <i className="ni ni-support-16" />
+                          </div>
+                        ) : null}
+                         <Media
+                          body
+                          className={
+                            !isMobile ? "ml-3" : "sm-4"
+                          }
+                        >
                           <Link to="/services">
                             <Button>Services</Button>
                           </Link>
@@ -174,8 +188,8 @@ class Navigation extends React.Component {
                       Company
                     </span>
                   </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem to="/about" tag={Link}>
+                  <DropdownMenu className="dropdown-menu-xl bg-gradient-white">
+                    <DropdownItem className="nav-link-inner--text" to="/about" tag={Link}>
                       About us
                     </DropdownItem>
                     <DropdownItem to="/projects" tag={Link}>
@@ -200,11 +214,13 @@ class Navigation extends React.Component {
                       {this.props.isLoggedIn ? (
                         <>Hello, {this.props.username}!</>
                       ) : (
-                        <>Account</>
+                        <>Bulmag Account</>
                       )}
                     </span>
                   </DropdownToggle>
-                  <DropdownMenu>{account}</DropdownMenu>
+                  <DropdownMenu className="dropdown-menu-xl bg-gradient-white">
+                    {account}
+                  </DropdownMenu>
                 </UncontrolledDropdown>
 
                 {/* {this.props.isLoggedIn ? greeting : false} */}
