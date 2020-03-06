@@ -60,7 +60,7 @@ class TabsSection extends React.Component {
                     </Row>
                   </div>
                 </Container>
-                <div style={{ height: isMobile ? "70px" : "350px"  }} />
+                <div style={{ height: isMobile ? "70px" : "350px" }} />
 
                 {/* SVG separator */}
                 {/* <div className="separator separator-bottom separator-skew">

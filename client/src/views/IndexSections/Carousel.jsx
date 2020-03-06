@@ -9,7 +9,12 @@ const items = [
       "https://www.abb-conversations.com/wp-content/uploads/2015/11/new-york-540807_1920-1920x800.jpg",
 
     caption: (
-      <Button className="btn-white mt-4" to="/products#HW" tag={Link}>
+      <Button
+        className="btn-white mt-4"
+        to="/services#Consulting"
+        tag={Link}
+       
+      >
         Learn more
       </Button>
     ),
