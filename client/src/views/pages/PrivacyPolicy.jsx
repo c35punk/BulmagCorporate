@@ -210,7 +210,7 @@ class PrivacyPolicy extends React.Component {
                   <p>
                     <b>
                       We are always very cautious against vulnerabilities in{" "}
-                      <b> our sites amd/or hosted services.</b>
+                      <b> our sites and/or hosted services.</b>
                     </b>{" "}
                     If you find a vulnerability in our service, we would be
                     grateful to let us know and encourage you to do so

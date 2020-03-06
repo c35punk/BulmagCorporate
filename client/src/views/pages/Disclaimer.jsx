@@ -21,7 +21,7 @@ class Disclaimer extends React.Component {
               blur={{ min: -1, max: 1 }}
               bgImage={require("../../assets/img/pics-vte5/ev-gpjvRZyavZc-unsplash.jpg")}
               bgImageAlt="the dog"
-              strength={850}
+              strength={950}
             >
               <div className="shape shape-style-1 shape-default "></div>
               <section className="section section-md section-shaped mb--200">
@@ -49,9 +49,7 @@ class Disclaimer extends React.Component {
                   information. Any action you take upon the information you find
                   on this website (Bulmag AD), is strictly at your own risk.
                   Bulmag AD will not be liable for any losses and/or damages in
-                  connection with the use of our website. Our Disclaimer was
-                  generated with the help of the Disclaimer Generator and the
-                  Disclaimer Template. From our website, you can visit other
+                  connection with the use of our website. From our website, you can visit other
                   websites by following hyperlinks to such external sites. While
                   we strive to provide only quality links to useful and ethical
                   websites, we have no control over the content and nature of
