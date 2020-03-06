@@ -40,7 +40,6 @@ class CardsFooter extends React.Component {
     ) : (
       <Container>
         <h3 className="text-primary">Partners</h3>
-
         <Row>
           <Col className="mb-5 mb-md-0" md="3">
             <Card className="card-lift--hover shadow border-0">

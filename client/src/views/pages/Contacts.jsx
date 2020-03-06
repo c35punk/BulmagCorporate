@@ -128,11 +128,11 @@ class Contacts extends React.Component {
         <main ref="main">
           <div className="position-relative">
             {/* shape Hero */}
-            <section className="section section-lg section-shaped pb-250 justify-content-center ">
+            <section className="section section-lg section-shaped pb-450 justify-content-center ">
               <div className="shape shape-default"></div>
               <Container className="py-lg-md d-flex">
                 <div className="col px-0 ">
-                  <Row className="justify-content-left mb--100">
+                  <Row className="justify-content-left mb--200">
                     <Col lg="6">
                       <h1 className="display-3 text-white ">CONTACTS</h1>
                     </Col>
@@ -193,13 +193,7 @@ class Contacts extends React.Component {
                   </Row>
                 </div>
               </Container>
-              <Parallax
-                bgImage={require("../../assets/img/pics-vte5/business card.jpg")}
-                bgImageAlt="Business Card"
-                strength={750}
-              >
-                <div style={{ height: "550px" }} />
-              </Parallax>
+
               {/* SVG separator */}
               {/* <div className="separator separator-bottom separator-skew">
                 <svg
@@ -217,11 +211,18 @@ class Contacts extends React.Component {
                 </svg>
               </div> */}
             </section>
+            <Parallax
+              bgImage={require("../../assets/img/pics-vte5/business card.jpg")}
+              bgImageAlt="Business Card"
+              strength={900}
+            >
+              <div style={{ height: isMobile ? "170px" : "450px" }} />
+            </Parallax>
             {/* 1st Hero Variation */}
           </div>
-          <section className="section section-lg pt-lg-0 section-contact-us">
+          <section className="section section-lg pt-lg-0 mt--100 section-contact-us">
             <Container>
-              <Row className="justify-content-left mt--300">
+              <Row className="justify-content-center">
                 <Col lg="12">
                   <Card className="bg-gradient-secondary shadow">
                     <CardBody className="p-lg-5">
