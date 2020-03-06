@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 
 //constants & components
 import { UserProvider, defaultState } from "../contexts/user-context";
-import { isMobile } from "react-device-detect";
 import CookieConsent from "react-cookie-consent";
 
 import UserRoute from "../routes/user-route";
@@ -25,6 +24,9 @@ import Navigation from "../components/Navbars/Navigation";
 import AddProduct from "./pages/AddProduct";
 import NotFound from "./pages/NotFound";
 import Footer from "components/Footers/Footer";
+import { Button } from "reactstrap";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Disclaimer from "./pages/Disclaimer";
 
 class Index extends Component {
   constructor(props) {
@@ -56,7 +58,27 @@ class Index extends Component {
       <div>
         <UserProvider value={user}>
           <CookieConsent style={{ color: "white" }}>
-            This website uses cookies to enhance the user experience.
+            This website uses cookies to enhance the user experience.{" "}
+            <Button
+              
+              className="btn-white"
+              color="default"
+              to="/privacy-policy"
+              tag={Link}
+              size="sm"
+            >
+              Privacy Policy
+            </Button>
+            <Button
+              
+              className="btn-white"
+              color="default"
+              to="/disclaimer"
+              tag={Link}
+              size="sm"
+            >
+              Disclaimer
+            </Button>
           </CookieConsent>
           <Navigation />
           <Switch>
@@ -67,6 +89,16 @@ class Index extends Component {
               render={props => <NotFound {...props} />}
             />
             <Route path="/about" exact render={props => <About {...props} />} />
+            <Route
+              path="/privacy-policy"
+              exact
+              render={props => <PrivacyPolicy {...props} />}
+            />
+            <Route
+              path="/disclaimer"
+              exact
+              render={props => <Disclaimer {...props} />}
+            />
             <Route
               path="/projects"
               exact

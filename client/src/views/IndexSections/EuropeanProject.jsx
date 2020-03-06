@@ -208,16 +208,16 @@ const EuropeanProjectInfo = () => {
           <Row>
             <Col className="justify-content-center align-items-center">
               <Row className={checked ? "text-primary" : "text-secondary"}>
-                Български
+                <Label className="custom-toggle">
+                  <Input
+                    type="checkbox"
+                    onClick={handleClick}
+                    checked={checked}
+                  />
+                  <span className="custom-toggle-slider rounded-circle" />
+                </Label>
+                {!checked ? " English" : " Български"}
               </Row>
-              <Label className="custom-toggle">
-                <Input
-                  type="checkbox"
-                  onClick={handleClick}
-                  checked={checked}
-                />
-                <span className="custom-toggle-slider rounded-circle" />
-              </Label>
             </Col>
           </Row>
           {languageVersion}

@@ -11,6 +11,7 @@ import {
   UncontrolledTooltip
 } from "reactstrap";
 import { isMobile } from "react-device-detect";
+import { Link } from "react-router-dom";
 
 class CardsFooter extends React.Component {
   render() {
@@ -129,10 +130,21 @@ class CardsFooter extends React.Component {
             </Col>
           </Row>
           <hr />
-          <Row className="align-items-center justify-content-md-between">
+          <Row className="align-items-center justify-content-md-start">
             <Col md="6">
               <div className="copyright">
                 © {new Date().getFullYear()} Design by Bulmag AD
+              </div>
+              <br />
+            </Col>
+            <Col md="6">
+              <div className="copyright">
+                <Button tag={Link} to="/privacy-policy">
+                  Privacy Policy
+                </Button>
+                <Button tag={Link} to="/disclaimer">
+                  Disclaimer
+                </Button>
               </div>
               <br />
             </Col>
