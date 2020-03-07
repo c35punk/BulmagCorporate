@@ -58,7 +58,7 @@ class Index extends Component {
       <div>
         <UserProvider value={user}>
           <CookieConsent style={{ color: "white" }}>
-            This website uses cookies.{" "}
+            We use cookies.{" "}
             <Button
               
               className="btn-white"

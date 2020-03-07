@@ -47,7 +47,7 @@ class CardsFooter extends React.Component {
               <a href="https://tr-sys.com/home/">
                 <CardImg
                   alt="..."
-                  src="https://www.paymentcomponents.com/wp-content/uploads/2018/05/press3.png"
+                  src={require("../../assets/img/pics-vte5/TRSYS.png")}
                 />
               </a>
             </Card>
@@ -57,7 +57,7 @@ class CardsFooter extends React.Component {
               <a href="https://www.lenovo.com/us/en/data-center">
                 <CardImg
                   alt="..."
-                  src="https://www.lenovopartnernetwork.com/assets/Uploads/2e3f24153f/lenovo-default-social.jpg"
+                  src={require("../../assets/img/pics-vte5/LENOVO.jpg")}
                 />
               </a>
             </Card>
@@ -67,7 +67,7 @@ class CardsFooter extends React.Component {
               <a href="https://www.infinidat.com/products-technology/infinibox">
                 <CardImg
                   alt="..."
-                  src="https://i.ytimg.com/vi/Tygk0HnjG-o/maxresdefault.jpg"
+                  src={require("../../assets/img/pics-vte5/INFINIDAT.jpg")}
                 />
               </a>
             </Card>
@@ -77,7 +77,7 @@ class CardsFooter extends React.Component {
               <a href="https://www.openway.com/">
                 <CardImg
                   alt="..."
-                  src="http://www.uzdaily.com/storage/img/Askar-foto/2-mfCd_q_iw.jpg"
+                  src={require("../../assets/img/pics-vte5/OpenWay.jpg")}
                 />
               </a>
             </Card>

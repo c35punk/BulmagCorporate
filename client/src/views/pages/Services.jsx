@@ -175,10 +175,10 @@ class TabsSection extends React.Component {
                         <TabPane tabId="plainTabs1">
                           <p className="description header">
                             <div id="maintenance">
-                              <h6 className="text-darker">
+                              <h3 className="text-darker">
                                 Post Warranty Enterprise Multi-Vendor
                                 Maintenance
-                              </h6>
+                              </h3>
                               <div class="table-single-cell">
                                 <h6 className="text-darker">
                                   With a Bulmag AD maintenance contract, you
@@ -319,7 +319,7 @@ class TabsSection extends React.Component {
                         </TabPane>
                         <TabPane tabId="plainTabs2">
                           <div id="service">
-                            <h6 className="text-dark">Service Center</h6>
+                            <h3 className="text-dark">Service Center</h3>
                             <div class="table-single-cell">
                               <h6 className="text-dark">
                                 We have more than 25 years of experience in
@@ -407,9 +407,9 @@ class TabsSection extends React.Component {
                         <TabPane tabId="plainTabs3">
                           <p className="description">
                             <div id="consultancy">
-                              <h6 className="text-darker">
+                              <h3 className="text-darker">
                                 Consulting Services
-                              </h6>
+                              </h3>
                               <div>
                                 <h6 className="text-dark">
                                   Bulmag AD has successfully navigated the
@@ -517,9 +517,9 @@ class TabsSection extends React.Component {
                         <TabPane tabId="plainTabs4">
                           <p className="description">
                             <div id="out">
-                              <h6 className="text-darker">
+                              <h3 className="text-darker">
                                 EFT-POS & ATM Outsourcing
-                              </h6>
+                              </h3>
                               <div class="table-single-cell">
                                 <h6 className="text-dark">
                                   Small-to-medium sized financial institutions
@@ -617,9 +617,9 @@ class TabsSection extends React.Component {
                         <TabPane tabId="plainTabs5">
                           <p className="description">
                             <div id="integration">
-                              <h6 className="text-darker">
+                              <h3 className="text-darker">
                                 Integration Services
-                              </h6>
+                              </h3>
 
                               <div>
                                 <h6 className="text-dark">
