@@ -7,6 +7,7 @@ import { UserConsumer } from "../../contexts/user-context";
 import { dbConstants } from "../../constants/constants";
 import ContractModal from "../IndexSections/ContractsModal";
 import TicketModal from "../IndexSections/TicketsModal";
+import { isMobile } from "react-device-detect";
 
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";

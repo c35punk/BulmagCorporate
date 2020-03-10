@@ -4,6 +4,7 @@ import axios from "axios";
 import Alert from "../IndexSections/Alerts";
 import { UserConsumer } from "../../contexts/user-context";
 import { dbConstants } from "../../constants/constants";
+import { isMobile } from "react-device-detect";
 
 // reactstrap components
 import {
