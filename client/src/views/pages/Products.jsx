@@ -52,7 +52,15 @@ class Products extends React.Component {
                   <div className="col px-0 mb--200">
                     <Row>
                       <Col lg="6">
-                        <h1 className="display-3 text-white">PRODUCTS</h1>
+                        <h1
+                          className={
+                            isMobile
+                              ? "display-4 text-white"
+                              : "display-3 text-white"
+                          }
+                        >
+                          PRODUCTS
+                        </h1>
                       </Col>
                     </Row>
                   </div>

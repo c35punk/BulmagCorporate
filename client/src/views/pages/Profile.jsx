@@ -66,7 +66,15 @@ class Profile extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="6">
-                      <h1 className="display-3 text-white">PROFILE</h1>
+                      <h1
+                        className={
+                          isMobile
+                            ? "display-4 text-white"
+                            : "display-3 text-white"
+                        }
+                      >
+                        PROFILE
+                      </h1>
                       <p className="lead text-white">Manage your account</p>
                     </Col>
                   </Row>

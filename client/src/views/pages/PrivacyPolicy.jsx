@@ -29,7 +29,15 @@ class PrivacyPolicy extends React.Component {
                   <div className="col px-2 mb--200">
                     <Row>
                       <Col lg="6">
-                        <h1 className="display-3 text-white">PRIVACY POLICY</h1>
+                        <h1
+                          className={
+                            isMobile
+                              ? "display-4 text-white"
+                              : "display-3 text-white"
+                          }
+                        >
+                          PRIVACY POLICY
+                        </h1>
                       </Col>
                     </Row>
                   </div>

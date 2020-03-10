@@ -135,7 +135,13 @@ class Login extends React.Component {
                         </Alert>
                       ) : null}
 
-                      <div className=" text-center display-3 text-primary">
+                      <div
+                        className={
+                          isMobile
+                            ? "display-4 text-white"
+                            : "display-3 text-white"
+                        }
+                      >
                         Login
                       </div>
                     </CardHeader>

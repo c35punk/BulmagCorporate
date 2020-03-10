@@ -134,7 +134,15 @@ class Contacts extends React.Component {
                 <div className="col px-0 ">
                   <Row className="justify-content-left mb--200">
                     <Col lg="6">
-                      <h1 className="display-3 text-white ">CONTACTS</h1>
+                      <h1
+                        className={
+                          isMobile
+                            ? "display-4 text-white"
+                            : "display-3 text-white"
+                        }
+                      >
+                        CONTACTS
+                      </h1>
                     </Col>
                     <div className="justify-content-center ">
                       <Col>

@@ -3,6 +3,7 @@ import React from "react";
 // reactstrap components
 import { Container, Col, Row } from "reactstrap";
 import { Parallax } from "react-parallax";
+import { isMobile } from "react-device-detect";
 
 // index page sections
 import Tabs from "../IndexSections/Tabs";
@@ -31,12 +32,20 @@ class About extends React.Component {
                   <div className="col px-0 mb--200">
                     <Row>
                       <Col lg="6">
-                        <h1 className="display-3 text-white">ABOUT US</h1>
+                        <h1
+                          className={
+                            isMobile
+                              ? "display-4 text-white"
+                              : "display-3 text-white"
+                          }
+                        >
+                          ABOUT US
+                        </h1>
                       </Col>
                     </Row>
                   </div>
                 </Container>
-                <div style={{ height: "350px" }} />
+                <div style={{ height: isMobile ? "70px" : "350px" }} />
               </section>
             </Parallax>
             <section className="section section-lg pt-lg-0 mt--200">

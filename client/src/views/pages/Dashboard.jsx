@@ -66,7 +66,11 @@ class Dashboard extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="12">
-                      <h1 className="display-3 text-white">DASHBOARD</h1>
+                      <h1   className={
+                            isMobile
+                              ? "display-4 text-white"
+                              : "display-3 text-white"
+                          }>DASHBOARD</h1>
                       <p className="lead text-white">Systems in maintenance</p>
                       <div className="btn-wrapper">
                         <Button

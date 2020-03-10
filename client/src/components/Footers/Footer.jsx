@@ -32,7 +32,7 @@ class CardsFooter extends React.Component {
               <h6 className="text-primary"> Tr-Sys </h6>
             </a>
 
-            <a href="https://www.openway.com/">
+            <a href="https://www.openwaygroup.com/">
               <h6 className="text-primary"> OpenWay </h6>
             </a>
           </Col>
@@ -74,7 +74,7 @@ class CardsFooter extends React.Component {
           </Col>
           <Col className="mb-5 mb-lg-0" md="3">
             <Card className="card-lift--hover shadow border-0">
-              <a href="https://www.openway.com/">
+              <a href="https://www.openwaygroup.com/">
                 <CardImg
                   alt="..."
                   src={require("../../assets/img/pics-vte5/OpenWay.jpg")}

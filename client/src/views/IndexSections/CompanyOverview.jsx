@@ -12,7 +12,7 @@ class CompanyOverview extends React.Component {
     return (
       <>
         <Parallax
-          bgImage={require("../../assets/img/pics-vte5/nasa-Q1p7bh3SHj8-unsplash.jpg")}
+          bgImage={require("../../assets/img/pics-vte5/matthew-henry-VviFtDJakYk-unsplash.jpg")}
           bgImageAlt="Bulmag DC"
           strength={strengthImage}
         >

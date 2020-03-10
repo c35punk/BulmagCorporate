@@ -174,7 +174,13 @@ class Register extends React.Component {
                 <Col lg="5">
                   <Card className="bg-secondary shadow border-0">
                     <CardHeader className="bg-white pb-5">
-                      <div className=" text-center display-3 text-primary">
+                      <div
+                        className={
+                          isMobile
+                            ? "display-4 text-white"
+                            : "display-3 text-white"
+                        }
+                      >
                         Register
                       </div>{" "}
                     </CardHeader>

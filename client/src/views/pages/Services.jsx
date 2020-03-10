@@ -48,11 +48,15 @@ class TabsSection extends React.Component {
                     <Row>
                       <Col lg="6">
                         <h1
-                          className="display-3 text-white"
                           style={{
                             textShadow:
                               "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
                           }}
+                          className={
+                            isMobile
+                              ? "display-4 text-white"
+                              : "display-3 text-white"
+                          }
                         >
                           SERVICES
                         </h1>
