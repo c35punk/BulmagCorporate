@@ -8,7 +8,7 @@ import { Container, Row, Col } from "reactstrap";
 
 class CompanyOverview extends React.Component {
   render() {
-    let strengthImage = isMobile ? 800 : 900;
+    let strengthImage = isMobile ? 800 : 1200;
     return (
       <>
         <Parallax

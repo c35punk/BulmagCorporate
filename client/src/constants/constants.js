@@ -3,7 +3,7 @@ const auth = {
   authUser: "authUser"
 };
 
-const baseUrl = "https://10.0.100.58:9949";
+const baseUrl = "http://localhost:9949";
 const authUrl = `${baseUrl}/auth`;
 const machineUrl = `${baseUrl}/machines`;
 const productUrl = `${baseUrl}/products`;
@@ -49,7 +49,7 @@ const dbConstants = {
 
 // Input notifications
 const notifications = {
-  welcomeMsg: "Welcome to our online store",
+  welcomeMsg: "Welcome",
   goToHome: "Go to home",
   goToStore: "Go to store",
   viewOrders: "View your orders",
@@ -102,40 +102,13 @@ const paths = {
   loginName: "Login",
   logoutPath: "/logout",
   logoutName: "Logout",
-  // home
-  indexPath: "/",
-  indexName: "Online store",
-  homePath: "/home",
-  homeName: "Home",
   // machines
   machineDetailsPath: "/machines/details",
   machineDetailsName: "Details",
   storePath: "/store",
   storeName: "Store",
   storeGoToName: "Go to store",
-  // cart
-  cartPath: "/cart",
-  cartName: "Cart",
-  // orders
-  myOrdersPath: "/orders",
-  myOrdersName: "My orders",
-  orderDetailsPath: "/orders/details",
-  orderDetailsName: "View",
-  // admin
-  machineCreatePath: "/admin/create",
-  machineCreateName: "Create",
-  machineEditPath: "/admin/edit",
-  machineEditName: "Edit machine",
-  machineDeletePath: "/admin/delete",
-  machineDeleteName: "Delete machine",
-  orderDetailsAdminPath: "/admin/orders/details",
-  ordersAdminPath: "/admin/orders",
-  ordersAdminName: "Admin orders",
-  ordersApprovedName: "Approved orders",
-  ordersCancelledName: "Cancelled orders",
-  ordersDeliveredName: "Delivered orders",
-  ordersPendingName: "Pending orders",
-  // user
+   // user
   profilePath: "/profile",
   profileName: "Profile",
   profileEditPath: "/profile/edit",

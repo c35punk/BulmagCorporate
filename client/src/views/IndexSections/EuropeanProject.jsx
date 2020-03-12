@@ -55,8 +55,69 @@ const EuropeanProjectInfo = () => {
         предприятието и по-успешното му присъствие на националните и външни
         пазари чрез увеличаване обема на услугите, които предоставя,
         оптимизиране на процесите, постигане на по-висока ефективност,
-        намаляване на разходите, подобряване на предлаганите услуги. Начало на
-        проекта: 24.02.2020г. Край на проекта: 24.02.2021г.
+        намаляване на разходите, подобряване на предлаганите услуги.
+        <p>
+          {" "}
+          Начало на проекта: 24.02.2020г. <br />
+          Край на проекта: 24.02.2021г.
+        </p>
+        <div style={{ border: "solid 1px red" }}></div>
+      </p>
+      <p>
+        На 25.05.2018г. <strong>Булмаг АД</strong> подписа договор за
+        безвъзмездни средства по{" "}
+        <strong>
+          Оперативна програма „Иновации и конкурентоспособност“ 2014-2020
+          процедура „Подобряване на производствения капацитет на МСП“.
+        </strong>
+        <p>
+          {" "}
+          Общата стойност на проекта е <strong>656 335.00лв.</strong>, от които
+          423 246.23лв. европейско финансиране, 74 690.52лв. национално
+          съфинансиран, както и 158 398.25лв. самофинансиране от бенефициента.
+        </p>{" "}
+        Основната цел на проектното предложение е разработване на нов продукт -
+        Иновативният робот за индустриални цели с иновативен софтуер, който за
+        разлика от всички други конкурентни продукти, позволява както ръчна,
+        така и пространствена и отдалечена манипулация на робот. С изпълнението
+        на дейностите по проекта се цели преминаване през редица индустриални
+        научни изследвания, включващи проучвания и тествания за придобиване на
+        необходимите компетенции за валидиране на технологията в лабораторна и в
+        релевантна среда. Разработване на отделните компоненти, съставляващи
+        сложната система на иновативното устройство, тестването им и
+        асемблирането им в единна система - прототип, който да се тества в
+        симулирана и в релевантна среда.
+        <p>
+          Партньор в изпълнението на проекта ще бъде{" "}
+          <strong>СДРУЖЕНИЕ ЗА НАУЧНОИЗСЛЕДОВАТЕЛСКА И РАЗВОЙНА ДЕЙНОСТ</strong>{" "}
+          към <strong>София Тех Парк АД</strong>.
+        </p>
+        <p>
+          {" "}
+          Начало на проекта: 25.05.2018г. <br />
+          Край на проекта: 24.01.2020г.
+        </p>
+        <p>
+          Процедурата по открит избор с публична покана стартира на 16.11.2018г.
+          <br />
+          Процедура открит избор с публична покана за „Доставка на ДМА – 12
+          мотора „ Поканата и документацията за участие може да бъде свалена от
+          ТУК на адреса на единния информационен портал за обща информация за
+          управлението на Структурните фондове и Кохезионния фонд на Европейския
+          съюз на Република България на следния линк
+          (https://eumis2020.government.bg/) Процедура по открит избор с
+          публична покана стартира на 11.07.2019г.
+          <br /> Процедура по открит избор с публична покана за „Избор на
+          консултант за провеждане на: Обособена позиция 1: Тестване и
+          оптимизиране на електрониката Обособена позиция 2: Якостен анализ на
+          механичната конструкция„. <br />
+          <br />
+          Поканата и документацията за участие може да бъде свалена от адреса на
+          единния информационен портал за обща информация за управлението на
+          Структурните фондове и Кохезионния фонд на Европейския съюз на
+          Република България на следния линк (https://eumis2020.government.bg/)
+        </p>
+        <div style={{ border: "solid 1px red" }}></div>
       </p>
       <p>
         На 29.03.2016 г. <strong>Булмаг АД</strong> подписа договор за
@@ -91,11 +152,15 @@ const EuropeanProjectInfo = () => {
       По време на изпълнението на проектното предложение, заедно с основната
       цел, ще бъдат постигнати още няколко съпътстващи конкретни цели:
       <p>
-        1. Увеличаване на продажбите; 2. Разширяване на пазарния дял; 3.
-        Международният пазар получи приходи. 6-10% от нетния доход на компанията
-        да се извлича от международните пазари като краткосрочна цел; 4.
-        Увеличаване на производителността на труда; 5. Подобряване на
-        ефективността на ресурсите.
+        <p> 1. Увеличаване на продажбите;</p>
+        <p> 2. Разширяване на пазарния дял;</p>
+        <p>
+          3. Международният пазар получи приходи. 6-10% от нетния доход на
+          компанията да се извлича от международните пазари като краткосрочна
+          цел;{" "}
+        </p>{" "}
+        <p>4. Увеличаване на производителността на труда;</p>
+        <p>5. Подобряване на ефективността на ресурсите.</p>
       </p>
       <p>
         Успешното изпълнение на проекта и постигането на целите са предпоставка
@@ -117,8 +182,8 @@ const EuropeanProjectInfo = () => {
   ) : (
     <Row id="enVer">
       <p>
-        On 02/24/2020 <strong>Bulmag AD</strong> has concluded a grant contract
-        under{" "}
+        On February 24, 2020, <strong>Bulmag AD</strong> has concluded a grant
+        contract under{" "}
         <strong>
           Operational Programme "Innovation and Competitiveness" 2014-2020
           procedure "Improving the production capacity of SMEs"
@@ -142,10 +207,71 @@ const EuropeanProjectInfo = () => {
           successful presence on national and foreign markets by increasing the
           volume of services it provides, optimizing the processes, achieving
           higher efficiency, reduced costs, improved service delivery.
+          <p>
+            Project start: 24.02.2020
+            <br />
+            Projct end: 24.02.2021
+          </p>
         </p>
+        <div style={{ border: "solid 1px red" }}></div>
       </p>
       <p>
-        On 29/03/2016, the <strong>Bulmag AD</strong> signed a contract for
+        On May 25, 2018, <strong> Bulmag AD </strong> signed a contract
+        for grants under{" "}
+        <strong>
+          Operational Program "Innovation and Competitiveness"
+          2014-2020 procedure "Improving the production capacity of SMEs".
+        </strong>
+        <p>
+          The total cost of the project is
+          <strong> 656 335.00 BGN </strong>, of which 423 246.23 BGN European
+          funding, 74 690.52лв. nationally co-financed as well as 158 398.25 BGN
+          self-financing by the beneficiary.         
+        </p>
+        The main objective of the project proposal is to develop a new product -
+         An innovative industrial robot with innovative software that unlike all
+        other competing products, it allows both manual,  as well as spatial and
+        remote manipulation of a robot. With the performance  the activities of
+        the project are intended to go through a number of industrial ones
+        scientific research, including studies and tests for the acquisition of
+        the necessary competencies to validate the technology in the laboratory
+        and in relevant environment. Development of the individual components
+        that make up the complex system of the innovative device, their testing
+        and assembling them into a single system - a prototype to test in
+        simulated and in a relevant environment.         
+        <p>
+          The project implementation partner will be
+          <strong> RESEARCH AND DEVELOPMENT ASSOCIATION </strong>to
+          <strong> Sofia Tech Park AD </strong>.
+          <br />
+          Project start: 25.05.2018 <br />
+          Project end: 24.01.2020         
+        </p>
+        <p>
+          The open procedure with public invitation started on November 16,
+          2018.           
+          <br />
+          Open selection procedure with public invitation for "Supply of
+          Equipment - 12 pcs "The invitation and documentation for participation
+          can be downloaded from the single general information portal for the
+          management of the Structural Funds and the Cohesion Fund of the
+          European Union Union of the Republic of Bulgaria at the following
+          link (https://eumis2020.government.bg/) Open selection procedure with
+          public invitation starts on 11.07.2019.
+          <br /> Open procedure with public invitation to "Select consultant to
+          conduct: Lot 1: Testing and optimization of electronics Lot 2: Quality
+          analysis of mechanical construction ". <br />           
+          <br />
+          The invitation and documentation for participation can be downloaded
+          from the single information portal for general management information
+          on The Structural Funds and the Cohesion Fund of the European Union
+          The Republic of Bulgaria at the following link
+          (https://eumis2020.government.bg/)         
+        </p>
+        <div style={{ border: "solid 1px red" }}></div>
+      </p>
+      <p>
+        On March 29, 2016, <strong>Bulmag AD</strong> signed a contract for
         grants under the{" "}
         <strong>
           Operational Programme "Innovation and Competitiveness" 2014-2020
@@ -177,10 +303,17 @@ const EuropeanProjectInfo = () => {
       During the execution of the project proposal along with the main objective
       several other accompanying specific objectives will be met:
       <p>
-        1. Increase sales; 2. Expand market share; 3. International market
-        obtained revenue. 6-10% of the net income of the company to be derived
-        from international markets as a short-term goal; 4. Increase labor
-        productivity; 5. Improve resource efficiency.
+        <ul>
+          <li>Increase sales</li>
+          <li>Expand market share</li>
+          <li>
+            International market obtained revenue. 6-10% of the net income of
+            the company to be derived from international markets as a short-term
+            goal
+          </li>
+          <li>Increase labor productivity</li>
+          <li>Improve resource efficiency.</li>
+        </ul>
       </p>
       <p>
         The successful project implementation and achievement of goals are a
