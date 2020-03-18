@@ -177,8 +177,8 @@ class Register extends React.Component {
                       <div
                         className={
                           isMobile
-                            ? "display-4 text-white"
-                            : "display-3 text-white"
+                            ? "display-4 text-primary"
+                            : "display-3 text-primary"
                         }
                       >
                         Register
