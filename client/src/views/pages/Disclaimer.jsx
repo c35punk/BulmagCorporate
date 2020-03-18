@@ -21,7 +21,7 @@ class Disclaimer extends React.Component {
               blur={{ min: -1, max: 1 }}
               bgImage={require("../../assets/img/pics-vte5/ev-gpjvRZyavZc-unsplash.jpg")}
               bgImageAlt="the dog"
-              strength={950}
+              strength={!isMobile ? 950 : 350}
             >
               <div className="shape shape-style-1 shape-default "></div>
               <section className="section section-md section-shaped mb--200">

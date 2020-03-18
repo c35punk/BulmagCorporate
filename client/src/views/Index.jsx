@@ -57,26 +57,42 @@ class Index extends Component {
     return (
       <div>
         <UserProvider value={user}>
-          <CookieConsent style={{ color: "white" }}>
+          <CookieConsent
+            buttonText="I consent"
+            buttonStyle={{
+              background: "#fff",
+              border: "0",
+              borderRadius: "5px",
+              color: "#aa2727",
+              cursor: "pointer",
+              padding: "5px 10px",
+              margin: "15px",
+              font: "10px, bold, Open Sans, sans serif"
+            }}
+            expires={150}
+          >
             We use cookies{" "}
-            <Button
-              className="btn-white"
-              color="default"
-              to="/privacy-policy"
-              tag={Link}
-              size="sm"
-            >
-              Privacy Policy
-            </Button>
-            <Button
-              className="btn-white"
-              color="default"
-              to="/disclaimer"
-              tag={Link}
-              size="sm"
-            >
-              Disclaimer
-            </Button>
+            <p>
+              {" "}
+              <Button
+                className="btn-white"
+                color="default"
+                to="/privacy-policy"
+                tag={Link}
+                size="sm"
+              >
+                Privacy Policy
+              </Button>
+              <Button
+                className="btn-white"
+                color="default"
+                to="/disclaimer"
+                tag={Link}
+                size="sm"
+              >
+                Disclaimer
+              </Button>
+            </p>
           </CookieConsent>
           <Navigation />
           <Switch>
