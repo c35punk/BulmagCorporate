@@ -35,6 +35,10 @@ class CardsFooter extends React.Component {
             <a href="https://www.openwaygroup.com/">
               <h6 className="text-primary"> OpenWay </h6>
             </a>
+
+            <a href="https://robobizz.com/">
+              <h6 className="text-primary"> Robobizz </h6>
+            </a>
           </Col>
         </Row>
       </Container>
@@ -42,7 +46,7 @@ class CardsFooter extends React.Component {
       <Container>
         <h3 className="text-primary">Partners</h3>
         <Row>
-          <Col className="mb-5 mb-md-0" md="3">
+          <Col className="mb-5 mb-md-0" md="2">
             <Card className="card-lift--hover shadow border-0">
               <a href="https://tr-sys.com/home/">
                 <CardImg
@@ -52,7 +56,7 @@ class CardsFooter extends React.Component {
               </a>
             </Card>
           </Col>
-          <Col className="mb-5 mb-lg-0" md="3">
+          <Col className="mb-5 mb-lg-0 col-md-offset-1" md="2">
             <Card className="card-lift--hover shadow border-0">
               <a href="https://www.lenovo.com/us/en/data-center">
                 <CardImg
@@ -62,7 +66,7 @@ class CardsFooter extends React.Component {
               </a>
             </Card>
           </Col>
-          <Col className="mb-5 mb-lg-2" md="3">
+          <Col className="mb-5 mb-lg-2" md="2">
             <Card className="card-lift--hover shadow border-0">
               <a href="https://www.infinidat.com/products-technology/infinibox">
                 <CardImg
@@ -72,12 +76,22 @@ class CardsFooter extends React.Component {
               </a>
             </Card>
           </Col>
-          <Col className="mb-5 mb-lg-0" md="3">
+          <Col className="mb-5 mb-lg-0" md="2">
             <Card className="card-lift--hover shadow border-0">
               <a href="https://www.openwaygroup.com/">
                 <CardImg
                   alt="..."
                   src={require("../../assets/img/pics-vte5/OpenWay.jpg")}
+                />
+              </a>
+            </Card>
+          </Col>
+          <Col className="mb-5 mb-lg-0" md="2">
+            <Card className="card-lift--hover shadow border-0">
+              <a href="https://robobizz.com/">
+                <CardImg
+                  alt="..."
+                  src={require("../../assets/img/pics-vte5/download.jfif")}
                 />
               </a>
             </Card>

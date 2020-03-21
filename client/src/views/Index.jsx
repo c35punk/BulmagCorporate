@@ -58,15 +58,13 @@ class Index extends Component {
       <div>
         <UserProvider value={user}>
           <CookieConsent
-            buttonText="I consent"
+            buttonText="I agree"
             buttonStyle={{
               background: "#fff",
               border: "0",
               borderRadius: "5px",
               color: "#aa2727",
               cursor: "pointer",
-              padding: "5px 10px",
-              margin: "15px",
               font: "10px, bold, Open Sans, sans serif"
             }}
             expires={150}

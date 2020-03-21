@@ -26,6 +26,18 @@ import {
 } from "reactstrap";
 
 class Navigation extends React.Component {
+  constructor(props) {
+    super(props);
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    document.getElementById("mobileNav").className =
+      "collapse hide navbar-collapse";
+  }
+
   componentDidMount() {
     let headroom = new Headroom(document.getElementById("navbar-main"));
     // initialise
@@ -95,7 +107,11 @@ class Navigation extends React.Component {
             <button className="navbar-toggler" id="navbar_global">
               <span className="navbar-toggler-icon" />
             </button>
-            <UncontrolledCollapse navbar toggler="#navbar_global">
+            <UncontrolledCollapse
+              navbar
+              toggler="#navbar_global"
+              id="mobileNav"
+            >
               <div className="navbar-collapse-header ">
                 <Row>
                   <Col className="collapse-brand" xs="6">
@@ -137,14 +153,9 @@ class Navigation extends React.Component {
                             <i className="ni ni-briefcase-24" />
                           </div>
                         )}
-                        <Media
-                          body
-                          className={
-                            !isMobile ? "ml-3" : "sm-4"
-                          }
-                        >
+                        <Media body className={!isMobile ? "ml-3" : "sm-4"}>
                           <Link to="/products">
-                            <Button>Products</Button>
+                            <Button onClick={this.handleClick}>Products</Button>
                           </Link>
                           <p className="description d-none d-md-inline-block mb-0">
                             We offer high-end HW and SW solutions
@@ -157,14 +168,9 @@ class Navigation extends React.Component {
                             <i className="ni ni-support-16" />
                           </div>
                         ) : null}
-                         <Media
-                          body
-                          className={
-                            !isMobile ? "ml-3" : "sm-4"
-                          }
-                        >
+                        <Media body className={!isMobile ? "ml-3" : "sm-4"}>
                           <Link to="/services">
-                            <Button>Services</Button>
+                            <Button onClick={this.handleClick}>Services</Button>
                           </Link>
                           <p className="description d-none d-md-inline-block mb-0">
                             Boost your business with our enterprise services
@@ -189,13 +195,25 @@ class Navigation extends React.Component {
                     </span>
                   </DropdownToggle>
                   <DropdownMenu className="dropdown-menu-xl bg-gradient-white">
-                    <DropdownItem className="nav-link-inner--text" to="/about" tag={Link}>
+                    <DropdownItem
+                      to="/about"
+                      tag={Link}
+                      onClick={this.handleClick}
+                    >
                       About us
                     </DropdownItem>
-                    <DropdownItem to="/projects" tag={Link}>
+                    <DropdownItem
+                      to="/projects"
+                      tag={Link}
+                      onClick={this.handleClick}
+                    >
                       Projects
                     </DropdownItem>
-                    <DropdownItem to="/contacts" tag={Link}>
+                    <DropdownItem
+                      to="/contacts"
+                      tag={Link}
+                      onClick={this.handleClick}
+                    >
                       Contacts
                     </DropdownItem>
                   </DropdownMenu>
@@ -205,6 +223,7 @@ class Navigation extends React.Component {
                     <i className="ni ni-badge d-lg-none mr-1" />
                     <span
                       className="nav-link-inner--text"
+                      onClick={this.handleClick}
                       style={{
                         textShadow: !isMobile
                           ? "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
