@@ -18,3 +18,4 @@ module.exports = (options) => {
   })
   db.on('error', err => console.log(`Database error: ${err}`))
 }
+

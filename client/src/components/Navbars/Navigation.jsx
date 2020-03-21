@@ -51,13 +51,13 @@ class Navigation extends React.Component {
     if (this.props.isLoggedIn && this.props.isAdmin) {
       account = (
         <>
-          <DropdownItem to="/add-product" tag={Link}>
+          <DropdownItem to="/add-product" tag={Link} onClick={this.handleClick}>
             Add Product
           </DropdownItem>
-          <DropdownItem to="/admin-dashboard" tag={Link}>
+          <DropdownItem to="/admin-dashboard" tag={Link} onClick={this.handleClick}>
             Admin Dashboard
           </DropdownItem>
-          <DropdownItem to="/logout" tag={Link}>
+          <DropdownItem to="/logout" tag={Link} onClick={this.handleClick}>
             Logout
           </DropdownItem>
         </>
@@ -65,13 +65,13 @@ class Navigation extends React.Component {
     } else if (this.props.isLoggedIn) {
       account = (
         <>
-          <DropdownItem to="/profile" tag={Link}>
+          <DropdownItem to="/profile" tag={Link} onClick={this.handleClick}>
             Profile
           </DropdownItem>
-          <DropdownItem to="/dashboard" tag={Link}>
+          <DropdownItem to="/dashboard" tag={Link} onClick={this.handleClick}>
             Dashboard
           </DropdownItem>
-          <DropdownItem to="/logout" tag={Link}>
+          <DropdownItem to="/logout" tag={Link} onClick={this.handleClick}>
             Logout
           </DropdownItem>
         </>
@@ -79,10 +79,10 @@ class Navigation extends React.Component {
     } else {
       account = (
         <>
-          <DropdownItem to="/login" tag={Link}>
+          <DropdownItem to="/login" tag={Link} onClick={this.handleClick}>
             Login
           </DropdownItem>
-          <DropdownItem to="/register" tag={Link}>
+          <DropdownItem to="/register" tag={Link} onClick={this.handleClick}>
             Register
           </DropdownItem>
         </>
@@ -223,7 +223,7 @@ class Navigation extends React.Component {
                     <i className="ni ni-badge d-lg-none mr-1" />
                     <span
                       className="nav-link-inner--text"
-                      onClick={this.handleClick}
+                      
                       style={{
                         textShadow: !isMobile
                           ? "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
