@@ -98,6 +98,7 @@ class Login extends React.Component {
             : (window.location = "/profile");
         });
       } catch (e) {
+        console.log("ERROR!!");
         console.log(e);
       }
     });

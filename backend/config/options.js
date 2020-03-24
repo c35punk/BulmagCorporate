@@ -11,7 +11,7 @@ module.exports = {
 
   production: {
     port: process.env.PORT,
-    db: 'mongodb://localhost:27017/bulmag-prod',
+    db: 'mongodb://localhost:27017/bulmag-development',
     port: 9949
   }
 }

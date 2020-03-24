@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { dbConstants } from "../../constants/constants";
 import { isMobile } from "react-device-detect";
+import productsArr from "constants/products";
 
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
@@ -26,6 +27,7 @@ class Products extends React.Component {
         this.setState({ products: res.data });
       })
       .catch(function(error) {
+        this.setState({ products: productsArr });
         console.log(error);
       });
     document.documentElement.scrollTop = 0;
@@ -84,7 +86,7 @@ class Products extends React.Component {
                 </Button>
                 <Col lg="12">
                   <Row className="row-grid">
-                    {this.state.products
+                    {productsArr
                       .filter(x => x.type === "HCI")
                       .map(product => {
                         return (
@@ -115,7 +117,7 @@ class Products extends React.Component {
                 </Button>
                 <Col lg="12">
                   <Row className="row-grid">
-                    {this.state.products
+                    {productsArr
                       .filter(x => x.type === "HW")
                       .map(product => {
                         return (
@@ -143,7 +145,7 @@ class Products extends React.Component {
                 </Button>
                 <Col lg="12">
                   <Row className="row-grid">
-                    {this.state.products
+                    {productsArr
                       .filter(x => x.type === "Banking")
                       .map(product => {
                         return (
@@ -173,7 +175,7 @@ class Products extends React.Component {
                 </Button>
                 <Col lg="12">
                   <Row className="row-grid">
-                    {this.state.products
+                    {productsArr
                       .filter(x => x.type === "InHouse")
                       .map(product => {
                         return (
