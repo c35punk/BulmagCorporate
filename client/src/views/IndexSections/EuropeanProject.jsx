@@ -68,7 +68,7 @@ const EuropeanProjectInfo = () => {
         безвъзмездни средства по{" "}
         <strong>
           Оперативна програма „Иновации и конкурентоспособност“ 2014-2020
-          процедура „Подобряване на производствения капацитет на МСП“.
+          процедура „Разработване на продуктови и производствени иновации“.
         </strong>
         <p>
           {" "}
@@ -220,7 +220,7 @@ const EuropeanProjectInfo = () => {
         for grants under{" "}
         <strong>
           Operational Program "Innovation and Competitiveness"
-          2014-2020 procedure "Improving the production capacity of SMEs".
+          2014-2020 procedure "Product and Manufactoring Innovation Develoment".
         </strong>
         <p>
           The total cost of the project is
