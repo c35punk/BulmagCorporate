@@ -42,8 +42,6 @@ class Navigation extends React.Component {
     let headroom = new Headroom(document.getElementById("navbar-main"));
     // initialise
     headroom.init();
-    console.log("Hello from Navigation.jsx");
-    console.log(this.props);
   }
   render() {
     let account;
@@ -54,7 +52,11 @@ class Navigation extends React.Component {
           <DropdownItem to="/add-product" tag={Link} onClick={this.handleClick}>
             Add Product
           </DropdownItem>
-          <DropdownItem to="/admin-dashboard" tag={Link} onClick={this.handleClick}>
+          <DropdownItem
+            to="/admin-dashboard"
+            tag={Link}
+            onClick={this.handleClick}
+          >
             Admin Dashboard
           </DropdownItem>
           <DropdownItem to="/logout" tag={Link} onClick={this.handleClick}>
@@ -223,7 +225,6 @@ class Navigation extends React.Component {
                     <i className="ni ni-badge d-lg-none mr-1" />
                     <span
                       className="nav-link-inner--text"
-                      
                       style={{
                         textShadow: !isMobile
                           ? "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
