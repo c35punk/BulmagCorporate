@@ -69,7 +69,8 @@ class Contacts extends React.Component {
 
     if (this.state.captchaCheck) {
       axios.post(dbConstants.mailsUrl, data).then(response => {
-        if (!response.data.success) {
+        console.log(response.data);
+        if (!!response.data.success) {
           this.setState({ error: response.data.errors });
           console.log(this.state.error);
           return;
@@ -243,6 +244,7 @@ class Contacts extends React.Component {
                         onSubmit={this.handleSubmit}
                         encType="multipart/form-data"
                       >
+                        {alertToShow}
                         <FormGroup
                           className={classnames("mt-5", {
                             focused: this.state.nameFocused

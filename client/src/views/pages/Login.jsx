@@ -48,13 +48,8 @@ class Login extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
-
     const { email, password } = this.state;
     const { updateUser } = this.props;
-
-    console.log("updateUser");
-    console.log(this.props);
 
     const credentials = {
       email,
@@ -64,6 +59,7 @@ class Login extends React.Component {
     this.setState({ formSubmitted: true }, () => {
       try {
         axios.post(dbConstants.loginUrl, credentials).then(res => {
+          console.log(credentials);
           // this.setState({ token: res.data.token });
           console.log("Success@@:");
           console.log(res.data);
@@ -111,10 +107,11 @@ class Login extends React.Component {
   }
 
   render() {
-    const { email, password, error, formSubmitted } = this.state;
+    const { email, password, error } = this.state;
 
     console.log("this.props");
     console.log(this.props);
+    console.log("this.state");
     console.log(this.state);
 
     return (
