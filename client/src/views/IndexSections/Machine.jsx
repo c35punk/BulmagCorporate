@@ -8,9 +8,6 @@ import { Card, CardBody, Badge, Col } from "reactstrap";
 
 class Machine extends React.Component {
   render() {
-    console.log("Machine's this.props");
-    console.log(this.props);
-
     let {
       manufacturer,
       machineName,
@@ -50,9 +47,6 @@ class Machine extends React.Component {
         Maintenance Expired
       </Badge>
     );
-
-    console.log("Machine.JSX");
-    console.log(this.props);
 
     return (
       <Col lg="3">
