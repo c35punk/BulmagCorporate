@@ -93,7 +93,7 @@ export default [
         "_id": "5e5f6d7138239e55b59cbc7b",
         "name": "GRGBanking",
         "description": "ATM",
-        "image": "https://lh3.googleusercontent.com/proxy/ZNZpO0PsY_1XEQXuUkJFzXEUN2GmXm3ucx4DeJBDITiY6Aop0DnJibsvbXUHRSAglfOjyMApnBndu4kq8MP3ZICAiIBljJt5KOweOfFz3og1GKBw4bYr057dBRtIcGos",
+        "image": "https://firstnationalabm.com/wp-content/uploads/2019/08/GRG-H22V-Series.png",
         "productUrl": "https://tr-sys.com/solution/automated-teller-machines/",
         "type": "Banking",
         "__v": 0
