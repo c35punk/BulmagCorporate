@@ -141,8 +141,8 @@ router.get('/users', (req, res) => {
         }
 
         usersToReturn.push(userToAdd)
+        
       });
-
       res.status(200).json(usersToReturn)
     })
 })

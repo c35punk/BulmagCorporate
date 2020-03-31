@@ -12,5 +12,6 @@ module.exports = (app) => {
   app.use(express.static(path.join(__dirname, 'client/build')))
   app.use(bodyParser.json())
   app.use(passport.initialize())
+
   console.log('Express up and running...')
 }

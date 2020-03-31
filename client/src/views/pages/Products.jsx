@@ -21,15 +21,6 @@ class Products extends React.Component {
   }
 
   componentDidMount() {
-    axios
-      .get(dbConstants.productsUrl)
-      .then(res => {
-        this.setState({ products: res.data });
-      })
-      .catch(function(error) {
-        this.setState({ products: productsArr });
-        console.log(error);
-      });
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
