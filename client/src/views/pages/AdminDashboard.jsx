@@ -148,7 +148,7 @@ class AdminDashboard extends React.Component {
                                       <Button
                                         className="float-center"
                                         color="info"
-                                        href="mailto:"
+                                        href={"mailto:" + contract.email}
                                         size="sm"
                                       >
                                         {contract.email}
@@ -229,6 +229,7 @@ class AdminDashboard extends React.Component {
                                       <Button
                                         className="float-center"
                                         color="info"
+                                        href={"mailto:" + contract.email}
                                         size="sm"
                                       >
                                         {contract.email}

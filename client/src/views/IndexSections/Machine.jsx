@@ -64,7 +64,7 @@ class Machine extends React.Component {
             </h5>
             <img src={image} alt="" style={{ width: "150px" }} />
             <div className="text-dark">
-              {show3D}
+              {machineName} {show3D}
               <br />
               PN: {productNumber}
               <br />

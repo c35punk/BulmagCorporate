@@ -3,7 +3,7 @@ const auth = {
   authUser: "authUser"
 };
 
-const baseUrl = "https://bulmag.bg/api";
+const baseUrl = "http://10.0.100.58:9949";
 const authUrl = `${baseUrl}/auth`;
 const machineUrl = `${baseUrl}/machines`;
 const productUrl = `${baseUrl}/products`;

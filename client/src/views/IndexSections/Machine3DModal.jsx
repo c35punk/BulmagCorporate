@@ -17,11 +17,11 @@ class Machine3DModal extends React.Component {
       manufacturer,
       machineName,
       productNumber,
-      serialNumber,
-      type
+      serialNumber
     } = this.props.machine;
     console.log(this.props);
-
+    let url = `https://www.lenovofiles.com/3dtours/products/superblaze/{machineName}/index.html`;
+    console.log(url);
     return (
       <>
         <Button
@@ -31,10 +31,7 @@ class Machine3DModal extends React.Component {
           onClick={() =>
             !isMobile
               ? this.toggleModal("notificationModal")
-              : window.open(
-                  `https://www.lenovofiles.com/3dtours/products/superblaze/${machineName}/index.html`,
-                  "_self"
-                )
+              : window.open(url, "_self")
           }
         >
           3D

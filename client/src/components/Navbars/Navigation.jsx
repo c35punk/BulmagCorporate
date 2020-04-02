@@ -92,6 +92,27 @@ class Navigation extends React.Component {
       );
     }
 
+    let show3Dtour = !isMobile ? (
+      <Media>
+        {/* {isMobile ? null : (
+        <div className="icon icon-shape bg-gradient-primary rounded-circle text-white">
+          <i className="ni ni-briefcase-24" />
+        </div>
+      )} */}
+        <Media body className={!isMobile ? "ml-3" : "sm-4"}>
+          <Modal
+            lenovothreedtours={"https://www.lenovofiles.com/3dtours/products/"}
+            description="Lenovo Data Products Center 3D Tour"
+          />
+          <p className="description d-none d-md-inline-block mb-0">
+            VMware, Nutanix, and Microsoft Appliances
+            <br />
+            DataCenter Building Blocks
+          </p>
+        </Media>
+      </Media>
+    ) : null;
+
     return (
       <header className="header-global">
         <Navbar
@@ -180,25 +201,7 @@ class Navigation extends React.Component {
                           </p>
                         </Media>
                       </Media>
-                      <Media>
-                        {/* {isMobile ? null : (
-                          <div className="icon icon-shape bg-gradient-primary rounded-circle text-white">
-                            <i className="ni ni-briefcase-24" />
-                          </div>
-                        )} */}
-                        <Media body className={!isMobile ? "ml-3" : "sm-4"}>
-                          <Modal
-                            lenovothreedtours={
-                              "https://www.lenovofiles.com/3dtours/products/"
-                            }
-                            description="Lenovo Data Products Center 3D Tour"
-                          />
-                          <p className="description d-none d-md-inline-block mb-0">
-                            VMware, Nutanix, and Microsoft Appliances<br />
-                            DataCenter Building Blocks
-                          </p>
-                        </Media>
-                      </Media>
+                      {show3Dtour}
                     </div>
                   </DropdownMenu>
                 </UncontrolledDropdown>
