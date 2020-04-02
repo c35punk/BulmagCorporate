@@ -46,7 +46,6 @@ class AddMachine extends React.Component {
 
   handleManufacturer(event) {
     this.setState({ manufacturer: event.target.value });
-   
   }
   handleName(event) {
     this.setState({ machineName: event.target.value });
