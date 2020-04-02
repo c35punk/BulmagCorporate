@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import { dbConstants } from "../../constants/constants";
 import { isMobile } from "react-device-detect";
-import productsArr from "constants/products";
 
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
@@ -21,6 +20,14 @@ class Products extends React.Component {
   }
 
   componentDidMount() {
+    axios
+      .get(dbConstants.productsUrl)
+      .then(res => {
+        this.setState({ products: res.data });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
@@ -77,7 +84,7 @@ class Products extends React.Component {
                 </Button>
                 <Col lg="12">
                   <Row className="row-grid">
-                    {productsArr
+                    {this.state.products
                       .filter(x => x.type === "HCI")
                       .map(product => {
                         return (
@@ -108,7 +115,7 @@ class Products extends React.Component {
                 </Button>
                 <Col lg="12">
                   <Row className="row-grid">
-                    {productsArr
+                    {this.state.products
                       .filter(x => x.type === "HW")
                       .map(product => {
                         return (
@@ -136,7 +143,7 @@ class Products extends React.Component {
                 </Button>
                 <Col lg="12">
                   <Row className="row-grid">
-                    {productsArr
+                    {this.state.products
                       .filter(x => x.type === "Banking")
                       .map(product => {
                         return (
@@ -166,7 +173,7 @@ class Products extends React.Component {
                 </Button>
                 <Col lg="12">
                   <Row className="row-grid">
-                    {productsArr
+                    {this.state.products
                       .filter(x => x.type === "InHouse")
                       .map(product => {
                         return (
