@@ -285,6 +285,22 @@ class Navigation extends React.Component {
                     Like us on Facebook
                   </UncontrolledTooltip>
                 </NavItem>
+                <NavItem>
+                  <NavLink
+                    className="nav-link-icon"
+                    href="https://www.linkedin.com/company/bulmag-ad/"
+                    id="tooltip333589076"
+                    target="_blank"
+                  >
+                    <i className="fa fa-linkedin" />
+                    <span className="nav-link-inner--text d-lg-none ml-2">
+                      LinkedIn
+                    </span>
+                  </NavLink>
+                  <UncontrolledTooltip delay={0} target="tooltip333589076">
+                    Connect with LinkedIn
+                  </UncontrolledTooltip>
+                </NavItem>
 
                 <NavItem>
                   <NavLink
