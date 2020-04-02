@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Headroom from "headroom.js";
 import { UserConsumer } from "../../contexts/user-context";
 import { isMobile } from "react-device-detect";
+import Modal from "../../views/IndexSections/Modals";
 
 // reactstrap components
 import {
@@ -176,6 +177,25 @@ class Navigation extends React.Component {
                           </Link>
                           <p className="description d-none d-md-inline-block mb-0">
                             Boost your business with our enterprise services
+                          </p>
+                        </Media>
+                      </Media>
+                      <Media>
+                        {/* {isMobile ? null : (
+                          <div className="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                            <i className="ni ni-briefcase-24" />
+                          </div>
+                        )} */}
+                        <Media body className={!isMobile ? "ml-3" : "sm-4"}>
+                          <Modal
+                            lenovothreedtours={
+                              "https://www.lenovofiles.com/3dtours/products/"
+                            }
+                            description="Lenovo Data Products Center 3D Tour"
+                          />
+                          <p className="description d-none d-md-inline-block mb-0">
+                            VMware, Nutanix, and Microsoft Appliances<br />
+                            DataCenter Building Blocks
                           </p>
                         </Media>
                       </Media>

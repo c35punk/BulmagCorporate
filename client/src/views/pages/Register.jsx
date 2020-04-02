@@ -114,7 +114,7 @@ class Register extends React.Component {
 
     event.preventDefault();
 
-    // window.location = "/login";
+    window.location = "/login";
   }
 
   componentDidMount() {

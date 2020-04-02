@@ -4,7 +4,7 @@ import { Button, Modal } from "reactstrap";
 import Loading from "./Loading";
 import { isMobile } from "react-device-detect";
 
-class Modals extends React.Component {
+class Machine3DModal extends React.Component {
   state = {};
   toggleModal = state => {
     this.setState({
@@ -13,23 +13,31 @@ class Modals extends React.Component {
   };
 
   render() {
-    let url = this.props.productUrl || this.props.serviceUrl;
+    let {
+      manufacturer,
+      machineName,
+      productNumber,
+      serialNumber,
+      type
+    } = this.props.machine;
     console.log(this.props);
+
     return (
       <>
-        <br />
         <Button
-          block
           className="mb-2"
-          color="dark"
+          color="primary"
           type="button"
           onClick={() =>
             !isMobile
               ? this.toggleModal("notificationModal")
-              : window.open(url, "_self")
+              : window.open(
+                  `https://www.lenovofiles.com/3dtours/products/superblaze/${machineName}/index.html`,
+                  "_self"
+                )
           }
         >
-          {this.props.lenovothreedtours ? "Lenovo DCG 3D Tour" : "Details"}
+          3D
         </Button>
         <Modal
           className="modal-dialog-centered modal-primary modal-lg"
@@ -39,7 +47,13 @@ class Modals extends React.Component {
         >
           <div className="modal-header">
             <h6 className="modal-title" id="modal-title-notification">
-              {this.props.description}
+              {manufacturer +
+                " " +
+                machineName +
+                " PN: " +
+                productNumber +
+                " SN: " +
+                serialNumber}
             </h6>
             <button
               aria-label="Close"
@@ -57,11 +71,7 @@ class Modals extends React.Component {
                 <Loading />
                 <iframe
                   class="embed-responsive-item"
-                  src={
-                    this.props.productUrl ||
-                    this.props.serviceUrl ||
-                    this.props.lenovothreedtours
-                  }
+                  src={`https://www.lenovofiles.com/3dtours/products/superblaze/${machineName}/index.html`}
                   allowfullscreen
                   title="Product URL"
                 ></iframe>
@@ -74,4 +84,4 @@ class Modals extends React.Component {
   }
 }
 
-export default Modals;
+export default Machine3DModal;

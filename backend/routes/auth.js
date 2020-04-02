@@ -2,6 +2,7 @@ const express = require('express')
 const passport = require('passport')
 const validator = require('validator')
 const User = require('../models/User')
+const authCheck = require('../config/auth-check')
 
 const router = new express.Router()
 
@@ -111,7 +112,7 @@ router.post('/signup', (req, res, next) => {
 
     return res.status(200).json({
       success: true,
-      message: 'You have successfully signed up! Now you should be able to log in.'
+      message: 'You have successfully registered! Now you should be able to log in.'
     })
   })(req, res, next)
 })
@@ -122,29 +123,30 @@ router.get('/users', (req, res) => {
       if (err) {
         res.send(err);
       } else {
+        console.log(result);
         res.send(result);
       }
     })
-    .then(users => {
-      let usersToReturn = [];
-      users.forEach(user => {
-        let userToAdd = {
-          id: user._id,
-          email: user.email,
-          roles: user.roles,
-          username: user.username,
-          companyName: user.companyName,
-          address: user.address,
-          contactPerson: user.contactPerson,
-          vatNumber: user.vatNumber,
-          companyImage: user.companyImage
-        }
+  // .then(users => {
+  //   let usersToReturn = [];
+  //   users.forEach(user => {
+  //     let userToAdd = {
+  //       id: user._id,
+  //       email: user.email,
+  //       roles: user.roles,
+  //       username: user.username,
+  //       companyName: user.companyName,
+  //       address: user.address,
+  //       contactPerson: user.contactPerson,
+  //       vatNumber: user.vatNumber,
+  //       companyImage: user.companyImage
+  //     }
 
-        usersToReturn.push(userToAdd)
-        
-      });
-      res.status(200).json(usersToReturn)
-    })
+  //     usersToReturn.push(userToAdd)
+
+  //   });
+  //   res.status(200).json(usersToReturn)
+  // })
 })
 
 router.post('/login', (req, res, next) => {

@@ -5,6 +5,7 @@ import ExpiredModal from "./MachineModalsExpired";
 import { functions } from "../../constants/constants";
 
 import { Card, CardBody, Badge, Col } from "reactstrap";
+import Machine3DModal from "./Machine3DModal";
 
 class Machine extends React.Component {
   render() {
@@ -37,6 +38,11 @@ class Machine extends React.Component {
       />
     );
 
+    let show3D =
+      manufacturer === "Lenovo" && type === "Server" ? (
+        <Machine3DModal machine={this.props.machine} />
+      ) : null;
+
     console.log(functions.isDateBeforeToday(currentDate));
     let status = functions.isDateBeforeToday(currentDate) ? (
       <Badge color="success" pill className="mr-3">
@@ -58,7 +64,7 @@ class Machine extends React.Component {
             </h5>
             <img src={image} alt="" style={{ width: "150px" }} />
             <div className="text-dark">
-              {machineName}
+              {show3D}
               <br />
               PN: {productNumber}
               <br />

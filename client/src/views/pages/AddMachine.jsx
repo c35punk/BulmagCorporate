@@ -46,6 +46,7 @@ class AddMachine extends React.Component {
 
   handleManufacturer(event) {
     this.setState({ manufacturer: event.target.value });
+   
   }
   handleName(event) {
     this.setState({ machineName: event.target.value });
@@ -156,6 +157,26 @@ class AddMachine extends React.Component {
                           <InputGroup className="input-group-alternative mb-3">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
+                                <i className="ni ni-align-left-2" />
+                              </InputGroupText>
+                            </InputGroupAddon>
+                            <Input
+                              type="select"
+                              placeholder="Type (Server, Storage, Switch, etc.)"
+                              name="type"
+                              value={this.state.type}
+                              onChange={this.handleType}
+                            >
+                              <option>Server</option>
+                              <option>Storage</option>
+                              <option>Switch</option>
+                            </Input>
+                          </InputGroup>
+                        </FormGroup>
+                        <FormGroup>
+                          <InputGroup className="input-group-alternative mb-3">
+                            <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
                                 <i className="ni ni-single-copy-04" />
                               </InputGroupText>
                             </InputGroupAddon>
@@ -200,26 +221,7 @@ class AddMachine extends React.Component {
                             />
                           </InputGroup>
                         </FormGroup>
-                        <FormGroup>
-                          <InputGroup className="input-group-alternative mb-3">
-                            <InputGroupAddon addonType="prepend">
-                              <InputGroupText>
-                                <i className="ni ni-align-left-2" />
-                              </InputGroupText>
-                            </InputGroupAddon>
-                            <Input
-                              type="select"
-                              placeholder="Type (Server, Storage, Switch, etc.)"
-                              name="type"
-                              value={this.state.type}
-                              onChange={this.handleType}
-                            >
-                              <option>Server</option>
-                              <option>Storage</option>
-                              <option>Switch</option>
-                            </Input>
-                          </InputGroup>
-                        </FormGroup>
+
                         <FormGroup>
                           <InputGroup className="input-group-alternative">
                             <InputGroupAddon addonType="prepend">
