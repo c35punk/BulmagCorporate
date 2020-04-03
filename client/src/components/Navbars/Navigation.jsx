@@ -119,7 +119,7 @@ class Navigation extends React.Component {
           className="navbar-main navbar-transparent navbar-light headroom"
           expand="lg"
           id="navbar-main"
-          style={{ backgroundColor: "rgba(39, 39, 39, 0.56)" }}
+          style={{ backgroundColor: "rgba(49, 49, 49, 0.97)" }}
         >
           <Container>
             <NavbarBrand className="mr-lg-5" to="/" tag={Link}>

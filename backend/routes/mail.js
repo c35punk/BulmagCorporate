@@ -59,9 +59,9 @@ router.post('/send', (req, res, next) => {
     var client = nodemailer.createTransport(sgTransport(options));
     var mail = {
         from: email,
-        to: 'ldjantov@bulmag.bg',
+        to: 'ldjantov@bulmag.bg, vterziyski@bulmag.bg, nzets@bulmag.bg, gchompalov@bulmag.bg',
         subject: 'New Contact Form Message',
-        html: `<img src="https://team-vision.bg/wp-content/uploads/2019/08/Bulmag.png" alt="BULMAG AD"/><br/><h2>${name}</h2><h4>${message}</h4>`
+        html: `<img src="https://team-vision.bg/wp-content/uploads/2019/08/Bulmag.png" alt="BULMAG AD"/><br/><h2>${name}</h2><br/><h4>${message}</h4>`
     }
 
     client.sendMail(mail, (err, data) => {

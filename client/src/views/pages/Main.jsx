@@ -8,6 +8,8 @@ import HomePageIntro from "views/IndexSections/HomePageIntro.jsx";
 import ProfessionalServicesBanner from "views/IndexSections/ProfessionalServicesBanner.jsx";
 import SupportBanner from "views/IndexSections/SupportBanner";
 import AltCarousel from "views/IndexSections/AltCarousel.jsx";
+import AltCarouselV2 from "views/IndexSections/AltCarouselV2.jsx";
+import data from "../../constants/carousel";
 
 class Main extends React.Component {
   componentDidMount() {
@@ -16,7 +18,7 @@ class Main extends React.Component {
     this.refs.main.scrollTop = 0;
   }
   render() {
-    let carousel = !isMobile ? <Carousel /> : <AltCarousel />;
+    let carousel = !isMobile ? <AltCarouselV2 data={data} /> : <AltCarousel />;
     return (
       <main ref="main">
         {carousel}
