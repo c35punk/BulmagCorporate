@@ -35,6 +35,7 @@ const dbConstants = {
   mailsUrl: `${mailUrl}/send`,
   ticketsUrl: `${ticketUrl}/`,
   addTicketsUrl: `${machineUrl}/add-ticket`,
+  addProductsUrl: `${productUrl}/add-product`,
   machineCreateUrl: `${machineUrl}/create`,
   machineEditByIdUrl: `${machineUrl}/edit/`,
   machineDeleteByIdUrl: `${machineUrl}/delete/`,

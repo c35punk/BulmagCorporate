@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { dbConstants } from "../../constants/constants";
 
 // reactstrap components
 import {
@@ -64,7 +65,7 @@ class AddProduct extends React.Component {
     };
 
     axios
-      .post("http://localhost:9949/products/add-product", productToBeAdded)
+      .post(dbConstants.addProductsUrl, productToBeAdded)
       .then(res => console.log(res.data));
     console.log(productToBeAdded);
     console.log(this.state);
@@ -108,7 +109,6 @@ class AddProduct extends React.Component {
                         <small>Details</small>
                       </div>
                       <Form role="form" onSubmit={this.handleSubmit}>
-                        
                         <FormGroup>
                           <InputGroup className="input-group-alternative mb-3">
                             <InputGroupAddon addonType="prepend">
@@ -173,7 +173,7 @@ class AddProduct extends React.Component {
                             />
                           </InputGroup>
                         </FormGroup>
-                        
+
                         <FormGroup>
                           <InputGroup className="input-group-alternative">
                             <InputGroupAddon addonType="prepend">
@@ -192,7 +192,6 @@ class AddProduct extends React.Component {
                           </InputGroup>
                         </FormGroup>
 
-                       
                         <div className="text-center">
                           <Button
                             className="mt-4"
