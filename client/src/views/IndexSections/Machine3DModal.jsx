@@ -20,7 +20,7 @@ class Machine3DModal extends React.Component {
       serialNumber
     } = this.props.machine;
     console.log(this.props);
-    let url = `https://www.lenovofiles.com/3dtours/products/superblaze/{machineName}/index.html`;
+    let url = `https://www.lenovofiles.com/3dtours/products/superblaze/${machineName}/index.html`;
     console.log(url);
     return (
       <>

@@ -1,6 +1,7 @@
 import React from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
+import certsArr from "../../constants/certs_not_in_use";
 
 // reactstrap components
 import {
@@ -15,6 +16,7 @@ import {
   Col,
   Container
 } from "reactstrap";
+import CertificateCard from "./CertificateCard";
 
 class TabsSection extends React.Component {
   state = {
@@ -1120,7 +1122,20 @@ class TabsSection extends React.Component {
                     </p>
                   </TabPane>
                   <TabPane tabId="plainTabs4">
-                    <p className="description"></p>
+                    <p className="description">
+                      <Col lg="12">
+                        <Row className="row-grid">
+                          {certsArr.map(person => {
+                            return (
+                              <>
+                                <CertificateCard person={person} />
+                                <br />
+                              </>
+                            );
+                          })}
+                        </Row>
+                      </Col>
+                    </p>
                   </TabPane>
                   <TabPane tabId="plainTabs5">
                     <p className="description">

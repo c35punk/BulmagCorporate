@@ -49,17 +49,7 @@ class App extends React.Component {
     }
   }
 
-  componentDidMount() {
-    // function timeoutLoop() {
-    //   setTimeout(function() {
-    //     this.props.data.map(x => {
-    //       this._changeActive(x.id);
-    //     });
-    //     timeoutLoop();
-    //   }, 2500);
-    // }
-    // timeoutLoop();
-  }
+
   render() {
     return (
       <section className="wrapper" style={this.state.wrapperStyle}>
