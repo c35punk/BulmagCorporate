@@ -1,7 +1,7 @@
 import React from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
-import certsArr from "../../constants/certs_not_in_use";
+import certsArr from "../../constants/certs";
 
 // reactstrap components
 import {
@@ -1125,14 +1125,20 @@ class TabsSection extends React.Component {
                     <p className="description">
                       <Col lg="12">
                         <Row className="row-grid">
-                          {certsArr.map(person => {
-                            return (
-                              <>
-                                <CertificateCard person={person} />
-                                <br />
-                              </>
-                            );
-                          })}
+                          {certsArr
+                            .sort(function(a, b) {
+                              return a.name
+                                .toLowerCase()
+                                .localeCompare(b.name.toLowerCase());
+                            })
+                            .map(person => {
+                              return (
+                                <>
+                                  <CertificateCard person={person} />
+                                  <br />
+                                </>
+                              );
+                            })}
                         </Row>
                       </Col>
                     </p>

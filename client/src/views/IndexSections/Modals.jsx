@@ -15,13 +15,37 @@ class Modals extends React.Component {
   render() {
     let url = this.props.productUrl || this.props.serviceUrl;
     console.log(this.props);
+
+    let certStyles = {
+      float: "left",
+      display: "inline",
+      width: "20em",
+      wordWrap: "break-word",
+      fontSize: "1em"
+    };
+    let { description, lenovothreedtours } = this.props;
+
+    let buttonText = !!lenovothreedtours ? "Lenovo DCG 3D Tour" : "Details";
+
+    let pdfImage = (
+      <img
+        src="https://www.pikpng.com/pngl/b/585-5853219_511e-medical-information-form-transparent-background-pdf-icon.png"
+        alt=""
+        style={{
+          width: "auto",
+          height: "2.5em",
+          wordWrap: "break-word",
+          objectFit: "scale-down"
+        }}
+      />
+    );
     return (
       <>
         <br />
         <Button
-          block
           className="mb-2"
           color="dark"
+          style={this.props.certificateUrl ? certStyles : null}
           type="button"
           onClick={() =>
             !isMobile
@@ -29,7 +53,11 @@ class Modals extends React.Component {
               : window.open(url, "_self")
           }
         >
-          {this.props.lenovothreedtours ? "Lenovo DCG 3D Tour" : "Details"}
+          {this.props.certificateUrl ? pdfImage : null}
+
+          {this.props.certificateUrl
+            ? description.slice(0, 14) + "..."
+            : buttonText}
         </Button>
         <Modal
           className="modal-dialog-centered modal-primary modal-lg"
@@ -39,7 +67,7 @@ class Modals extends React.Component {
         >
           <div className="modal-header">
             <h6 className="modal-title" id="modal-title-notification">
-              {this.props.description}
+              {description}
             </h6>
             <button
               aria-label="Close"

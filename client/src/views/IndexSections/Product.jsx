@@ -7,20 +7,13 @@ class Product extends React.Component {
   render() {
     let { name, description, image, type, productUrl } = this.props.product;
 
-    let size = type === "Banking" ? 2 : 3;
+    let size = 3;
 
-    let styles =
-      type === "Banking"
-        ? {
-            width: "90px",
-            height: "105px",
-            objectFit: "scale-down"
-          }
-        : {
-            width: "130px",
-            height: "155px",
-            objectFit: "scale-down"
-          };
+    let styles = {
+      width: "130px",
+      height: "155px",
+      objectFit: "scale-down"
+    };
     return (
       <Col lg={size}>
         <Card className="card-lift--hover shadow border-0">

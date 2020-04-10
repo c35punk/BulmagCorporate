@@ -8,46 +8,46 @@ class CertificateCard extends React.Component {
     let { name, certs } = this.props.person;
 
     return (
-      <Col lg="6">
-        <Card className="card-lift--hover shadow border-0">
-          <CardBody className="py-5">
+      <Col lg="12">
+        <Card className="shadow border-0">
+          <CardBody
+            style={{
+              border: "red 1px solid"
+            }}
+          >
             <Col lg="12">
+              <div>
+                <Badge
+                  color="info"
+                  pill
+                  className="mr-4"
+                  style={{ fontSize: "1.2em" }}
+                >
+                  <i className="ni ni-single-02 text-primary" />
+                  {" " + name}
+                </Badge>
+              </div>
               <Row className="row-grid">
-                {certs.map(person => {
+                {certs.map(certificate => {
                   return (
                     <>
-                      <h2 lg="6">{person.name}</h2>
-                      <img
-                        src="https://i7.pngguru.com/preview/510/904/930/pdf-adobe-acrobat-computer-icons-pdf-icon.jpg"
-                        alt=""
-                        styles={{
-                          width: "90px",
-                          height: "105px",
-                          objectFit: "scale-down"
-                        }}
-                      />
-                      <br />
-                      {/* {person.certs.forEach(certificate => {
-                        <Modal
-                          className="mt-3"
-                          color="info"
-                          productUrl={`https://bulmag.bg/cert/${certificate.certNumber}.pdf`}
-                          description={certificate.description}
-                        />;
-                      })} */ console.log(
-                        person.certs
-                      )}
-                      }
+                      <Row lg="3" style={{ display: "block" }}>
+                        <Col>
+                          <Badge>
+                            <Modal
+                              className="mt-3"
+                              color="info"
+                              certificateUrl={`https://bulmag.bg/cert/${certificate.certNumber}.pdf`}
+                              description={certificate.description}
+                            />
+                          </Badge>
+                        </Col>
+                      </Row>
                     </>
                   );
                 })}
               </Row>
             </Col>
-            <div>
-              <Badge color="info" pill className="mr-1">
-                {name}
-              </Badge>
-            </div>
           </CardBody>
         </Card>
       </Col>

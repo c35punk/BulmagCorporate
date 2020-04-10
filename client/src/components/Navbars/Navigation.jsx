@@ -102,7 +102,7 @@ class Navigation extends React.Component {
         <Media body className={!isMobile ? "ml-3" : "sm-4"}>
           <Modal
             lenovothreedtours={"https://www.lenovofiles.com/3dtours/products/"}
-            description="Lenovo Data Center Group 3D Tour"
+            description="Lenovo DCG 3D Tour"
           />
           <p className="description d-none d-md-inline-block mb-0">
             VMware, Nutanix, and Microsoft Appliances
