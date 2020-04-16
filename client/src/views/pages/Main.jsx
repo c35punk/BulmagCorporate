@@ -2,7 +2,6 @@ import React from "react";
 
 import { isMobile } from "react-device-detect";
 
-import Carousel from "../IndexSections/Carousel.jsx";
 import CompanyOverview from "../IndexSections/CompanyOverview.jsx";
 import HomePageIntro from "views/IndexSections/HomePageIntro.jsx";
 import ProfessionalServicesBanner from "views/IndexSections/ProfessionalServicesBanner.jsx";
