@@ -6,9 +6,9 @@ import { isMobile } from "react-device-detect";
 
 class Modals extends React.Component {
   state = {};
-  toggleModal = state => {
+  toggleModal = (state) => {
     this.setState({
-      [state]: !this.state[state]
+      [state]: !this.state[state],
     });
   };
 
@@ -21,7 +21,7 @@ class Modals extends React.Component {
       display: "inline",
       width: "20em",
       wordWrap: "break-word",
-      fontSize: "1em"
+      fontSize: "1em",
     };
     let { description, lenovothreedtours } = this.props;
 
@@ -35,7 +35,7 @@ class Modals extends React.Component {
           width: "auto",
           height: "2.5em",
           wordWrap: "break-word",
-          objectFit: "scale-down"
+          objectFit: "scale-down",
         }}
       />
     );
@@ -88,6 +88,7 @@ class Modals extends React.Component {
                   src={
                     this.props.productUrl ||
                     this.props.serviceUrl ||
+                    this.props.certificateUrl ||
                     this.props.lenovothreedtours
                   }
                   allowfullscreen

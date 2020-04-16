@@ -9,26 +9,26 @@ class App extends React.Component {
     this.state = {
       activeID: 0,
       wrapperStyle: {
-        backgroundImage: `url('${this.props.data[0].img}')`
+        backgroundImage: `url('${this.props.data[0].img}')`,
       },
       panelStyle: {
-        background: this.props.data[0].colour
+        background: this.props.data[0].colour,
       },
       buttonHover: false,
       buttonStyle: {
-        color: "#ffffff"
-      }
+        color: "#ffffff",
+      },
     };
   }
   _changeActive(id) {
     this.setState({
       activeID: id,
       wrapperStyle: {
-        backgroundImage: `url('${this.props.data[id].img}')`
+        backgroundImage: `url('${this.props.data[id].img}')`,
       },
       panelStyle: {
-        backgroundColor: this.props.data[id].colour
-      }
+        backgroundColor: this.props.data[id].colour,
+      },
     });
   }
   _buttonColour() {
@@ -36,19 +36,18 @@ class App extends React.Component {
       this.setState({
         buttonHover: true,
         buttonStyle: {
-          color: this.props.data[this.state.activeID].colour
-        }
+          color: this.props.data[this.state.activeID].colour,
+        },
       });
     } else {
       this.setState({
         buttonHover: false,
         buttonStyle: {
-          color: "#ffffff"
-        }
+          color: "#ffffff",
+        },
       });
     }
   }
-
 
   render() {
     return (
@@ -81,8 +80,8 @@ class Panel extends React.Component {
           style={{
             padding: "5em",
             fontFamily:
-              "'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif",
-            textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
+              "'Lucida Grande', 'Lucida Sans Unicode', Geneva, sans-serif",
+            textShadow: "-1px 0 black, 0 1px black, 2px 0 black, 0 -1px black",
           }}
         >
           <Col>
@@ -92,6 +91,7 @@ class Panel extends React.Component {
               className="btn-primary mt-4"
               to={this.props.data.location}
               tag={Link}
+            
             >
               Details
             </Button>
@@ -112,7 +112,7 @@ class Selectors extends React.Component {
   render() {
     return (
       <div className="selectors">
-        {this.props.data.map(item => (
+        {this.props.data.map((item) => (
           <Selector
             key={item.id}
             id={item.id}
