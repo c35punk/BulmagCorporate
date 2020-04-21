@@ -50,7 +50,7 @@ class Disclaimer extends React.Component {
                 <Col>
                   <h4 className="text-primary">Statement</h4>
                   All the information on this website -{" "}
-                  <strong>https://www.bulmag.bg</strong> - is published in good
+                  <strong>https://bulmag.bg</strong> - is published in good
                   faith and for general information purpose only.{" "}
                   <strong>Bulmag AD</strong> does not make any warranties about
                   the completeness, reliability and accuracy of this

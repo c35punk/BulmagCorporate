@@ -15,7 +15,7 @@ module.exports = (req, res, next) => {
   // decode the token using a secret key-phrase
   return jwt.verify(token, 'p4ss', (err, decoded) => {
     if (err) {
-      return console.log('JWT ERROR!!!'), res.status(401).end()
+      return console.log('JWT ERROR!'), res.status(401).end()
     }
 
     const userId = decoded.sub
@@ -23,7 +23,7 @@ module.exports = (req, res, next) => {
       .findById(userId)
       .then(user => {
         if (!user) {
-          return console.log('No USER!!!'), res.status(401).end()
+          return console.log('No USER!'), res.status(401).end()
         }
 
         req.user = user
