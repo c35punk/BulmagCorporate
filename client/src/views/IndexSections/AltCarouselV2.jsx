@@ -84,7 +84,8 @@ class Panel extends React.Component {
             textShadow: "-1px 0 black, 0 1px black, 2px 0 black, 0 -1px black",
           }}
         >
-          <Col>
+          <Col   style={{
+            padding: "6em 0 0 0"}}>
             <p className="panel-info">{this.props.data.header}</p>
             <p className="panel-info">{this.props.data.body}</p>
             <Button
