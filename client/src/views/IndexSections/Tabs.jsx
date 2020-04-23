@@ -14,19 +14,20 @@ import {
   TabPane,
   Row,
   Col,
-  Container
+  Container,
 } from "reactstrap";
 import CertificateCard from "./CertificateCard";
+import HistoryPoints from "./HistoryPoints";
 
 class TabsSection extends React.Component {
   state = {
     iconTabs: 1,
-    plainTabs: 1
+    plainTabs: 1,
   };
   toggleNavs = (e, state, index) => {
     e.preventDefault();
     this.setState({
-      [state]: index
+      [state]: index,
     });
   };
   render() {
@@ -46,9 +47,9 @@ class TabsSection extends React.Component {
                   <NavLink
                     aria-selected={this.state.plainTabs === 1}
                     className={classnames("mb-sm-3 mb-md-0", {
-                      active: this.state.plainTabs === 1
+                      active: this.state.plainTabs === 1,
                     })}
-                    onClick={e => this.toggleNavs(e, "plainTabs", 1)}
+                    onClick={(e) => this.toggleNavs(e, "plainTabs", 1)}
                     href="#"
                     role="tab"
                   >
@@ -59,9 +60,9 @@ class TabsSection extends React.Component {
                   <NavLink
                     aria-selected={this.state.plainTabs === 3}
                     className={classnames("mb-sm-3 mb-md-0", {
-                      active: this.state.plainTabs === 3
+                      active: this.state.plainTabs === 3,
                     })}
-                    onClick={e => this.toggleNavs(e, "plainTabs", 3)}
+                    onClick={(e) => this.toggleNavs(e, "plainTabs", 3)}
                     href="#"
                     role="tab"
                   >
@@ -73,9 +74,9 @@ class TabsSection extends React.Component {
                   <NavLink
                     aria-selected={this.state.plainTabs === 2}
                     className={classnames("mb-sm-3 mb-md-0", {
-                      active: this.state.plainTabs === 2
+                      active: this.state.plainTabs === 2,
                     })}
-                    onClick={e => this.toggleNavs(e, "plainTabs", 2)}
+                    onClick={(e) => this.toggleNavs(e, "plainTabs", 2)}
                     href="#"
                     role="tab"
                   >
@@ -86,9 +87,9 @@ class TabsSection extends React.Component {
                   <NavLink
                     aria-selected={this.state.plainTabs === 4}
                     className={classnames("mb-sm-3 mb-md-0", {
-                      active: this.state.plainTabs === 4
+                      active: this.state.plainTabs === 4,
                     })}
-                    onClick={e => this.toggleNavs(e, "plainTabs", 4)}
+                    onClick={(e) => this.toggleNavs(e, "plainTabs", 4)}
                     href="#"
                     role="tab"
                   >
@@ -99,9 +100,9 @@ class TabsSection extends React.Component {
                   <NavLink
                     aria-selected={this.state.plainTabs === 5}
                     className={classnames("mb-sm-3 mb-md-0", {
-                      active: this.state.plainTabs === 5
+                      active: this.state.plainTabs === 5,
                     })}
-                    onClick={e => this.toggleNavs(e, "plainTabs", 5)}
+                    onClick={(e) => this.toggleNavs(e, "plainTabs", 5)}
                     href="#"
                     role="tab"
                   >
@@ -1050,6 +1051,7 @@ class TabsSection extends React.Component {
                     </p>
                   </TabPane>
                   <TabPane tabId="plainTabs3">
+                    <HistoryPoints />
                     <p className="description">
                       <ul>
                         <h5 className="text-darker">
@@ -1126,12 +1128,12 @@ class TabsSection extends React.Component {
                       <Col lg="12">
                         <Row className="row-grid">
                           {certsArr
-                            .sort(function(a, b) {
+                            .sort(function (a, b) {
                               return a.name
                                 .toLowerCase()
                                 .localeCompare(b.name.toLowerCase());
                             })
-                            .map(person => {
+                            .map((person) => {
                               return (
                                 <>
                                   <CertificateCard person={person} />
