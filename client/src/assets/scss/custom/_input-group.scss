@@ -142,7 +142,7 @@ h4 {
 header {
 	background: $secondary;
 	padding: 10px;
-	@include prefix(box-shadow, 0 3px 3px rgba(0, 0, 0, 0.05));
+	@include prefix(box-shadow, 0 1px 1px rgba(0, 0, 0, 0.05));
 	@extend %clearfix;
 
 	.logo {
@@ -160,14 +160,14 @@ header {
 		}
 	}
 
-	.social {
-		float: right;
-		.btn {
-			font-family: "Dosis";
-			font-size: 14px;
-			margin: 10px 5px;
-		}
-	}
+	// .social {
+	// 	float: right;
+	// 	.btn {
+	// 		font-family: "Dosis";
+	// 		font-size: 14px;
+	// 		margin: 10px 5px;
+	// 	}
+	// }
 }
 
 // Timeline

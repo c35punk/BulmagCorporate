@@ -131,14 +131,14 @@ class CardsFooter extends React.Component {
                 className="btn-neutral btn-icon-only btn-round ml-1"
                 color="facebook"
                 href="https://www.linkedin.com/company/bulmag-ad/"
-                id="tooltip837440414"
+                id="tooltip837440419"
                 size="lg"
                 target="_blank"
               >
                 <i className="fa fa-linkedin" />
               </Button>
-              <UncontrolledTooltip delay={0} target="tooltip837440414">
-                Like us
+              <UncontrolledTooltip delay={0} target="tooltip837440419">
+                Connect with LinkedIn
               </UncontrolledTooltip>
 
               <Button

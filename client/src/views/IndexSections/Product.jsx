@@ -5,7 +5,7 @@ import { Card, CardBody, Badge, Col } from "reactstrap";
 
 class Product extends React.Component {
   render() {
-    let { name, description, image, type, productUrl } = this.props.product;
+    let { name, description, image,  productUrl } = this.props.product;
 
     let size = 3;
 
