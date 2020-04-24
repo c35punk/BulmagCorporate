@@ -59,9 +59,13 @@
 		border-color: $input-group-addon-focus-border-color;
 	}
 }
-
-//History Points
 @import "https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700";
+
+// Variables
+$bg-body: #f9f9f9;
+
+$primary-color: $secondary;
+$secondary-color: $primary;
 
 // Typography
 $base-font: helvetica, arial, tahoma, verdana;
@@ -70,7 +74,7 @@ $base-font-title: "Dosis", arial, tahoma, verdana;
 $base-font-color: #726f77;
 
 // Timeline
-$timeline-color: $secondary;
+$timeline-color: $primary-color;
 
 // Mixins and Placeholders
 %clearfix {
@@ -101,6 +105,7 @@ html {
 	height: 100%;
 }
 body {
+	background: $bg-body;
 	background-size: cover;
 	margin: 0;
 	padding: 0;
@@ -138,144 +143,20 @@ h4 {
 	padding: 10px 0;
 }
 
-// Header
-header {
-	background: $secondary;
-	padding: 10px;
-	@include prefix(box-shadow, 0 1px 1px rgba(0, 0, 0, 0.05));
-	@extend %clearfix;
-
-	.logo {
-		color: $secondary;
-		float: left;
-		font: {
-			family: $base-font-title;
-			size: 22px;
-			weight: 500;
-		}
-
-		> span {
-			color: lighten($secondary, 20%);
-			font-weight: 300;
-		}
-	}
-
-	// .social {
-	// 	float: right;
-	// 	.btn {
-	// 		font-family: "Dosis";
-	// 		font-size: 14px;
-	// 		margin: 10px 5px;
-	// 	}
-	// }
-}
-
-// Timeline
-#timeline {
-	width: 100%;
-	margin: 30px auto;
-	position: relative;
-	padding: 0 10px;
-	@include prefix(transition, all 0.4s ease);
-
-	&:before {
-		content: "";
-		width: 3px;
-		height: 100%;
-		background: $timeline-color;
-		left: 50%;
-		top: 0;
-		position: absolute;
-	}
-
-	&:after {
-		content: "";
-		clear: both;
-		display: table;
-		width: 100%;
-	}
-
-	.timeline-item {
-		margin-bottom: 50px;
-		position: relative;
-		@extend %clearfix;
-
-		.timeline-icon {
-			background: $timeline-color;
-			width: 50px;
-			height: 50px;
-			position: absolute;
-			top: 0;
-			left: 50%;
-			overflow: hidden;
-			margin-left: -23px;
-			@include prefix(border-radius, 50%);
-
-			svg {
-				position: relative;
-				top: 14px;
-				left: 14px;
-			}
-		}
-
-		.timeline-content {
-			width: 45%;
-			background: #fff;
-			padding: 20px;
-			@include prefix(box-shadow, 0 3px 0 rgba(0, 0, 0, 0.1));
-			@include prefix(border-radius, 5px);
-			@include prefix(transition, all 0.3s ease);
-
-			h2 {
-				padding: 15px;
-				background: $timeline-color;
-				color: #fff;
-				margin: -20px -20px 0 -20px;
-				font-weight: 300;
-				@include prefix(border-radius, 3px 3px 0 0);
-			}
-
-			&:before {
-				content: "";
-				position: absolute;
-				left: 45%;
-				top: 20px;
-				width: 0;
-				height: 0;
-				border-top: 7px solid transparent;
-				border-bottom: 7px solid transparent;
-				border-left: 7px solid $timeline-color;
-			}
-
-			&.right {
-				float: right;
-
-				&:before {
-					content: "";
-					right: 45%;
-					left: inherit;
-					border-left: 0;
-					border-right: 7px solid $timeline-color;
-				}
-			}
-		}
-	}
-}
-
 // Buttons
 .btn {
 	padding: 5px 15px;
 	text-decoration: none;
-	background: transparent;
-	border: 2px solid lighten($secondary, 10%);
-	color: lighten($secondary, 10%);
+	background: lighten($primary-color, 25%);
+	border: 2px solid lighten($primary-color, 10%);
+	color: darken($secondary-color, 25%);
 	display: inline-block;
 	position: relative;
 	text-transform: uppercase;
 	font-size: 12px;
 	@include prefix(border-radius, 5px);
 	@include prefix(transition, background 0.3s ease);
-	@include prefix(box-shadow, 2px 2px 0 lighten($secondary, 10%));
+	@include prefix(box-shadow, 2px 2px 0 lighten($primary-color, 10%));
 
 	&:hover {
 		box-shadow: none;

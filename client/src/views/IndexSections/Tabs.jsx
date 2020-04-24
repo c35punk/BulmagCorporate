@@ -2,6 +2,7 @@ import React from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
 import certsArr from "../../constants/certs";
+import historyPoints from "../../constants/historyPoints";
 
 // reactstrap components
 import {
@@ -69,7 +70,6 @@ class TabsSection extends React.Component {
                     History Points
                   </NavLink>
                 </NavItem>
-
                 <NavItem>
                   <NavLink
                     aria-selected={this.state.plainTabs === 2}
@@ -1051,77 +1051,7 @@ class TabsSection extends React.Component {
                     </p>
                   </TabPane>
                   <TabPane tabId="plainTabs3">
-                    <HistoryPoints />
-                    <p className="description">
-                      <ul>
-                        <h5 className="text-darker">
-                          1991 — Bulmag Ltd (in Bulgarian - OOD) Foundation
-                        </h5>
-                      </ul>
-                      <ul>
-                        <h5 className="text-darker">
-                          {" "}
-                          1992 — IBM® Business Partner
-                        </h5>
-                      </ul>
-                      <ul>
-                        <h5 className="text-darker">
-                          1996 — Certified IBM® Service
-                        </h5>
-                      </ul>
-                      <ul>
-                        <h5 className="text-darker">
-                          {" "}
-                          1999 — IBM® Top Performer for Bulgaria
-                        </h5>
-                      </ul>
-                      <ul>
-                        <h5 className="text-darker">
-                          {" "}
-                          2002 — ISO 9001:2000 Certification
-                        </h5>
-                      </ul>
-                      <ul>
-                        <h5 className="text-darker">2003 — Bulmag AD (JSC)</h5>
-                      </ul>
-                      <ul>
-                        <h5 className="text-darker">
-                          2006 — IBM® Premier Business Partner
-                        </h5>
-                      </ul>
-                      <ul>
-                        <h5 className="text-darker">
-                          2007 — Lenovo® Premier Business Partner
-                        </h5>
-                      </ul>
-                      <ul>
-                        <h5 className="text-darker">
-                          2015 — HPE® Business Partner
-                        </h5>
-                      </ul>
-                      <ul>
-                        <h5 className="text-darker">
-                          {" "}
-                          2015 — SAP Labs® Business Partner
-                        </h5>
-                      </ul>
-                      <ul>
-                        <h5 className="text-darker">
-                          2016 — Transaction Systems® Business Partner
-                        </h5>
-                      </ul>
-
-                      <ul className="text-dark">
-                        <h5 className="text-darker">
-                          2019 — eBulmag® Online Shop
-                        </h5>
-                      </ul>
-                      <ul className="text-dark">
-                        <h5 className="text-darker">
-                          2020 — Authorised INFINIDAT Service Center
-                        </h5>
-                      </ul>
-                    </p>
+                    <HistoryPoints points={historyPoints} />
                   </TabPane>
                   <TabPane tabId="plainTabs4">
                     <p className="description">

@@ -3,7 +3,7 @@ import React from "react";
 import { Button, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 
-class App extends React.Component {
+class AltCarouselV2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -84,15 +84,21 @@ class Panel extends React.Component {
             textShadow: "-1px 0 black, 0 1px black, 2px 0 black, 0 -1px black",
           }}
         >
-          <Col   style={{
-            padding: "6em 0 0 0"}}>
+          <Col
+            style={{
+              padding: "6em 0 0 0",
+            }}
+          >
             <p className="panel-info">{this.props.data.header}</p>
             <p className="panel-info">{this.props.data.body}</p>
             <Button
+              style={{
+                textShadow:
+                  "0px 0 black, 0 0px black, 0px 0 black, 0 0px black",
+              }}
               className="btn-primary mt-4"
               to={this.props.data.location}
               tag={Link}
-            
             >
               Details
             </Button>
@@ -141,4 +147,4 @@ class Selector extends React.Component {
   }
 }
 
-export default App;
+export default AltCarouselV2;
