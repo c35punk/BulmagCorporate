@@ -19,6 +19,7 @@ import {
 } from "reactstrap";
 import CertificateCard from "./CertificateCard";
 import HistoryPoints from "./HistoryPoints";
+import Presentation from "./Presentation";
 
 class TabsSection extends React.Component {
   state = {

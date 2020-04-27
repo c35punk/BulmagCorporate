@@ -1,8 +1,10 @@
 import React from "react";
+import { Container, Button } from "reactstrap";
+import { Link } from "react-router-dom";
 
 function HistoryPoints(props) {
   let evenId = (
-    <div class="timeline-icon">
+    <div className="timeline-icon">
       <svg
         version="1.1"
         id="Layer_1"
@@ -30,7 +32,7 @@ l-1.675-1.089h10.341c0.537,0,0.953-0.44,0.953-0.979V2.039l1.459,2.027V17.36L16.4
   );
 
   let oddId = (
-    <div class="timeline-icon">
+    <div className="timeline-icon">
       <svg
         version="1.1"
         id="Layer_1"
@@ -55,17 +57,21 @@ c-0.081-0.365,0.035-0.729,0.313-0.975l4.34-3.811C21.219,7.921,20.855,6.848,19.99
   );
 
   return (
-    <div class="container">
-      <h3 className="text-darker">HISTORY POINTS</h3>
+    <div className="container">
       {props.points.map((hPoint) => {
         return (
           <>
             {hPoint.id % 2 === 0 ? evenId : oddId}
             <div id="timeline">
-              <div class="timeline-item">
-                <div class="timeline-content">
-                  <h4>{hPoint.title}</h4>
-                  <p>{hPoint.year}</p>
+              <div className="timeline-item">
+                <div className="blur--hover">
+                  <div className="blur-item  mt-5 on-screen">
+                    <h4 className="text-darker">{hPoint.title}</h4>
+                  </div>
+                  <div className="blur-hidden h5">
+                    {" "}
+                    <h1 className=" text-primary">{hPoint.year}</h1>
+                  </div>
                 </div>
               </div>
             </div>
