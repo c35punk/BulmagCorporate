@@ -248,7 +248,7 @@ class TabsSection extends React.Component {
                                     <br />
                                     <p>
                                       <img
-                                        src="../../assets/img/img/bulmag.bg/logo_RaiffeisenBank.jpg"
+                                        src={require("../../assets/img/bulmag.bg/logo_RaiffeisenBank.jpg")}
                                         alt="RAIFFEISENBANK EAD"
                                         width="150"
                                         height="50"
@@ -289,7 +289,7 @@ class TabsSection extends React.Component {
                                     <p>
                                       <img
                                         alt="BORICA-BANKSERVICE JSC"
-                                        src="../../assets/img/img/bulmag.bg/logo_BoricaBankservice.jpg"
+                                        src={require("../../assets/img/bulmag.bg/logo_BoricaBankservice.jpg")}
                                         width="150"
                                         height="91"
                                       />
@@ -390,7 +390,7 @@ class TabsSection extends React.Component {
                                     <p>
                                       <img
                                         alt="HVB BANK BIOCHIM"
-                                        src="../../assets/img/bulmag.bg/logo_BiochimBank.jpg"
+                                        src={require("../../assets/img/bulmag.bg/logo_BiochimBank.jpg")}
                                         width="150"
                                         height="37"
                                       />
@@ -406,7 +406,7 @@ class TabsSection extends React.Component {
                                     <p>
                                       <img
                                         alt="Hebros Bank"
-                                        src="../../assets/img/img/bulmag.bg/logo_HebrosBank.jpg"
+                                        src={require("../../assets/img/bulmag.bg/logo_HebrosBank.jpg")}
                                         width="150"
                                         height="34"
                                       />
@@ -420,7 +420,7 @@ class TabsSection extends React.Component {
                                     <p>
                                       <img
                                         alt="FIRST INVESTMENT BANK AD"
-                                        src="../../assets/img/img/bulmag.bg/logo_FirstInvestmentBank.jpg"
+                                        src={require("../../assets/img/bulmag.bg/logo_FirstInvestmentBank.jpg")}
                                         width="150"
                                         height="43"
                                       />
@@ -442,7 +442,7 @@ class TabsSection extends React.Component {
                                     <p>
                                       <img
                                         alt="D COMMERCE BANK AD"
-                                        src="../../assets/img/img/bulmag.bg/logo_DBank.jpg"
+                                        src={require("../../assets/img/bulmag.bg/logo_DBank.jpg")}
                                         width="150"
                                         height="43"
                                       />
@@ -490,7 +490,7 @@ class TabsSection extends React.Component {
                                     <p>
                                       <img
                                         alt="CENTRAL COOPERATIVE BANK PLC."
-                                        src="../../assets/img/img/bulmag.bg/logo_ccb.png"
+                                        src={require("../../assets/img/bulmag.bg/logo_ccb.png")}
                                         width="150"
                                         height="28"
                                       />
@@ -515,7 +515,7 @@ class TabsSection extends React.Component {
                                     <p>
                                       <img
                                         alt="DSK BANK"
-                                        src="../../assets/img/img/bulmag.bg/logo_DSKBank.jpg"
+                                        src={require("../../assets/img/bulmag.bg/logo_DSKBank.jpg")}
                                         width="150"
                                         height="32"
                                       />
@@ -538,7 +538,7 @@ class TabsSection extends React.Component {
                                     <p>
                                       <img
                                         alt="BNP PARIBAS S.A. BULGARIA"
-                                        src="../../assets/img/img/bulmag.bg/logo_BNP_Paribas.jpg"
+                                        src={require("../../assets/img/bulmag.bg/logo_BNP_Paribas.jpg")}
                                         width="150"
                                         height="34"
                                       />
@@ -565,7 +565,7 @@ class TabsSection extends React.Component {
                                         {" "}
                                         <img
                                           alt="VIVACOM"
-                                          src="../../assets/img/img/bulmag.bg/logo_VIVIACOM.jpg"
+                                          src={require("../../assets/img/bulmag.bg/logo_VIVIACOM.jpg")}
                                           width="150"
                                           height="36"
                                         />
@@ -591,7 +591,7 @@ class TabsSection extends React.Component {
                                         {" "}
                                         <img
                                           alt="DANONE BULGARIA"
-                                          src="../../assets/img/img/bulmag.bg/logo_Danone.gif"
+                                          src={require("../../assets/img/bulmag.bg/logo_Danone.gif")}
                                           width="150"
                                           height="44"
                                         />
@@ -616,7 +616,7 @@ class TabsSection extends React.Component {
                                         {" "}
                                         <img
                                           alt="COCA COLA HBC"
-                                          src="../../assets/img/img/bulmag.bg/logo_CocaColaHbc.jpg"
+                                          src={require("../../assets/img/bulmag.bg/logo_CocaColaHbc.jpg")}
                                           width="150"
                                           height="24"
                                         />
@@ -642,7 +642,7 @@ class TabsSection extends React.Component {
                                         {" "}
                                         <img
                                           alt="KAVEN ORBICO LTD"
-                                          src="../../assets/img/img/bulmag.bg/logo_KavenOrbico.jpg"
+                                          src={require("../../assets/img/bulmag.bg/logo_KavenOrbico.jpg")}
                                           width="150"
                                           height="21"
                                         />
@@ -670,7 +670,7 @@ class TabsSection extends React.Component {
                                         {" "}
                                         <img
                                           alt="DEMAX AD"
-                                          src="../../assets/img/img/bulmag.bg/logo_Demax.jpg"
+                                          src={require("../../assets/img/bulmag.bg/logo_Demax.jpg")}
                                           width="150"
                                           height="38"
                                         />
@@ -695,7 +695,7 @@ class TabsSection extends React.Component {
                                         {" "}
                                         <img
                                           alt="NATIONAL ACADEMIC LIBRARY AND INFORMATION SYSTEM FOUNDATION"
-                                          src="../../assets/img/img/bulmag.bg/logo_Nalis.jpg"
+                                          src={require("../../assets/img/bulmag.bg/logo_Nalis.jpg")}
                                           width="150"
                                           height="34"
                                         />
@@ -723,7 +723,7 @@ class TabsSection extends React.Component {
                                         {" "}
                                         <img
                                           alt="KOZLODUY NPP PLC"
-                                          src="../../assets/img/img/bulmag.bg/logo_KozloduyNPP.jpg"
+                                          src={require("../../assets/img/bulmag.bg/logo_KozloduyNPP.jpg")}
                                           width="150"
                                           height="50"
                                         />
@@ -750,7 +750,7 @@ class TabsSection extends React.Component {
                                         {" "}
                                         <img
                                           alt="SOFIYSKA VODA AD"
-                                          src="../../assets/img/img/bulmag.bg/logo_SofiyskaVoda.jpg"
+                                          src={require("../../assets/img/bulmag.bg/logo_SofiyskaVoda.jpg")}
                                           width="150"
                                           height="50"
                                         />
@@ -778,7 +778,7 @@ class TabsSection extends React.Component {
                                         {" "}
                                         <img
                                           alt="BULGARTRANSGAZ EAD"
-                                          src="../../assets/img/img/bulmag.bg/logo_BulgarTransGas.jpg"
+                                          src={require("../../assets/img/bulmag.bg/logo_BulgarTransGas.jpg")}
                                           width="150"
                                           height="37"
                                         />
@@ -803,7 +803,7 @@ class TabsSection extends React.Component {
                                         {" "}
                                         <img
                                           alt="NATSIONALNA ELEKTRICHESKA KOMPANIA EAD"
-                                          src="../../assets/img/img/bulmag.bg/logo_NEK.jpg"
+                                          src={require("../../assets/img/bulmag.bg/logo_NEK.jpg")}
                                           width="150"
                                           height="35"
                                         />
@@ -829,7 +829,7 @@ class TabsSection extends React.Component {
                                         {" "}
                                         <img
                                           alt="SUPREME ADMINISTRATIVE COURT"
-                                          src="../../assets/img/img/bulmag.bg/logo_VAS.jpg"
+                                          src={require("../../assets/img/bulmag.bg/logo_VAS.jpg")}
                                           width="150"
                                           height="53"
                                         />
@@ -854,7 +854,7 @@ class TabsSection extends React.Component {
                                         {" "}
                                         <img
                                           alt="ING"
-                                          src="../../assets/img/img/bulmag.bg/logo_ING.jpg"
+                                          src={require("../../assets/img/bulmag.bg/logo_ING.jpg")}
                                           width="150"
                                           height="37"
                                         />
@@ -879,7 +879,7 @@ class TabsSection extends React.Component {
                                         {" "}
                                         <img
                                           alt="Dir.bg"
-                                          src="../../assets/img/img/bulmag.bg/logo_Dirbg.jpg"
+                                          src={require("../../assets/img/bulmag.bg/logo_Dirbg.jpg")}
                                           width="150"
                                           height="41"
                                         />
@@ -905,7 +905,7 @@ class TabsSection extends React.Component {
                                         {" "}
                                         <img
                                           alt="MINI MARITSA IZTOK EAD"
-                                          src="../../assets/img/img/bulmag.bg/logo_MaricaIztok.jpg"
+                                          src={require("../../assets/img/bulmag.bg/logo_MaricaIztok.jpg")}
                                           width="150"
                                           height="45"
                                         />
@@ -932,7 +932,7 @@ class TabsSection extends React.Component {
                                         {" "}
                                         <img
                                           alt="METRO C &amp; C BULGARIA"
-                                          src="../../assets/img/img/bulmag.bg/logo_Metro.jpg"
+                                          src={require("../../assets/img/bulmag.bg/logo_Metro.jpg")}
                                           width="150"
                                           height="42"
                                         />
@@ -959,7 +959,7 @@ class TabsSection extends React.Component {
                                         {" "}
                                         <img
                                           alt="PRAKTIKER BULGARIA"
-                                          src="../../assets/img/bulmag.bg/logo_Praktiker.jpg"
+                                          src={require("../../assets/img/bulmag.bg/logo_Praktiker.jpg")}
                                           width="150"
                                           height="33"
                                         />
@@ -988,7 +988,7 @@ class TabsSection extends React.Component {
                                         {" "}
                                         <img
                                           alt="BAUMAX BULGARIA"
-                                          src="../../assets/img/img/bulmag.bg/logo_Baumax.jpg"
+                                          src={require("../../assets/img/bulmag.bg/logo_Baumax.jpg")}
                                           width="150"
                                           height="39"
                                         />
@@ -1010,7 +1010,7 @@ class TabsSection extends React.Component {
                                         {" "}
                                         <img
                                           alt="CARREFOUR BULGARIA"
-                                          src="../../assets/img/img/bulmag.bg/logo_Carrefour.jpg"
+                                          src={require("../../assets/img/bulmag.bg/logo_Carrefour.jpg")}
                                           width="150"
                                           height="29"
                                         />
@@ -1030,7 +1030,7 @@ class TabsSection extends React.Component {
                                         {" "}
                                         <img
                                           alt="MERCATOR-B"
-                                          src="../../assets/img/img/bulmag.bg/logo_Mercator.jpg"
+                                          src={require("../../assets/img/bulmag.bg/logo_Mercator.jpg")}
                                           width="150"
                                           height="45"
                                         />

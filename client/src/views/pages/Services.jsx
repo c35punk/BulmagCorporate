@@ -15,18 +15,18 @@ import {
   TabContent,
   TabPane,
   Row,
-  Col
+  Col,
 } from "reactstrap";
 
 class TabsSection extends React.Component {
   state = {
     iconTabs: 1,
-    plainTabs: 1
+    plainTabs: 1,
   };
   toggleNavs = (e, state, index) => {
     e.preventDefault();
     this.setState({
-      [state]: index
+      [state]: index,
     });
   };
   render() {
@@ -50,7 +50,7 @@ class TabsSection extends React.Component {
                         <h1
                           style={{
                             textShadow:
-                              "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
+                              "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black",
                           }}
                           className={
                             isMobile
@@ -101,72 +101,65 @@ class TabsSection extends React.Component {
                         <NavLink
                           aria-selected={this.state.plainTabs === 1}
                           className={classnames("mb-sm-2 mb-md-0", {
-                            active: this.state.plainTabs === 1
+                            active: this.state.plainTabs === 1,
                           })}
-                          onClick={e => this.toggleNavs(e, "plainTabs", 1)}
+                          onClick={(e) => this.toggleNavs(e, "plainTabs", 1)}
                           href="#"
                           role="tab"
                         >
-                          <i className="fa fa-2x fa-superpowers">&nbsp;</i>
-                          <p className="mt-5 mt-lg-2">
-                            Post-Warranty Maintenance
-                          </p>
+                          Post-Warranty Maintenance
                         </NavLink>
                       </NavItem>
                       <NavItem>
                         <NavLink
                           aria-selected={this.state.plainTabs === 2}
                           className={classnames("mb-sm-2 mb-md-0", {
-                            active: this.state.plainTabs === 2
+                            active: this.state.plainTabs === 2,
                           })}
-                          onClick={e => this.toggleNavs(e, "plainTabs", 2)}
+                          onClick={(e) => this.toggleNavs(e, "plainTabs", 2)}
                           href="#"
                           role="tab"
                         >
-                          <i className="fa fa-2x fa-server">&nbsp;</i>
-                          <p className="mt-5 mt-lg-2">Service Center</p>
+                          Service Center
                         </NavLink>
                       </NavItem>
                       <NavItem>
                         <NavLink
                           aria-selected={this.state.plainTabs === 3}
                           className={classnames("mb-sm-2 mb-md-0", {
-                            active: this.state.plainTabs === 3
+                            active: this.state.plainTabs === 3,
                           })}
-                          onClick={e => this.toggleNavs(e, "plainTabs", 3)}
+                          onClick={(e) => this.toggleNavs(e, "plainTabs", 3)}
                           href="#"
                           role="tab"
                         >
-                          <i className="fa fa-2x fa-black-tie">&nbsp;</i>
-                          <p className="mt-5 mt-lg-2">Consulting Services</p>
+                          Consulting Services
                         </NavLink>
                       </NavItem>
                       <NavItem>
                         <NavLink
                           aria-selected={this.state.plainTabs === 4}
                           className={classnames("mb-sm-2 mb-md-0", {
-                            active: this.state.plainTabs === 4
+                            active: this.state.plainTabs === 4,
                           })}
-                          onClick={e => this.toggleNavs(e, "plainTabs", 4)}
+                          onClick={(e) => this.toggleNavs(e, "plainTabs", 4)}
                           href="#"
                           role="tab"
                         >
-                          <i className="fa fa-2x fa-arrow-circle-up">&nbsp;</i>
-                          <p className="mt-5 mt-lg-2">Outsourcing</p>
+                          Outsourcing
                         </NavLink>
                       </NavItem>
                       <NavItem>
                         <NavLink
                           aria-selected={this.state.plainTabs === 5}
                           className={classnames("mb-sm-2 mb-md-0", {
-                            active: this.state.plainTabs === 5
+                            active: this.state.plainTabs === 5,
                           })}
-                          onClick={e => this.toggleNavs(e, "plainTabs", 5)}
+                          onClick={(e) => this.toggleNavs(e, "plainTabs", 5)}
                           href="#"
                           role="tab"
                         >
-                          <i className="fa fa-2x fa-handshake-o">&nbsp;</i>
-                          <p className="mt-5 mt-lg-2">Integration Services</p>
+                          Integration Services
                         </NavLink>
                       </NavItem>
                     </Nav>
