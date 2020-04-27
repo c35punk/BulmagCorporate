@@ -62,7 +62,7 @@
 @import "https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700";
 
 // Variables
-$bg-body: #f9f9f9;
+$bg-body: transparent;
 
 $primary-color: $secondary;
 $secondary-color: $primary;
@@ -115,33 +115,7 @@ body {
 	color: $base-font-color;
 }
 
-img {
-	max-width: 100%;
-}
 
-a {
-	text-decoration: none;
-}
-
-.container {
-	max-width: 1100px;
-	margin: 0 auto;
-}
-
-h1,
-h2,
-h3,
-h4 {
-	font: {
-		family: $base-font-title;
-		weight: 500;
-	}
-}
-
-.project-name {
-	text-align: center;
-	padding: 10px 0;
-}
 
 // Buttons
 .btn {
