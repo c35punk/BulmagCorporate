@@ -18,8 +18,7 @@ import {
   Container,
 } from "reactstrap";
 import CertificateCard from "./CertificateCard";
-import HistoryPoints from "./HistoryPoints";
-import Presentation from "./Presentation";
+import BlurPresenter from "./BlurPresenter";
 
 class TabsSection extends React.Component {
   state = {
@@ -1052,7 +1051,7 @@ class TabsSection extends React.Component {
                     </p>
                   </TabPane>
                   <TabPane tabId="plainTabs3">
-                    <HistoryPoints points={historyPoints} />
+                    <BlurPresenter data={historyPoints} />
                   </TabPane>
                   <TabPane tabId="plainTabs4">
                     <p className="description">

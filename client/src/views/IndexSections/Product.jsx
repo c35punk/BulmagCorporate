@@ -12,8 +12,9 @@ class Product extends React.Component {
     let styles = {
       width: "130px",
       height: "155px",
-      objectFit: "scale-down"
+      objectFit: "scale-down",
     };
+
     return (
       <Col lg={size}>
         <Card className="card-lift--hover shadow border-0">

@@ -3,7 +3,7 @@ const auth = {
   authUser: "authUser"
 };
 
-const baseUrl = "http://localhost:9949";
+const baseUrl = "https://bulmag.bg/api";
 const authUrl = `${baseUrl}/auth`;
 const machineUrl = `${baseUrl}/machines`;
 const productUrl = `${baseUrl}/products`;
@@ -18,6 +18,9 @@ const functions = {
     );
   },
 
+  parseStringToFunction(str) {
+    return Function(str)
+  }
 }
 
 
@@ -109,7 +112,7 @@ const paths = {
   storePath: "/store",
   storeName: "Store",
   storeGoToName: "Go to store",
-   // user
+  // user
   profilePath: "/profile",
   profileName: "Profile",
   profileEditPath: "/profile/edit",
