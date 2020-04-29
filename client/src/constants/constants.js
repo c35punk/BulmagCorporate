@@ -4,6 +4,8 @@ const auth = {
 };
 
 const baseUrl = "https://bulmag.bg/api";
+const lotusDbBaseUrl = "http://srvcom2.bulmag.bg"
+const lotusServiceUrl = `${lotusDbBaseUrl}/service`
 const authUrl = `${baseUrl}/auth`;
 const machineUrl = `${baseUrl}/machines`;
 const productUrl = `${baseUrl}/products`;
@@ -18,9 +20,7 @@ const functions = {
     );
   },
 
-  parseStringToFunction(str) {
-    return Function(str)
-  }
+
 }
 
 
@@ -48,6 +48,12 @@ const dbConstants = {
   machineFileUploadByIdUrl: `${machineUrl}/upload/`,
   machineFileDeleteByIdUrl: `${machineUrl}/upload/delete/`,
   machineFileDownloadByIdUrl: `${machineUrl}/download/`,
+
+  // lotus db
+  lotusServiceJournal: `${lotusServiceUrl}/service.nsf/api/data/documents?search=`,
+  lotusThinkJournal: `${lotusServiceUrl}/think.nsf/api/data/documents?search=`,
+  lotusMaintJournal: `${lotusServiceUrl}/maint.nsf/api/data/documents?search=`,
+  lotusPartsJournal: `${lotusServiceUrl}/parts.nsf/api/data/documents?search=`
 
 };
 
