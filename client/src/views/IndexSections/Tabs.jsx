@@ -236,8 +236,6 @@ class TabsSection extends React.Component {
                                 <div className="static_main_content">
                                   <div className="static_text">
                                     <div>
-                                      <h3 className="text-darker">Customers</h3>
-                                      <br />
                                       <h5 className="text-dark">
                                         <strong> Bulmag AD</strong> implemented
                                         solutions with numerous clients of which

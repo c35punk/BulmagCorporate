@@ -1,6 +1,6 @@
 import React from "react";
 
-function HistoryPoints(props) {
+function BlurPresenter(props) {
   return (
     <div className="container">
       {props.data.map((data) => {
@@ -26,4 +26,4 @@ function HistoryPoints(props) {
   );
 }
 
-export default HistoryPoints;
+export default BlurPresenter;

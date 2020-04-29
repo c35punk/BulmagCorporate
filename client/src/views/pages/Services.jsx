@@ -1,5 +1,5 @@
 import React from "react";
-// nodejs library that concatenates classes
+
 import classnames from "classnames";
 import { Parallax } from "react-parallax";
 import { isMobile } from "react-device-detect";
@@ -65,23 +65,6 @@ class TabsSection extends React.Component {
                   </div>
                 </Container>
                 <div style={{ height: isMobile ? "70px" : "350px" }} />
-
-                {/* SVG separator */}
-                {/* <div className="separator separator-bottom separator-skew">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  preserveAspectRatio="none"
-                  version="1.1"
-                  viewBox="0 0 2560 100"
-                  x="0"
-                  y="0"
-                >
-                  <polygon
-                    className="fill-white"
-                    points="560 0 2560 100 0 100"
-                  />
-                </svg>
-              </div> */}
               </section>
             </Parallax>
           </div>
