@@ -49,7 +49,7 @@ const dbConstants = {
   machineFileDeleteByIdUrl: `${machineUrl}/upload/delete/`,
   machineFileDownloadByIdUrl: `${machineUrl}/download/`,
 
-  // lotus db
+  // lotus db !!IMPORTANT you need concat string at the end of the url (i.e. "Serial Number")
   lotusServiceJournal: `${lotusServiceUrl}/service.nsf/api/data/documents?search=`,
   lotusThinkJournal: `${lotusServiceUrl}/think.nsf/api/data/documents?search=`,
   lotusMaintJournal: `${lotusServiceUrl}/maint.nsf/api/data/documents?search=`,
