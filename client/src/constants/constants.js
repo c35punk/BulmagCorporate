@@ -3,10 +3,12 @@ const auth = {
   authUser: "authUser"
 };
 
-const baseUrl = "https://bulmag.bg/api";
+const preApiUrl = "https://bulmag.bg"
+const baseUrl = `${preApiUrl}/api`
 const lotusDbBaseUrl = "http://srvcom2.bulmag.bg"
 const lotusServiceUrl = `${lotusDbBaseUrl}/service`
 const authUrl = `${baseUrl}/auth`;
+const certUrl = `${preApiUrl}/cert`
 const machineUrl = `${baseUrl}/machines`;
 const productUrl = `${baseUrl}/products`;
 const serviceUrl = `${baseUrl}/services`;
@@ -31,12 +33,14 @@ const dbConstants = {
   registerUrl: `${authUrl}/signup`,
   getUsersUrl: `${authUrl}/users`,
 
-  // machines, products, services, mail
+  // machines, products, services, mail, certs
   machinesUrl: `${machineUrl}/`,
   productsUrl: `${productUrl}/`,
   servicesUrl: `${serviceUrl}/`,
   mailsUrl: `${mailUrl}/send`,
   ticketsUrl: `${ticketUrl}/`,
+  certsUrl: `${certUrl}/certs.json`,
+
   addTicketsUrl: `${machineUrl}/add-ticket`,
   addProductsUrl: `${productUrl}/add-product`,
   machineCreateUrl: `${machineUrl}/create`,

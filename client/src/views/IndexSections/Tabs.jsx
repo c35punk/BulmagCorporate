@@ -2,7 +2,9 @@ import React from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
 import certsArr from "../../constants/certs";
+import { dbConstants } from "../../constants/constants";
 import historyPoints from "../../constants/historyPoints";
+import axios from "axios";
 
 // reactstrap components
 import {
@@ -31,6 +33,14 @@ class TabsSection extends React.Component {
       [state]: index,
     });
   };
+
+  componentDidMount() {
+    axios
+      .get(dbConstants.certsUrl)
+      .then((res) => console.log(res))
+      .catch((e) => console.log(e));
+  }
+
   render() {
     return (
       <>

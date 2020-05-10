@@ -17,7 +17,8 @@ class Dashboard extends React.Component {
     super(props);
 
     this.state = {
-      machines: []
+      machines: [],
+      lotusEntries: [],
     };
   }
 
@@ -25,12 +26,32 @@ class Dashboard extends React.Component {
     if (this.props.isLoggedIn && !this.props.isAdmin) {
       axios
         .get(dbConstants.machinesUrl)
-        .then(res => {
+        .then((res) => {
           console.log(res);
           this.setState({ machines: res.data });
         })
-        .catch(function(error) {
+        .catch(function (error) {
           console.log(error);
+        });
+
+      let lotusRepairsUrl = dbConstants.lotusServiceJournal + "BTC";
+      let config = {
+        setHeaders: { "Access-Control-Allow-Origin": "*" },
+      };
+      let proxy = {
+        proxy: {
+          host: "http://srvcom2.bulmag.bg/",
+        },
+      };
+
+      axios
+        .get(lotusRepairsUrl, { config, proxy })
+        .then((res) => {
+          console.log(res);
+          this.setState({ lotusEntries: res });
+        })
+        .catch((err) => {
+          console.log(err);
         });
 
       document.documentElement.scrollTop = 0;
@@ -46,11 +67,11 @@ class Dashboard extends React.Component {
     console.log(this.state);
 
     let myMachines = this.state.machines.filter(
-      s => s.creatorID === this.props.id
+      (s) => s.creatorID === this.props.id
     );
 
     let machinesWithTickets = myMachines.filter(
-      machine => machine.tickets.length !== 0
+      (machine) => machine.tickets.length !== 0
     );
 
     return (
@@ -67,11 +88,15 @@ class Dashboard extends React.Component {
                 <div className="col px-0">
                   <Row>
                     <Col lg="12">
-                      <h1   className={
-                            isMobile
-                              ? "display-4 text-white"
-                              : "display-3 text-white"
-                          }>DASHBOARD</h1>
+                      <h1
+                        className={
+                          isMobile
+                            ? "display-4 text-white"
+                            : "display-3 text-white"
+                        }
+                      >
+                        DASHBOARD
+                      </h1>
                       <p className="lead text-white">Systems in maintenance</p>
                       <div className="btn-wrapper">
                         <Button
@@ -130,9 +155,9 @@ class Dashboard extends React.Component {
                 <Col lg="12">
                   <Row className="row-grid">
                     {this.state.machines
-                      .filter(x => x.type === "Server")
-                      .filter(s => s.creatorID === this.props.id)
-                      .map(machine => {
+                      .filter((x) => x.type === "Server")
+                      .filter((s) => s.creatorID === this.props.id)
+                      .map((machine) => {
                         return (
                           <>
                             <Machine
@@ -162,9 +187,9 @@ class Dashboard extends React.Component {
                 <Col lg="12">
                   <Row className="row-grid">
                     {this.state.machines
-                      .filter(x => x.type === "Switch")
-                      .filter(s => s.creatorID === this.props.id)
-                      .map(machine => {
+                      .filter((x) => x.type === "Switch")
+                      .filter((s) => s.creatorID === this.props.id)
+                      .map((machine) => {
                         return (
                           <>
                             <Machine
@@ -193,9 +218,9 @@ class Dashboard extends React.Component {
                 <Col lg="12">
                   <Row className="row-grid">
                     {this.state.machines
-                      .filter(x => x.type === "Storage")
-                      .filter(s => s.creatorID === this.props.id)
-                      .map(machine => {
+                      .filter((x) => x.type === "Storage")
+                      .filter((s) => s.creatorID === this.props.id)
+                      .map((machine) => {
                         return (
                           <Machine
                             machine={machine}
@@ -214,7 +239,7 @@ class Dashboard extends React.Component {
   }
 }
 
-const DashboardContext = props => {
+const DashboardContext = (props) => {
   return (
     <UserConsumer>
       {({ isLoggedIn, isAdmin, username, id }) => (

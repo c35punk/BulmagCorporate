@@ -280,6 +280,7 @@ export default [
             { certNumber: "710B59A23B8BAC43C2257F5400247C37", description: "HPE 3PAR SA ENABLEMENT WORKSHOP" },
             { certNumber: "5B6EFB78A93CCC4AC2257B3D004ABF1F", description: "IBM PureFlex Assessment" },
             { certNumber: "4C44D0985F311450C225825E0045A877", description: "Lenovo Certified Data Center Technical Sales Professional" },
+            { certNumber: "8440D52541FF7A50C2258550006E5045", description: "Lenovo Certified Data Center Technical Sales Professional" },
             { certNumber: "07A3D8489EAB8031C2257AB70048B346", description: "Lenovo Desktop Systems Hardware Service Training Technology and FRU Service" },
             { certNumber: "BAC4B2FCC9F99F4BC2257AB700492624", description: "Lenovo Notebook Systems Hardware Service Training Technology and FRU Service" },
             { certNumber: "6DBA7A04580926E4C2257A100043BA26", description: "Servicing IBM System x Servers Test - Part II" },
