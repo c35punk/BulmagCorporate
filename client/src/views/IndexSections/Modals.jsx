@@ -91,7 +91,6 @@ class Modals extends React.Component {
                     this.props.certificateUrl ||
                     this.props.lenovothreedtours
                   }
-                  autoplay
                   allowfullscreen
                   title="Product URL"
                 ></iframe>
@@ -105,5 +104,3 @@ class Modals extends React.Component {
 }
 
 export default Modals;
-
-

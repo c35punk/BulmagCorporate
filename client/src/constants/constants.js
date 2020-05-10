@@ -40,7 +40,6 @@ const dbConstants = {
   mailsUrl: `${mailUrl}/send`,
   ticketsUrl: `${ticketUrl}/`,
   certsUrl: `${certUrl}/certs.json`,
-
   addTicketsUrl: `${machineUrl}/add-ticket`,
   addProductsUrl: `${productUrl}/add-product`,
   machineCreateUrl: `${machineUrl}/create`,
