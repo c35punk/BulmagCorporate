@@ -185,18 +185,16 @@ class TabsSection extends React.Component {
                                       <span>
                                         The Bulmag AD maintenance contract for
                                         hardware combines proactive system
-                                        maintenance using the Technogroup AG
-                                        Remotetool and direct access to the
-                                        expertise of the Technogroup AG
-                                        knowledge database. This service is
-                                        complemented by the Auto-Call-System RHS
-                                        Baseline, which informs the Bulmag AD
-                                        control centre about hardware failures
-                                        of server units. Thereby, a&nbsp;Bulmag
-                                        AD technician fixes the error with the
-                                        right components before you even noticed
-                                        the error yourself. Using our service,
-                                        you profit from an exceptional system
+                                        maintenance our knowledge database. This
+                                        service is complemented by the
+                                        Auto-Call-System RHS Baseline, which
+                                        informs the Bulmag AD control centre
+                                        about hardware failures of server units.
+                                        Thereby, a&nbsp;Bulmag AD technician
+                                        fixes the error with the right
+                                        components before you even noticed the
+                                        error yourself. Using our service, you
+                                        profit from an exceptional system
                                         reliability that is necessary for smooth
                                         operations.
                                       </span>
