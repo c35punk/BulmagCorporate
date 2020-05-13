@@ -325,7 +325,7 @@ class TabsSection extends React.Component {
                                   </h5>
                                   <p>
                                     <span>
-                                      We are authorized Lenovo®, NetApp®, and
+                                      We are authorized Lenovo®, NetApp®, INFINIDAT®, and
                                       PAX® warranty and post-warranty service
                                       providers. We have rich experience in
                                       maintenance of high-end servers and
