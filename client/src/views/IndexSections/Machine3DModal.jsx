@@ -6,9 +6,9 @@ import { isMobile } from "react-device-detect";
 
 class Machine3DModal extends React.Component {
   state = {};
-  toggleModal = state => {
+  toggleModal = (state) => {
     this.setState({
-      [state]: !this.state[state]
+      [state]: !this.state[state],
     });
   };
 
@@ -17,10 +17,10 @@ class Machine3DModal extends React.Component {
       manufacturer,
       machineName,
       productNumber,
-      serialNumber
+      serialNumber,
     } = this.props.machine;
     console.log(this.props);
-    let url = `https://www.lenovofiles.com/3dtours/products/superblaze/${machineName}/index.html`;
+    let url = `https://lenovopress.com/#term=${machineName}&sort=last_update`;
     console.log(url);
     return (
       <>
@@ -34,7 +34,7 @@ class Machine3DModal extends React.Component {
               : window.open(url, "_self")
           }
         >
-          3D
+          &#8505;
         </Button>
         <Modal
           className="modal-dialog-centered modal-primary modal-lg"
@@ -68,7 +68,7 @@ class Machine3DModal extends React.Component {
                 <Loading />
                 <iframe
                   class="embed-responsive-item"
-                  src={`https://www.lenovofiles.com/3dtours/products/superblaze/${machineName}/index.html`}
+                  src={`https://lenovopress.com/servers/thinksystem/${machineName}#sort=relevance`}
                   allowfullscreen
                   title="Product URL"
                 ></iframe>

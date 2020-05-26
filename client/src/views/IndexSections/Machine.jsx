@@ -16,7 +16,7 @@ class Machine extends React.Component {
       serialNumber,
       type,
       startDate,
-      endDate
+      endDate,
     } = this.props.machine;
 
     let { image } = this.props;
@@ -39,7 +39,7 @@ class Machine extends React.Component {
     );
 
     let show3D =
-      manufacturer === "Lenovo" && type === "Server" ? (
+      manufacturer === "Lenovo" && (type === "Server" || type === "Storage") ? (
         <Machine3DModal machine={this.props.machine} />
       ) : null;
 
