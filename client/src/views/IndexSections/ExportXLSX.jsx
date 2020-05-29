@@ -8,14 +8,12 @@ export const ExportXLSX = ({ csvData, fileName }) => {
     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8";
   const fileExtension = ".xlsx";
 
-  console.log(csvData);
-
   const exportToXLSX = (csvData, fileName) => {
     const ws = XLSX.utils.json_to_sheet(csvData);
     const wb = {
       Sheets:
         fileName === "contracts-report" ? { Contracts: ws } : { Repairs: ws },
-      SheetNames: fileName === "contracts-report" ? ["Contracts"] : ["Repairs"]
+      SheetNames: fileName === "contracts-report" ? ["Contracts"] : ["Repairs"],
     };
 
     const excelBuffer = XLSX.write(wb, { bookType: "xlsx", type: "array" });
@@ -28,7 +26,7 @@ export const ExportXLSX = ({ csvData, fileName }) => {
       className="mt-4"
       color="default"
       type="submit"
-      onClick={e => exportToXLSX(csvData, fileName)}
+      onClick={(e) => exportToXLSX(csvData, fileName)}
     >
       Export .xlsx
     </Button>

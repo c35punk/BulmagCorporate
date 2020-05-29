@@ -15,7 +15,7 @@ import {
   CardBody,
   Form,
   FormGroup,
-  Button
+  Button,
 } from "reactstrap";
 import ConfirmExtension from "views/IndexSections/ConfirmExtension";
 
@@ -26,7 +26,7 @@ class AdminDashboard extends React.Component {
     this.state = {
       machines: [],
       tickets: [],
-      contracts: []
+      contracts: [],
     };
   }
 
@@ -34,21 +34,19 @@ class AdminDashboard extends React.Component {
     if (this.props.isAdmin) {
       axios
         .get(dbConstants.machinesUrl)
-        .then(res => {
-          console.log(res);
+        .then((res) => {
           this.setState({ machines: res.data });
         })
-        .catch(function(error) {
+        .catch(function (error) {
           console.log(error);
         });
 
       axios
         .get(dbConstants.getUsersUrl)
-        .then(res => {
-          console.log(res);
+        .then((res) => {
           this.setState({ contracts: res.data });
         })
-        .catch(function(error) {
+        .catch(function (error) {
           console.log(error);
         });
 
@@ -60,10 +58,6 @@ class AdminDashboard extends React.Component {
     }
   }
   render() {
-    console.log("Hello from ADMIN DASHBOARD");
-    console.log("this.state");
-    console.log(this.state);
-
     let number = 0;
     return (
       <>
@@ -135,7 +129,7 @@ class AdminDashboard extends React.Component {
                             </tr>
                           </thead>
                           <tbody key="tbody">
-                            {this.state.contracts.map(contract => {
+                            {this.state.contracts.map((contract) => {
                               number++;
                               return (
                                 <>
@@ -161,7 +155,7 @@ class AdminDashboard extends React.Component {
                                       {" "}
                                       <ContractModal
                                         machines={this.state.machines.filter(
-                                          x => x.creatorID === contract._id
+                                          (x) => x.creatorID === contract._id
                                         )}
                                         company={contract.companyName}
                                         isAdmin={this.props.isAdmin}
@@ -172,9 +166,11 @@ class AdminDashboard extends React.Component {
                                       <TicketModal
                                         machinesWithTickets={this.state.machines
                                           .filter(
-                                            x => x.creatorID === contract._id
+                                            (x) => x.creatorID === contract._id
                                           )
-                                          .filter(x => x.tickets.length !== 0)}
+                                          .filter(
+                                            (x) => x.tickets.length !== 0
+                                          )}
                                         company={contract.companyName}
                                       />
                                     </td>
@@ -217,7 +213,7 @@ class AdminDashboard extends React.Component {
                             </tr>
                           </thead>
                           <tbody key="tbody">
-                            {this.state.contracts.map(contract => {
+                            {this.state.contracts.map((contract) => {
                               number++;
                               return (
                                 <>
@@ -239,9 +235,9 @@ class AdminDashboard extends React.Component {
                                     <td>
                                       {this.state.machines
                                         .filter(
-                                          x => x.creatorID === contract._id
+                                          (x) => x.creatorID === contract._id
                                         )
-                                        .map(machine => {
+                                        .map((machine) => {
                                           return (
                                             <>
                                               <Button
@@ -261,9 +257,9 @@ class AdminDashboard extends React.Component {
                                     <td>
                                       {this.state.machines
                                         .filter(
-                                          x => x.creatorID === contract._id
+                                          (x) => x.creatorID === contract._id
                                         )
-                                        .map(machine => {
+                                        .map((machine) => {
                                           return machine.proposedDate >
                                             machine.endDate ? (
                                             <>
@@ -338,7 +334,7 @@ class AdminDashboard extends React.Component {
   }
 }
 
-const DashboardContext = props => {
+const DashboardContext = (props) => {
   return (
     <UserConsumer>
       {({ isLoggedIn, isAdmin, username, id }) => (

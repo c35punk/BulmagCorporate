@@ -18,7 +18,7 @@ import {
   Row,
   Label,
   Modal,
-  Col
+  Col,
 } from "reactstrap";
 
 class ConfirmExtension extends React.Component {
@@ -26,16 +26,16 @@ class ConfirmExtension extends React.Component {
     super(props);
     this.state = {
       startDate: "",
-      endDate: this.props.endDate
+      endDate: this.props.endDate,
     };
     this.handleConfirm = this.handleConfirm.bind(this);
   }
 
   state = {};
-  toggleModal = state => {
+  toggleModal = (state) => {
     this.setState({
       [state]: !this.state[state],
-      machine: this.props.machine
+      machine: this.props.machine,
     });
   };
 
@@ -43,21 +43,20 @@ class ConfirmExtension extends React.Component {
     event.preventDefault();
     const newEndDate = this.props.endDate;
 
-    console.log(newEndDate);
     let machineId = this.props.machine._id;
 
     axios
       .put(`${dbConstants.machinesUrl}/editByAdmin/${machineId}`, {
         machineId,
-        newEndDate
+        newEndDate,
       })
-      .then(res => {
+      .then((res) => {
         if (res.status === 200) {
-          res.json().then(data => {
+          res.json().then((data) => {
             this.props.history.push(`/edit/${machineId}`);
           });
         } else {
-          res.json().then(err => {
+          res.json().then((err) => {
             console.log(err.message);
           });
         }
@@ -70,17 +69,14 @@ class ConfirmExtension extends React.Component {
   }
 
   render() {
-    console.log("Welcome from Confirm Extension");
-
     let {
       machineName,
       manufacturer,
       serialNumber,
       productNumber,
       startDate,
-      type
+      type,
     } = this.props.machine;
-    console.log(this.state);
 
     return (
       <>

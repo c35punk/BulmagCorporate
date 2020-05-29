@@ -16,7 +16,7 @@ import {
   InputGroup,
   Container,
   Row,
-  Col
+  Col,
 } from "reactstrap";
 
 class AddMachine extends React.Component {
@@ -30,7 +30,7 @@ class AddMachine extends React.Component {
       type: "Server",
       startDate: Date,
       endDate: Date,
-      agree: false
+      agree: false,
     };
 
     this.handleManufacturer = this.handleManufacturer.bind(this);
@@ -79,14 +79,12 @@ class AddMachine extends React.Component {
       startDate: this.state.startDate,
       endDate: this.state.endDate,
       agree: this.state.agree,
-      creatorID: this.props.id
+      creatorID: this.props.id,
     };
-
-    console.log(machineToBeAdded);
 
     axios
       .post(dbConstants.machineCreateUrl, machineToBeAdded)
-      .then(res => console.log(res.data));
+      .then((res) => console.log(res.data));
 
     event.preventDefault();
     window.location = "/dashboard";
@@ -302,7 +300,7 @@ class AddMachine extends React.Component {
   }
 }
 
-const AddSystemContext = props => {
+const AddSystemContext = (props) => {
   return (
     <UserConsumer>
       {({ isLoggedIn, isAdmin, username, id }) => (

@@ -19,7 +19,7 @@ import {
   Row,
   Col,
   UncontrolledAlert,
-  UncontrolledTooltip
+  UncontrolledTooltip,
 } from "reactstrap";
 
 class Register extends React.Component {
@@ -37,7 +37,7 @@ class Register extends React.Component {
       contactPerson: "",
       companyImage: "",
       address: "",
-      error: ""
+      error: "",
     };
 
     this.handleName = this.handleName.bind(this);
@@ -64,7 +64,7 @@ class Register extends React.Component {
   }
   handleRepeatPassword(event) {
     this.setState({
-      repeatPassword: event.target.value
+      repeatPassword: event.target.value,
     });
   }
   handleAgree(event) {
@@ -100,16 +100,15 @@ class Register extends React.Component {
       contactPerson: this.state.contactPerson,
       companyImage: this.state.companyImage,
       address: this.state.address,
-      agree: this.state.agree
+      agree: this.state.agree,
     };
 
-    axios.post(dbConstants.registerUrl, newUser).then(res => {
+    axios.post(dbConstants.registerUrl, newUser).then((res) => {
       if (!res.data.success) {
         this.setState({ error: res.data.errors });
         console.log(this.state.error);
         return;
       }
-      console.log(res.data);
     });
 
     event.preventDefault();
@@ -138,7 +137,7 @@ class Register extends React.Component {
           style={{
             backgroundColor: "#aa2727",
             color: "black",
-            visability: "visible"
+            visability: "visible",
           }}
           delay={{ show: 0, hide: 1 }}
           target={field}
@@ -156,8 +155,6 @@ class Register extends React.Component {
         </UncontrolledTooltip>
       ) : null;
     }
-
-    console.log(this.state);
 
     return (
       <>

@@ -43,7 +43,6 @@ class Machine extends React.Component {
         <Machine3DModal machine={this.props.machine} />
       ) : null;
 
-    console.log(functions.isDateBeforeToday(currentDate));
     let status = functions.isDateBeforeToday(currentDate) ? (
       <Badge color="success" pill className="mr-3">
         In Maintenance

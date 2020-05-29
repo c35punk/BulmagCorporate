@@ -19,7 +19,7 @@ import {
   Row,
   Jumbotron,
   Modal,
-  Col
+  Col,
 } from "reactstrap";
 
 class MachineModals extends React.Component {
@@ -32,7 +32,7 @@ class MachineModals extends React.Component {
       uploadedFile: {},
       uploadedFileName: "",
       ticketStatus: true,
-      creatorID: this.props.machine.creatorID
+      creatorID: this.props.machine.creatorID,
     };
     this.handleComponent = this.handleComponent.bind(this);
     this.handleFailureText = this.handleFailureText.bind(this);
@@ -40,10 +40,10 @@ class MachineModals extends React.Component {
     this.onFileChange = this.onFileChange.bind(this);
   }
   state = {};
-  toggleModal = state => {
+  toggleModal = (state) => {
     this.setState({
       [state]: !this.state[state],
-      repairDate: Date(Date.now())
+      repairDate: Date(Date.now()),
     });
   };
 
@@ -56,7 +56,7 @@ class MachineModals extends React.Component {
   onFileChange(event) {
     this.setState({
       uploadedFile: event.target.files[0],
-      uploadedFileName: event.target.files[0].name
+      uploadedFileName: event.target.files[0].name,
     });
   }
 
@@ -70,14 +70,12 @@ class MachineModals extends React.Component {
       fileName: this.state.uploadedFileName,
       creatorID: this.state.creatorID,
       machineID: this.props.machine._id,
-      ticketStatus: this.state.ticketStatus
+      ticketStatus: this.state.ticketStatus,
     };
-
-    console.log(ticketToBeAdded);
 
     axios
       .post(dbConstants.addTicketsUrl, ticketToBeAdded)
-      .then(res => console.log(res.data));
+      .then((res) => console.log(res.data));
 
     event.preventDefault();
     window.location = "/dashboard";
@@ -88,7 +86,7 @@ class MachineModals extends React.Component {
       manufacturer,
       machineName,
       productNumber,
-      serialNumber
+      serialNumber,
     } = this.props.machine;
     return (
       <>

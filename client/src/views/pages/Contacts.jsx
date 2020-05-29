@@ -22,7 +22,7 @@ import {
   UncontrolledAlert,
   Row,
   Col,
-  Form
+  Form,
 } from "reactstrap";
 
 // index page sections
@@ -35,7 +35,7 @@ class Contacts extends React.Component {
       senderEmail: "",
       message: "",
       captchaCheck: false,
-      error: ""
+      error: "",
     };
     this.handleSenderName = this.handleSenderName.bind(this);
     this.handleSenderEmail = this.handleSenderEmail.bind(this);
@@ -61,27 +61,20 @@ class Contacts extends React.Component {
     let data = {
       name: this.state.senderName,
       email: this.state.senderEmail,
-      message: this.state.message
+      message: this.state.message,
     };
 
-    console.log(data);
-    console.log(this.state.captchaCheck);
-
     if (this.state.captchaCheck) {
-      axios.post(dbConstants.mailsUrl, data).then(response => {
-        console.log(response.data);
+      axios.post(dbConstants.mailsUrl, data).then((response) => {
         if (!!response.data.success) {
           this.setState({ error: response.data.errors });
-          console.log(this.state.error);
           return;
         }
-        console.log(response.data);
 
         if (response.data.msg === "success") {
           console.log("Message Sent.");
           window.location = "/contacts";
         } else if (response.data.msg === "fail") {
-          console.log(response);
           console.log("Message failed to send.");
           window.location = "/contacts";
         }
@@ -182,7 +175,7 @@ class Contacts extends React.Component {
                       style={{
                         overflow: "hidden",
                         paddingTop: " 56.25%",
-                        position: "relative"
+                        position: "relative",
                       }}
                     >
                       <iframe
@@ -195,7 +188,7 @@ class Contacts extends React.Component {
                           position: "absolute",
                           top: "0",
                           width: "100%",
-                          borderRadius: "5px"
+                          borderRadius: "5px",
                         }}
                       ></iframe>
                     </Col>
@@ -247,7 +240,7 @@ class Contacts extends React.Component {
                         {alertToShow}
                         <FormGroup
                           className={classnames("mt-5", {
-                            focused: this.state.nameFocused
+                            focused: this.state.nameFocused,
                           })}
                         >
                           <InputGroup className="input-group-alternative">
@@ -262,10 +255,10 @@ class Contacts extends React.Component {
                               id="name"
                               value={this.state.senderName}
                               onChange={this.handleSenderName}
-                              onFocus={e =>
+                              onFocus={(e) =>
                                 this.setState({ nameFocused: true })
                               }
-                              onBlur={e =>
+                              onBlur={(e) =>
                                 this.setState({ nameFocused: false })
                               }
                             />
@@ -273,7 +266,7 @@ class Contacts extends React.Component {
                         </FormGroup>
                         <FormGroup
                           className={classnames({
-                            focused: this.state.emailFocused
+                            focused: this.state.emailFocused,
                           })}
                         >
                           <InputGroup className="input-group-alternative">
@@ -288,10 +281,10 @@ class Contacts extends React.Component {
                               id="email"
                               value={this.state.senderEmail}
                               onChange={this.handleSenderEmail}
-                              onFocus={e =>
+                              onFocus={(e) =>
                                 this.setState({ emailFocused: true })
                               }
-                              onBlur={e =>
+                              onBlur={(e) =>
                                 this.setState({ emailFocused: false })
                               }
                             />
@@ -312,7 +305,7 @@ class Contacts extends React.Component {
                         </FormGroup>
 
                         <ReCaptcha
-                          ref={el => {
+                          ref={(el) => {
                             this.captchaDemo = el;
                           }}
                           render="explicit"

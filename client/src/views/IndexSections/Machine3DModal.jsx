@@ -19,9 +19,7 @@ class Machine3DModal extends React.Component {
       productNumber,
       serialNumber,
     } = this.props.machine;
-    console.log(this.props);
     let url = `https://lenovopress.com/#term=${machineName}&sort=last_update`;
-    console.log(url);
     return (
       <>
         <Button

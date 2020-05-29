@@ -17,7 +17,7 @@ import {
   Row,
   Label,
   Modal,
-  Col
+  Col,
 } from "reactstrap";
 
 class MachineModals extends React.Component {
@@ -25,7 +25,7 @@ class MachineModals extends React.Component {
     super(props);
     this.state = {
       startDate: "",
-      endDate: ""
+      endDate: "",
     };
     this.handleEndDate = this.handleEndDate.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
@@ -33,17 +33,17 @@ class MachineModals extends React.Component {
   }
 
   state = {};
-  toggleModal = state => {
+  toggleModal = (state) => {
     this.setState({
       [state]: !this.state[state],
-      machine: this.props.machine
+      machine: this.props.machine,
     });
   };
 
   handleEndDate(event) {
     this.setState({
       startDate: this.props.machine.startDate,
-      endDate: event.target.value + "T00:00:00.000Z"
+      endDate: event.target.value + "T00:00:00.000Z",
     });
   }
 
@@ -51,19 +51,17 @@ class MachineModals extends React.Component {
     event.preventDefault();
     const editedTokens = {
       startDate: this.state.startDate,
-      endDate: this.state.endDate
+      endDate: this.state.endDate,
     };
 
-    console.log(editedTokens);
-
     let machineId = this.props.machine._id;
-    machineService.editMachineById(machineId, editedTokens).then(res => {
+    machineService.editMachineById(machineId, editedTokens).then((res) => {
       if (res.status === 200) {
-        res.json().then(data => {
+        res.json().then((data) => {
           this.props.history.push(`/edit/${machineId}`);
         });
       } else {
-        res.json().then(err => {
+        res.json().then((err) => {
           console.log(err.message);
         });
       }
@@ -78,19 +76,17 @@ class MachineModals extends React.Component {
   handleDelete(event) {
     event.preventDefault();
     const editedTokens = {
-      endDate: this.state.endDate
+      endDate: this.state.endDate,
     };
 
-    console.log(editedTokens);
-
     let machineId = this.props.machine._id;
-    machineService.deleteMachine(machineId).then(res => {
+    machineService.deleteMachine(machineId).then((res) => {
       if (res.status === 200) {
-        res.json().then(data => {
+        res.json().then((data) => {
           this.props.history.push(`/delete/${machineId}`);
         });
       } else {
-        res.json().then(err => {
+        res.json().then((err) => {
           console.log(err.message);
         });
       }
@@ -104,9 +100,8 @@ class MachineModals extends React.Component {
       serialNumber,
       productNumber,
       startDate,
-      type
+      type,
     } = this.props.machine;
-    console.log(this.state);
 
     let button = !this.props.machine.proposedDate ? (
       <Button
@@ -116,11 +111,11 @@ class MachineModals extends React.Component {
         type="button"
         onClick={() => this.toggleModal("notificationModal")}
       >
-      Extension Request
+        Extension Request
       </Button>
     ) : (
       <Button block className="mb-2" color="default" type="button" disabled>
-      AWAITING APPROVAL
+        AWAITING APPROVAL
       </Button>
     );
 

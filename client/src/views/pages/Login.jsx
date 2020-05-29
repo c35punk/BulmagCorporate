@@ -20,7 +20,7 @@ import {
   InputGroup,
   Container,
   Row,
-  Col
+  Col,
 } from "reactstrap";
 
 class Login extends React.Component {
@@ -31,7 +31,7 @@ class Login extends React.Component {
       email: "",
       password: "",
       error: "",
-      formSubmitted: false
+      formSubmitted: false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -53,16 +53,13 @@ class Login extends React.Component {
 
     const credentials = {
       email,
-      password
+      password,
     };
 
     this.setState({ formSubmitted: true }, () => {
       try {
-        axios.post(dbConstants.loginUrl, credentials).then(res => {
-          console.log(credentials);
+        axios.post(dbConstants.loginUrl, credentials).then((res) => {
           // this.setState({ token: res.data.token });
-          console.log("Success@@:");
-          console.log(res.data);
 
           if (!res.data.success) {
             this.setState({ error: res.data.message, formSubmitted: false });
@@ -70,8 +67,8 @@ class Login extends React.Component {
           }
 
           const isAdmin = res.data.user.roles
-            .map(role => role.toLowerCase())
-            .some(role => role === "admin");
+            .map((role) => role.toLowerCase())
+            .some((role) => role === "admin");
 
           window.localStorage.setItem("auth_token", res.data.token);
           window.localStorage.setItem(
@@ -79,14 +76,14 @@ class Login extends React.Component {
             JSON.stringify({
               ...res.data.user,
               isAdmin: isAdmin,
-              isLoggedIn: true
+              isLoggedIn: true,
             })
           );
           updateUser({
             isAdmin,
             isLoggedIn: true,
             updateUser,
-            ...res.data.user
+            ...res.data.user,
           });
 
           isAdmin
@@ -94,7 +91,6 @@ class Login extends React.Component {
             : (window.location = "/profile");
         });
       } catch (e) {
-        console.log("ERROR!!");
         console.log(e);
       }
     });
@@ -108,11 +104,6 @@ class Login extends React.Component {
 
   render() {
     const { email, password, error } = this.state;
-
-    console.log("this.props");
-    console.log(this.props);
-    console.log("this.state");
-    console.log(this.state);
 
     return (
       <>
@@ -201,7 +192,7 @@ class Login extends React.Component {
   }
 }
 
-const LoginContext = props => {
+const LoginContext = (props) => {
   return (
     <UserConsumer>
       {({ isLoggedIn, updateUser, isAdmin }) => (

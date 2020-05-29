@@ -17,31 +17,31 @@ class Profile extends React.Component {
       machines: [],
       servers: Number,
       storages: Number,
-      switches: Number
+      switches: Number,
     };
   }
 
   componentDidMount() {
     axios
       .get(dbConstants.machinesUrl)
-      .then(res => {
+      .then((res) => {
         const userMachines = res.data.filter(
-          x => x.creatorID === this.props.user.id
+          (x) => x.creatorID === this.props.user.id
         );
         this.setState({
-          machines: userMachines
+          machines: userMachines,
         });
         this.setState({
-          servers: this.state.machines.filter(x => x.type === "Server")
+          servers: this.state.machines.filter((x) => x.type === "Server"),
         });
         this.setState({
-          storages: this.state.machines.filter(x => x.type === "Storage")
+          storages: this.state.machines.filter((x) => x.type === "Storage"),
         });
         this.setState({
-          switches: this.state.machines.filter(x => x.type === "Switch")
+          switches: this.state.machines.filter((x) => x.type === "Switch"),
         });
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
     document.documentElement.scrollTop = 0;
@@ -49,9 +49,6 @@ class Profile extends React.Component {
     this.refs.main.scrollTop = 0;
   }
   render() {
-    console.log("Hello from Profile");
-    console.log(this.props);
-    console.log(this.state.machines);
     return (
       <>
         <main className="profile-page" ref="main">
@@ -209,7 +206,7 @@ class Profile extends React.Component {
   }
 }
 
-const ProfileContext = props => {
+const ProfileContext = (props) => {
   return (
     <UserConsumer>
       {({ isLoggedIn, isAdmin }) => (

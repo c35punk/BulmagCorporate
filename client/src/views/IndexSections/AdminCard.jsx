@@ -8,8 +8,7 @@ import { Card, CardBody, Badge, Col } from "reactstrap";
 
 class Machine extends React.Component {
   render() {
-    console.log("Machine's this.props");
-    console.log(this.props);
+
 
     let {
       manufacturer,
@@ -41,7 +40,6 @@ class Machine extends React.Component {
       />
     );
 
-    console.log(functions.isDateBeforeToday(currentDate));
 
     let status = functions.isDateBeforeToday(currentDate) ? (
       <Badge color="success" pill className="mr-3">
@@ -53,8 +51,7 @@ class Machine extends React.Component {
       </Badge>
     );
 
-    console.log("Machine.JSX");
-    console.log(this.props);
+  
 
     return (
       <Col lg="3">

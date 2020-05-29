@@ -5,8 +5,6 @@ import { UncontrolledAlert } from "reactstrap";
 
 class Alerts extends React.Component {
   render() {
-    console.log("E@&*!%!$%");
-    console.log(this.props);
     return (
       <>
         <UncontrolledAlert color="danger" fade={true}>

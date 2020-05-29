@@ -52,7 +52,7 @@ const dbConstants = {
   machineFileDeleteByIdUrl: `${machineUrl}/upload/delete/`,
   machineFileDownloadByIdUrl: `${machineUrl}/download/`,
 
-  // lotus db !!IMPORTANT you need concat string at the end of the url (i.e. "Serial Number")
+  // lotus db !!IMPORTANT you need concat string at the end of the url (i.e. "Serial Number") IT WILL BE REFACTORED after we updated Domino Server to version >10 (with cors)
   lotusServiceJournal: `${lotusServiceUrl}/service.nsf/api/data/documents?search=`,
   lotusThinkJournal: `${lotusServiceUrl}/think.nsf/api/data/documents?search=`,
   lotusMaintJournal: `${lotusServiceUrl}/maint.nsf/api/data/documents?search=`,

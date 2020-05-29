@@ -9,7 +9,7 @@ import {
   Form,
   Row,
   Modal,
-  Col
+  Col,
 } from "reactstrap";
 import { ExportXLSX } from "./ExportXLSX";
 
@@ -18,15 +18,15 @@ class TicketsModal extends React.Component {
     super(props);
     this.state = {
       machinesWithTickets: [],
-      numberOfTickets: 0
+      numberOfTickets: 0,
     };
   }
 
   state = {};
-  toggleModal = state => {
+  toggleModal = (state) => {
     this.setState({
       [state]: !this.state[state],
-      machinesWithTickets: this.props.machinesWithTickets
+      machinesWithTickets: this.props.machinesWithTickets,
     });
   };
 
@@ -35,9 +35,6 @@ class TicketsModal extends React.Component {
   // }
 
   render() {
-    console.log("Hello from Tickets Modal");
-    console.log(this.state);
-
     let numberOfTickets = 0;
 
     let arr = this.state.machinesWithTickets;
@@ -110,7 +107,7 @@ class TicketsModal extends React.Component {
                             </tr>
                           </thead>
                           <tbody key="tbody">
-                            {this.state.machinesWithTickets.map(machine => {
+                            {this.state.machinesWithTickets.map((machine) => {
                               return (
                                 <>
                                   <tr>
@@ -122,7 +119,7 @@ class TicketsModal extends React.Component {
 
                                     <td>{machine.serialNumber}</td>
                                     <td>
-                                      {machine.tickets.map(x => {
+                                      {machine.tickets.map((x) => {
                                         x["Serial Number"] =
                                           machine.serialNumber;
                                         x["Ticket Number"] = x.ticketNumber;
@@ -138,7 +135,7 @@ class TicketsModal extends React.Component {
                                       })}
                                     </td>
                                     <td>
-                                      {machine.tickets.map(x => {
+                                      {machine.tickets.map((x) => {
                                         return (
                                           "\r\n" +
                                           (x["Repair Date"]
@@ -148,19 +145,19 @@ class TicketsModal extends React.Component {
                                       })}
                                     </td>
                                     <td>
-                                      {machine.tickets.map(x => {
+                                      {machine.tickets.map((x) => {
                                         return (
                                           "\r\n" + x["Description"] + "\r\n"
                                         );
                                       })}
                                     </td>
                                     <td>
-                                      {machine.tickets.map(x => {
+                                      {machine.tickets.map((x) => {
                                         return "\r\n" + x["Component"] + "\r\n";
                                       })}
                                     </td>
                                     <td>
-                                      {machine.tickets.map(x => {
+                                      {machine.tickets.map((x) => {
                                         return (
                                           "\r\n" +
                                           (x["Status"] ? "Open" : "Closed") +

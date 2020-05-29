@@ -55,7 +55,7 @@ class AddProduct extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log(this.state);
+
     const productToBeAdded = {
       name: this.state.name,
       description: this.state.description,
@@ -67,8 +67,7 @@ class AddProduct extends React.Component {
     axios
       .post(dbConstants.addProductsUrl, productToBeAdded)
       .then(res => console.log(res.data));
-    console.log(productToBeAdded);
-    console.log(this.state);
+
 
     event.preventDefault();
     window.location = "/products";
