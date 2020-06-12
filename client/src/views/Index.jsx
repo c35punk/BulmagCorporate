@@ -42,12 +42,12 @@ class Index extends Component {
       user: {
         ...defaultState,
         ...parsedUser,
-        updateUser: this.updateUser
-      }
+        updateUser: this.updateUser,
+      },
     };
   }
 
-  updateUser = user => {
+  updateUser = (user) => {
     this.setState({ user });
   };
 
@@ -58,14 +58,14 @@ class Index extends Component {
       <div>
         <UserProvider value={user}>
           <CookieConsent
-            buttonText="I agree"
+            buttonText="X"
             buttonStyle={{
               background: "#fff",
               border: "0",
               borderRadius: "5px",
               color: "#aa2727",
               cursor: "pointer",
-              font: "10px, bold, Open Sans, sans serif"
+              font: "10px, bold, Open Sans, sans serif",
             }}
             expires={150}
           >
@@ -94,79 +94,87 @@ class Index extends Component {
           </CookieConsent>
           <Navigation />
           <Switch>
-            <Route path="/" exact render={props => <Main {...props} />} />
+            <Route path="/" exact render={(props) => <Main {...props} />} />
             <Route
               path="/not-found"
               exact
-              render={props => <NotFound {...props} />}
+              render={(props) => <NotFound {...props} />}
             />
-            <Route path="/about" exact render={props => <About {...props} />} />
+            <Route
+              path="/about"
+              exact
+              render={(props) => <About {...props} />}
+            />
             <Route
               path="/privacy-policy"
               exact
-              render={props => <PrivacyPolicy {...props} />}
+              render={(props) => <PrivacyPolicy {...props} />}
             />
             <Route
               path="/disclaimer"
               exact
-              render={props => <Disclaimer {...props} />}
+              render={(props) => <Disclaimer {...props} />}
             />
             <Route
               path="/projects"
               exact
-              render={props => <Projects {...props} />}
+              render={(props) => <Projects {...props} />}
             />
-            <Route path="/login" exact render={props => <Login {...props} />} />
+            <Route
+              path="/login"
+              exact
+              render={(props) => <Login {...props} />}
+            />
             <UserRoute
               path="/profile"
               exact
-              render={props => <Profile {...props} user={user} />}
+              render={(props) => <Profile {...props} user={user} />}
             />
             <Route
               path="/register"
               exact
-              render={props => <Register {...props} />}
+              render={(props) => <Register {...props} />}
             />
             <Route
               path="/contacts"
               exact
-              render={props => <Contacts {...props} />}
+              render={(props) => <Contacts {...props} />}
             />
             <Route
               path="/products"
               exact
-              render={props => <Products {...props} />}
+              render={(props) => <Products {...props} />}
             />
             <Route
               path="/services"
               exact
-              render={props => <Services {...props} />}
+              render={(props) => <Services {...props} />}
             />
             <UserRoute
               path="/dashboard"
               exact
-              render={props => <Dashboard {...props} />}
+              render={(props) => <Dashboard {...props} />}
             />
             />
             <UserRoute
               path="/admin-dashboard"
               exact
-              render={props => <AdminDashboard {...props} />}
+              render={(props) => <AdminDashboard {...props} />}
             />
             <UserRoute
               path="/logout"
               exact
-              render={props => <Logout {...props} />}
+              render={(props) => <Logout {...props} />}
             />
             <UserRoute
               path="/add-machine"
               exact
-              render={props => <AddMachine {...props} />}
+              render={(props) => <AddMachine {...props} />}
             />
             <AdminRoute
               path="/add-product"
               exact
-              render={props => <AddProduct {...props} />}
+              render={(props) => <AddProduct {...props} />}
             />
           </Switch>
           <Footer />
