@@ -8,20 +8,18 @@ import {
   NavLink,
   TabContent,
   TabPane,
-  Row,
-  Col
 } from "reactstrap";
 import classnames from "classnames";
 
 class Service extends React.Component {
   state = {
     iconTabs: 1,
-    plainTabs: 1
+    plainTabs: 1,
   };
   toggleNavs = (e, state, index) => {
     e.preventDefault();
     this.setState({
-      [state]: index
+      [state]: index,
     });
   };
   render() {
@@ -39,9 +37,9 @@ class Service extends React.Component {
               <NavLink
                 aria-selected={this.state.plainTabs === 1}
                 className={classnames("mb-sm-3 mb-md-0", {
-                  active: this.state.plainTabs === 1
+                  active: this.state.plainTabs === 1,
                 })}
-                onClick={e => this.toggleNavs(e, "plainTabs", 1)}
+                onClick={(e) => this.toggleNavs(e, "plainTabs", 1)}
                 href="#"
                 role="tab"
               >
