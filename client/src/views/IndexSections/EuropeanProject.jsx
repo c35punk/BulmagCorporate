@@ -61,6 +61,9 @@ const EuropeanProjectInfo = () => {
           Начало на проекта: 24.02.2020г. <br />
           Край на проекта: 24.02.2021г.
         </p>
+        <p>
+          <a href="https://bulmag.bg/docs/company/project-2020-2021.7z">Свалете документите</a>
+        </p>
         <div style={{ border: "solid 1px red" }}></div>
       </p>
       <p>
