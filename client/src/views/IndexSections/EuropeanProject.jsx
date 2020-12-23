@@ -62,7 +62,7 @@ const EuropeanProjectInfo = () => {
           Край на проекта: 24.02.2021г.
         </p>
         <p>
-          <a href="https://bulmag.bg/docs/company/project-2020-2021.7z">Свалете документите</a>
+          <a href="https://bulmag.bg/docs/company/Project-2020-2021.7z">Свалете документите</a>
         </p>
         <div style={{ border: "solid 1px red" }}></div>
       </p>
@@ -215,6 +215,9 @@ const EuropeanProjectInfo = () => {
             <br />
             Projct end: 24.02.2021
           </p>
+          <p>
+          <a href="https://bulmag.bg/docs/company/Project-2020-2021.7z">Download documents</a>
+        </p>
         </p>
         <div style={{ border: "solid 1px red" }}></div>
       </p>
