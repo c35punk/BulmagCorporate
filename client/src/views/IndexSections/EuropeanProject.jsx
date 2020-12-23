@@ -16,7 +16,7 @@ const EuropeanProjectInfo = () => {
         style={{
           width: "330px",
           height: "205px",
-          objectFit: "contain"
+          objectFit: "contain",
         }}
       />
     </Col>
@@ -62,7 +62,14 @@ const EuropeanProjectInfo = () => {
           Край на проекта: 24.02.2021г.
         </p>
         <p>
-          <a href="https://bulmag.bg/docs/company/Project-2020-2021.7z">Свалете документите</a>
+          Процедурата по открит избор с публична покана стартира на 23.12.2020г.
+          Процедура открит избор с публична покана за „Доставка на ДМА и ДНА„
+          Поканата и документацията за участие може да бъде свалена от{" "}
+          <a href="https://bulmag.bg/docs/company/Project-2020-2021.7z">ТУК</a>{" "}
+          на адреса на единния информационен портал за обща информация за
+          управлението на Структурните фондове и Кохезионния фонд на Европейския
+          съюз на Република България на следния линк
+          (https://eumis2020.government.bg/)
         </p>
         <div style={{ border: "solid 1px red" }}></div>
       </p>
@@ -216,7 +223,14 @@ const EuropeanProjectInfo = () => {
             Projct end: 24.02.2021
           </p>
           <p>
-          <a href="https://bulmag.bg/docs/company/Project-2020-2021.7z">Download documents</a>
+          The open selection procedure with a public invitation starts on 23.12.2020.
+           Open selection procedure with a public invitation for "Delivery of fixed and intangible assets"
+           The invitation and documentation can be downloaded from {""}
+           <a href="https://bulmag.bg/docs/company/Project-2020-2021.7z"> HERE </a> {""}
+           and at of the unified information portal for general information on
+           management of the Structural Funds and the European Cohesion Fund
+           Union of the Republic of Bulgaria at the following link
+           (https://eumis2020.government.bg/)
         </p>
         </p>
         <div style={{ border: "solid 1px red" }}></div>
