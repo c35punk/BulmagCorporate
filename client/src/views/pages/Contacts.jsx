@@ -166,8 +166,8 @@ class Contacts extends React.Component {
                       <Col>
                         <h4 className="justify-content-center">Address</h4>
                         <h6>Bulmag HQ</h6>
-                        <a href="#">1784</a> <br />
-                        <a href="map:">Sofia, 7 Grigorii Gorbatenko str.</a>
+                        <a href="#">1592</a> <br />
+                        <a href="map:">Sofia, 8 Asen Yordanov Blvd.</a>
                       </Col>
                     </div>
                     <Col
@@ -179,7 +179,7 @@ class Contacts extends React.Component {
                       }}
                     >
                       <iframe
-                        src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Bulmag+AD,+Sofia,+Bulgaria&amp;aq=0&amp;oq=bulmag+ad+sofia&amp;sll=37.0625,-95.677068&amp;sspn=57.292148,135.263672&amp;t=m&amp;ie=UTF8&amp;hq=Bulmag+AD,&amp;hnear=Sofia,+Sofia-city,+Bulgaria&amp;ll=42.654856,23.372898&amp;spn=0.018937,0.025749&amp;z=14&amp;iwloc=A&amp;output=embed&amp;iwloc=near"
+                        src="https://www.google.com/maps/place/bul.+%22Asen+Yordanov%22+8,+1592+g.k.+Druzhba+1,+Sofia/@42.6732349,23.3813518,17z/data=!3m1!4b1!4m5!3m4!1s0x40aa8676a6ba6145:0x4df288dfbdf39501!8m2!3d42.6732349!4d23.3835405"
                         title="Location"
                         style={{
                           border: "solid 1px #aa2727",

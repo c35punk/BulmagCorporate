@@ -20,7 +20,7 @@
   ],
   "author": "Liubomir Djantov ldj5",
   "license": "MIT",
-  "homepage": "https://www.bulmag.bg",
+  "homepage": "https://bulmag.bg",
   "scripts": {
     "start": "set PORT=34881 && node scripts/start.js",
     "build": "node scripts/build.js",
