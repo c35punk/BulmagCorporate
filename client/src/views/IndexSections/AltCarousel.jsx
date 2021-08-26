@@ -8,16 +8,31 @@ class AltCarousel extends React.Component {
   constructor(props) {
     super(props);
 
-    this.IMAGE_PARTS = 4;
+    this.IMAGE_PARTS = 2;
 
-    this.changeTO = null;
-    this.AUTOCHANGE_TIME = 4000;
+    this.changeTO = 2;
+    this.AUTOCHANGE_TIME = 1000;
 
     this.state = {
-      activeSlide: -1,
-      prevSlide: -1,
+      activeSlide: 2,
+      prevSlide: 2,
       sliderReady: false,
       slides: [
+        
+        {
+          offering: "Maintenance",
+          upper: "Post-Warranty",
+          img:
+            "https://einfotechng.com/images/data-center-header.jpg",
+          button: (
+            <p className="slider__slide-readmore">
+              {" "}
+              <Button className="btn-primary mt-4" to="/services" tag={Link}>
+                Learn more
+              </Button>
+            </p>
+          )
+        },
         {
           offering: "Transformation",
           upper: "Digital",
@@ -45,20 +60,6 @@ class AltCarousel extends React.Component {
                 to="/products#Banking"
                 tag={Link}
               >
-                Learn more
-              </Button>
-            </p>
-          )
-        },
-        {
-          offering: "Maintenance",
-          upper: "Post-Warranty",
-          img:
-            "https://atfip-formations.fr/wp-content/uploads/2018/10/technicien-datacenter-1920x800.jpg",
-          button: (
-            <p className="slider__slide-readmore">
-              {" "}
-              <Button className="btn-primary mt-4" to="/services" tag={Link}>
                 Learn more
               </Button>
             </p>

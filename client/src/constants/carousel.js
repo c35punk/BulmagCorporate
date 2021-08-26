@@ -4,7 +4,7 @@ export default [
         header: "Post-Warranty Maintenance",
         location: '/services',
         body: "With a Bulmag AD maintenance contract, you protect yourself against unplanned additional costs for repairs, support, and maintenance, which exceed your budget and can threaten the financing of projects relevant to security.        From hardware maintenance and repairs to telephone support and system monitoring, you get everything you need for a smooth data centre. Thereby, your systems are excellently secured.",
-        img: "https://atfip-formations.fr/wp-content/uploads/2018/10/technicien-datacenter-1920x800.jpg"
+        img: "https://einfotechng.com/images/data-center-header.jpg"
     },
     {
         id: 1,

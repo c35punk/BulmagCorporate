@@ -1086,7 +1086,7 @@ class TabsSection extends React.Component {
                   <TabPane tabId="plainTabs5">
                     <p className="description">
                       <div className="static_text">
-                        <h3 className="text-primary">United Bulgarian Bank</h3>
+                        <h3 className="text-primary">United Bulgarian Bank AD</h3>
                         <table className="bordered">
                           <thead>
                             <tr>
