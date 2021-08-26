@@ -179,7 +179,7 @@ class Contacts extends React.Component {
                       }}
                     >
                       <iframe
-                        src="https://www.google.com/maps/place/Bulmag+AD/@42.6732388,23.3813518,17z/data=!3m1!4b1!4m5!3m4!1s0x40aa86838c6cd31b:0x42aea8f09e24dc93!8m2!3d42.6732298!4d23.38357"
+                        src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Bulmag+AD,+Sofia,+Bulgaria&amp;aq=0&amp;oq=bulmag+ad+sofia&amp;sll=37.0625,-95.677068&amp;sspn=57.292148,135.263672&amp;t=m&amp;ie=UTF8&amp;hq=Bulmag+AD,&amp;hnear=Sofia,+Sofia-city,+Bulgaria&amp;ll=42.654856,23.372898&amp;spn=0.018937,0.025749&amp;z=14&amp;iwloc=A&amp;output=embed&amp;iwloc=near"
                         title="Location"
                         style={{
                           border: "solid 1px #aa2727",
