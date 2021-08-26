@@ -1086,7 +1086,7 @@ class TabsSection extends React.Component {
                   <TabPane tabId="plainTabs5">
                     <p className="description">
                       <div className="static_text">
-                        <h3 className="text-primary">UniCredit Bulbank AD</h3>
+                        <h3 className="text-primary">United Bulgarian Bank</h3>
                         <table className="bordered">
                           <thead>
                             <tr>
@@ -1098,22 +1098,11 @@ class TabsSection extends React.Component {
                           </thead>
                           <tr>
                             <td>BGN</td>
-                            <td>UNCRBGSF</td>
-                            <td>UNCR7630</td>
-                            <td>BG10 UNCR 7630 1007 6022 07</td>
+                            <td>UBBSBGSF</td>
+                            <td>UBBS7827</td>
+                            <td>BG46 UBBS 7827 1014 5407 05</td>
                           </tr>
-                          <tr>
-                            <td>USD</td>
-                            <td>UNCRBGSF</td>
-                            <td>UNCR7630</td>
-                            <td>BG34 UNCR 7630 1175 6999 62</td>
-                          </tr>
-                          <tr>
-                            <td>EUR</td>
-                            <td>UNCRBGSF</td>
-                            <td>UNCR7630</td>
-                            <td>BG92 UNCR 7000 1500 6762 96</td>
-                          </tr>
+                       
                         </table>
 
                         <h3 className="text-primary">
